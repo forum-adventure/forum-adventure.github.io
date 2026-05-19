@@ -15,6 +15,8 @@
             --accent-hover: #0056b3;
             --random-color: #28a745;
             --random-hover: #218838;
+            --refresh-color: #17a2b8;
+            --refresh-hover: #138496;
             --hover-bg: #eeeeee;
             --item-border: #eeeeee;
             --sub-text: #6c757d; 
@@ -32,6 +34,8 @@
             --accent-hover: #66aaff;
             --random-color: #2fb94e;
             --random-hover: #269c3f;
+            --refresh-color: #1fc1da;
+            --refresh-hover: #179cb0;
             --hover-bg: #2a2a2a;
             --item-border: #2d2d2d;
             --sub-text: #aaaaaa;
@@ -221,6 +225,7 @@
         .utilities-container {
             display: flex;
             justify-content: center;
+            gap: 12px;
             margin-bottom: 20px;
         }
 
@@ -238,6 +243,31 @@
 
         .btn-random:hover {
             background-color: var(--random-hover);
+        }
+
+        /* Nút cập nhật dữ liệu mới */
+        .btn-refresh {
+            background-color: var(--refresh-color);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-refresh:hover {
+            background-color: var(--refresh-hover);
+        }
+
+        .btn-refresh:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
         }
 
         /* Danh sách bài viết */
@@ -363,6 +393,7 @@
 
     <div class="utilities-container">
         <button class="btn-random" id="btnRandom" title="Xem ngẫu nhiên một bài viết từ danh mục hiện tại">Xem ngẫu nhiên 1 bài</button>
+        <button class="btn-refresh" id="btnRefresh" title="Bỏ cache và cập nhật dữ liệu mới nhất từ máy chủ">🔄 Cập nhật dữ liệu mới</button>
     </div>
 
     <div class="list-container" id="listContainer">
@@ -391,6 +422,7 @@
         const listContainer = document.getElementById('listContainer');
         const paginationContainer = document.getElementById('paginationContainer');
         const btnRandom = document.getElementById('btnRandom');
+        const btnRefresh = document.getElementById('btnRefresh');
         const btnThemeToggle = document.getElementById('btnThemeToggle');
         const themeIcon = document.getElementById('themeIcon');
         const themeText = document.getElementById('themeText');
@@ -422,14 +454,25 @@
         // ----------------------------------------
 
         // Tải đồng thời 2 file data riêng biệt và phân loại vào masterData
-        async function loadExternalData() {
+        // Thêm tham số forceRefresh để quyết định có bypass cache trình duyệt hay không
+        async function loadExternalData(forceRefresh = false) {
             try {
+                listContainer.innerHTML = '<div class="empty-message">Đang tải dữ liệu từ các file...</div>';
+                
+                // Cấu hình fetch: Nếu cần làm mới, yêu cầu trình duyệt lấy trực tiếp từ server
+                const fetchOptions = forceRefresh ? { cache: 'reload' } : {};
+                
+                // Cache-busting thủ công bằng cách đính kèm timestamp đề phòng server/CDN cố tình giữ cache
+                const suffix = forceRefresh ? `?t=${Date.now()}` : '';
+
                 const [resVn, resInt] = await Promise.allSettled([
-                    fetch('data_vn.txt').then(r => r.ok ? r.text() : ''),
-                    fetch('data_int.txt').then(r => r.ok ? r.text() : '')
+                    fetch(`data_vn.txt${suffix}`, fetchOptions).then(r => r.ok ? r.text() : ''),
+                    fetch(`data_int.txt${suffix}`, fetchOptions).then(r => r.ok ? r.text() : '')
                 ]);
                 
                 let hasData = false;
+                // Reset lại masterData để tránh dồn ứ dữ liệu cũ khi bấm cập nhật nhiều lần
+                masterData = { vn: {}, int: {} };
 
                 if (resVn.status === 'fulfilled' && resVn.value) {
                     const linesVn = resVn.value.split('\n').map(l => l.trim()).filter(l => l.length > 0);
@@ -509,8 +552,17 @@
                 createTabButton(domain.toUpperCase(), domain);
             });
 
-            if (filterContainer.firstChild) {
-                filterContainer.firstChild.click();
+            // Tìm nút tab đang hoạt động trước đó hoặc mặc định chọn nút đầu tiên
+            const tabs = filterContainer.querySelectorAll('.btn-tab');
+            let targetTab = tabs[0];
+            tabs.forEach(tab => {
+                if(tab.textContent.toLowerCase() === currentDomain.toLowerCase()){
+                    targetTab = tab;
+                }
+            });
+            
+            if (targetTab) {
+                targetTab.click();
             }
         }
 
@@ -518,14 +570,15 @@
             const button = document.createElement('button');
             button.className = 'btn-tab';
             button.textContent = label;
+            if (domainKey === currentDomain) button.classList.add('active');
+            
             button.addEventListener('click', () => {
                 document.querySelectorAll('.btn-tab').forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
                 
                 currentDomain = domainKey;
                 currentPage = 1;
-                searchInput.value = ''; 
-                searchQuery = '';
+                // Không tự động xóa từ khóa tìm kiếm khi chuyển tab để trải nghiệm mượt mà hơn
                 displayPosts();
             });
             filterContainer.appendChild(button);
@@ -558,6 +611,9 @@
             }
 
             const totalPages = Math.ceil(targetPosts.length / postsPerPage);
+            // Bảo vệ an toàn nếu currentPage vượt quá tổng số trang mới cập nhật
+            if (currentPage > totalPages) currentPage = totalPages || 1;
+
             const startIndex = (currentPage - 1) * postsPerPage;
             const endIndex = startIndex + postsPerPage;
             const paginatedPosts = targetPosts.slice(startIndex, endIndex);
@@ -644,7 +700,7 @@
             }, 300);
         });
 
-        // --- SỬA LỖI: KHU VỰC XỬ LÝ NÚT RANDOM (Trả về logic nguyên bản) ---
+        // --- KHU VỰC XỬ LÝ NÚT RANDOM ---
         btnRandom.addEventListener('click', () => {
             const allCurrentPosts = getActivePosts();
             if (allCurrentPosts.length === 0) {
@@ -667,6 +723,18 @@
             listContainer.appendChild(postItem);
         });
 
+        // --- KHU VỰC XỬ LÝ NÚT CẬP NHẬT DỮ LIỆU MỚI (BỎ CACHE) ---
+        btnRefresh.addEventListener('click', async () => {
+            btnRefresh.disabled = true;
+            btnRefresh.textContent = '⏳ Đang đồng bộ...';
+            
+            // Gọi hàm load với tham số true để xóa cache trên trình duyệt và IIS/Apache server
+            await loadExternalData(true);
+            
+            btnRefresh.disabled = false;
+            btnRefresh.textContent = '🔄 Cập nhật dữ liệu mới';
+        });
+
         // --- KHU VỰC XỬ LÝ CHUYỂN ĐỔI NGUỒN DỮ LIỆU TỪ 2 FILE ---
         document.querySelectorAll('.btn-source').forEach(btn => {
             btn.addEventListener('click', (e) => {
@@ -683,8 +751,8 @@
             });
         });
 
-        // Khởi chạy ứng dụng khi DOM sẵn sàng
-        window.addEventListener('DOMContentLoaded', loadExternalData);
+        // Khởi chạy ứng dụng khi DOM sẵn sàng (chạy ở chế độ bình thường có cache)
+        window.addEventListener('DOMContentLoaded', () => loadExternalData(false));
     </script>
 </body>
 </html>
