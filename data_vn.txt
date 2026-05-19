@@ -10370,11 +10370,9 @@ Hội Vozer chơi đồng hồ. | https://voz.vn/t/hoi-vozer-choi-dong-ho.579413
 
 Kinh nghiệm build PC render kiến trúc nội thất Vray Corona Enscape Lumion xài bền 10 năm – không lỗi vặt | https://voz.vn/t/kinh-nghiem-build-pc-render-kien-truc-noi-that-vray-corona-enscape-lumion-xai-ben-10-nam-%E2%80%93-khong-loi-vat.1238779/
 
-ĐH Kinh tế TP.HCM tổ chức khóa đào tạo “Tổng quan vận hành và chiến lược tham giaTrung tâm Tài chính quốc tế Việt Nam” | https://voz.vn/t/dh-kinh-te-tp-hcm-to-chuc-khoa-dao-tao-%E2%80%9Ctong-quan-van-hanh-va-chien-luoc-tham-giatrung-tam-tai-chinh-quoc-te-viet-nam%E2%80%9D.1238771/
 
 Chọn gói internet doanh nghiệp khi nào, và tại sao cá nhân lại cần dùng gói này | https://voz.vn/t/chon-goi-internet-doanh-nghiep-khi-nao-va-tai-sao-ca-nhan-lai-can-dung-goi-nay.1235233/
 
-Bí kíp học ngoại ngữ mà người Tây dùng 30 năm rồi nhưng người Việt mình ít biết — Spaced Repetition | https://voz.vn/t/bi-kip-hoc-ngoai-ngu-ma-nguoi-tay-dung-30-nam-roi-nhung-nguoi-viet-minh-it-biet-%E2%80%94-spaced-repetition.1235146/
 
 Option Xe Xăng | https://voz.vn/t/option-xe-xang.1234174/
 
@@ -10394,13 +10392,11 @@ Kinh nghiệm chạy xe đường đèo với xe điện | https://voz.vn/t/kinh
 
 Cách lướt ảnh Cab.vn và Haivl.com thời 2011-2014 bằng Wayback Machine | https://voz.vn/t/cach-luot-anh-cab-vn-va-haivl-com-thoi-2011-2014-bang-wayback-machine.1225719/
 
-Web app học Shadowing và Dictation miễn phí, chất lượng và giao diện "chill" như xem phim | https://voz.vn/t/web-app-hoc-shadowing-va-dictation-mien-phi-chat-luong-va-giao-dien-chill-nhu-xem-phim.1224935/
 
 hướng dẫn đăng kí grok heavy 1 năm miễn phí | https://voz.vn/t/huong-dan-dang-ki-grok-heavy-1-nam-mien-phi.1224917/
 
 Chia sẻ chút trải nghiệm du lịch tự túc Hàn Quốc (Seoul-Busan 7N6Đ) | https://voz.vn/t/chia-se-chut-trai-nghiem-du-lich-tu-tuc-han-quoc-seoul-busan-7n6d.1223985/
 
-Cùng nhau sửa chữa vật phẩm - trang bị trong gia đình | https://voz.vn/t/cung-nhau-sua-chua-vat-pham-trang-bi-trong-gia-dinh.1223019/
 
 Hướng dẫn tải Chrome 32 bit để tiết kiệm ram trong thời kỳ giá ram tăng cao | https://voz.vn/t/huong-dan-tai-chrome-32-bit-de-tiet-kiem-ram-trong-thoi-ky-gia-ram-tang-cao.1222825/
 
@@ -10430,9 +10426,7 @@ Everyday English Academy: [Read] | https://voz.vn/t/everyday-english-academy-rea
 
 Chặn Website bằng giao thức NAT trên MikroTik (có bao gồm chuyển hướng đến màn hình cảnh báo) | https://voz.vn/t/chan-website-bang-giao-thuc-nat-tren-mikrotik-co-bao-gom-chuyen-huong-den-man-hinh-canh-bao.1214481/
 
-Có cần và nên sử dụng camera quay 10 bit không? | https://voz.vn/t/co-can-va-nen-su-dung-camera-quay-10-bit-khong.1214284/
 
-App học tiếng Trung miễn phí, học từ vựng + luyện thi HSK | https://voz.vn/t/app-hoc-tieng-trung-mien-phi-hoc-tu-vung-luyen-thi-hsk.1214227/
 
 Tự học writing and Speaking 7.0 | https://voz.vn/t/tu-hoc-writing-and-speaking-7-0.1214102/
 
@@ -10442,7 +10436,6 @@ Kinh nghiệm mua xe lần đầu [Update liên tục] | https://voz.vn/t/kinh-n
 
 Chia sẻ tự học tiếng Trung qua app, đạt HSK4 sau 6 tháng | https://voz.vn/t/chia-se-tu-hoc-tieng-trung-qua-app-dat-hsk4-sau-6-thang.1210710/
 
-Lãi suất liên ngân hàng vọt lên mức 21%, cao nhất lịch sử | https://voz.vn/t/lai-suat-lien-ngan-hang-vot-len-muc-21-cao-nhat-lich-su.1207002/
 
 Khắc phục lỗi máy lọc nước RO nước chảy ra yếu. | https://voz.vn/t/khac-phuc-loi-may-loc-nuoc-ro-nuoc-chay-ra-yeu.1206013/
 
@@ -10452,11 +10445,9 @@ Cài WSL2 - Chạy Phần Mềm Linux Trên Windows (kể cả Win iot LTSC) | h
 
 Fortigate VM dùng cho học tập nghiên cứu | https://voz.vn/t/fortigate-vm-dung-cho-hoc-tap-nghien-cuu.1202092/
 
-Tất cả mọi thứ về TOEIC 2 kỹ năng | https://voz.vn/t/tat-ca-moi-thu-ve-toeic-2-ky-nang.1200859/
 
 Lắp đèn LED thay bóng Halogen có sáng hơn không - Chưa chắc. | https://voz.vn/t/lap-den-led-thay-bong-halogen-co-sang-hon-khong-chua-chac.1198466/
 
-Nhiều phụ nữ khóc khi đạt cực khoái | https://voz.vn/t/nhieu-phu-nu-khoc-khi-dat-cuc-khoai.1196175/
 
 ExpressVPN Cashback 100% | https://voz.vn/t/expressvpn-cashback-100.1194135/
 
@@ -10480,7 +10471,6 @@ Hướng dẫn thêm EXIF data vào trong ảnh như vivo, huawei | https://voz.
 
 Tận Dụng Android TV Box thành Home Server Cho Tiết Kiệm | https://voz.vn/t/tan-dung-android-tv-box-thanh-home-server-cho-tiet-kiem.1184891/
 
-Nghiệp vụ Xuất nhập khẩu/Logistics và Khai báo Hải quan | https://voz.vn/t/nghiep-vu-xuat-nhap-khau-logistics-va-khai-bao-hai-quan.1184811/
 
 Thi bằng lái xe B1(cơ khí) cuối năm 2025 + sân Việt Thanh + thầy Đại | https://voz.vn/t/thi-bang-lai-xe-b1-co-khi-cuoi-nam-2025-san-viet-thanh-thay-dai.1183775/
 
@@ -10492,7 +10482,6 @@ Mình vừa cài Windows Server trên Proxmox, chia sẻ kinh nghiệm cho ae! |
 
 Cảnh báo RAM tàu, fake, bán vàng thau lẫn lộn, trộn hàng, giả hàng hãng cũ để bán giá cao | https://voz.vn/t/canh-bao-ram-tau-fake-ban-vang-thau-lan-lon-tron-hang-gia-hang-hang-cu-de-ban-gia-cao.1179220/
 
-App tiếng anh học và luyện thi TOIEC & IELTS | https://voz.vn/t/app-tieng-anh-hoc-va-luyen-thi-toiec-ielts.1178148/
 
 Chia sẻ khóa học chụp ảnh trên Udemy | https://voz.vn/t/chia-se-khoa-hoc-chup-anh-tren-udemy.1177436/
 
@@ -10594,11 +10583,9 @@ iPhone không hiện trong iTunes? 3uTools báo No Device? Đừng vội nản, 
 
 Vì sao khía cạnh tiếp diễn (progressive aspect) lại diễn tả tính tạm thời | https://voz.vn/t/vi-sao-khia-canh-tiep-dien-progressive-aspect-lai-dien-ta-tinh-tam-thoi.1126950/
 
-Chia sẻ phần mềm học tiếng anh hiệu quả | https://voz.vn/t/chia-se-phan-mem-hoc-tieng-anh-hieu-qua.1125977/
 
 Libera Chat: trò chuyện ẩn danh mạng IRC | https://voz.vn/t/libera-chat-tro-chuyen-an-danh-mang-irc.1124761/
 
-[Đèn đóm] Kinh nghiệm và thảo luận | https://voz.vn/t/den-dom-kinh-nghiem-va-thao-luan.1123928/
 
 Nên mua iPhone nào trong năm 2025? Đây là hướng dẫn đầy đủ theo ngân sách và nhu cầu | https://voz.vn/t/nen-mua-iphone-nao-trong-nam-2025-day-la-huong-dan-day-du-theo-ngan-sach-va-nhu-cau.1123778/
 
@@ -10664,7 +10651,6 @@ Chống nóng cửa nóc Panorama: Không cần thiết dán phim bên trong, n�
 
 Công cụ tạo landing page hay minishop với mã giới thiệu duc4eyes | https://voz.vn/t/cong-cu-tao-landing-page-hay-minishop-voi-ma-gioi-thieu-duc4eyes.1094967/
 
-Kinh nghiệm du lịch tự túc Trung Quốc: Thượng Hải - Hàng Châu - Bắc Kinh. | https://voz.vn/t/kinh-nghiem-du-lich-tu-tuc-trung-quoc-thuong-hai-hang-chau-bac-kinh.1094051/
 
 Cập nhật Patch LOL mới nhất ở đây | https://voz.vn/t/cap-nhat-patch-lol-moi-nhat-o-day.1093159/
 
@@ -10718,9 +10704,7 @@ extension thuyết minh video | https://voz.vn/t/extension-thuyet-minh-video.107
 
 Hướng Dẫn Dành Cho Người Mới Mua MacBook: Các Lưu Ý Cơ Bản Để Làm Quen Với Hệ Điều Hành macOS | https://voz.vn/t/huong-dan-danh-cho-nguoi-moi-mua-macbook-cac-luu-y-co-ban-de-lam-quen-voi-he-dieu-hanh-macos.1079414/
 
-[Options] Được khuyên là không nên dính vào Platinum đang sideway, Tôi quyết định ném 900 triệu vào chứng minh, và kết quả là …. | https://voz.vn/t/options-duoc-khuyen-la-khong-nen-dinh-vao-platinum-dang-sideway-toi-quyet-dinh-nem-900-trieu-vao-chung-minh-va-ket-qua-la-%E2%80%A6.1079385/
 
-Nội quy box | https://voz.vn/t/noi-quy-box.1078346/
 
 Chủ động tiêm vaccine: Phòng bệnh hiệu quả hơn chữa trị muộn | https://voz.vn/t/chu-dong-tiem-vaccine-phong-benh-hieu-qua-hon-chua-tri-muon.1077869/
 
@@ -10754,7 +10738,6 @@ Lossless Scaling - Tăng FPS đáng kể cho những game, phim, giả lập swi
 
 Dùng AI để dịch mọi thứ | https://voz.vn/t/dung-ai-de-dich-moi-thu.1066681/
 
-Chia sẻ 1 vài hiểu biết về máy hút ẩm. | https://voz.vn/t/chia-se-1-vai-hieu-biet-ve-may-hut-am.1066501/
 
 Phim cách nhiệt, kinh nghiệm từ hơn 10 năm dán các xe | https://voz.vn/t/phim-cach-nhiet-kinh-nghiem-tu-hon-10-nam-dan-cac-xe.1066240/
 
@@ -10780,7 +10763,6 @@ Hướng dẫn convert AP H196A của Viettel thành Card WiFi tốc độ cao "
 
 Cẩn thận với chiêu lùa gà uống Collagen | https://voz.vn/t/can-than-voi-chieu-lua-ga-uong-collagen.1054487/
 
-Bán ảnh kiếm tiền trên Shutterstock | https://voz.vn/t/ban-anh-kiem-tien-tren-shutterstock.1053488/
 
 Hướng dẫn xây dựng hệ thống thông tin cho doanh nghiệp SME | https://voz.vn/t/huong-dan-xay-dung-he-thong-thong-tin-cho-doanh-nghiep-sme.1052903/
 
@@ -10808,19 +10790,14 @@ Clipchamp - phần mềm dựng phim cho người mới cực dễ 1 Click ăn n
 
 Săn sale đồ chơi ô tô trên Aliexpress | https://voz.vn/t/san-sale-do-choi-o-to-tren-aliexpress.1041661/
 
-Luyện tiếng Anh giọng Anh -Mỹ phờ free | https://voz.vn/t/luyen-tieng-anh-giong-anh-my-pho-free.1039546/
 
 Phân tích kỹ thuật cơ bản - Cấu trúc thị trường và các setup thường gặp | https://voz.vn/t/phan-tich-ky-thuat-co-ban-cau-truc-thi-truong-va-cac-setup-thuong-gap.1039225/
 
-Lộ trình tự học Tiếng Anh cho người mất gốc trong 30 ngày | https://voz.vn/t/lo-trinh-tu-hoc-tieng-anh-cho-nguoi-mat-goc-trong-30-ngay.1038753/
 
-Khóa tự học IELTS đảm bảo đầu ra 7.0 từ trình độ mất gốc | https://voz.vn/t/khoa-tu-hoc-ielts-dam-bao-dau-ra-7-0-tu-trinh-do-mat-goc.1038360/
 
 Chia sẻ Continue: công cụ Ai hỗ trợ lập trình miễn phí, bảo mật, không cần internet | https://voz.vn/t/chia-se-continue-cong-cu-ai-ho-tro-lap-trinh-mien-phi-bao-mat-khong-can-internet.1038261/
 
-Những điều ít ai chia sẻ khi đầu tư chứng khoán | https://voz.vn/t/nhung-dieu-it-ai-chia-se-khi-dau-tu-chung-khoan.1038114/
 
-Cùng học Esperanto - Quốc tế ngữ | https://voz.vn/t/cung-hoc-esperanto-quoc-te-ngu.1038048/
 
 Chia sẻ cách dùng Free trọn đời Wemod (không giới hạn thời gian) | https://voz.vn/t/chia-se-cach-dung-free-tron-doi-wemod-khong-gioi-han-thoi-gian.1035726/
 
@@ -10858,19 +10835,16 @@ Thông báo 21/10 | https://voz.vn/t/thong-bao-21-10.1025921/
 
 Tải video youtube, playlist video youtube bằng Jdownloader trên Ubuntu và các bản Linux | https://voz.vn/t/tai-video-youtube-playlist-video-youtube-bang-jdownloader-tren-ubuntu-va-cac-ban-linux.1025077/
 
-Bí từ, bí ý khi nói tiếng Anh thì mình đã và đang làm gì để cải thiện? | https://voz.vn/t/bi-tu-bi-y-khi-noi-tieng-anh-thi-minh-da-va-dang-lam-gi-de-cai-thien.1024186/
 
 Cài Vmware Workstation Pro vào trên Ubuntu và các bản Linux khác | https://voz.vn/t/cai-vmware-workstation-pro-vao-tren-ubuntu-va-cac-ban-linux-khac.1023563/
 
 [CHIA SẺ ] Khóa học AlgoTrading101 | https://voz.vn/t/chia-se-khoa-hoc-algotrading101.1023197/
 
-[Chia sẻ] - Học tiếng Anh (English) qua video của FileCR | https://voz.vn/t/chia-se-hoc-tieng-anh-english-qua-video-cua-filecr.1022506/
 
 Tất tần về Tiếng Anh cho dân IT (Hoặc tương tự). | https://voz.vn/t/tat-tan-ve-tieng-anh-cho-dan-it-hoac-tuong-tu.1022310/
 
 Hướng dẫn Unlock HW8145V5-20 Viettel (Update 2024) | https://voz.vn/t/huong-dan-unlock-hw8145v5-20-viettel-update-2024.1021402/
 
-Tự học ngữ pháp Tiếng Anh | https://voz.vn/t/tu-hoc-ngu-phap-tieng-anh.1021290/
 
 [CHIA SẺ ] Khóa học Dream Big Designer | https://voz.vn/t/chia-se-khoa-hoc-dream-big-designer.1020476/
 
@@ -10886,7 +10860,6 @@ Review chơi game stream PC bằng NVidia Shield pro bản 2019 | https://voz.vn
 
 Thầy giáo chỉ ra: Nhiều người học tiếng Anh bị mất phương hướng, học mãi không giỏi vì xem nhẹ yếu tố then chốt này | https://voz.vn/t/thay-giao-chi-ra-nhieu-nguoi-hoc-tieng-anh-bi-mat-phuong-huong-hoc-mai-khong-gioi-vi-xem-nhe-yeu-to-then-chot-nay.1017516/
 
-2025 - Năm của siêu lạm phát | https://voz.vn/t/2025-nam-cua-sieu-lam-phat.1017388/
 
 Chia sẻ phương pháp luyện nghe hiểu tiếng Anh hiệu quả từ gốc | https://voz.vn/t/chia-se-phuong-phap-luyen-nghe-hieu-tieng-anh-hieu-qua-tu-goc.1017231/
 
@@ -10936,7 +10909,6 @@ Cho anh em ko biết chọn ngôn ngữ gì? | https://voz.vn/t/cho-anh-em-ko-bi
 
 Làm gì khi điện thoại bị nổi quảng cáo liên tục? | https://voz.vn/t/lam-gi-khi-dien-thoai-bi-noi-quang-cao-lien-tuc.1009828/
 
-Thành quả sau gần 4 năm đầu tư chứng khoán & những nguồn kiến thức cóp nhặt được | https://voz.vn/t/thanh-qua-sau-gan-4-nam-dau-tu-chung-khoan-nhung-nguon-kien-thuc-cop-nhat-duoc.1009588/
 
 Công cụ bỏ qua story quảng cáo Instagram | https://voz.vn/t/cong-cu-bo-qua-story-quang-cao-instagram.1009286/
 
@@ -10948,7 +10920,6 @@ Hướng dẫn unlock bootloader điện thoại Xiaomi chạy HyperOS (only chi
 
 Tổng hợp về Xiaoxin pad 2024 | https://voz.vn/t/tong-hop-ve-xiaoxin-pad-2024.1007424/
 
-Thẻ tín dụng nào được hoàn tiền mua sắm nhiều nhất? | https://voz.vn/t/the-tin-dung-nao-duoc-hoan-tien-mua-sam-nhieu-nhat.1007084/
 
 Hướng dẫn cài App store ( chợ ứng dụng ) Flatpak cho Ubuntu và Linux | https://voz.vn/t/huong-dan-cai-app-store-cho-ung-dung-flatpak-cho-ubuntu-va-linux.1006746/
 
@@ -11214,17 +11185,14 @@ Dùng âm thanh ru ngủ vào ban đêm có nên hay không ? | https://vn-z.vn/
 
 Trung Quốc đạt tiến bộ mới trong tổng hợp CO2 thành đường nhân tạo. | https://vn-z.vn/threads/trung-quoc-dat-tien-bo-moi-trong-tong-hop-co2-thanh-duong-nhan-tao.80432/
 
-Video KHCN | https://vn-z.vn/forums/khoa-hoc-cong-nghe.35/?prefix_id=70
 
 VIDEO CLIP Phổi của một người nghiện hút thuốc lá nhìn như thế nào? | https://vn-z.vn/threads/video-clip-phoi-cua-mot-nguoi-nghien-hut-thuoc-la-nhin-nhu-the-nao.17139/
 
-Thảo luận | https://vn-z.vn/forums/khoa-hoc-cong-nghe.35/?prefix_id=28
 
 Sinh vật có thể tiến hóa đến mức trường sinh bất tử không? | https://vn-z.vn/threads/sinh-vat-co-the-tien-hoa-den-muc-truong-sinh-bat-tu-khong.26452/
 
 NASA đưa robot lên mặt trăng để tìm nguồn nước | https://vn-z.vn/threads/nasa-dua-robot-len-mat-trang-de-tim-nguon-nuoc.16428/
 
-Thế giới động vật | https://vn-z.vn/forums/khoa-hoc-cong-nghe.35/?prefix_id=78
 
 Loài cá đắt nhất thế giới - Cá ngừ vây xanh được phát hiện ở Anh | https://vn-z.vn/threads/loai-ca-dat-nhat-the-gioi-ca-ngu-vay-xanh-duoc-phat-hien-o-anh.24663/
 
@@ -11256,7 +11224,6 @@ Kính viễn vọng Sky Eye FAST của Trung Quốc phát hiện nền văn minh
 
 Con robot "Quằn quại" gây bão mạng | https://vn-z.vn/threads/con-robot-quan-quai-gay-bao-mang.19005/
 
-Chuyện lạ | https://vn-z.vn/forums/khoa-hoc-cong-nghe.35/?prefix_id=96
 
 Hai tháng không có mặt trời: một thị trấn ở Alaska sẽ sống trong bóng tối cho đến năm 2021 | https://vn-z.vn/threads/hai-thang-khong-co-mat-troi-mot-thi-tran-o-alaska-se-song-trong-bong-toi-cho-den-nam-2021.31342/
 
@@ -11636,135 +11603,70 @@ Pokémon Detective Pikachu - Thám tử Pikachu 2019 - Vui nhộn, bí ẩn, k�
 
 Thần đèn Aladdin 2019 có gì mới? | https://vn-z.vn/threads/than-den-aladdin-2019-co-gi-moi.12505/
 
-Chuyên mục: Tìm tên phim | https://vn-z.vn/threads/chuyen-muc-tim-ten-phim.5034/
 
-Nhận 3 tháng xem phim trên iFlix hoàn toàn miễn phí | https://vn-z.vn/threads/nhan-3-thang-xem-phim-tren-iflix-hoan-toan-mien-phi.2781/
 
-Hướng dẫn thêm bớt âm thanh phụ đề file Media | https://vn-z.vn/threads/huong-dan-them-bot-am-thanh-phu-de-file-media.22362/
 
-Mùa 2 loạt phim người đóng One Piece Into the Grand Line, Từ Núi Đảo Ngược đến Đảo Drum: Netflix sẽ chính thức lên sóng vào ngày 10/3. | https://vn-z.vn/threads/mua-2-loat-phim-nguoi-dong-one-piece-into-the-grand-line-tu-nui-dao-nguoc-den-dao-drum-netflix-se-chinh-thuc-len-song-vao-ngay-10-3.114493/
 
-Trọn bộ Season 1 Fallout chính thức miễn phí trên Youtube Prime Video | https://vn-z.vn/threads/tron-bo-season-1-fallout-chinh-thuc-mien-phi-tren-youtube-prime-video.114414/
 
-YouTube giành quyền phát sóng độc quyền toàn cầu lễ trao giải Oscar giai đoạn 2029–2033 | https://vn-z.vn/threads/youtube-gianh-quyen-phat-song-doc-quyen-toan-cau-le-trao-giai-oscar-giai-doan-2029-2033.113903/
 
-Nghệ sĩ Thương Tín qua đời tại Phan Rang thọ 70 tuổi | https://vn-z.vn/threads/nghe-si-thuong-tin-qua-doi-tai-phan-rang-tho-70-tuoi.113843/
 
-82,7 tỷ USD, Netflix chính thức công bố kế hoạch thâu tóm Warner Bros | https://vn-z.vn/threads/82-7-ty-usd-netflix-chinh-thuc-cong-bo-ke-hoach-thau-tom-warner-bros.113833/
 
-HBO Chính Thức Khởi Quay Series “Harry Potter” Mới, Dự Kiến Lên Sóng Năm 2026 – Dàn Diễn Viên Mới Lộ Diện! | https://vn-z.vn/threads/hbo-chinh-thuc-khoi-quay-series-harry-potter-moi-du-kien-len-song-nam-2026-dan-dien-vien-moi-lo-dien.112998/
 
-PHIM TRUNG QUỐC VÀ HỒNG KÔNG ĐẶC SẮC TÌM CHO CÁC BẠN! PHIM HOT! | https://vn-z.vn/threads/phim-trung-quoc-va-hong-kong-dac-sac-tim-cho-cac-ban-phim-hot.112772/
 
-Share Cookie Netflix | https://vn-z.vn/threads/share-cookie-netflix.103093/
 
-Keanu Reeves trở lại với “John Wick 5” sau khi bị thuyết phục bởi ý tưởng mới đầy ấn tượng | https://vn-z.vn/threads/keanu-reeves-tro-lai-voi-john-wick-5-sau-khi-bi-thuyet-phuc-boi-y-tuong-moi-day-an-tuong.111110/
 
-TÀI KHOẢN CRUNCHYROLL MEGA FAN THÀNH VIÊN CAO CẤP. | https://vn-z.vn/threads/tai-khoan-crunchyroll-mega-fan-thanh-vien-cao-cap.104531/
 
-Thông tin điện ảnh | https://vn-z.vn/forums/dien-anh.32/?prefix_id=85
 
-Có cách nào xem phim trên K+ miễn phí không? | https://vn-z.vn/threads/co-cach-nao-xem-phim-tren-k-mien-phi-khong.110698/
 
-Chia sẻ Netflix Cookies [21-02-2024] | https://vn-z.vn/threads/chia-se-netflix-cookies-21-02-2024.91193/
 
-[GG Drive] Âm Dương Sư : Thị Thần Lệnh [Vietsub] với diễn viên chính Châu Tấn, Trần Khôn ! | https://vn-z.vn/threads/gg-drive-am-duong-su-thi-than-lenh-vietsub-voi-dien-vien-chinh-chau-tan-tran-khon.46420/
 
-NSƯT Diễn Viên Quý Bình qua đời ở tuổi 42 sau thời gian dài chống chọi bạo bệnh | https://vn-z.vn/threads/nsut-dien-vien-quy-binh-qua-doi-o-tuoi-42-sau-thoi-gian-dai-chong-choi-bao-benh.110052/
 
-Phim Cuộc Đời Đức Phật Thích Ca (Buddha) 2013 | https://vn-z.vn/threads/phim-cuoc-doi-duc-phat-thich-ca-buddha-2013.90622/
 
-Dragon Ball - All Movie Collection 1080p Bluray x264 / x265 HEVC Pack | https://vn-z.vn/threads/dragon-ball-all-movie-collection-1080p-bluray-x264-x265-hevc-pack.57164/
 
-Kỳ tích hoạt hình Trung Quốc! “Na Tra 2” dự đoán tổng doanh thu đạt 71 tỷ NDT | https://vn-z.vn/threads/ky-tich-hoat-hinh-trung-quoc-na-tra-2-du-doan-tong-doanh-thu-dat-71-ty-ndt.108700/
 
-Thảo Luận | https://vn-z.vn/forums/dien-anh.32/?prefix_id=67
 
-Xin phim Đến thượng đế cũng phải cười Full | https://vn-z.vn/threads/xin-phim-den-thuong-de-cung-phai-cuoi-full.108345/
 
-Tìm 3 đồng đội dùng chung tk NetFlix Việt Nam | https://vn-z.vn/threads/tim-3-dong-doi-dung-chung-tk-netflix-viet-nam.103445/
 
-Xem phim 4K bị giật nhiễu | https://vn-z.vn/threads/xem-phim-4k-bi-giat-nhieu.107345/
 
-Tìm trọn bộ "how i met your mother" | https://vn-z.vn/threads/tim-tron-bo-how-i-met-your-mother.106796/
 
-SERIES VỀ THẾ GIỚI TÂM LINH HUYỀN BÍ | https://vn-z.vn/threads/series-ve-the-gioi-tam-linh-huyen-bi.28287/
 
-Telegram Chatbot hỗ trợ kích hoạt Netflix trên Smart/Android TV | https://vn-z.vn/threads/telegram-chatbot-ho-tro-kich-hoat-netflix-tren-smart-android-tv.70794/
 
-Xin web tải phim hd | https://vn-z.vn/threads/xin-web-tai-phim-hd.1652/
 
-Chia sẻ web xem phim hay | https://vn-z.vn/threads/chia-se-web-xem-phim-hay.81729/
 
-Avenger Endgame 2019 - Phần tổng kết 10 năm Marvel | https://vn-z.vn/threads/avenger-endgame-2019-phan-tong-ket-10-nam-marvel.11723/
 
-The Witcher (Netflix) | https://vn-z.vn/threads/the-witcher-netflix.14002/
 
-Nhờ tìm phim Bao Thanh Thiên 1993 | https://vn-z.vn/threads/nho-tim-phim-bao-thanh-thien-1993.12003/
 
-Sử dụng IPTV xem tivi 4k | https://vn-z.vn/threads/su-dung-iptv-xem-tivi-4k.78741/
 
-Captain Marvel 2019 - Nữ siêu nhân bị đồn thổi quá mức | https://vn-z.vn/threads/captain-marvel-2019-nu-sieu-nhan-bi-don-thoi-qua-muc.9872/
 
-THE PREDATOR 2018 - QUÁI THÚ VÔ HÌNH - THẢM BẠI | https://vn-z.vn/threads/the-predator-2018-quai-thu-vo-hinh-tham-bai.4177/
 
-(Hỏi/Thắc mắc) Cho mình hỏi link down phim như ở VN-Zoom.com đâu rồi? | https://vn-z.vn/threads/hoi-thac-mac-cho-minh-hoi-link-down-phim-nhu-o-vn-zoom-com-dau-roi.11886/
 
-Netflix LOVE, DEATH & ROBOTS - Tuyển tập phim hoạt hình 18+ bá đạo! | https://vn-z.vn/threads/netflix-love-death-robots-tuyen-tap-phim-hoat-hinh-18-ba-dao.10463/
 
-HOLMES & WATSON 2019 - CẶP ĐÔI PHÁ HẠI | https://vn-z.vn/threads/holmes-watson-2019-cap-doi-pha-hai.7923/
 
-Hacker tấn công máy chủ lấy đi nhiều phim chưa phát hành của các idol như Yua Mikami | https://vn-z.vn/threads/hacker-tan-cong-may-chu-lay-di-nhieu-phim-chua-phat-hanh-cua-cac-idol-nhu-yua-mikami.42789/
 
-Bên trong một xưởng phim tại Nhật | https://vn-z.vn/threads/ben-trong-mot-xuong-phim-tai-nhat.4237/
 
-VENOM 2018 - QUÁI VẬT BÙN ĐEN | https://vn-z.vn/threads/venom-2018-quai-vat-bun-den.3874/
 
-Hunter Killer (2018) - CUỘC GIẢI CỨU TỬ THẦN | https://vn-z.vn/threads/hunter-killer-2018-cuoc-giai-cuu-tu-than.7060/
 
-Alita - Battle Angel 2019 - THIÊN THẦN CHIẾN BINH - ĐỘC ĐÁO VÀ DỮ DỘI | https://vn-z.vn/threads/alita-battle-angel-2019-thien-than-chien-binh-doc-dao-va-du-doi.8823/
 
-'Quỳnh búp bê' 18+ và những kỷ lục phim truyền hình | https://vn-z.vn/threads/quynh-bup-be-18-va-nhung-ky-luc-phim-truyen-hinh.5432/
 
-PHIM CUỘC ĐỜI ĐỨC PHẬT THÍCH CA (BUDDHA) | https://vn-z.vn/threads/phim-cuoc-doi-duc-phat-thich-ca-buddha.68308/
 
-TERMINATOR 6 - DARK FATE 2019 - VẬN MỆNH ĐEN TỐI | https://vn-z.vn/threads/terminator-6-dark-fate-2019-van-menh-den-toi.16449/
 
-Đoạn phim nhiều cảm xúc nhất trong bản điện ảnh " Đất rừng phương nam" | https://vn-z.vn/threads/doan-phim-nhieu-cam-xuc-nhat-trong-ban-dien-anh-dat-rung-phuong-nam.87594/
 
-Shazam 2019 - Siêu nhân sấm sét - Vui nhộn hài hước | https://vn-z.vn/threads/shazam-2019-sieu-nhan-sam-set-vui-nhon-hai-huoc.11051/
 
-Bàn về du hành thời gian trong "Avengers: Endgame", Spoiling Cực Mạnh | https://vn-z.vn/threads/ban-ve-du-hanh-thoi-gian-trong-avengers-endgame-spoiling-cuc-manh.11796/
 
-T-34 2018 - Cuộc chiến xe Tank hấp dẫn! | https://vn-z.vn/threads/t-34-2018-cuoc-chien-xe-tank-hap-dan.8891/
 
-‘Bí kíp luyện rồng 3’: Cái kết tròn trịa cho thương hiệu dài 9 năm | https://vn-z.vn/threads/bi-kip-luyen-rong-3-cai-ket-tron-tria-cho-thuong-hieu-dai-9-nam.8946/
 
-[Netfix - Cookies Editor] Hướng dẫn import Netfix cookie json cho người mới ^^ | https://vn-z.vn/threads/netfix-cookies-editor-huong-dan-import-netfix-cookie-json-cho-nguoi-moi.83117/
 
-Đá Linh Hồn mới chính là chìa khóa để đánh bại Thanos trong Avengers: Endgame? | https://vn-z.vn/threads/da-linh-hon-moi-chinh-la-chia-khoa-de-danh-bai-thanos-trong-avengers-endgame.9547/
 
-Những pha hành động 'bẻ cong định luật vật lý' chỉ có trong phim Ấn Độ | https://vn-z.vn/threads/nhung-pha-hanh-dong-be-cong-dinh-luat-vat-ly-chi-co-trong-phim-an-do.9797/
 
-Netflix dừng chia sẻ mật khẩu đối với những người không sống cùng nhau | https://vn-z.vn/threads/netflix-dung-chia-se-mat-khau-doi-voi-nhung-nguoi-khong-song-cung-nhau.56036/
 
-Nếu Captain Marvel và Superman đọ sức, ai sẽ chiến thắng? | https://vn-z.vn/threads/neu-captain-marvel-va-superman-do-suc-ai-se-chien-thang.9630/
 
-Topic yêu cầu phim link Google Drive | https://vn-z.vn/threads/topic-yeu-cau-phim-link-google-drive.86529/
 
-The Dark Knight (2008), Heath Ledger đã vô tình làm nổ tung cả một bệnh viện | https://vn-z.vn/threads/the-dark-knight-2008-heath-ledger-da-vo-tinh-lam-no-tung-ca-mot-benh-vien.21562/
 
-Bí mật trong ngành công nghiệp JAV ở Nhật Bản | https://vn-z.vn/threads/bi-mat-trong-nganh-cong-nghiep-jav-o-nhat-ban.4624/
 
-AVENGER 3 - INFINITY WAR 2018 - THẢM HỌA TOÀN CẦU | https://vn-z.vn/threads/avenger-3-infinity-war-2018-tham-hoa-toan-cau.3009/
 
-Venom vượt Wonder Woman mang về hơn 21 triệu USD doanh thu phòng vé | https://vn-z.vn/threads/venom-vuot-wonder-woman-mang-ve-hon-21-trieu-usd-doanh-thu-phong-ve.5885/
 
-THE NEW KING OF COMEDY 2019 - TÂN VUA HÀI KỊCH - CƯỜI VÀ KHÓC TRONG CUỘC ĐỜI | https://vn-z.vn/threads/the-new-king-of-comedy-2019-tan-vua-hai-kich-cuoi-va-khoc-trong-cuoc-doi.8842/
 
-Pokémon Detective Pikachu - Thám tử Pikachu 2019 - Vui nhộn, bí ẩn, kịch tính | https://vn-z.vn/threads/pokemon-detective-pikachu-tham-tu-pikachu-2019-vui-nhon-bi-an-kich-tinh.12246/
 
-Thần đèn Aladdin 2019 có gì mới? | https://vn-z.vn/threads/than-den-aladdin-2019-co-gi-moi.12505/
 
 Sau quá trình sử dụng nhiều cái như Mi band 3 và Watch Lite 2 Và Giờ Về Nồi Đồng Cối Đá Casio | https://vn-z.vn/threads/sau-qua-trinh-su-dung-nhieu-cai-nhu-mi-band-3-va-watch-lite-2-va-gio-ve-noi-dong-coi-da-casio.88562/
 
@@ -14492,11 +14394,8 @@ Kỷ nguyên "xài chùa" và “xem chùa” tại Việt Nam đã đến lúc 
 
 Phúc lợi xã hội #1: Bài toán sinh nở, an cư và lập nghiệp | https://spiderum.com/bai-dang/Phuc-loi-xa-hoi-1-Bai-toan-sinh-no-an-cu-va-lap-nghiep-ilZq5keArCoe
 
-Tại sao đàm phán Mỹ - Iran rơi vào bế tắc ? | https://spiderum.com/bai-dang/Tai-sao-dam-phan-My-Iran-roi-vao-be-tac-NzsrU1jSI39h
 
-Kỷ nguyên "xài chùa" và “xem chùa” tại Việt Nam đã đến lúc chấm dứt | https://spiderum.com/bai-dang/Ky-nguyen-xai-chua-va-xem-chua-tai-Viet-Nam-da-den-luc-cham-dut-xCl8gmRU3WU9
 
-Phúc lợi xã hội #1: Bài toán sinh nở, an cư và lập nghiệp | https://spiderum.com/bai-dang/Phuc-loi-xa-hoi-1-Bai-toan-sinh-no-an-cu-va-lap-nghiep-ilZq5keArCoe
 
 Đeo khẩu trang là mê tín dị đoan | https://spiderum.com/bai-dang/Deo-khau-trang-la-me-tin-di-doan-u4SPKoY8jfil
 Chuyện Gen Z nói không với mạng xã hội | https://spiderum.com/bai-dang/Chuyen-Gen-Z-noi-khong-voi-mang-xa-hoi-haBJqSHIDPK6
@@ -14739,7 +14638,6 @@ Người Do Thái Thông Minh Nhất Là Do Gene Mang Nhiều Căn Bệnh Di Tru
 
 Tại sao chúng ta bị "ám ảnh" bởi những kẻ sát nhân hàng loạt? | https://spiderum.com/bai-dang/Tai-sao-chung-ta-bi-andampquotam-anhandampquot-boi-nhung-ke-sat-nhan-hang-loat-5fu
 
-HIỆU ỨNG THIÊN LỆCH KẺ SỐNG SÓT: GIỎI VÀ XUẤT CHÚNG | https://spiderum.com/bai-dang/HIEU-UNG-THIEN-LECH-KE-SONG-SOT-GIOI-VA-XUAT-CHUNG-5gj
 
 NHỮNG HIỂU LẦM THƯỜNG GẶP VỀ LOÀI RẮN 🐍🐍🐍 (Đọc đi, hay lắm) | https://spiderum.com/bai-dang/NHUNG-HIEU-LAM-THUONG-GAP-VE-LOAI-RAN-Doc-di-hay-lam-o8t
 
@@ -14997,7 +14895,6 @@ Máu Mê Tiền Và Kinh Doanh Của Người Việt | https://spiderum.com
 
 Làm vì tiền | https://spiderum.com/bai-dang/Lam-vi-tien-7sr
 
-Viễn cảnh 2050: Thế hệ tiếp theo nên học gì để thành công? | https://spiderum.com/bai-dang/Vien-canh-2050-The-he-tiep-theo-nen-hoc-gi-de-thanh-cong-emb
 
 Học ngu mà kiếm nhiều tiền còn hơn học giỏi mà không kiếm được tiền. | https://spiderum.com/bai-dang/Hoc-ngu-ma-kiem-nhieu-tien-con-hon-hoc-gioi-ma-khong-kiem-duoc-tien-nc1
 
@@ -15007,7 +14904,6 @@ Deep Work – Làm sao để thôi "hời hợt" và lên "đỉnh" hàng ngày
 
 5h tôi đòi xách cặp về đấy: Rốt cuộc là tôi đi làm hay tôi đi nô dịch? | https://spiderum.com/bai-dang/5h-toi-doi-xach-cap-ve-day-Rot-cuoc-la-toi-di-lam-hay-toi-di-no-dich-abp
 
-7 THÓI QUEN TƯỞNG LÀ LƯỜI BIẾNG (NHƯNG THỰC CHẤT GIÚP BẠN LÀM NHIỀU VIỆC HƠN) | https://spiderum.com/bai-dang/BAY-THOI-QUEN-TUONG-LA-LUOI-BIENG-NHUNG-THUC-CHAT-GIUP-BAN-LAM-NHIEU-VIEC-HON-qz6
 
 8x-9x sẽ bị chết bẹp nếu không thay đổi | https://spiderum.com/bai-dang/8x-9x-se-bi-chet-bep-neu-khong-thay-doi-p10
 
@@ -15019,7 +14915,6 @@ Không có chuyên môn, thì hãy... ngậm mồm vào | https://spiderum.com/b
 
 Xây dựng sức khỏe tinh thần từ sớm nhờ Tư Duy Phản Biện | https://spiderum.com/bai-dang/Xay-dung-suc-khoe-tinh-than-tu-som-nho-Tu-Duy-Phan-Bien-er6
 
-Deep Work: Kỳ cùng chuyên tâm | https://spiderum.com/bai-dang/Deep-Work-Ky-cung-chuyen-tam-v69
 
 Tìm hiểu về kinh tế học - Phần II: Tư Bản và Cộng Sản | https://spiderum.com/bai-dang/Tim-hieu-ve-kinh-te-hoc-Phan-2-Tu-ban-va-cong-san-5z5
 
@@ -15039,7 +14934,6 @@ Khi ứng viên xin việc được phép thành thật... | https://spiderum.co
 
 Chuyện Spiderum đi gọi vốn: Chẳng mơ Kỳ Lân, chỉ mong thành Nhện | https://spiderum.com/bai-dang/Chuyen-Spiderum-di-goi-von-Chang-mo-Ky-Lan-chi-mong-thanh-Nhen-uui
 
-Tư duy lập trình phục vụ cuộc sống | https://spiderum.com/bai-dang/Tu-duy-lap-trinh-phuc-vu-cuoc-song-afo
 
 Thành đạt hay cái bẫy của tuổi trẻ? | https://spiderum.com/bai-dang/Thanh-dat-hay-cai-bay-cua-tuoi-tre-cm0
 
@@ -15047,13 +14941,11 @@ DEEP WORK – TỪ SÁCH VỞ TỚI THỰC TẾ KHÁC NHAU NHƯ THẾ NÀO? | ht
 
 Làm thế nào để trở thành người xuất chúng nhất trong một lĩnh vực nào đó? | https://spiderum.com/bai-dang/Lam-the-nao-de-tro-thanh-nguoi-xuat-chung-nhat-trong-mot-linh-vuc-nao-do-kle
 
-Analysis Paralysis - Tê liệt khi suy nghĩ và phân tích quá nhiều | https://spiderum.com/bai-dang/Paralysis-Analysis-Te-liet-khi-suy-nghi-va-phan-tich-qua-nhieu-km1
 
 Cải thiện kỹ năng Viết mỗi ngày từ những điều đơn giản | https://spiderum.com/bai-dang/Cai-thien-ky-nang-Viet-moi-ngay-tu-nhung-dieu-don-gian-vzo
 
 Thiên Nga Đen: Suy ngẫm về bằng chứng câm lặng | https://spiderum.com/bai-dang/Thien-Nga-Den-Suy-ngam-ve-bang-chung-cam-lang-ijz
 
-Sony, vụ hack vào Play Station Network, và BKAV | https://spiderum.com/bai-dang/Sony-vu-hack-vao-Play-Station-Network-va-BKAV-jy0k6s0NWPJZ
 
 (WoT) Fresher - Ảo tưởng, cuồng vỹ, thiếu kỹ năng, thiếu hợp tác, thiếu khả năng học hỏi (P1) | https://spiderum.com/bai-dang/WoT-Fresher-Ao-tuong-cuong-vy-thieu-ky-nang-thieu-hop-tac-thieu-kha-nang-hoc-hoi-P1-rge
 
@@ -15067,7 +14959,6 @@ Một cái đầu mở | https://spiderum.com/bai-dang/Mot-cai-dau-mo-gqs
 
 Công việc đầu tiên ở Mỹ | https://spiderum.com/bai-dang/Cong-viec-dau-tien-o-My-l9q
 
-[9toTalk #20] Mạng Xã Hội Lotus - Sinh Ra Để Làm Gì? | https://spiderum.com/bai-dang/9toTalk-20-Mang-Xa-Hoi-Lotus-Sinh-Ra-De-Lam-Gi-iip
 
 Tôi Thấy Sinh Viên Thời Nay Đã Lười Lại Còn Chảnh | https://spiderum.com/bai-dang/Toi-Thay-Sinh-Vien-Thoi-Nay-Da-Luoi-Lai-Con-Chanh-7wm
 
@@ -15141,7 +15032,6 @@ Procrastination: Căn bệnh vô hình giết chết chúng ta | https://spideru
 
 Tản mạn: Dở của giỏi và giỏi của dở. | https://spiderum.com/bai-dang/Tan-man-Do-cua-gioi-va-gioi-cua-do-ggu
 
-Tối ưu hóa phát triển bản thân bằng chiếc smartphone | https://spiderum.com/bai-dang/Toi-uu-hoa-phat-trien-ban-than-bang-chiec-smartphone-rfo
 
 Phát triển phần mềm: Làm cách nào để chuyển từ nghiệp dư thành chuyên nghiệp? | https://spiderum.com/bai-dang/Phat-trien-phan-mem-Lam-cach-nao-de-chuyen-tu-nghiep-du-thanh-chuyen-nghiep-kc0
 
@@ -15157,7 +15047,6 @@ Tại sao bạn nên làm (ít nhất là) 2 công việc cùng một lúc? | ht
 
 Một vài kĩ năng soạn thảo cơ bản và làm thế nào để trở thành CTV báo chí? | https://spiderum.com/bai-dang/Mot-vai-ki-nang-soan-thao-co-ban-va-lam-the-nao-de-tro-thanh-CTV-bao-chi-i24
 
-Bài 1 : BẠN PHẢI LẬP BẢNG BÁO CÁO TÀI CHÍNH CÁ NHÂN! | https://spiderum.com/bai-dang/Bai-1-BAN-PHAI-LAP-BANG-BAO-CAO-TAI-CHINH-CA-NHAN-wt8
 
 Thay vì tìm kiếm một công việc ổn định, hãy học cách xây dựng năng lực ổn định | https://spiderum.com/bai-dang/Thay-vi-tim-kiem-mot-cong-viec-on-dinh-hay-hoc-cach-xay-dung-nang-luc-on-dinh-nwt
 
@@ -15167,7 +15056,6 @@ Học công nghệ thông tin thì làm gì để sống? | https://spiderum.com
 
 Những sinh viên xuất sắc nhất đang rơi vào “Bẫy Danh vọng” như thế nào? | https://spiderum.com/bai-dang/Nhung-sinh-vien-xuat-sac-nhat-dang-roi-vao-Bay-Danh-vong-nhu-the-nao-gtw
 
-Nhập Môn Meme Marketing | https://spiderum.com/bai-dang/Nhap-Mon-Meme-Marketing-eul
 
 Gửi những người đang chán việc: “Sự ổn định không phải lúc nào cũng nhàm chán và những điều ta chưa làm không phải lúc nào cũng thú vị” | https://spiderum.com/bai-dang/Gui-nhung-nguoi-dang-chan-viec-Su-on-dinh-khong-phai-luc-nao-cung-nham-chan-va-nhung-dieu-ta-chua-lam-khong-phai-luc-nao-cung-thu-vi-caw
 
@@ -15299,9 +15187,7 @@ Học hai ngôn ngữ Hàn - Trung, mình thấy gì về người Trung Quốc?
 
 BƠI RA BIỂN LỚN | https://spiderum.com/bai-dang/BOI-RA-BIEN-LON-6zs
 
-Những góc tối của DHS Việt ở Melbourne | https://spiderum.com/bai-dang/Nhung-goc-toi-cua-DHS-Viet-o-Melbourne-9fk65qxJ10Jb
 
-Người Việt Nam làm Tiếp viên Hàng không tại Hàn Quốc thì sẽ như thế nào? | https://spiderum.com/bai-dang/Nguoi-Viet-Nam-lam-Tiep-vien-Hang-khong-tai-Han-Quoc-thi-se-nhu-the-nao-vb6
 
 Nếu có tiền, ở Việt Nam vẫn là sướng nhất | https://spiderum.com/bai-dang/Neu-co-tien-o-Viet-Nam-van-la-suong-nhat-i4t
 
@@ -15751,17 +15637,13 @@ Chuyện mình đi thực tập không lương ở Bắc Âu | https://spiderum.
 
 Việc học lịch sử ở Việt Nam và câu chuyện của mình | https://spiderum.com/bai-dang/Viec-hoc-lich-su-o-Viet-Nam-va-cau-chuyen-cua-minh-9RHKMtA5IL4X
 
-[WTDTY] Thảm họa thế kỉ: giáo dục Việt Nam thời covid-19 | https://spiderum.com/bai-dang/WTDTY-Tham-hoa-the-ki-giao-duc-Viet-Nam-thoi-covid-19-EstaOwMjaZR8
 
-Những góc tối của DHS Việt ở Melbourne | https://spiderum.com/bai-dang/Nhung-goc-toi-cua-DHS-Viet-o-Melbourne-9fk65qxJ10Jb
 
 Nếu có thể tự học ở bên ngoài thì có cần phải học đại học? | https://spiderum.com/bai-dang/Neu-co-the-tu-hoc-o-ben-ngoai-thi-co-can-phai-hoc-dai-hoc-80i
 
 Học được gì qua 4 năm định cư ở Canada? (Phần 2) | https://spiderum.com/bai-dang/Hoc-duoc-gi-qua-4-nam-dinh-cu-o-Canada-Phan-2-csj
 
-Những Kì Vọng Lớn Lao và Bốn Câu Hỏi Dành Cho Tân Sinh Viên | https://spiderum.com/bai-dang/Nhung-Ki-Vong-Lon-Lao-va-Bon-Cau-Hoi-Danh-Cho-Tan-Sinh-Vien-bbj
 
-Làm gì nếu như bỏ học đại học? | https://spiderum.com/bai-dang/Lam-gi-neu-nhu-bo-hoc-dai-hoc-g1g
 
 Để trở nên trưởng thành | https://spiderum.com/bai-dang/De-tro-nen-truong-thanh-6g5
 
@@ -15797,9 +15679,7 @@ Hướng dẫn các bạn cách viết nhiều, trôi chảy và không bao gi�
 
 Learning How to Learn - Week 3 - Part 1: Procrastination | https://spiderum.com/bai-dang/Learning-How-to-Learn-Week-3-Part-1-Procrastination-n4v
 
-“Hãy nâng điểm cho con tôi” | https://spiderum.com/bai-dang/Hay-nang-diem-cho-con-toi-aIO1JAXEPpzO
 
-Cái bọn chê học Toán không thiết thực bơi vào đây thầy cân hết | https://spiderum.com/bai-dang/Cai-bon-che-hoc-Toan-khong-thiet-thuc-boi-vao-day-thay-can-het-e1u
 
 Xếp hạng Đại học Việt Nam: Hiểu đúng về con số thống kê, xếp hạng | https://spiderum.com/bai-dang/Xep-hang-Dai-hoc-Viet-Nam-Hieu-dung-ve-con-so-thong-ke-xep-hang-74b
 
@@ -15807,17 +15687,13 @@ Xếp hạng Đại học Việt Nam: Hiểu đúng về con số thống kê, x
 
 Cải cách tiếng Việt - Đừng lấy suy nghĩ người lớn để áp đặt cho trẻ em | https://spiderum.com/bai-dang/Cai-cach-tieng-Viet-Dung-lay-suy-nghi-nguoi-lon-de-ap-dat-cho-tre-em-bww
 
-Bạn ơi! Sinh viên thì nên học gì? | https://spiderum.com/bai-dang/Ban-oi-sinh-vien-thi-nen-hoc-gi-dmu
 
-Giá trị của kiến thức và tương lai của việc học tập | https://spiderum.com/bai-dang/Gia-tri-cua-kien-thuc-va-tuong-lai-cua-viec-hoc-tap-pcf
 
 Về việc phát âm tiếng Anh chuẩn hay là nắm chắc căn bản | https://spiderum.com/bai-dang/Ve-viec-phat-am-tieng-Anh-chuan-hay-la-nam-chac-can-ban-6vf
 
-Giá mà có người nói với tôi hồi Đại học | https://spiderum.com/bai-dang/Gia-ma-co-nguoi-noi-voi-toi-hoi-Dai-hoc-ols
 
 Tất cả những gì bạn cần để học giỏi | https://spiderum.com/bai-dang/Minh-viet-gi-ve-chuyen-hoc-uqz
 
-Phép toán đằng sau Quy tắc 5 giờ: Lí do bạn cần học 1 giờ mỗi ngày chỉ để không bị bỏ lại đằng sau | https://spiderum.com/bai-dang/Phep-toan-dang-sau-Quy-tac-5-gio-Li-do-ban-can-hoc-1-gio-moi-ngay-chi-de-khong-bi-bo-lai-dang-sau-lji
 
 TÔI KHÔNG MUỐN CÓ CON | https://spiderum.com/bai-dang/TOI-KHONG-MUON-CO-CON-GgW9DBPvSRII
 
@@ -15833,7 +15709,6 @@ TRIẾT LÝ DẠY VÀ HỌC VĂN CỦA VIỆT NAM VÀ TRUNG QUỐC. | https://sp
 
 Có Phải Các Trường Đại Học Úc Đang Vắt Học Sinh Quốc Tế Như Vắt Sữa Bò? | https://spiderum.com/bai-dang/Co-Phai-Cac-Truong-Dai-Hoc-Uc-Dang-Vat-Hoc-Sinh-Quoc-Te-Nhu-Vat-Sua-Bo-ozg
 
-Phát triển phần mềm: Làm cách nào để chuyển từ nghiệp dư thành chuyên nghiệp? | https://spiderum.com/bai-dang/Phat-trien-phan-mem-Lam-cach-nao-de-chuyen-tu-nghiep-du-thanh-chuyen-nghiep-kc0
 
 NHỮNG ĐIỂM MÙ (CỦA MÌNH) TRONG HỌC TẬP (P.1) | https://spiderum.com/bai-dang/NHUNG-DIEM-MU-CUA-MINH-TRONG-HOC-TAP-P1-nnh
 
@@ -15849,7 +15724,6 @@ Giáo dục Việt Nam và phương Tây khác nhau thế nào? (Part 1) | https
 
 Thầy cô dạy toán có dạy chúng ta những thứ này? | https://spiderum.com/bai-dang/Thay-co-day-toan-co-day-chung-ta-nhung-thu-nay-asm
 
-Những sinh viên xuất sắc nhất đang rơi vào “Bẫy Danh vọng” như thế nào? | https://spiderum.com/bai-dang/Nhung-sinh-vien-xuat-sac-nhat-dang-roi-vao-Bay-Danh-vong-nhu-the-nao-gtw
 
 Tiếng Anh vs IELTS, Dạy vs Học | https://spiderum.com/bai-dang/Tieng-Anh-vs-IELTS-Day-vs-Hoc-odd
 
@@ -15861,7 +15735,6 @@ PEER PRESSURE: TÔI TÀI GIỎI, Ừ KỆ BẠN!? | https://spiderum.com/bai-dan
 
 DU HỌC - SỰ THẬT PHŨ PHÀNG | https://spiderum.com/bai-dang/DU-HOC-SU-THAT-PHU-PHANG-7ln
 
-Học tiến sĩ để làm gì và tại sao tân tiến sĩ không nên theo nghề nghiên cứu học thuật ? | https://spiderum.com/bai-dang/Hoc-tien-si-de-lam-gi-va-tai-sao-tan-tien-si-khong-nen-theo-nghe-nghien-cuu-hoc-thuat-ZhqJEw9jezxB
 
 VẤN ĐỀ CỦA GIÁO DỤC VIỆT NAM DƯỚI GÓC NHÌN CỦA MỘT GIÁO VIÊN TRẺ | https://spiderum.com/bai-dang/VAN-DE-CUA-GIAO-DUC-VIET-NAM-DUOI-GOC-NHIN-CUA-MOT-GIAO-VIEN-TRE-D0y8HE82WioJ
 
@@ -15885,7 +15758,6 @@ Giáo dục Việt Nam phi thực tế đến mức nào? | https://spiderum.com
 
 Từ chuyện Giang ơi bị bắt nạt, người lớn ở đâu trong những câu chuyện bạo lực học đường? | https://spiderum.com/bai-dang/Giang-oi-bi-bat-nat-nguoi-lon-o-dau-trong-nhung-cau-chuyen-bao-luc-hoc-duong-qpq
 
-5 CÁI TÁT LẬT MẶT SINH VIÊN NĂM NHẤT | https://spiderum.com/bai-dang/5-CAI-TAT-LAT-MAT-SINH-VIEN-NAM-NHAT-pv7
 
 Giáo viên có trái tim không còn bình yên | https://spiderum.com/bai-dang/Giao-vien-co-trai-tim-khong-con-binh-yen-rs7
 
@@ -16029,7 +15901,6 @@ Lời nguyền bất hạnh của những đứa trẻ ngoan | https://spiderum.
 
 [18+][NSFW] Con gái ơi, hãy quan tâm đúng mức tới "chuyện ấy" nhé! (P1) | https://spiderum.com/bai-dang/18NSFW-Con-gai-oi-hay-quan-tam-dung-muc-toi-chuyen-ay-nhe-P1-j7z
 
-Xem Porn ảnh hưởng như thế nào tới tụi mình? | https://spiderum.com/bai-dang/Xem-Porn-anh-huong-nhu-the-nao-toi-tui-minh-l1m
 
 QUAN HỆ TÌNH DỤC TRONG MÙA ĐẠI DỊCH? | https://spiderum.com/bai-dang/QUAN-HE-TINH-DUC-TRONG-MUA-DAI-DICH-mmk
 
@@ -16043,7 +15914,6 @@ Xấu là xấu, không lằng nhằng! | https://spiderum.com/bai-dang/Xau-la-x
 
 [18+] HOW TO EAT A PUSSY LIKE A CHAMP - Nghệ thuật đàn ca sáo nhị | https://spiderum.com/bai-dang/18-HOW-TO-EAT-A-PUSSY-LIKE-A-CHAMP-Nghe-thuat-dan-ca-sao-nhi-cwz
 
-Dữ liệu từ website Hentai tiết lộ điều gì về chính chúng ta [18+] | https://spiderum.com/bai-dang/Du-lieu-tu-website-Hentai-tiet-lo-dieu-gi-ve-chinh-chung-ta-18-qoa
 
 Manners make Man - "Vẫn là tôi nhưng đỉnh vcđ" | https://spiderum.com/bai-dang/Manners-make-Man-Van-la-toi-nhung-dinh-vcd-cuf
 
@@ -16059,7 +15929,6 @@ Sex thì tốt đấy, nhưng thiếu hiểu biết về Sex và mắc các lo�
 
 VÌ SAO CHUẨN MEN THÌ KHÔNG XEM PORN VÀ QUAY TAY ? | https://spiderum.com/bai-dang/VI-SAO-CHUAN-MEN-THI-KHONG-XEM-PORN-VA-QUAY-TAY-q2g
 
-Bức tranh toàn cảnh về các JAV idols | https://spiderum.com/bai-dang/Buc-tranh-toan-canh-ve-cac-JAV-idols-v2s
 
 [CASE STUDY NHỎ - BÀI HỌC LỚN] | https://spiderum.com/bai-dang/CASE-STUDY-NHO-BAI-HOC-LON-usk
 
@@ -16307,7 +16176,6 @@ Bạn đốt cháy bao nhiêu calo khi quan hệ tình dục? | https://spiderum
 
 Tại sao lại là LucDuc ? | https://spiderum.com/bai-dang/Tai-sao-lai-la-LucDuc-LtWaYRdTtZvi
 
-[Tóm tắt Sách] Não bộ kể gì về bạn? - David Eagleman | https://spiderum.com/bai-dang/Tom-tat-Sach-Nao-bo-ke-gi-ve-ban-David-Eagleman-33itHsUD23NI
 
 Đến văn phòng làm việc và ra cà phê học bài chưa chắc đã hiệu quả | https://spiderum.com/bai-dang/DONG-LUC-XA-HOI-LIEU-TA-CO-CO-GANG-HON-TRUOC-SU-CO-MAT-CUA-NGUOI-KHAC-7MPtkJhpqGvU
 
@@ -16339,7 +16207,6 @@ Cô gái à, tham thôi, đừng tham quá | https://spiderum.com/bai-dang/Em-a-
 
 Đám cưới hay là trò lố? | https://spiderum.com/bai-dang/Dam-cuoi-hay-la-tro-lo-atr
 
-Xấu là xấu, không lằng nhằng! | https://spiderum.com/bai-dang/Xau-la-xau-khong-lang-nhang-fuo
 
 Một số lỗi tư duy thường gặp trên Internet | https://spiderum.com/bai-dang/Mot-so-loi-tu-duy-thuong-gap-tren-Internet-bv0
 
@@ -16351,7 +16218,6 @@ Bức tranh toàn cảnh về định kiến vùng miền của người 
 
 Cẩm nang nhận biết fake news nâng cao | https://spiderum.com/bai-dang/Cam-nang-nhan-biet-fake-news-nang-cao-32ylaH9jw92n
 
-Tư duy Bayesian Updating trong một thế giới bất định | https://spiderum.com/bai-dang/Tu-duy-Bayesian-Updating-trong-mot-the-gioi-bat-dinh-bf2
 
 Con Gái Thích Gì và Bài Học Mèo Con | https://spiderum.com/bai-dang/Con-gai-thich-gi-va-Bai-hoc-meo-con-4wg
 
@@ -16363,15 +16229,11 @@ Sự khốn nạn của số đông định kiến | https://spiderum.com/bai-da
 
 Mặt trái của Tư duy tích cực | https://spiderum.com/bai-dang/Mat-trai-cua-Tu-duy-tich-cuc-heu
 
-Deep Work – Làm sao để thôi "hời hợt" và lên "đỉnh" hàng ngày | https://spiderum.com/bai-dang/Deep-Work-Lam-sao-de-thoi-hoi-hot-va-len-dinh-hang-ngay-h12
 
-[Nofap] Vì sao ngừng quay tay sẽ giúp các zai bớt nhạt | https://spiderum.com/bai-dang/Nofap-Vi-sao-ngung-quay-tay-se-giup-cac-zai-bot-nhat-d1o
 
-HIỆU ỨNG THIÊN LỆCH KẺ SỐNG SÓT: GIỎI VÀ XUẤT CHÚNG | https://spiderum.com/bai-dang/HIEU-UNG-THIEN-LECH-KE-SONG-SOT-GIOI-VA-XUAT-CHUNG-5gj
 
 Tuổi thơ và quá trình hình thành tính cách con người | https://spiderum.com/bai-dang/Tuoi-tho-va-qua-trinh-hinh-thanh-tinh-cach-con-nguoi-9e8
 
-7 THÓI QUEN TƯỞNG LÀ LƯỜI BIẾNG (NHƯNG THỰC CHẤT GIÚP BẠN LÀM NHIỀU VIỆC HƠN) | https://spiderum.com/bai-dang/BAY-THOI-QUEN-TUONG-LA-LUOI-BIENG-NHUNG-THUC-CHAT-GIUP-BAN-LAM-NHIEU-VIEC-HON-qz6
 
 Tại Sao Mục Đích Và Kỷ Luật Thúc Đẩy Sức Khỏe Tâm Lý | https://spiderum.com/bai-dang/Tai-sao-Muc-dich-va-Ky-luat-Thuc-day-Suc-khoe-Tam-ly-CF5vR7cn8UY2
 
@@ -16379,19 +16241,15 @@ MẠNG XÃ HỘI HỦY HOẠI XÃ HỘI NHIỀU HƠN BẠN NGHĨ | https://spide
 
 Làm Sao Để Viết Chính Xác | https://spiderum.com/bai-dang/Lam-Sao-De-Viet-Chinh-Xac-X6mtdPedghJH
 
-Deep Work: Kỳ cùng chuyên tâm | https://spiderum.com/bai-dang/Deep-Work-Ky-cung-chuyen-tam-v69
 
-Khả năng tập trung bị mất đi theo thời gian | https://spiderum.com/bai-dang/Kha-nang-tap-trung-bi-mat-di-theo-thoi-gian-q21
 
 Lời nguyền kiến thức - The curse of knowledge | https://spiderum.com/bai-dang/Loi-nguyen-tri-thuc-The-curse-of-knowledge-ic6
 
 Hiệu ứng Werther: Tại sao nên ngừng ngay việc khai thác và đưa tin về các vụ tự vẫn như hiện tại? | https://spiderum.com/bai-dang/Hieu-ung-Werther-Tai-sao-nen-ngung-ngay-viec-khai-thac-va-dua-tin-ve-nguoi-tu-van-nhu-hien-tai-8h5
 
-Để trở nên trưởng thành | https://spiderum.com/bai-dang/De-tro-nen-truong-thanh-6g5
 
 Phụ nữ thật tuyệt vời! | https://spiderum.com/bai-dang/Phu-nu-that-tuyet-voi-rn0
 
-ĐÂY LÀ CÁCH ĐỂ HỌC XONG KHÔNG TRẢ LẠI CHO THẦY: "SHOW, DON'T TELL" | https://spiderum.com/bai-dang/DAY-LA-CACH-DE-HOC-XONG-KHONG-TRA-LAI-CHO-THAY-SHOW-DONT-TELL-hz8
 
 Bàn về tính đố kỵ của người Việt. | https://spiderum.com/bai-dang/Ban-ve-tinh-do-ky-cua-nguoi-Viet-d9g
 
@@ -16399,7 +16257,6 @@ Làm gì để khỏi... ấm ớ khi đến những nơi bạn chẳng quen ai?
 
 Không nói những điều không cần nói | https://spiderum.com/bai-dang/Khong-noi-nhung-dieu-khong-can-noi-ICJdIEYgjpbL
 
-DEEP WORK – TỪ SÁCH VỞ TỚI THỰC TẾ KHÁC NHAU NHƯ THẾ NÀO? | https://spiderum.com/bai-dang/DEEP-WORK-TU-SACH-VO-TOI-THUC-TE-KHAC-NHAU-NHU-THE-NAO-aHvvrXB8SJJ6
 
 Sandbox – phương pháp giúp bạn tự học bất cứ thứ gì | https://spiderum.com/bai-dang/Sandbox-phuong-phap-giup-ban-tu-hoc-bat-cu-thu-gi-w5e
 
@@ -16409,7 +16266,6 @@ Nhàn rỗi không sinh nông nổi mà sinh sự tầm thường và bệnh tâ
 
 Learning How to Learn - Week 2 - Part 1 | https://spiderum.com/bai-dang/Learning-How-to-Learn-Week-2-Part-1-5kh
 
-Hiệu ứng Matthew và công bằng trong lớp học | https://spiderum.com/bai-dang/Hieu-ung-Matthew-va-cong-bang-trong-lop-hoc-rg1
 
 Dân “hướng nội” à, các bạn bớt gõ phím đi hộ cái | https://spiderum.com/bai-dang/Dan-huong-noi-a-cac-ban-bot-go-phim-di-ho-cai-70g
 
@@ -16417,7 +16273,6 @@ Tại sao những điều tốt đẹp trên đời lại luôn trái ngược? 
 
 "Sống thật với chính mình" là lời khuyên kinh khủng | https://spiderum.com/bai-dang/Song-that-voi-chinh-minh-la-loi-khuyen-kinh-khung-uvq
 
-VÌ SAO CHÚNG TA NGHIỆN "QUAY TAY"? | https://spiderum.com/bai-dang/VI-SAO-CHUNG-TA-NGHIEN-QUAY-TAY-n63
 
 36 câu hỏi để yêu nhau | https://spiderum.com/bai-dang/36-cau-hoi-de-yeu-nhau-iia
 
@@ -16427,13 +16282,10 @@ Kỹ năng quan trọng nhất mà không ai dạy bạn | https://spiderum.com/
 
 Cội Nguồn Của Cô Đơn | https://spiderum.com/bai-dang/Coi-Nguon-Co-Don-nor
 
-"Ngoan" có thật sự tốt không? | https://spiderum.com/bai-dang/Ngoan-la-mot-tinh-tu-doc-hai-j5u
 
 Bạn đang yêu hay chỉ đang mưu cầu sự gắn bó? | https://spiderum.com/bai-dang/Ban-dang-yeu-hay-chi-dang-muu-cau-su-gan-bo-lmx
 
-Não Của Bạn Không Xử Lý Thông Tin Và Nó Không Phải Là Một Cái Máy Tính | https://spiderum.com/bai-dang/Nao-Cua-Ban-Khong-Xu-Ly-Thong-Tin-Va-No-Khong-Phai-La-Mot-Cai-May-Tinh-lm4
 
-Learning How to Learn - Week 3 - Part 1: Procrastination | https://spiderum.com/bai-dang/Learning-How-to-Learn-Week-3-Part-1-Procrastination-n4v
 
 Hạnh phúc là thứ không có thật. | https://spiderum.com/bai-dang/Hanh-phuc-la-thu-khong-co-that-LhGsd1kwgqgZ
 
@@ -16441,7 +16293,6 @@ Hạnh phúc là thứ không có thật. | https://spiderum.com/bai-dang/Hanh-p
 
 Vòng lặp chết chóc hay Cầu toàn và Sự trì hoãn | https://spiderum.com/bai-dang/Vong-lap-chet-choc-hay-Cau-toan-va-Su-tri-hoan-mri
 
-TÔI KHÔNG MUỐN CÓ CON | https://spiderum.com/bai-dang/TOI-KHONG-MUON-CO-CON-GgW9DBPvSRII
 
 Thiên kiến xác nhận: Nguyên nhân cho những quyết định sai lầm bạn hay mắc phải trong cuộc sống | https://spiderum.com/bai-dang/Thien-kien-xac-nhan-Nguyen-nhan-cho-nhung-quyet-dinh-sai-lam-ban-hay-mac-phai-trong-cuoc-song-7wu
 
@@ -16449,9 +16300,7 @@ Thực hư chuyện não trái não phải | https://spiderum.com/bai-dang/Thuc-
 
 Tại sao chúng ta yêu người này mà không phải là người khác? | https://spiderum.com/bai-dang/Tai-sao-chung-ta-yeu-nguoi-nay-ma-khong-phai-la-nguoi-khac-pqu
 
-Procrastination: Căn bệnh vô hình giết chết chúng ta | https://spiderum.com/bai-dang/Procrastination-Can-benh-vo-hinh-giet-chet-chung-ta-kg3
 
-NHỮNG ĐIỂM MÙ (CỦA MÌNH) TRONG HỌC TẬP (P.1) | https://spiderum.com/bai-dang/NHUNG-DIEM-MU-CUA-MINH-TRONG-HOC-TAP-P1-nnh
 
 Làm việc như người Nhật hay tự tử như người Nhật? Và chúng ta đã bị lừa mị ra làm sao? | https://spiderum.com/bai-dang/Lam-viec-nhu-nguoi-Nhat-hay-tu-tu-nhu-nguoi-Nhat-Va-chung-ta-da-bi-lua-mi-ra-lam-sao-afe
 
@@ -16473,11 +16322,9 @@ PARADOX OF CHOICE: VÌ SAO NGƯỜI VIỆT NAM "CẢM THẤY" HẠNH PHÚC TRONG
 
 DOPAMINE, SMARTPHONES VÀ MỘT TRẬN CHIẾN CHO THỜI GIAN [BÀI DỊCH] | https://spiderum.com/bai-dang/DOPAMINE-SMARTPHONES-VA-MOT-TRAN-CHIEN-CHO-THOI-GIAN-BAI-DICH-ruf
 
-Tầng cuối của Maslow và trường phái nhân văn - không phải là 'thể hiện' hay 'khẳng định' | https://spiderum.com/bai-dang/Tang-cuoi-cua-Maslow-va-truong-phai-nhan-van-khong-phai-la-the-hien-hay-khang-dinh-gnk
 
 Bạn có phải là một HSP (người cực kỳ nhạy cảm)? | https://spiderum.com/bai-dang/Ban-co-phai-la-mot-HSP-nguoi-cuc-ky-nhay-cam-9d0
 
-Kích thích và ham muốn: Khi cơ thể “phản bội” chúng ta | https://spiderum.com/bai-dang/Kich-thich-va-ham-muon-Khi-co-the-phan-boi-chung-ta-BjDhEu7DZcrY
 
 Love Addiction - Chúng ta đã lợi dụng tình yêu như thế nào | https://spiderum.com/bai-dang/Love-Addiction-Chung-ta-da-loi-dung-tinh-yeu-nhu-the-nao-nni
 
@@ -16485,7 +16332,6 @@ Phức cảm thượng đẳng - The Superiority Complex | https://spiderum.com/
 
 Dù đã có Google rồi, nhưng chúng mình vẫn phải dùng đến não chứ? | https://spiderum.com/bai-dang/Du-da-co-Google-roi-nhung-chung-minh-van-phai-dung-den-nao-chu-cu5
 
-TAROT PHẢN KHOA HỌC VÀ KHÔNG CHÍNH XÁC, TẠI SAO (GEN Z) CHÚNG TA VẪN TIN? - PHẦN I | https://spiderum.com/bai-dang/TAROT-PHAN-KHOA-HOC-VA-KHONG-CHINH-XAC-TAI-SAO-GEN-Z-CHUNG-TA-VAN-TIN-PHAN-I-11eh
 
 CHÚNG TA CÓ SUY NGHĨ QUÁ ĐƠN GIẢN KHI BÀN LUẬN VỀ KINH TẾ? | https://spiderum.com/bai-dang/CHUNG-TA-CO-SUY-NGHI-QUA-DON-GIAN-KHI-BAN-LUAN-VE-KINH-TE-rhh
 
@@ -16549,7 +16395,6 @@ Các ông cố lên! | https://spiderum.com/bai-dang/Cac-ong-co-len-mTtuRmheYqVt
 
 Mình đã áp dụng khái niệm "Chỉnh khung nhận thức" trong tâm lí học như thế nào? | https://spiderum.com/bai-dang/Minh-da-ap-dung-khai-niem-Chinh-khung-nhan-thuc-Reframing-trong-tam-li-hoc-nhu-the-nao-n7m
 
-VÌ SAO TƯ DUY PHẢN BIỆN LẠI KHÓ? MỘT VÍ DỤ TỪ VIỆC HỌC NGÔN NGỮ | https://spiderum.com/bai-dang/VI-SAO-TU-DUY-PHAN-BIEN-LAI-KHO-MOT-VI-DU-TU-VIEC-HOC-NGON-NGU-NvpH9tnAq3vx
 
 Good girls, bad girls, and everything in between ... | https://spiderum.com/bai-dang/Good-girls-bad-girls-and-everything-in-between-he9
 
@@ -16633,7 +16478,6 @@ VỤ BÊ BỐI KHIẾN GIẢI NOBEL VĂN HỌC BỊ HỦY | https://spiderum.com
 
 Andrew Tate - Tại sao là kẻ nguy hiểm nhất TikTok? | https://spiderum.com/bai-dang/Andrew-Tate-Tai-sao-la-ke-nguy-hiem-nhat-TikTok-iBRisIDNeUow
 
-Cháu tôi xếp mấy con bọ đi thành hàng | https://spiderum.com/bai-dang/Chau-toi-xep-may-con-bo-di-thanh-hang-xKMOGsEk9SfW
 
 Topic xàm: 1 tháng không điện thoại | https://spiderum.com/bai-dang/Topic-xam-1-thang-khong-dien-thoai-Ack0mcFNomdN
 
@@ -16679,7 +16523,6 @@ Chủng tộc và dương vật - huyền thoại và sự thật | https://spid
 
 Trải nghiệm triết lý sống tối giản công nghệ số trong 1 tuần, mình ĐƯỢC và MẤT gì? | https://spiderum.com/bai-dang/Trai-nghiem-triet-ly-song-toi-gian-cong-nghe-so-trong-1-tuan-minh-DUOC-va-MAT-gi-HQIXWylS9jH1
 
-"Cười ỉa" nghĩa là gì? | https://spiderum.com/bai-dang/Cuoi-ia-nghia-la-gi-UsvwAfKZrrTf
 
 Ko gì thoải mái bằng ỉa đái kịp thời | https://spiderum.com/bai-dang/Ko-gi-thoai-mai-bang-ia-dai-kip-thoi-CGW6Xdtm8DZ7
 
@@ -16707,7 +16550,6 @@ Khi nền tảng và mối quen biết trở thành cái cớ cho sự thiếu c
 
 Đôi dòng suy ngẫm về "Không muốn có con". | https://spiderum.com/bai-dang/Doi-dong-suy-ngam-ve-Khong-muon-co-con-2vEYeuEu0eyR
 
-Một giấc mơ đáng sợ... | https://spiderum.com/bai-dang/Mot-giac-mo-dang-so-Z5QICRxkRrGl
 
 Chuyện quái gì đang xảy ra với KanYe West | https://spiderum.com/bai-dang/Chuyen-quai-gi-dang-xay-ra-voi-KanYe-West-XiVwEVrDi8HJ
 
@@ -16777,7 +16619,6 @@ NgocDiem em yêu chị. | https://spiderum.com/bai-dang/em-iu-chi-qua-nRQfi9NYOQ
 
 Năm 12 (phần 1): Kẻ bám đuôi trong Vô Lượng kiếp | https://spiderum.com/bai-dang/Nam-12-phan-1-Ke-bam-duoi-trong-Vo-Luong-kiep-95vEg6tq05bL
 
-Truyện ngắn: Chàng độc thân "khô ráo" ở Đà Nẵng | https://spiderum.com/bai-dang/Truyen-ngan-Chang-doc-than-kho-rao-o-Da-Nang-cdzMk9jsK4vE
 
 Đừng bao giờ để một kẻ có quá khứ tâm lý bất ổn, lệch lạc và mặc cảm cực độ làm Tech Lead hoặc bất kỳ vị trí quan trọng nào | https://spiderum.com/bai-dang/Dung-bao-gio-de-mot-ke-co-qua-khu-tam-ly-bat-on-lech-lac-va-mac-cam-cuc-do-lam-Tech-Lead-hoac-bat-ky-vi-tri-quan-trong-nao-Wd5bnN4RbvXo
 
@@ -16795,245 +16636,125 @@ Hội chứng con vịt - Thứ biến ta thành những con rô bốt? | https:
 
 Tôi lười biếng, chúng ta lười biếng, mọi người lười biếng. | https://spiderum.com/bai-dang/Toi-luoi-bieng-chung-ta-luoi-bieng-moi-nguoi-luoi-bieng-5ce
 
-Con gái cảm thấy thế nào sau khi từ chối một chàng trai ? | https://spiderum.com/bai-dang/Con-gai-cam-thay-the-nao-sau-khi-tu-choi-mot-chang-trai-5cj
 
-Niềm vui chóng tàn và Niềm vui vững bền | https://spiderum.com/bai-dang/Niem-vui-chong-tan-va-Niem-vui-vung-ben-g9t
 
-Sapiosexual - hẹn hò cũng phải hợp thời? | https://spiderum.com/bai-dang/Sapiosexual-hen-ho-cung-phai-hop-thoi-bu8
 
-Vấn đề ở Việt Nam: nhiều người sống quá cảm tính và tư duy lỏng lẻo | https://spiderum.com/bai-dang/Van-de-o-Viet-Nam-moi-nguoi-song-qua-cam-tinh-va-tu-duy-long-leo-87p
 
-Một số lỗi tư duy khiến cuộc sống của bạn khó khăn (I) | https://spiderum.com/bai-dang/Mot-so-loi-tu-duy-khien-cuoc-song-cua-ban-kho-khan-I-7g0
 
-Chỉ là một câu trả lời trên Reddit. | https://spiderum.com/bai-dang/Chi-la-mot-cau-tra-loi-tren-Reddit-ghr
 
-Bạn Có Thấy Bộ Quần Áo Mới Của Hoàng Đế? | https://spiderum.com/bai-dang/Ban-Co-Thay-Bo-Quan-Ao-Moi-Cua-Nha-Vua-fjj
 
-Đại dịch chống "nhạt" và cái bẫy tiêu chuẩn của gái | https://spiderum.com/bai-dang/Dai-dich-chong-nhat-va-cai-bay-tieu-chuan-cua-gai-cxg
 
-CON NGƯỜI ĐANG BỊ CHI PHỐI BỞI CHỦ NGHĨA “NHANH VÀ NGẮN HƠN NỮA” | https://spiderum.com/bai-dang/CON-NGUOI-DANG-BI-CHI-PHOI-BOI-CHU-NGHIA-NHANH-VA-NGAN-HON-NUA-xVG4c3LcSH8N
 
-Tâm lý học của sự thay đổi bản thân | https://spiderum.com/bai-dang/Tam-ly-hoc-cua-su-thay-doi-ban-than-s4l
 
-Cô gái à, tham thôi, đừng tham quá | https://spiderum.com/bai-dang/Em-a-tham-thoi-dung-tham-qua-nnc
 
-Đám cưới hay là trò lố? | https://spiderum.com/bai-dang/Dam-cuoi-hay-la-tro-lo-atr
 
-Xấu là xấu, không lằng nhằng! | https://spiderum.com/bai-dang/Xau-la-xau-khong-lang-nhang-fuo
 
-Một số lỗi tư duy thường gặp trên Internet | https://spiderum.com/bai-dang/Mot-so-loi-tu-duy-thuong-gap-tren-Internet-bv0
 
-Sự mỏng manh của đàn ông thời nay | https://spiderum.com/bai-dang/Su-mong-manh-cua-dan-ong-thoi-nay-wLEHsFuZ37yA
 
-Con Trai, Con Gái: Quen Nhau Sao Lại Khó? | https://spiderum.com/bai-dang/Con-Trai-Con-Gai-Quen-Nhau-Sao-Lai-Kho-cs0
 
-Bức tranh toàn cảnh về định kiến vùng miền của người Việt Nam | https://spiderum.com/bai-dang/Buc-tranh-toan-canh-ve-dinh-kien-vung-mien-cua-nguoi-Viet-Nam-qt0
 
-Cẩm nang nhận biết fake news nâng cao | https://spiderum.com/bai-dang/Cam-nang-nhan-biet-fake-news-nang-cao-32ylaH9jw92n
 
-Tư duy Bayesian Updating trong một thế giới bất định | https://spiderum.com/bai-dang/Tu-duy-Bayesian-Updating-trong-mot-the-gioi-bat-dinh-bf2
 
-Con Gái Thích Gì và Bài Học Mèo Con | https://spiderum.com/bai-dang/Con-gai-thich-gi-va-Bai-hoc-meo-con-4wg
 
-Hội chứng "People Pleaser" - Người tốt hay nô lệ của hình ảnh tử tế ? | https://spiderum.com/bai-dang/Nguoi-tot-hay-no-le-cua-hinh-anh-tu-te-nwu
 
-Dân tỉnh X bị kì thị, học sinh trường xịn ra đi làm thất bại và giá trị của Apple lớn hơn nền kinh tế Việt Nam | https://spiderum.com/bai-dang/Dan-tinh-X-bi-ki-thi-hoc-sinh-truong-xin-ra-di-lam-that-bai-va-gia-tri-cua-Apple-lon-hon-nen-kinh-te-Viet-Nam-9a7
 
-Sự khốn nạn của số đông định kiến | https://spiderum.com/bai-dang/Su-khon-nan-cua-so-dong-dinh-kien-opa
 
-Mặt trái của Tư duy tích cực | https://spiderum.com/bai-dang/Mat-trai-cua-Tu-duy-tich-cuc-heu
 
-Deep Work – Làm sao để thôi "hời hợt" và lên "đỉnh" hàng ngày | https://spiderum.com/bai-dang/Deep-Work-Lam-sao-de-thoi-hoi-hot-va-len-dinh-hang-ngay-h12
 
-[Nofap] Vì sao ngừng quay tay sẽ giúp các zai bớt nhạt | https://spiderum.com/bai-dang/Nofap-Vi-sao-ngung-quay-tay-se-giup-cac-zai-bot-nhat-d1o
 
-HIỆU ỨNG THIÊN LỆCH KẺ SỐNG SÓT: GIỎI VÀ XUẤT CHÚNG | https://spiderum.com/bai-dang/HIEU-UNG-THIEN-LECH-KE-SONG-SOT-GIOI-VA-XUAT-CHUNG-5gj
 
-Tuổi thơ và quá trình hình thành tính cách con người | https://spiderum.com/bai-dang/Tuoi-tho-va-qua-trinh-hinh-thanh-tinh-cach-con-nguoi-9e8
 
-7 THÓI QUEN TƯỞNG LÀ LƯỜI BIẾNG (NHƯNG THỰC CHẤT GIÚP BẠN LÀM NHIỀU VIỆC HƠN) | https://spiderum.com/bai-dang/BAY-THOI-QUEN-TUONG-LA-LUOI-BIENG-NHUNG-THUC-CHAT-GIUP-BAN-LAM-NHIEU-VIEC-HON-qz6
 
-Tại Sao Mục Đích Và Kỷ Luật Thúc Đẩy Sức Khỏe Tâm Lý | https://spiderum.com/bai-dang/Tai-sao-Muc-dich-va-Ky-luat-Thuc-day-Suc-khoe-Tam-ly-CF5vR7cn8UY2
 
-MẠNG XÃ HỘI HỦY HOẠI XÃ HỘI NHIỀU HƠN BẠN NGHĨ | https://spiderum.com/bai-dang/MANG-XA-HOI-HUY-HOAI-XA-HOI-NHIEU-HON-BAN-NGHI-jNAPbHS7fRLa
 
-Làm Sao Để Viết Chính Xác | https://spiderum.com/bai-dang/Lam-Sao-De-Viet-Chinh-Xac-X6mtdPedghJH
 
-Deep Work: Kỳ cùng chuyên tâm | https://spiderum.com/bai-dang/Deep-Work-Ky-cung-chuyen-tam-v69
 
-Khả năng tập trung bị mất đi theo thời gian | https://spiderum.com/bai-dang/Kha-nang-tap-trung-bi-mat-di-theo-thoi-gian-q21
 
-Lời nguyền kiến thức - The curse of knowledge | https://spiderum.com/bai-dang/Loi-nguyen-tri-thuc-The-curse-of-knowledge-ic6
 
-Hiệu ứng Werther: Tại sao nên ngừng ngay việc khai thác và đưa tin về các vụ tự vẫn như hiện tại? | https://spiderum.com/bai-dang/Hieu-ung-Werther-Tai-sao-nen-ngung-ngay-viec-khai-thac-va-dua-tin-ve-nguoi-tu-van-nhu-hien-tai-8h5
 
-Để trở nên trưởng thành | https://spiderum.com/bai-dang/De-tro-nen-truong-thanh-6g5
 
-Phụ nữ thật tuyệt vời! | https://spiderum.com/bai-dang/Phu-nu-that-tuyet-voi-rn0
 
-ĐÂY LÀ CÁCH ĐỂ HỌC XONG KHÔNG TRẢ LẠI CHO THẦY: "SHOW, DON'T TELL" | https://spiderum.com/bai-dang/DAY-LA-CACH-DE-HOC-XONG-KHONG-TRA-LAI-CHO-THAY-SHOW-DONT-TELL-hz8
 
-Bàn về tính đố kỵ của người Việt. | https://spiderum.com/bai-dang/Ban-ve-tinh-do-ky-cua-nguoi-Viet-d9g
 
-Làm gì để khỏi... ấm ớ khi đến những nơi bạn chẳng quen ai? | https://spiderum.com/bai-dang/Lam-gi-de-khoi-am-o-khi-den-nhung-noi-ban-chang-quen-ai-7as
 
-Không nói những điều không cần nói | https://spiderum.com/bai-dang/Khong-noi-nhung-dieu-khong-can-noi-ICJdIEYgjpbL
 
-DEEP WORK – TỪ SÁCH VỞ TỚI THỰC TẾ KHÁC NHAU NHƯ THẾ NÀO? | https://spiderum.com/bai-dang/DEEP-WORK-TU-SACH-VO-TOI-THUC-TE-KHAC-NHAU-NHU-THE-NAO-aHvvrXB8SJJ6
 
-Sandbox – phương pháp giúp bạn tự học bất cứ thứ gì | https://spiderum.com/bai-dang/Sandbox-phuong-phap-giup-ban-tu-hoc-bat-cu-thu-gi-w5e
 
-Dành cho những người muốn trở nên sáng tạo | https://spiderum.com/bai-dang/Danh-cho-nhung-nguoi-muon-tro-nen-sang-tao-lxk
 
-Nhàn rỗi không sinh nông nổi mà sinh sự tầm thường và bệnh tâm lý | https://spiderum.com/bai-dang/Nhan-roi-khong-sinh-nong-noi-ma-sinh-su-tam-thuong-va-benh-tam-ly-cdh
 
-Learning How to Learn - Week 2 - Part 1 | https://spiderum.com/bai-dang/Learning-How-to-Learn-Week-2-Part-1-5kh
 
-Hiệu ứng Matthew và công bằng trong lớp học | https://spiderum.com/bai-dang/Hieu-ung-Matthew-va-cong-bang-trong-lop-hoc-rg1
 
-Dân “hướng nội” à, các bạn bớt gõ phím đi hộ cái | https://spiderum.com/bai-dang/Dan-huong-noi-a-cac-ban-bot-go-phim-di-ho-cai-70g
 
-Tại sao những điều tốt đẹp trên đời lại luôn trái ngược? | https://spiderum.com/bai-dang/Tai-sao-nhung-dieu-tot-dep-tren-doi-lai-luon-trai-nguoc-bkb
 
-"Sống thật với chính mình" là lời khuyên kinh khủng | https://spiderum.com/bai-dang/Song-that-voi-chinh-minh-la-loi-khuyen-kinh-khung-uvq
 
-VÌ SAO CHÚNG TA NGHIỆN "QUAY TAY"? | https://spiderum.com/bai-dang/VI-SAO-CHUNG-TA-NGHIEN-QUAY-TAY-n63
 
-36 câu hỏi để yêu nhau | https://spiderum.com/bai-dang/36-cau-hoi-de-yeu-nhau-iia
 
-Learning How to Learn - Week 2 - Part 2 | https://spiderum.com/bai-dang/Learning-How-to-Learn-Week-2-Part-2-5kz
 
-Kỹ năng quan trọng nhất mà không ai dạy bạn | https://spiderum.com/bai-dang/Ky-nang-quan-trong-nhat-ma-khong-ai-day-ban-kpf
 
-Cội Nguồn Của Cô Đơn | https://spiderum.com/bai-dang/Coi-Nguon-Co-Don-nor
 
-"Ngoan" có thật sự tốt không? | https://spiderum.com/bai-dang/Ngoan-la-mot-tinh-tu-doc-hai-j5u
 
-Bạn đang yêu hay chỉ đang mưu cầu sự gắn bó? | https://spiderum.com/bai-dang/Ban-dang-yeu-hay-chi-dang-muu-cau-su-gan-bo-lmx
 
-Não Của Bạn Không Xử Lý Thông Tin Và Nó Không Phải Là Một Cái Máy Tính | https://spiderum.com/bai-dang/Nao-Cua-Ban-Khong-Xu-Ly-Thong-Tin-Va-No-Khong-Phai-La-Mot-Cai-May-Tinh-lm4
 
-Learning How to Learn - Week 3 - Part 1: Procrastination | https://spiderum.com/bai-dang/Learning-How-to-Learn-Week-3-Part-1-Procrastination-n4v
 
-Hạnh phúc là thứ không có thật. | https://spiderum.com/bai-dang/Hanh-phuc-la-thu-khong-co-that-LhGsd1kwgqgZ
 
-Đám đông và tinh hoa, ai mới thông minh? | https://spiderum.com/bai-dang/Dam-dong-va-tinh-hoa-ai-moi-thong-minh-cnt
 
-Vòng lặp chết chóc hay Cầu toàn và Sự trì hoãn | https://spiderum.com/bai-dang/Vong-lap-chet-choc-hay-Cau-toan-va-Su-tri-hoan-mri
 
-TÔI KHÔNG MUỐN CÓ CON | https://spiderum.com/bai-dang/TOI-KHONG-MUON-CO-CON-GgW9DBPvSRII
 
-Thiên kiến xác nhận: Nguyên nhân cho những quyết định sai lầm bạn hay mắc phải trong cuộc sống | https://spiderum.com/bai-dang/Thien-kien-xac-nhan-Nguyen-nhan-cho-nhung-quyet-dinh-sai-lam-ban-hay-mac-phai-trong-cuoc-song-7wu
 
-Thực hư chuyện não trái não phải | https://spiderum.com/bai-dang/Thuc-hu-chuyen-nao-trai-nao-phai-dik
 
-Tại sao chúng ta yêu người này mà không phải là người khác? | https://spiderum.com/bai-dang/Tai-sao-chung-ta-yeu-nguoi-nay-ma-khong-phai-la-nguoi-khac-pqu
 
-Procrastination: Căn bệnh vô hình giết chết chúng ta | https://spiderum.com/bai-dang/Procrastination-Can-benh-vo-hinh-giet-chet-chung-ta-kg3
 
-NHỮNG ĐIỂM MÙ (CỦA MÌNH) TRONG HỌC TẬP (P.1) | https://spiderum.com/bai-dang/NHUNG-DIEM-MU-CUA-MINH-TRONG-HOC-TAP-P1-nnh
 
-Làm việc như người Nhật hay tự tử như người Nhật? Và chúng ta đã bị lừa mị ra làm sao? | https://spiderum.com/bai-dang/Lam-viec-nhu-nguoi-Nhat-hay-tu-tu-nhu-nguoi-Nhat-Va-chung-ta-da-bi-lua-mi-ra-lam-sao-afe
 
-Thuyết hành vi và Dating tips | https://spiderum.com/bai-dang/Thuyet-hanh-vi-va-Dating-tips-4xe
 
-Cảm xúc luôn đúng, hành động thì chưa chắc | https://spiderum.com/bai-dang/Cam-xuc-luon-dung-hanh-dong-thi-chua-chac-BraHiG7oUWRw
 
-Đừng so sánh đời thật của bạn với cuộc sống ảo của người khác | https://spiderum.com/bai-dang/Dung-so-sanh-doi-that-cua-ban-voi-cuoc-song-ao-cua-nguoi-khac-hu9
 
-Ba cấp độ của Tự Nhận Thức | https://spiderum.com/bai-dang/Ba-cap-do-cua-Tu-Nhan-Thuc-ako
 
-Bạn có thực sự biết cách lắng nghe? | https://spiderum.com/bai-dang/Ban-co-thuc-su-biet-cach-lang-nghe-pom
 
-Về nghệ thuật kể chuyện. | https://spiderum.com/bai-dang/Ve-nghe-thuat-ke-chuyen-mr9
 
-Tại sao bạn lại thu hút hoặc bị thu hút bởi "người-không-dành-cho-bạn" ? | https://spiderum.com/bai-dang/Tai-sao-ban-lai-thu-hut-hoac-bi-thu-hut-boi-nguoi-khong-danh-cho-ban-uu3
 
-PARADOX OF CHOICE: VÌ SAO NGƯỜI VIỆT NAM "CẢM THẤY" HẠNH PHÚC TRONG DỊCH BỆNH HƠN CÁC QUỐC GIA KHÁC? | https://spiderum.com/bai-dang/PARADOX-OF-CHOICE-VI-SAO-NGUOI-VIET-NAM-CAM-THAY-HANH-PHUC-TRONG-DICH-BENH-HON-CAC-QUOC-GIA-KHAC-q6p
 
-DOPAMINE, SMARTPHONES VÀ MỘT TRẬN CHIẾN CHO THỜI GIAN [BÀI DỊCH] | https://spiderum.com/bai-dang/DOPAMINE-SMARTPHONES-VA-MOT-TRAN-CHIEN-CHO-THOI-GIAN-BAI-DICH-ruf
 
-Tầng cuối của Maslow và trường phái nhân văn - không phải là 'thể hiện' hay 'khẳng định' | https://spiderum.com/bai-dang/Tang-cuoi-cua-Maslow-va-truong-phai-nhan-van-khong-phai-la-the-hien-hay-khang-dinh-gnk
 
-Bạn có phải là một HSP (người cực kỳ nhạy cảm)? | https://spiderum.com/bai-dang/Ban-co-phai-la-mot-HSP-nguoi-cuc-ky-nhay-cam-9d0
 
-Kích thích và ham muốn: Khi cơ thể “phản bội” chúng ta | https://spiderum.com/bai-dang/Kich-thich-va-ham-muon-Khi-co-the-phan-boi-chung-ta-BjDhEu7DZcrY
 
-Love Addiction - Chúng ta đã lợi dụng tình yêu như thế nào | https://spiderum.com/bai-dang/Love-Addiction-Chung-ta-da-loi-dung-tinh-yeu-nhu-the-nao-nni
 
-Phức cảm thượng đẳng - The Superiority Complex | https://spiderum.com/bai-dang/Phuc-cam-thuong-dang-The-Superiority-Complex-ipu
 
-Dù đã có Google rồi, nhưng chúng mình vẫn phải dùng đến não chứ? | https://spiderum.com/bai-dang/Du-da-co-Google-roi-nhung-chung-minh-van-phai-dung-den-nao-chu-cu5
 
-TAROT PHẢN KHOA HỌC VÀ KHÔNG CHÍNH XÁC, TẠI SAO (GEN Z) CHÚNG TA VẪN TIN? - PHẦN I | https://spiderum.com/bai-dang/TAROT-PHAN-KHOA-HOC-VA-KHONG-CHINH-XAC-TAI-SAO-GEN-Z-CHUNG-TA-VAN-TIN-PHAN-I-11eh
 
-CHÚNG TA CÓ SUY NGHĨ QUÁ ĐƠN GIẢN KHI BÀN LUẬN VỀ KINH TẾ? | https://spiderum.com/bai-dang/CHUNG-TA-CO-SUY-NGHI-QUA-DON-GIAN-KHI-BAN-LUAN-VE-KINH-TE-rhh
 
-Theo chuyên gia hành vi của FBI, 10 kỹ thuật sẽ giúp bạn có được sự tin tưởng trong giao tiếp với bất cứ ai | https://spiderum.com/bai-dang/Theo-chuyen-gia-hanh-vi-cua-FBI-10-ky-thuat-se-giup-ban-co-duoc-su-tin-tuong-trong-giao-tiep-voi-bat-cu-ai-uuw
 
-BẠN CÓ ĐANG GIẢ VỜ BẬN RỘN? | https://spiderum.com/bai-dang/BAN-CO-DANG-GIA-VO-BAN-RON-nun
 
-Anima - Sự nữ tính trong tâm trí nam giới | https://spiderum.com/bai-dang/Anima-Su-nu-tinh-trong-tam-tri-nam-gioi-gxo
 
-Ông chủ Cảm xúc và Nô lệ lý trí | https://spiderum.com/bai-dang/Ong-chu-Cam-xuc-va-No-le-ly-tri-2qu
 
-Hướng nội và hướng ngoại có phải do bẩm sinh? | https://spiderum.com/bai-dang/Huong-noi-va-huong-ngoai-co-phai-do-bam-sinh-956
 
-Não của người hướng nội và người hướng ngoại khác nhau thế nào? | https://spiderum.com/bai-dang/Nao-cua-nguoi-huong-noi-va-nguoi-huong-ngoai-khac-nhau-the-nao-8ie
 
-Đúng, sai, và tư cách nạn nhân trong chuyện trầm cảm | https://spiderum.com/bai-dang/Dung-sai-va-no-nan-trong-chuyen-tram-cam-us6
 
-[English Below] Nỗi cô đơn của chúng ta - Monster Box | https://spiderum.com/bai-dang/English-Below-Noi-co-don-cua-chung-ta-Monster-Box-oup
 
-Đàn ông nghĩ gì khi cho tiền phụ nữ? | https://spiderum.com/bai-dang/Dan-ong-nghi-gi-khi-cho-tien-phu-nu-lpz
 
-Một số lỗi tư duy cảm tính (Phần I) | https://spiderum.com/bai-dang/Mot-so-loi-tu-duy-cam-tinh-Phan-I-8fc
 
-Chuyện tiếng Việt, chuyện tư duy, hay gì khác nữa? | https://spiderum.com/bai-dang/Part-1-Chuyen-ngon-ngu-chuyen-tu-duy-hay-gi-khac-nua-goc
 
-9toTalk #39: Đã đến lúc nghiêm túc nói về sức khoẻ tâm lý | https://spiderum.com/bai-dang/9toTalk-39-Da-den-luc-nghiem-tuc-noi-ve-suc-khoe-tam-ly-n7n
 
-Bạn có đang "đói" Dopamine? (Phần 1) | https://spiderum.com/bai-dang/Ban-co-dang-doi-Dopamine-Phan-1-lup
 
-Tại sao các thảm hoạ thiên nhiên thường bị truyền thông thổi phồng, và bạn không nên đóng góp cho các quỹ cứu trợ thiên tai | https://spiderum.com/bai-dang/Tai-sao-cac-tham-hoa-thien-nhien-thuong-bi-truyen-thong-thoi-phong-va-ban-khong-nen-dong-gop-cho-cac-quy-cuu-tro-thien-tai-kYVoUROlI4t4
 
-Câu hỏi: Đâu là những thiên kiến nhận thức quan trọng nhất mà chúng ta cần lưu ý? | https://spiderum.com/bai-dang/Cau-hoi-Dau-la-nhung-thien-kien-nhan-thuc-quan-trong-nhat-ma-chung-ta-can-luu-y-qwq
 
-Chương 1: Kiểm soát cảm xúc chỉ bằng cách đứng thẳng. | https://spiderum.com/bai-dang/Chuong-1-Kiem-soat-cam-xuc-chi-bang-cach-dung-thang-owp
 
-Smartphone đang khiến bạn ngu đi, sống khép kín và kém lành mạnh. Nhưng tại sao bạn không thể đặt nó xuống?! | https://spiderum.com/bai-dang/Smartphone-dang-khien-ban-ngu-di-song-khep-kin-va-kem-lanh-manh-Nhung-tai-sao-ban-khong-the-dat-no-xuong-bgj
 
-Các mối quan hệ của chúng ta đổ vỡ bởi phần lớn mọi người giao tiếp với nhau như-thế-này | https://spiderum.com/bai-dang/Cac-moi-quan-he-cua-chung-ta-do-vo-boi-phan-lon-moi-nguoi-giao-tiep-voi-nhau-nhu-the-nay-kq6
 
-TIẾN HÓA CỦA LO LẮNG | https://spiderum.com/bai-dang/TIEN-HOA-CUA-LO-LANG-s81
 
-Vì sao mấy đứa Gen Y không hạnh phúc? | https://spiderum.com/bai-dang/Vi-sao-may-dua-Gen-Y-khong-hanh-phuc-nh4
 
-Vạch rõ giới hạn – để người khác phải tôn trọng bạn | https://spiderum.com/bai-dang/Vach-ro-gioi-han-de-nguoi-khac-phai-ton-trong-ban-qk0
 
-Làm thế nào để "chung sống" với những nỗi sợ? | https://spiderum.com/bai-dang/Lam-the-nao-de-chung-song-voi-nhung-noi-so-a28
 
-THÁP MASLOW RỖNG RUỘT: KHI NGƯỜI TRẺ DÙNG CONCERT VÀ “CHỮA LÀNH” ĐỂ GÂY MÊ THỰC TẠI (NHÌN LẠI 2025) | https://spiderum.com/bai-dang/THAP-MASLOW-RONG-RUOT-KHI-NGUOI-TRE-DUNG-CONCERT-VA-CHUA-LANH-DE-GAY-ME-THUC-TAI-NHIN-LAI-2025-aMS0VZZLWvrj
 
-Bạn có chắc mình hiểu về đàn ông? | https://spiderum.com/bai-dang/Ban-co-chac-minh-hieu-ve-dan-ong-pti
 
-Du học, tâm lý học và tính tò mò đã thay đổi cuộc đời tôi như thế nào - phần 2 | https://spiderum.com/bai-dang/Du-hoc-tam-ly-hoc-va-tinh-to-mo-da-thay-doi-cuoc-doi-toi-nhu-the-nao-phan-2-d4c
 
-Mình có đang nói chuyện "tử tế" với nhau? | https://spiderum.com/bai-dang/Minh-co-dang-noi-chuyen-tu-te-voi-nhau-wj2lpDvPHvDQ
 
-Vài điều thu được từ khóa học Introduction to Psychology của Yale Uni | https://spiderum.com/bai-dang/Vai-dieu-thu-duoc-tu-khoa-hoc-online-Introduction-Psychology-tai-Yale-Uni-e4b
 
-Các ông cố lên! | https://spiderum.com/bai-dang/Cac-ong-co-len-mTtuRmheYqVt
 
-Mình đã áp dụng khái niệm "Chỉnh khung nhận thức" trong tâm lí học như thế nào? | https://spiderum.com/bai-dang/Minh-da-ap-dung-khai-niem-Chinh-khung-nhan-thuc-Reframing-trong-tam-li-hoc-nhu-the-nao-n7m
 
-VÌ SAO TƯ DUY PHẢN BIỆN LẠI KHÓ? MỘT VÍ DỤ TỪ VIỆC HỌC NGÔN NGỮ | https://spiderum.com/bai-dang/VI-SAO-TU-DUY-PHAN-BIEN-LAI-KHO-MOT-VI-DU-TU-VIEC-HOC-NGON-NGU-NvpH9tnAq3vx
 
-Good girls, bad girls, and everything in between ... | https://spiderum.com/bai-dang/Good-girls-bad-girls-and-everything-in-between-he9
 
-Self-fulfilling prophecy là gì và mặt tốt/xấu của nó | https://spiderum.com/bai-dang/Self-fulfilling-prophecy-la-gi-va-mat-totxau-cua-no-q6e
 
-Tiêu chuẩn dễ dãi của giới trẻ Việt trong văn hóa, nghệ thuật. | https://spiderum.com/bai-dang/Tieu-chuan-de-dai-cua-gioi-tre-Viet-trong-van-hoa-nghe-thuat-HBWhCLtrIFNs
 
 Nô lệ của chính mình | https://spiderum.com/bai-dang/No-le-cua-chinh-minh-89d
 
@@ -17075,7 +16796,6 @@ Biện minh nỗ lực | https://spiderum.com/bai-dang/Bien-minh-no-luc-7ko
 
 Có gì đó gọi là... | https://spiderum.com/bai-dang/Co-gi-do-goi-la-5q7
 
-Làm thế nào để dịch một bài báo Tiếng Anh hay hơn? | https://spiderum.com/bai-dang/Lam-the-nao-de-dich-mot-bai-bao-Tieng-Anh-hay-hon-68u
 
 Chuyện tình của dấu chấm - WannaTell #1 | https://spiderum.com/bai-dang/Chuyen-tinh-cua-dau-cham-WannaTell-1-6uh
 
@@ -17089,15 +16809,12 @@ Miyamoto Musashi - Tự kỷ luật bản thân | https://spiderum.com/bai-dang/
 
 Làm thế nào để kể một câu chuyện hay | https://spiderum.com/bai-dang/Lam-the-nao-de-ke-mot-cau-chuyen-hay-8nc
 
-Làm Sao Để Viết Chính Xác | https://spiderum.com/bai-dang/Lam-Sao-De-Viet-Chinh-Xac-X6mtdPedghJH
 
 Sử Dụng Kết Cấu Để Viết Hay Hơn | https://spiderum.com/bai-dang/Su-Dung-Ket-Cau-De-Viet-Hay-Hon-ggf
 
-ĐÂY LÀ CÁCH ĐỂ HỌC XONG KHÔNG TRẢ LẠI CHO THẦY: "SHOW, DON'T TELL" | https://spiderum.com/bai-dang/DAY-LA-CACH-DE-HOC-XONG-KHONG-TRA-LAI-CHO-THAY-SHOW-DONT-TELL-hz8
 
 Tôi đã bắt kịp cỗ máy học tập James Scholz chỉ với một quyển sách. | https://spiderum.com/bai-dang/Toi-da-bat-kip-co-may-hoc-tap-James-Scholz-chi-bang-mot-quyen-sach-FQSbED59bNVn
 
-Cải thiện kỹ năng Viết mỗi ngày từ những điều đơn giản | https://spiderum.com/bai-dang/Cai-thien-ky-nang-Viet-moi-ngay-tu-nhung-dieu-don-gian-vzo
 
 TẠI SAO VIỆT NAM KHÔNG CÓ GIẢI NOBEL VĂN HỌC? | https://spiderum.com/bai-dang/TAI-SAO-VIET-NAM-KHONG-CO-GIAI-NOBEL-VAN-HOC-b3u
 
@@ -17195,7 +16912,6 @@ Viết cho con | https://spiderum.com/bai-dang/Viet-cho-con-l43
 
 Bí quyết tán gái nhà họ Dương - Chương 2 - Tặng hoa tốn tiền | https://spiderum.com/bai-dang/Bi-quyet-tan-gai-nha-ho-Duong-Chuong-2-Tang-hoa-ton-tien-QUPUH38MhMaZ
 
-Chuyện con Bắp cắn người | https://spiderum.com/bai-dang/Chuyen-con-Bap-can-nguoi-KYdanLxdyRm2
 
 Viết lại kí ức một người bạn | https://spiderum.com/bai-dang/Viet-lai-ki-uc-mot-nguoi-ban-iga
 
@@ -17387,7 +17103,6 @@ GÓC CHẾT CỦA SỰ KỶ LUẬT ĐẾN CÁI GIÁ CỦA SỰ BAY BỔNG | http
 
 TRUYỆN DỊCH: XẠ THỦ | https://spiderum.com/bai-dang/TRUYEN-DICH-XA-THU-VGl8aenLHOFG
 
-Hồi xưa nhà tôi nuôi một đàn gà | https://spiderum.com/bai-dang/Hoi-xua-nha-toi-nuoi-mot-dan-ga-7ByoxssGKyZJ
 
 |badio #4| - người lạ ở thành phố lạ | https://spiderum.com/bai-dang/orbadio-4or-nguoi-la-o-thanh-pho-la-REaMoXKR3TFq
 
@@ -17507,7 +17222,6 @@ BẢO VỆ CÁI ĐẸP NGHỆ THUẬT | https://spiderum.com/bai-dang/BAO-VE-CAI
 
 "On the Love of the Country": Tại sao thiên nhiên lại khiến ta yêu đến vậy? | https://spiderum.com/bai-dang/On-the-Love-of-the-Country-Tai-sao-thien-nhien-lai-khien-ta-yeu-den-vay-U9da9EUXp8Fx
 
-Điện Kremlin- trái tim của xứ sở Bạch Dương | https://spiderum.com/bai-dang/Dien-Kremlin-trai-tim-cua-xu-so-Bach-Duong-LN1q9NAlOAeJ
 
 Họ bị "xử" chỉ vì "có dùng AI" | https://spiderum.com/bai-dang/Ho-bi-xu-chi-vi-co-dung-AI-KEIONVc3DUTL
 
@@ -17631,19 +17345,13 @@ Hành trình 3 năm “Gieo mầm nhân ái” của BẾP CHAY KHAI TÂM | http
 
 Nếu anh đã stalk đến đây | https://spiderum.com/bai-dang/Neu-anh-da-stalk-den-day-K1ZHOieuQjiU
 
-Quảng Ninh - Nơi đẹp đến nao lòng nhưng đừng đi nếu bạn muốn… giá rẻ | https://spiderum.com/bai-dang/Quang-Ninh-Noi-dep-den-nao-long-nhung-dung-di-neu-ban-muon-gia-re-5uOIWUjDbLd9
 
-Vùng biển này có gì mà khiến tôi phải đi 2 lần trong vòng 3 tháng? | https://spiderum.com/bai-dang/Vung-bien-nay-co-gi-ma-khien-toi-phai-di-2-lan-trong-vong-3-thang-g3dhi6YD8Emf
 
-Hành Trình tới với Tứ Cực Việt Nam: Hiểu bản thân bằng cách thấu hiểu đất nước | https://spiderum.com/bai-dang/Hanh-Trinh-toi-voi-Tu-Cuc-Viet-Nam-Hieu-ban-than-bang-cach-thau-hieu-dat-nuoc-Tjm1jRA3JDQa
 
-Biển Việt Nam: khi “top thế giới” không chỉ là danh xưng | https://spiderum.com/bai-dang/Bien-Viet-Nam-khi-top-the-gioi-khong-chi-la-danh-xung-ZHS8aDSYVHFg
 
 Minh Triết Thiêng Liêng Trong Ẩm Thực Việt | https://spiderum.com/bai-dang/Minh-Triet-Thieng-Lieng-Trong-Am-Thuc-Viet-JCxmozPFSmKA
 
-Cà phê Americano | https://spiderum.com/bai-dang/Ca-phe-Americano-Y5gs6zgrFnBe
 
-Fructose: "Tội đồ" trong chai nước ngọt hay chỉ là hiểu lầm? | https://spiderum.com/bai-dang/Fructose-Toi-do-trong-chai-nuoc-ngot-hay-chi-la-hieu-lam-15zQAeVd210U
 
 Khương Thượng: Từ món chả nhái tới việc lưu giữ nét văn hóa ẩm thực dân gian giữa lòng Hà Nội | https://spiderum.com/bai-dang/KHUONG-THUONG-TU-MON-CHA-NHAI-TOI-VIEC-LUU-GIU-NET-VAN-HOA-AM-THUC-DAN-GIAN-GIUA-LONG-HA-NOI-ZpmXnYiNH7uy
 
@@ -17659,7 +17367,6 @@ Người Hà Nội xưa ăn gì? Nét ẩm thực độc đáo của người H�
 
 Tuổi Đời "Hơn" 100 Năm Của Phở | https://spiderum.com/bai-dang/Tuoi-Doi-Hon-100-Nam-cua-Pho-yPuXqrDFfxRu
 
-Từ đất sinh hương - Địa lý, Tính cách và Hồn Ẩm thực Việt | https://spiderum.com/bai-dang/Tu-dat-sinh-huong-Dia-ly-Tinh-cach-va-Hon-Am-thuc-Viet-xfglvMswFwUd
 
 #LAB-02: Fermentation Primer - An toàn, pH và Muối | https://spiderum.com/bai-dang/LAB-02-Fermentation-Primer-An-toan-pH-va-Muoi-oJW7bYfvbpkn
 
@@ -17721,7 +17428,6 @@ TRÀ VỚI NƯỚC ANH – NGƯỜI BẠN MỚI NHƯNG ĐẬM TÌNH | https://sp
 
 Nhập môn trà: trà là gì? (kèm hướng dẫn chuẩn bị bộ trà cụ cho người mới bắt đầu thưởng trà) | https://spiderum.com/bai-dang/Nhap-mon-tra-tra-la-gi-kem-huong-dan-chuan-bi-bo-tra-cu-cho-nguoi-moi-bat-dau-thuong-tra-7uLyXoAOkfAx
 
-Cơm rượu nếp - say sưa ăn, say sưa yêu | https://spiderum.com/bai-dang/Com-ruou-nep-say-sua-an-say-sua-yeu-IMbQvv8JUWMn
 
 Nhà bếp 404 - Các loại hạt và củ | https://spiderum.com/bai-dang/Nha-bep-404-Cac-loai-hat-va-cu-kug
 
@@ -17763,7 +17469,6 @@ Món ăn khó nhất một đầu bếp có thể làm là món nào? | https://
 
 [Kitchen 101] Đừng đùa với MacaWrong | https://spiderum.com/bai-dang/Kitchen-101-Dung-dua-voi-MacaWrong-806
 
-GIẢI MÃ F&B VÀ ĐI TÌM CÔNG THỨC CHIẾN THẮNG | https://spiderum.com/bai-dang/GIAI-MA-FandB-VA-DI-TIM-CONG-THUC-CHIEN-THANG-sC96enUIqKML
 
 NỀN TẢNG CỦA THỨC UỐNG. | https://spiderum.com/bai-dang/NEN-TANG-CUA-THUC-UONG-gsTb1JvCf41T
 
@@ -17773,11 +17478,9 @@ Mọi thứ mà tôi, một người Ý, nghĩ rằng mình biết về món Ý 
 
 Góc độ khoa học trong pha chế matcha | https://spiderum.com/bai-dang/Khoa-hoc-trong-viec-danh-matcha-OR95Ka3pCSyY
 
-60 LƯU Ý KHI MỞ QUÁN TRÊN APP GỌI ĐỒ ĂN | https://spiderum.com/bai-dang/60-LUU-Y-KHI-MO-QUAN-TREN-APP-GOI-DO-AN-3p94cz4UO1l2
 
 Bàn Về Đồ Ăn Mang Tính Âm – Dương | https://spiderum.com/bai-dang/Ban-Ve-Do-An-Mang-Tinh-Am-Duong-O7RVDJ0z02Sn
 
-Miền nào thức nấy. | https://spiderum.com/bai-dang/Mien-nao-thuc-nay-nmGajUTrsPfZ
 
 "GIẢM CÂN LÀNH MẠNH" | https://spiderum.com/bai-dang/Giam-can-lanh-manh-HydH3cwCoU9A
 
@@ -17801,21 +17504,16 @@ Những hương vị thân thuộc được gói ghém bởi tình yêu và sự
 
 Văn hoá xiên bẩn | https://spiderum.com/bai-dang/Van-hoa-xien-ban-mpy1y2foEsBR
 
-8 bài học KD F&B từ case Pizza 4Ps | https://spiderum.com/bai-dang/8-bai-hoc-KD-FandB-tu-case-Pizza-4Ps-ioGsPsKfrRdf
 
 Staff Meal | https://spiderum.com/bai-dang/Staff-Meal-L9nK70jiYFbn
 
-Bánh Giò - ... | https://spiderum.com/bai-dang/Banh-Gio--RIgasz3jbnOF
 
 Trà chuyện (#2) - Những thức trà người Việt ưa dùng | https://spiderum.com/bai-dang/Tra-chuyen-2-Nhung-thuc-tra-nguoi-Viet-ua-dung-iS7iaKb0LdYC
 
-Mỗi ngày một bài viết. Ngày 2: Đi một vòng (nội thành) Hải Phòng | https://spiderum.com/bai-dang/Moi-ngay-mot-bai-viet-Ngay-2-Di-mot-vong-noi-thanh-Hai-Phong-yxXuhzldTLd8
 
 Ẩm thực Việt Nam: 3 món ăn bạn nhất định phải thử! | https://spiderum.com/bai-dang/Am-thuc-Viet-Nam-3-mon-an-ban-nhat-dinh-phai-thu-zMRDbQhi114e
 
-5 BÀI HỌC KHI KD F&B TỪ STARBUCKS | https://spiderum.com/bai-dang/5-BAI-HOC-KHI-KD-FandB-TU-STARBUCKS-gEw4PfY0BK9T
 
-2024: Du lịch 1 mình Sài Gòn - 1 vài tỉnh miền Tây. Review ẩm thực | https://spiderum.com/bai-dang/2024-Du-lich-1-minh-Sai-Gon-1-vai-tinh-mien-Tay-Review-am-thuc-wWshJSwjHJiy
 
 Muôn Vị Nhân Gian - Siêu thoả mãn những cái tôi lãng mạn. | https://spiderum.com/bai-dang/Muon-Vi-Nhan-Gian-Sieu-thoa-man-nhung-cai-toi-lang-man-hnxWBWCO57Eq
 
@@ -17829,7 +17527,6 @@ Kiếp nạn thứ 82 trong công cuộc tìm hiểu dinh dưỡng | https://spi
 
 Trà chuyện (#1) - Lịch sử & Vị thế trà Việt | https://spiderum.com/bai-dang/Tra-chuyen-1-Lich-su-and-Vi-the-tra-Viet-46cPdTQfHNuM
 
-12 ĐIỀU CƠ BẢN VỀ FRANCHISE LĨNH VỰC ẨM THỰC | https://spiderum.com/bai-dang/12-DIEU-CO-BAN-VE-FRANCHISE-LINH-VUC-AM-THUC-sM4G7CB9QrPj
 
 [Minimalism]: Tối giản kiểu chữ - Vì sao bạn nên học cách viết chữ đẹp? | https://spiderum.com/bai-dang/Minimalism-Toi-gian-kieu-chu-Vi-sao-ban-nen-hoc-cach-viet-chu-dep-75x
 
@@ -17867,11 +17564,9 @@ TRONG DÂN GIAN CÓ CÂU "CẠO GIÓ" ĐỂ CHỮA "TRÚNG GIÓ" — VẬY TRÚN
 
 Về Quan niệm Thời gian của Người Cổ Đại (Châu Phi) và Hiện Đại (Phương Tây) | https://spiderum.com/bai-dang/Ve-Quan-niem-Thoi-gian-cua-Nguoi-Co-Dai-Chau-Phi-va-Hien-Dai-Phuong-Tay-kVN0AAHBRaJ1
 
-Hơi ấm của khuôn mặt sạm nắng: Vẻ đẹp đích thực không cần lớp phấn trắng | https://spiderum.com/bai-dang/Hoi-am-cua-khuon-mat-sam-nang-Ve-dep-dich-thuc-khong-can-lop-phan-trang-f4IujB2tGgij
 
 Vì sao The Big Bang Theory là một sitcom đáng xem? | https://spiderum.com/bai-dang/Vi-sao-The-Big-Bang-Theory-la-mot-sitcom-dang-xem-AyXJpsYG2wpW
 
-Truyện ngắn: Chàng độc thân "khô ráo" ở Đà Nẵng | https://spiderum.com/bai-dang/Truyen-ngan-Chang-doc-than-kho-rao-o-Da-Nang-cdzMk9jsK4vE
 
 Tuổi 30: Suy ngẫm #1 về việc kế hoạch trong cuộc sống. | https://spiderum.com/bai-dang/Tuoi-30-Suy-ngam-1-ve-viec-ke-hoach-trong-cuoc-song-Y0xlmqiCV35N
 
@@ -17955,7 +17650,6 @@ Ba đại nhân vật khoan dung độ lượng nên thành nghiệp lớn | htt
 
 Tạm Biệt 2025: Vì sao Tiết Kiệm có thể là Từ Ngữ / Lối Sống Overrated từ Đây về Sau? | https://spiderum.com/bai-dang/Tam-Biet-2025-Vi-sao-Tiet-Kiem-co-the-la-Tu-Ngu-Loi-Song-Overrated-tu-Day-ve-Sau-D65yUn3HO6fy
 
-Đừng mải mê vớt trăng dưới nước nữa! | https://spiderum.com/bai-dang/Dung-mai-me-vot-trang-duoi-nuoc-nua-XVX3Om3QoGd2
 
 30 tuổi: Đi siêu thị lúc 3h chiều và nhận ra mình đã mắc kẹt | https://spiderum.com/bai-dang/30-tuoi-Di-sieu-thi-luc-3h-chieu-va-nhan-ra-minh-da-mac-ket-F23IMuwiGMKD
 
@@ -17965,11 +17659,9 @@ Triết học thực hành (Practical Philosophy) – P5: Về cách đối mặ
 
 Stoicism, thế giới đầy hỗn loạn, và con virus corona | https://spiderum.com/bai-dang/Stoicism-the-gioi-day-hon-loan-va-con-virus-corona-l1u
 
-Vì sao lại NỨNG? Và tại sao đàn ông lại thích ngực? | SAMURICE | https://spiderum.com/bai-dang/Vi-sao-lai-NUNG-Va-tai-sao-dan-ong-lai-thich-nguc-or-SAMURICE-qBOaxUBJEJSd
 
 MỘT NGÔI NHÀ ĐẸP. | https://spiderum.com/bai-dang/MOT-NGOI-NHA-DEP-n9q
 
-Muốn tìm bạn gái còn trinh, sai hay không? | https://spiderum.com/bai-dang/Muon-tim-ban-gai-con-trinh-sai-hay-khong-1174
 
 Kết hôn sớm hay trễ, chúng ta đều có thể hạnh phúc với lựa chọn của riêng mình | https://spiderum.com/bai-dang/Ket-hon-som-hay-tre-chung-ta-deu-co-the-hanh-phuc-voi-lua-chon-cua-rieng-minh-wgm
 
@@ -17989,7 +17681,6 @@ Tại sao tôi không phải là một nhà khắc kỷ(Stoic) | https://spideru
 
 Tôi nên tìm người bạn đời của mình ở đâu? | https://spiderum.com/bai-dang/Toi-nen-tim-nguoi-ban-doi-cua-minh-o-dau-5DdZZgUcM8CN
 
-Làm "tình" với chữ - NNN | https://spiderum.com/bai-dang/Lam-tinh-voi-chu-aglIdQpAv3r5
 
 Kiếm tiền, tiêu tiền, rồi chết. Chuyện gì đang xảy ra với cuộc đời thế? | https://spiderum.com/bai-dang/Kiem-tien-tieu-tien-roi-chet-Chuyen-gi-dang-xay-ra-voi-cuoc-doi-the-kir
 
@@ -18017,11 +17708,9 @@ Cách Tôi Học Tập Một Cách Liên Tục Mặc Dù Có Công Việc Toàn 
 
 19 quy luật để có một cuộc đời tốt đẹp từ Hoàng đế Marcus Aurelius | https://spiderum.com/bai-dang/19-quy-luat-de-co-mot-cuoc-doi-tot-dep-tu-Hoang-de-Marcus-Aurelius-rYEnrBRZCJvJ
 
-Buổi “trao duyên” đầy ý nhị với bánh cuốn | https://spiderum.com/bai-dang/Buoi-trao-duyen-day-y-nhi-voi-banh-cuon-RMcgLKHA7W7l
 
 Đó Là Tình Yêu Độc Hại Đấy - Toxic Love | https://spiderum.com/bai-dang/Do-La-Tinh-Yeu-Doc-Hai-Day-Toxic-Love-j3uniKvRKQac
 
-Cháu tôi xếp mấy con bọ đi thành hàng | https://spiderum.com/bai-dang/Chau-toi-xep-may-con-bo-di-thanh-hang-xKMOGsEk9SfW
 
 Một bài viết gần 574 chữ | https://spiderum.com/bai-dang/Mot-bai-viet-gan-574-chu-vUwg3qJNoeWO
 
@@ -18051,9 +17740,7 @@ Có nên thờ ơ với ước mơ của cha mẹ? | https://spiderum.com/bai-da
 
 Giữa Cơn Mê Tập Thể, Ai Còn Biết Mình Đang Thức?" | https://spiderum.com/bai-dang/Giua-Con-Me-Tap-The-Ai-Con-Biet-Minh-Dang-Thuc-mHyRYoJw9njf
 
-Chán ghét và phản đối, tự do tuyệt đối và tự do tương đối | https://spiderum.com/bai-dang/Chan-ghet-va-phan-doi-tu-do-tuyet-doi-va-tu-do-tuong-doi-c25
 
-Bỏ phố về biển: Bạn cần bao nhiêu tiền và lòng dũng cảm để bắt đầu cuộc sống mới? | https://spiderum.com/bai-dang/Bo-pho-ve-bien-Ban-can-bao-nhieu-tien-va-long-dung-cam-de-bat-dau-cuoc-song-moi-yJtjUtFhKE4x
 
 Mọi thứ dần hiện đại hơn, cớ sao bắt Tết mãi cũ hoài? | https://spiderum.com/bai-dang/Moi-thu-dan-hien-dai-hon-co-sao-bat-Tet-mai-cu-hoai-x7z
 
@@ -18061,7 +17748,6 @@ Cocktail Bar: Sự chuyển mình trong lối sống “night life” của ngư
 
 Tiền và cách đo lường hạnh phúc | https://spiderum.com/bai-dang/Tien-va-cach-do-luong-hanh-phuc-m6u
 
-Chuyện ăn chay | https://spiderum.com/bai-dang/Chuyen-an-chay-8ib
 
 Làm gì trước bất hạnh của người khác? | https://spiderum.com/bai-dang/Lam-gi-truoc-bat-hanh-cua-nguoi-khac-T14e4rUvhe1a
 
@@ -18117,7 +17803,6 @@ CÂU CHUYỆN ĐỒ HỘP VÀ NGƯỜI TRẺ. | https://spiderum.com/bai-dang/CA
 
 Như thế nào là Văn minh, Tử tế, Có tâm-có đức? | https://spiderum.com/bai-dang/Nhu-the-nao-la-Van-minh-Tu-te-Co-tam-co-duc-qix
 
-Tạm Biệt 2025: Vì sao Tiết Kiệm có thể là Từ Ngữ / Lối Sống Overrated từ Đây về Sau? | https://spiderum.com/bai-dang/Tam-Biet-2025-Vi-sao-Tiet-Kiem-co-the-la-Tu-Ngu-Loi-Song-Overrated-tu-Day-ve-Sau-D65yUn3HO6fy
 
 Hai Năm Trên Spiderum Và Mình Hướng Dẫn Bạn Viết Bài | https://spiderum.com/bai-dang/Hai-Nam-Tren-Spiderum-Va-Minh-Huong-Dan-Ban-Viet-Bai-fSl2UDmJX2sz
 
@@ -18125,9 +17810,7 @@ BẠN TIÊU CỰC ? - ỪA KỆ BẠN | https://spiderum.com/bai-dang/BAN-TIEU-C
 
 Shibui (渋い) - Mỹ cảm tinh tế của người Nhật | https://spiderum.com/bai-dang/Shibui-My-cam-tinh-te-cua-nguoi-Nhat-6m7
 
-Cơm rượu nếp - say sưa ăn, say sưa yêu | https://spiderum.com/bai-dang/Com-ruou-nep-say-sua-an-say-sua-yeu-IMbQvv8JUWMn
 
-Tại sao Phú Yên lại là Nơi đáng sống? Tất tần tật về vùng đất "hoa vàng cỏ xanh" Phú Yên: Từ địa lý lịch sử, tới văn hoá du lịch & quy hoạch hiện đại | https://spiderum.com/bai-dang/Tai-sao-Phu-Yen-lai-la-Noi-dang-song-Tat-tan-tat-ve-vung-dat-hoa-vang-co-xanh-Phu-Yen-Tu-dia-ly-lich-su-toi-van-hoa-du-lich-and-quy-hoach-hien-dai-zsemXq1HQfWa
 
 Còn sống đã là một loại thành công | https://spiderum.com/bai-dang/Con-song-da-la-mot-loai-thanh-cong-ODAZcXJc7deQ
 
@@ -18141,7 +17824,6 @@ CÁI ĐỨC CỦA NGƯỜI HÚT THUỐC | https://spiderum.com/bai-dang/CAI-DUC-
 
 [Minimalism] Mình đã bắt đầu sống tối giản như thế nào? | https://spiderum.com/bai-dang/Minimalism-Minh-da-bat-dau-song-toi-gian-nhu-the-nao-9rn
 
-Biển Việt Nam: khi “top thế giới” không chỉ là danh xưng | https://spiderum.com/bai-dang/Bien-Viet-Nam-khi-top-the-gioi-khong-chi-la-danh-xung-ZHS8aDSYVHFg
 
 Bạn đã từng trải qua tỉnh thức mà bạn không hay biết. | https://spiderum.com/bai-dang/Ban-song-trong-tinh-thuc-ma-ban-khong-hay-biet-B1CKOHZ2jhDL
 
@@ -18179,11 +17861,9 @@ LÀM NGƯỜI SAO LẠI KHỔ SỞ ĐẾN VẬY | https://spiderum.com/bai-dang/
 
 Chủ nghĩa tối giản - bí quyết để sống hạnh phúc hơn | https://spiderum.com/bai-dang/Chu-nghia-toi-gian-bi-quyet-de-song-hanh-phuc-hon-6qn
 
-Lược sử nghìn năm chống lại mùi cơ thể | https://spiderum.com/bai-dang/Luoc-su-nghin-nam-chong-lai-mui-co-the-w4Bw3LVZyJEd
 
 Quán net và Game online, một thời say mê, một thời để nhớ | https://spiderum.com/bai-dang/Quan-net-va-Game-online-mot-thoi-say-me-mot-thoi-de-nho-tJfbYJEkceIX
 
-Tôi bị scam trên dating app | https://spiderum.com/bai-dang/Minh-bi-scam-tren-dating-app-0Q0uswh57Zah
 
 Đã đến lúc "đọc trộm" nhật ký của một vị Hoàng đế La Mã | https://spiderum.com/bai-dang/Da-den-luc-doc-trom-nhat-ky-cua-mot-vi-Hoang-de-La-Ma-p6jYxkqT8Ked
 
@@ -18197,7 +17877,6 @@ Vì sao cả thế giới như muốn chống lại genZ? | https://spiderum.com
 
 Tôi nghe nhạc của Taylor Swift ở trong tù | https://spiderum.com/bai-dang/Toi-nghe-nhac-cua-Taylor-Swift-o-trong-tu-kH3VgRmL9EsM
 
-Đàn ông vào bếp nên nấu món gì? | Phần 2.1: Công thức nước chấm thần thánh | https://spiderum.com/bai-dang/Dan-ong-vao-bep-nen-nau-mon-gi-or-Phan-21-Cong-thuc-nuoc-cham-than-thanh-tZUdame6cenj
 
 LÝ DO MÌNH YÊU THÍCH MAKEUP? | https://spiderum.com/bai-dang/LY-DO-MINH-YEU-THICH-MAKEUP-opu
 
@@ -18221,7 +17900,6 @@ Sự vô tâm của những người nghỉ việc và những người ở lạ
 
 Thế giới đang pui pui pui và tôi dám chắc rằng đó là lỗi của Internet | https://spiderum.com/bai-dang/The-gioi-dang-pui-pui-pui-va-toi-dam-chac-rang-no-la-loi-cua-Internet-vwq
 
-Hành Trình tới với Tứ Cực Việt Nam: Hiểu bản thân bằng cách thấu hiểu đất nước | https://spiderum.com/bai-dang/Hanh-Trinh-toi-voi-Tu-Cuc-Viet-Nam-Hieu-ban-than-bang-cach-thau-hieu-dat-nuoc-Tjm1jRA3JDQa
 
 Slowly - trải nghiệm kết bạn qua thư truyền thống | https://spiderum.com/bai-dang/Slowly-trai-nghiem-ket-ban-qua-thu-truyen-thong-QJLHCYqq9nau
 
@@ -18241,15 +17919,12 @@ Khi kỳ vọng cần được buông bỏ | https://spiderum.com/bai-dang/Khi-k
 
 Vài mẹo tiết kiệm và tận dụng đồ dùng | https://spiderum.com/bai-dang/Vai-meo-tiet-kiem-va-tan-dung-do-dung-cua-toi-9UTjjREhCzFR
 
-GÓC CHẾT CỦA SỰ KỶ LUẬT ĐẾN CÁI GIÁ CỦA SỰ BAY BỔNG | https://spiderum.com/bai-dang/GOC-CHET-CUA-SU-KY-LUAT-DEN-CAI-GIA-CUA-SU-BAY-BONG-9qCuK1tcpkaB
 
-Trải nghiệm triết lý sống tối giản công nghệ số trong 1 tuần, mình ĐƯỢC và MẤT gì? | https://spiderum.com/bai-dang/Trai-nghiem-triet-ly-song-toi-gian-cong-nghe-so-trong-1-tuan-minh-DUOC-va-MAT-gi-HQIXWylS9jH1
 
 TÂM BẠN SAO THÌ ĐỜI BẠN VẬY! THẬT, KHÔNG KHÁC ĐƯỢC. | https://spiderum.com/bai-dang/TAM-BAN-SAO-THI-DOI-BAN-VAY-THAT-KHONG-KHAC-DUOC-XXoETdZ8LHl5
 
 List Những Mẹo Thay Đổi Cuộc Sống Bất Ngờ Mà Bạn Nên Biết (Có Cập Nhật) | https://spiderum.com/bai-dang/List-Nhung-Meo-Thay-Doi-Cuoc-Song-Bat-Ngo-Ma-Ban-Nen-Biet-Co-Cap-Nhat-N3d888Wi40o2
 
-Mình rất nhớ Việt Nam... | https://spiderum.com/bai-dang/Minh-rat-nho-Viet-Nam-QWZpOOLmsVDJ
 
 10 năm như một bức họa, cũng may là trời đỡ xám hơn | https://spiderum.com/bai-dang/10-nam-nhu-mot-buc-hoa-cung-may-la-troi-do-xam-hon-4VC0f1RcrL4F
 
@@ -18259,7 +17934,6 @@ Người trẻ và những lo toan tiền bạc (#1) | https://spiderum.com/bai-
 
 THỜI GIAN CỦA NGƯỜI ĐI LÀM 6 NGÀY/TUẦN | https://spiderum.com/bai-dang/THOI-GIAN-CUA-NGUOI-DI-LAM-6-NGAYTUAN-gjnr7iA0bMUr
 
-Chi tiết trải nghiệm đi du lịch Phú Yên 1 mình | https://spiderum.com/bai-dang/Chi-tiet-trai-nghiem-di-du-lich-Phu-Yen-1-minh-L6lJWM8IKhUI
 
 KHI BẤT ĐỘNG SẢN KHÔNG CÒN LÀ MỎ VÀNG | https://spiderum.com/bai-dang/KHI-BAT-DONG-SAN-KHONG-CON-LA-MO-VANG-i5oQaFtvpt6j
 
@@ -18269,7 +17943,6 @@ TIẾN BỘ LÀ NHỮNG BẬC THANG KHÔNG NGỜ | https://spiderum.com/bai-dang
 
 Phật Giáo Vô Thần: Hướng đi nên đi trong thời đại mới ? | https://spiderum.com/bai-dang/Phat-Giao-Vo-Than-Huong-di-nen-di-trong-thoi-dai-moi-WQKAIcewkcDe
 
-Như thế nào là YÊU? Và lúc nào là THƯƠNG? | https://spiderum.com/bai-dang/Nhu-the-nao-la-YEU-Va-luc-nao-la-THUONG-blnRayj00uow
 
 Hạnh phúc là ở trong giây phút hiện tại | https://spiderum.com/bai-dang/Hanh-phuc-la-o-trong-giay-phut-hien-tai-EkYUVSf6uokX
 
@@ -18291,59 +17964,45 @@ Viết cho mấy người mới yêu | https://spiderum.com/bai-dang/Viet-cho-ma
 
 Đôi khi, bệnh là một phước lành? | https://spiderum.com/bai-dang/Doi-khi-benh-la-mot-phuoc-lanh-fcw
 
-Ám ảnh tình dục trong văn học Nhật | https://spiderum.com/bai-dang/Am-anh-tinh-duc-trong-van-hoc-Nhat-fde
 
 Thiền nhiều để làm gì ? | https://spiderum.com/bai-dang/Thien-nhieu-de-lam-gi-feo
 
 Tôi tài giỏi - Ừ kệ bạn | https://spiderum.com/bai-dang/Toi-tai-gioi-U-ke-ban-6pg
 
-Vấn đề ở Việt Nam: nhiều người sống quá cảm tính và tư duy lỏng lẻo | https://spiderum.com/bai-dang/Van-de-o-Viet-Nam-moi-nguoi-song-qua-cam-tinh-va-tu-duy-long-leo-87p
 
 Trường chuyên, lớp chọn: Bầy cừu? Xin lỗi bạn vừa nói gì cơ? | https://spiderum.com/bai-dang/Truong-Chuyen-lop-chon-Bay-cuu-Xin-loi-ban-vua-noi-gi-co-cz1
 
 Đi Kèm Siêu Trí Tuệ Là Siêu Sân Si | https://spiderum.com/bai-dang/Di-Kem-Sieu-Tri-Tue-La-Sieu-San-Si-jn6
 
-Bạn Có Thấy Bộ Quần Áo Mới Của Hoàng Đế? | https://spiderum.com/bai-dang/Ban-Co-Thay-Bo-Quan-Ao-Moi-Cua-Nha-Vua-fjj
 
-Có Mắt Như Mù | https://spiderum.com/bai-dang/Co-Mat-Nhu-Mu-h1x
 
 Lịch Sử Ở Việt Nam Đang Được Giảng Dạy Như Một Tôn Giáo | https://spiderum.com/bai-dang/Lich-Su-O-Viet-Nam-Dang-Duoc-Giang-Day-Nhu-Mot-Ton-Giao-nRdvG4fdkJFs
 
 Viết Cho Cuộc Sống Nhàm Chán Của Người Lớn | https://spiderum.com/bai-dang/Viet-Cho-Cuoc-Song-Nham-Chan-Cua-Nguoi-Lon-jeTawCMpTiKR
 
-Máu Mê Tiền Và Kinh Doanh Của Người Việt | https://spiderum.com/bai-dang/Mau-Me-Tien-Va-Kinh-Doanh-Cua-Nguoi-Viet-gt6
 
 Monster Box, Spiderum, QuoraVn, RedditVn, J2Team và sự mỏng manh của cộng đồng tri thức trẻ Việt | https://spiderum.com/bai-dang/Monster-Box-Spiderum-QuoraVn-RedditVn-J2Team-va-su-mong-manh-cua-cong-dong-tri-thuc-Viet-jvs
 
-Đám cưới hay là trò lố? | https://spiderum.com/bai-dang/Dam-cuoi-hay-la-tro-lo-atr
 
-Xấu là xấu, không lằng nhằng! | https://spiderum.com/bai-dang/Xau-la-xau-khong-lang-nhang-fuo
 
 Hậu Quả Của Dạy Sử Sai Lầm: Nghèo Kiến Thức, Kém Tư Duy Nhưng Ngạo Mạn | https://spiderum.com/bai-dang/Hau-Qua-Cua-Day-Su-Sai-Lam-Ngheo-Kien-Thuc-Kem-Tu-Duy-Nhung-Ngao-Man-bw1
 
 Chăm Sóc Bản Thân - Vì Mình và Vì Người | https://spiderum.com/bai-dang/Cham-Soc-Ban-Than-Vi-Minh-va-Vi-Nguoi-0yfTcOZckShU
 
-Một số lỗi tư duy thường gặp trên Internet | https://spiderum.com/bai-dang/Mot-so-loi-tu-duy-thuong-gap-tren-Internet-bv0
 
-Sự mỏng manh của đàn ông thời nay | https://spiderum.com/bai-dang/Su-mong-manh-cua-dan-ong-thoi-nay-wLEHsFuZ37yA
 
 How-To: Thử tự lập kế hoạch cho 10 năm tới | https://spiderum.com/bai-dang/How-To-Thu-tu-lap-ke-hoach-cho-10-nam-toi-d97
 
 Vingroup và Sự Trỗi Dậy Đầy Nghi Vấn Của Một Đế Chế Kinh Tế | https://spiderum.com/bai-dang/Vingroup-va-Su-Troi-Day-Day-Nghi-Van-Cua-Mot-De-Che-Kinh-Te-hfg
 
-Làm vì tiền | https://spiderum.com/bai-dang/Lam-vi-tien-7sr
 
-Bức tranh toàn cảnh về định kiến vùng miền của người Việt Nam | https://spiderum.com/bai-dang/Buc-tranh-toan-canh-ve-dinh-kien-vung-mien-cua-nguoi-Viet-Nam-qt0
 
-Cẩm nang nhận biết fake news nâng cao | https://spiderum.com/bai-dang/Cam-nang-nhan-biet-fake-news-nang-cao-32ylaH9jw92n
 
 Giấc mơ của ông Nobi | https://spiderum.com/bai-dang/Giac-mo-cua-ong-Nobi-i72
 
 Sự cần thiết của Tự mình suy tư vấn đề | https://spiderum.com/bai-dang/Su-can-thiet-cua-ky-nang-Tu-minh-suy-tu-van-de-0HqYSDaqTa7O
 
-Viễn cảnh 2050: Thế hệ tiếp theo nên học gì để thành công? | https://spiderum.com/bai-dang/Vien-canh-2050-The-he-tiep-theo-nen-hoc-gi-de-thanh-cong-emb
 
-Tư duy Bayesian Updating trong một thế giới bất định | https://spiderum.com/bai-dang/Tu-duy-Bayesian-Updating-trong-mot-the-gioi-bat-dinh-bf2
 
 Tiền ở đâu - Đầu ở đó | https://spiderum.com/bai-dang/Tien-o-dau-Dau-o-do-ab7
 
@@ -18351,23 +18010,16 @@ Những chiếc tử cung biết đi | https://spiderum.com/bai-dang/Nhung-chiec
 
 Đầu tư cơ bản P.1 - Thị trường hoạt động như thế nào? | https://spiderum.com/bai-dang/Dau-tu-co-ban-P1-Thi-truong-hoat-dong-nhu-the-nao-VZGI0OU7YllA
 
-Học ngu mà kiếm nhiều tiền còn hơn học giỏi mà không kiếm được tiền. | https://spiderum.com/bai-dang/Hoc-ngu-ma-kiem-nhieu-tien-con-hon-hoc-gioi-ma-khong-kiem-duoc-tien-nc1
 
-Hội chứng "People Pleaser" - Người tốt hay nô lệ của hình ảnh tử tế ? | https://spiderum.com/bai-dang/Nguoi-tot-hay-no-le-cua-hinh-anh-tu-te-nwu
 
 Quanh tôi - những kẻ lười, lì và an phận | https://spiderum.com/bai-dang/Quanh-toi-nhung-ke-luoi-li-va-an-phan-hqv
 
-Dữ liệu từ website Hentai tiết lộ điều gì về chính chúng ta [18+] | https://spiderum.com/bai-dang/Du-lieu-tu-website-Hentai-tiet-lo-dieu-gi-ve-chinh-chung-ta-18-qoa
 
-Dân tỉnh X bị kì thị, học sinh trường xịn ra đi làm thất bại và giá trị của Apple lớn hơn nền kinh tế Việt Nam | https://spiderum.com/bai-dang/Dan-tinh-X-bi-ki-thi-hoc-sinh-truong-xin-ra-di-lam-that-bai-va-gia-tri-cua-Apple-lon-hon-nen-kinh-te-Viet-Nam-9a7
 
-Làm Sao Để Giàu? | https://spiderum.com/bai-dang/Lam-Sao-De-Giau-gbq
 
 Thượng đẳng | https://spiderum.com/bai-dang/Thuong-dang-859
 
-Sự khốn nạn của số đông định kiến | https://spiderum.com/bai-dang/Su-khon-nan-cua-so-dong-dinh-kien-opa
 
-Nếu có thể tự học ở bên ngoài thì có cần phải học đại học? | https://spiderum.com/bai-dang/Neu-co-the-tu-hoc-o-ben-ngoai-thi-co-can-phai-hoc-dai-hoc-80i
 
 Tư Duy: Lát Cắt Và Chuỗi | https://spiderum.com/bai-dang/Lat-Cat-Va-Chuoi-a42
 
@@ -18377,41 +18029,31 @@ Mở rộng thế giới của mình, rồi hãy tìm đam mê | https://spideru
 
 Có tiền thì nói gì cũng đúng? | https://spiderum.com/bai-dang/Co-tien-thi-noi-gi-cung-dung-oba
 
-Manners make Man - "Vẫn là tôi nhưng đỉnh vcđ" | https://spiderum.com/bai-dang/Manners-make-Man-Van-la-toi-nhung-dinh-vcd-cuf
 
-Mặt trái của Tư duy tích cực | https://spiderum.com/bai-dang/Mat-trai-cua-Tu-duy-tich-cuc-heu
 
 "Bội thực" thông điệp nhảm trên mạng xã hội và hậu quả tâm lý nó mang lại | https://spiderum.com/bai-dang/Boi-thuc-thong-diep-nham-tren-mang-xa-hoi-va-hau-qua-tam-ly-no-mang-lai-bCfevculERkF
 
-Macro, micro và những quyết định trong cuộc sống | https://spiderum.com/bai-dang/Macro-micro-va-nhung-quyet-dinh-trong-cuoc-song-k34
 
-Deep Work – Làm sao để thôi "hời hợt" và lên "đỉnh" hàng ngày | https://spiderum.com/bai-dang/Deep-Work-Lam-sao-de-thoi-hoi-hot-va-len-dinh-hang-ngay-h12
 
-[Nofap] Vì sao ngừng quay tay sẽ giúp các zai bớt nhạt | https://spiderum.com/bai-dang/Nofap-Vi-sao-ngung-quay-tay-se-giup-cac-zai-bot-nhat-d1o
 
 Đàn ông - ta nói nhiều nhưng chẳng bao giờ nói về mình | https://spiderum.com/bai-dang/Dan-ong-ta-noi-nhieu-nhung-chang-bao-gio-noi-ve-minh-Ot18bTuV4O0w
 
 Cross-field skillset là gì? Ứng dụng nó trên con đường tự do ý chí, tự do tài chính? | https://spiderum.com/bai-dang/Cross-field-skillset-la-gi-Ung-dung-no-tren-con-duong-tu-do-y-chi-tu-do-tai-chinh-nbi
 
-5h tôi đòi xách cặp về đấy: Rốt cuộc là tôi đi làm hay tôi đi nô dịch? | https://spiderum.com/bai-dang/5h-toi-doi-xach-cap-ve-day-Rot-cuoc-la-toi-di-lam-hay-toi-di-no-dich-abp
 
 Bạn có biết những gì bạn không biết? | https://spiderum.com/bai-dang/Ban-co-biet-nhung-gi-ban-khong-biet-5rd
 
-HIỆU ỨNG THIÊN LỆCH KẺ SỐNG SÓT: GIỎI VÀ XUẤT CHÚNG | https://spiderum.com/bai-dang/HIEU-UNG-THIEN-LECH-KE-SONG-SOT-GIOI-VA-XUAT-CHUNG-5gj
 
 Vì sao truyền thông không bao giờ muốn bạn đạt đến hạnh phúc thực sự? | https://spiderum.com/bai-dang/Vi-sao-truyen-thong-khong-bao-gio-muon-ban-dat-den-hanh-phuc-thuc-su-BQobaISRZ7PR
 
-Tuổi thơ và quá trình hình thành tính cách con người | https://spiderum.com/bai-dang/Tuoi-tho-va-qua-trinh-hinh-thanh-tinh-cach-con-nguoi-9e8
 
 Đàn Ông Tinh Tế | https://spiderum.com/bai-dang/Dan-Ong-Tinh-Te-ukq
 
 Người duy nhất nói thật chính là kẻ nói dối!? | https://spiderum.com/bai-dang/Nguoi-duy-nhat-noi-that-chinh-la-ke-noi-doi-vqx
 
-7 THÓI QUEN TƯỞNG LÀ LƯỜI BIẾNG (NHƯNG THỰC CHẤT GIÚP BẠN LÀM NHIỀU VIỆC HƠN) | https://spiderum.com/bai-dang/BAY-THOI-QUEN-TUONG-LA-LUOI-BIENG-NHUNG-THUC-CHAT-GIUP-BAN-LAM-NHIEU-VIEC-HON-qz6
 
 Nếu con gái tôi 17 tuổi | https://spiderum.com/bai-dang/Neu-con-gai-toi-17-tuoi-7wf
 
-Tại Sao Mục Đích Và Kỷ Luật Thúc Đẩy Sức Khỏe Tâm Lý | https://spiderum.com/bai-dang/Tai-sao-Muc-dich-va-Ky-luat-Thuc-day-Suc-khoe-Tam-ly-CF5vR7cn8UY2
 
 Ngu dốt là cái tội yêu nghiệt | https://spiderum.com/bai-dang/Ngu-dot-la-cai-toi-yeu-nghiet-g09
 
@@ -18419,31 +18061,23 @@ Ngu dốt là cái tội yêu nghiệt | https://spiderum.com/bai-dang/Ngu-dot-l
 
 Anh em ạ, tán gái là phải có TIỀN | https://spiderum.com/bai-dang/Anh-em-a-tan-gai-la-phai-co-TIEN-kfb
 
-8x-9x sẽ bị chết bẹp nếu không thay đổi | https://spiderum.com/bai-dang/8x-9x-se-bi-chet-bep-neu-khong-thay-doi-p10
 
 Lương tâm, đạo đức, và những điều cơ bản trong việc chọn góc nhìn | https://spiderum.com/bai-dang/Luong-tam-dao-duc-va-nhung-dieu-co-ban-trong-viec-chon-goc-nhin-g61
 
 [Trilogy] Kẻ giác ngộ thấy gì khi nhìn vào thế giới? | https://spiderum.com/bai-dang/Ke-giac-ngo-thay-gi-khi-nhin-vao-the-gioi-8OIwU1avfaMc
 
-Tuyển dụng - Ứng tuyển, khi nào hết toxic? | https://spiderum.com/bai-dang/Tuyen-dung-Ung-tuyen-khi-nao-het-toxic-KK3HcQCzo0Az
 
 'Hậu duệ mặt trời' phiên bản Việt Nam: Hình ảnh người lính xa lạ | https://spiderum.com/bai-dang/Hau-due-mat-troi-phien-ban-Viet-Nam-Hinh-anh-nguoi-linh-xa-la-chm
 
-Học thuyết tiến hóa: Câu chuyện về Charles Darwin và Cây Sự Sống | https://spiderum.com/bai-dang/Hoc-thuyet-tien-hoa-Cau-chuyen-ve-Charles-Darwin-va-Cay-Su-Song-bg9
 
-Tìm hiểu về kinh tế học - Phần I: Niềm tin và nợ công | https://spiderum.com/bai-dang/Tim-hieu-ve-kinh-te-hoc-5wp
 
 Thời đại học mông lung và cách tối ưu hóa từ một sinh viên tiến bộ | https://spiderum.com/bai-dang/Thoi-dai-hoc-mong-lung-va-cach-toi-uu-hoa-tu-mot-sinh-vien-tien-bo-qhq
 
-Học được gì qua 4 năm định cư ở Canada? (Phần 2) | https://spiderum.com/bai-dang/Hoc-duoc-gi-qua-4-nam-dinh-cu-o-Canada-Phan-2-csj
 
 Người trẻ (hút) cần: | https://spiderum.com/bai-dang/Nguoi-tre-hut-can-ee7
 
-Không có chuyên môn, thì hãy... ngậm mồm vào | https://spiderum.com/bai-dang/Khong-co-chuyen-mon-thi-hay-ngam-mom-vao-bxl
 
-MẠNG XÃ HỘI HỦY HOẠI XÃ HỘI NHIỀU HƠN BẠN NGHĨ | https://spiderum.com/bai-dang/MANG-XA-HOI-HUY-HOAI-XA-HOI-NHIEU-HON-BAN-NGHI-jNAPbHS7fRLa
 
-Xây dựng sức khỏe tinh thần từ sớm nhờ Tư Duy Phản Biện | https://spiderum.com/bai-dang/Xay-dung-suc-khoe-tinh-than-tu-som-nho-Tu-Duy-Phan-Bien-er6
 
 Tại sao đi viếng chùa thường xuyên mà vẫn sân si, mỏ hỗn | https://spiderum.com/bai-dang/Tai-sao-di-vieng-chua-thuong-xuyen-ma-van-san-si-mo-hon-SwXyxl141WQc
 
@@ -18455,15 +18089,11 @@ Khác biệt, chứ không hơn kém | https://spiderum.com/bai-dang/Khac-biet-c
 
 Thế thì đây là ý nghĩa tận cùng của cuộc sống! | https://spiderum.com/bai-dang/The-thi-day-la-y-nghia-tan-cung-cua-cuoc-song-hhkyqTxPvZth
 
-Làm thế nào để kể một câu chuyện hay | https://spiderum.com/bai-dang/Lam-the-nao-de-ke-mot-cau-chuyen-hay-8nc
 
-Làm Sao Để Viết Chính Xác | https://spiderum.com/bai-dang/Lam-Sao-De-Viet-Chinh-Xac-X6mtdPedghJH
 
-Deep Work: Kỳ cùng chuyên tâm | https://spiderum.com/bai-dang/Deep-Work-Ky-cung-chuyen-tam-v69
 
 Lựa lời mà nói cho vừa...lòng ai? | https://spiderum.com/bai-dang/Lua-loi-ma-noi-cho-vualong-ai-nzu
 
-Khả năng tập trung bị mất đi theo thời gian | https://spiderum.com/bai-dang/Kha-nang-tap-trung-bi-mat-di-theo-thoi-gian-q21
 
 Bạn Có Biết Trả Ơn Chưa? | https://spiderum.com/bai-dang/Ban-Co-Biet-Tra-On-Chua-lOusKy9GtwuF
 
@@ -18473,99 +18103,71 @@ Làm thuê có giàu được không? | https://spiderum.com/bai-dang/Lam-thue-c
 
 Những con bò vui nhộn | https://spiderum.com/bai-dang/Nhung-con-bo-vui-nhon-ifw
 
-[WTDTY] Một xã hội chà đạp lên tất cả những tiến bộ của nền văn minh | https://spiderum.com/bai-dang/WTDTY-Mot-xa-hoi-cha-dap-len-tat-ca-nhung-tien-bo-cua-nen-van-minh-o2KdLXv9yY05
 
 Cứ Sợ Đi, Nhưng Cứ Làm Đi! | https://spiderum.com/bai-dang/Cu-So-Di-Nhung-Cu-Lam-Di-6qamtVcXc3OA
 
-Tìm hiểu về kinh tế học - Phần II: Tư Bản và Cộng Sản | https://spiderum.com/bai-dang/Tim-hieu-ve-kinh-te-hoc-Phan-2-Tu-ban-va-cong-san-5z5
 
-Hai chữ Đam Mê™ chỉ dành cho bọn trẻ ranh | https://spiderum.com/bai-dang/Hai-chu-Dam-Metm-chi-danh-cho-bon-tre-ranh-8tn
 
 Vì sao đôi khi tôi cân nhắc lời của bà hàng cá hơn một chuyên gia? | https://spiderum.com/bai-dang/Vi-sao-doi-khi-toi-can-nhac-loi-cua-ba-hang-ca-hon-mot-chuyen-gia-ltGydlJ21O2J
 
-Lời nguyền kiến thức - The curse of knowledge | https://spiderum.com/bai-dang/Loi-nguyen-tri-thuc-The-curse-of-knowledge-ic6
 
 Tại sao Thụy Sĩ KHÔNG THỂ BỊ XÂM LƯỢC | https://spiderum.com/bai-dang/Tai-sao-Thuy-Si-KHONG-THE-BI-XAM-LUOC-pdqHtQBL0QxC
 
 Chuyện Biểu Tình Ngày 10/06: Nếu Họ Không Phải Là Người Việt Thì Họ Là Ai? | https://spiderum.com/bai-dang/Chuyen-Bieu-Tinh-1006-Neu-Ho-Khong-Phai-La-Nguoi-Viet-Thi-Ho-La-Ai-aix
 
-Các Bé Bự | https://spiderum.com/bai-dang/Cac-Be-Bu-i80
 
-Những Kì Vọng Lớn Lao và Bốn Câu Hỏi Dành Cho Tân Sinh Viên | https://spiderum.com/bai-dang/Nhung-Ki-Vong-Lon-Lao-va-Bon-Cau-Hoi-Danh-Cho-Tan-Sinh-Vien-bbj
 
 Toxic love - Tình yêu độc hại phiên bản Tiktok 2023. | https://spiderum.com/bai-dang/Toxic-love-Tinh-yeu-doc-hai-phien-ban-Tiktok-2023-FrNedCHl4pVh
 
-Làm gì nếu như bỏ học đại học? | https://spiderum.com/bai-dang/Lam-gi-neu-nhu-bo-hoc-dai-hoc-g1g
 
 Vì sao chơi poker giúp bạn tư duy chiến lược tốt hơn cờ vua? Tất tần tật về Thiên Nga Đen | https://spiderum.com/bai-dang/Vi-sao-choi-poker-giup-ban-tu-duy-chien-luoc-tot-hon-co-vua-Tat-tan-tat-ve-Thien-Nga-Den-d24
 
-Hiệu ứng Werther: Tại sao nên ngừng ngay việc khai thác và đưa tin về các vụ tự vẫn như hiện tại? | https://spiderum.com/bai-dang/Hieu-ung-Werther-Tai-sao-nen-ngung-ngay-viec-khai-thac-va-dua-tin-ve-nguoi-tu-van-nhu-hien-tai-8h5
 
-Nghiệp Hình sự - Cho tôi nhiều mà lấy đi của tôi cũng không ít. | https://spiderum.com/bai-dang/Nghiep-Hinh-su-Cho-toi-nhieu-ma-lay-di-cua-toi-cung-khong-it-ezb
 
-50 nguyên tắc được đúc kết về sức khoẻ | https://spiderum.com/bai-dang/50-nguyen-tac-duoc-duc-ket-ve-suc-khoe-rf5
 
-Để trở nên trưởng thành | https://spiderum.com/bai-dang/De-tro-nen-truong-thanh-6g5
 
 Good/nice boy: Có gì đáng tự hào? | https://spiderum.com/bai-dang/Goodnice-boy-Co-gi-dang-tu-hao-qxe
 
 Viết Cho Năm 2022: Biết Về Thứ Gì Đó và Biết Thứ Gì Đó | https://spiderum.com/bai-dang/Viet-Cho-Nam-2022-Biet-Ve-Thu-Gi-Do-va-Biet-Thu-Gi-Do-MjwF1JzNLTuP
 
-Câu Chuyện Tesla Xây Nhà Máy Ở Đức | https://spiderum.com/bai-dang/Cau-Chuyen-Tesla-Xay-Nha-May-O-Duc-0rvhQ462J03U
 
-Phụ nữ thật tuyệt vời! | https://spiderum.com/bai-dang/Phu-nu-that-tuyet-voi-rn0
 
-ĐÂY LÀ CÁCH ĐỂ HỌC XONG KHÔNG TRẢ LẠI CHO THẦY: "SHOW, DON'T TELL" | https://spiderum.com/bai-dang/DAY-LA-CACH-DE-HOC-XONG-KHONG-TRA-LAI-CHO-THAY-SHOW-DONT-TELL-hz8
 
 Tôi Không Mong Con Tôi Báo Hiếu Với Mình | https://spiderum.com/bai-dang/Toi-Khong-Mong-Con-Toi-Bao-Hieu-Voi-Minh-E5MHsSd2v76H
 
 Chuyện tập gym và Chuyện đầu tư của tôi | https://spiderum.com/bai-dang/Chuyen-tap-gym-va-Chuyen-dau-tu-cua-toi-zr3
 
-Bàn về tính đố kỵ của người Việt. | https://spiderum.com/bai-dang/Ban-ve-tinh-do-ky-cua-nguoi-Viet-d9g
 
-Những kỹ năng giao tiếp đơn giản mà hiệu quả | https://spiderum.com/bai-dang/Nhung-ky-nang-giao-tiep-don-gian-ma-hieu-qua-co2
 
 Nghĩ Lớn Qua Các Góc Nhìn Vĩ Mô | https://spiderum.com/bai-dang/Nghi-lon-qua-cac-goc-nhin-vi-mo-9ng
 
 Điều cần học đầu tiên: đó là cách tự học | https://spiderum.com/bai-dang/Dieu-can-hoc-dau-tien-do-la-cach-tu-hoc-pri
 
-Làm gì để khỏi... ấm ớ khi đến những nơi bạn chẳng quen ai? | https://spiderum.com/bai-dang/Lam-gi-de-khoi-am-o-khi-den-nhung-noi-ban-chang-quen-ai-7as
 
-Khi ứng viên xin việc được phép thành thật... | https://spiderum.com/bai-dang/Khi-ung-vien-xin-viec-duoc-phep-thanh-that-qup
 
 Khi Mua Sách Spiderum, Bạn Đang Đóng Góp Vào Điều Gì? | https://spiderum.com/bai-dang/Khi-Mua-Sach-Spiderum-Ban-Dang-Dong-Gop-Vao-Dieu-Gi-d8h
 
 Nếu là gián, hãy là gián, sao phải làm thiên nga? | https://spiderum.com/bai-dang/Neu-la-gian-hay-la-gian-sao-phai-lam-thien-nga-pup
 
-Nghịch lý Fermi: Người ngoài hành tinh ở đâu cả rồi? | https://spiderum.com/bai-dang/Nghich-ly-Fermi-Nguoi-ngoai-hanh-tinh-o-dau-ca-roi-b4h
 
 Căn bệnh ung thư mang tên Self-help | https://spiderum.com/bai-dang/Tai-sao-khong-nen-doc-sach-self-help-6jw
 
-“Tập luyện” như thế nào để trở thành một thiên tài? | https://spiderum.com/bai-dang/Tap-luyen-nhu-the-nao-de-tro-thanh-mot-thien-tai-WopI54tuuhm5
 
-Tư duy lập trình phục vụ cuộc sống | https://spiderum.com/bai-dang/Tu-duy-lap-trinh-phuc-vu-cuoc-song-afo
 
-Trẻ con hay ông nội, bà nội? | https://spiderum.com/bai-dang/Tre-con-hay-ong-noi-ba-noi-drd
 
-Thành đạt hay cái bẫy của tuổi trẻ? | https://spiderum.com/bai-dang/Thanh-dat-hay-cai-bay-cua-tuoi-tre-cm0
 
 Khi đàn ông quay lưng | https://spiderum.com/bai-dang/Khi-dan-ong-quay-lung-UshvHOK9ETwE
 
-"Các trò giỏi đừng tưởng là do năng lực của mấy trò. Đó là năng lực của bố mẹ các trò…." | https://spiderum.com/bai-dang/Cac-tro-gioi-dung-tuong-la-do-nang-luc-cua-may-tro-Do-la-nang-luc-cua-bo-me-cac-tro-7rk
 
 Tại sao địa lý nước Nga lại TỆ | https://spiderum.com/bai-dang/Tai-sao-dia-ly-nuoc-Nga-lai-TE-cTQPQLWJJwHd
 
 Mình "soi" vợ, vợ "soi" mình | https://spiderum.com/bai-dang/Minh-soi-vo-vo-soi-minh-xz3
 
-DEEP WORK – TỪ SÁCH VỞ TỚI THỰC TẾ KHÁC NHAU NHƯ THẾ NÀO? | https://spiderum.com/bai-dang/DEEP-WORK-TU-SACH-VO-TOI-THUC-TE-KHAC-NHAU-NHU-THE-NAO-aHvvrXB8SJJ6
 
 Kết Nối Với Ai | https://spiderum.com/bai-dang/Ket-Noi-Voi-Ai-UGV4PTIFDC4w
 
-Sandbox – phương pháp giúp bạn tự học bất cứ thứ gì | https://spiderum.com/bai-dang/Sandbox-phuong-phap-giup-ban-tu-hoc-bat-cu-thu-gi-w5e
 
-Dành cho những người muốn trở nên sáng tạo | https://spiderum.com/bai-dang/Danh-cho-nhung-nguoi-muon-tro-nen-sang-tao-lxk
 
-Nhàn rỗi không sinh nông nổi mà sinh sự tầm thường và bệnh tâm lý | https://spiderum.com/bai-dang/Nhan-roi-khong-sinh-nong-noi-ma-sinh-su-tam-thuong-va-benh-tam-ly-cdh
 
 Hồ Quý Ly – bậc anh tài sinh nhầm thời hay kẻ tội nhân thiên cổ? | https://spiderum.com/bai-dang/Ho-Quy-Ly-bac-anh-tai-sinh-nham-thoi-hay-ke-toi-nhan-thien-co-duh
 
@@ -18575,19 +18177,13 @@ Người thành đạt thường có những thói quen gì? | https://spiderum.
 
 Định kiến không sai | https://spiderum.com/bai-dang/Dinh-kien-khong-sai-h38
 
-Thiết kế luật chơi trong xã hội | https://spiderum.com/bai-dang/Thiet-ke-luat-choi-trong-xa-hoi-5hi
 
-Tìm lại đứa bé trong ta | https://spiderum.com/bai-dang/Tim-lai-dua-be-trong-ta-vbx
 
 Hệ thống chấm điểm công dân (P1) : Tại sao giới trẻ Trung Quốc vẫn thờ ơ? | https://spiderum.com/bai-dang/He-thong-cham-diem-cong-dan-P1-Tai-sao-gioi-tre-Trung-Quoc-van-tho-o-fqp
 
-Learning How to Learn - Week 2 - Part 1 | https://spiderum.com/bai-dang/Learning-How-to-Learn-Week-2-Part-1-5kh
 
-Hiệu ứng Matthew và công bằng trong lớp học | https://spiderum.com/bai-dang/Hieu-ung-Matthew-va-cong-bang-trong-lop-hoc-rg1
 
-Có kiến thức nào là vô dụng hay là tư duy lạc hậu về giáo dục | https://spiderum.com/bai-dang/Co-kien-thuc-nao-la-vo-dung-hay-la-tu-duy-lac-hau-ve-giao-duc-5br
 
-Dân “hướng nội” à, các bạn bớt gõ phím đi hộ cái | https://spiderum.com/bai-dang/Dan-huong-noi-a-cac-ban-bot-go-phim-di-ho-cai-70g
 
 Khi còn trẻ, chúng mình nên làm gì? | https://spiderum.com/bai-dang/Khi-con-tre-chung-minh-nen-lam-gi-eIYEs7V6KlfQ
 
@@ -18599,23 +18195,18 @@ Vingroup Và Khi Con Số Biết "Nói Dối" | https://spiderum.com/bai-dang/Vi
 
 THỊ TRƯỜNG DẦN TỈNH GIẤC SAU CƠN SAY: CÁC ÁP LỰC VĨ MÔ HIỆN HÌNH CUỐI NĂM. | https://spiderum.com/bai-dang/THI-TRUONG-DAN-TINH-GIAC-SAU-CON-SAY-CAC-AP-LUC-VI-MO-HIEN-HINH-CUOI-NAM-0ZqCqFeYJj5B
 
-OnlyFans kinh doanh như thế nào và ai thực sự kiếm được tiền từ nó? | https://spiderum.com/bai-dang/OnlyFans-kinh-doanh-nhu-the-nao-va-ai-thuc-su-kiem-duoc-tien-tu-no-3LjY26j7NI63
 
 Những tài sản trú ẩn mà giới siêu giàu không muốn cho bạn biết | https://spiderum.com/bai-dang/Nhung-tai-san-tru-an-ma-gioi-sieu-giau-khong-muon-cho-ban-biet-9N6Tu8elBA5F
 
 CUỘC CHẠY ĐUA CUỐI NĂM: TÍN DỤNG TĂNG, THANH KHOẢN GIẢM VÀ LÃI SUẤT NHẢY MÚA | https://spiderum.com/bai-dang/CUOC-CHAY-DUA-CUOI-NAM-TIN-DUNG-TANG-THANH-KHOAN-GIAM-VA-LAI-SUAT-NHAY-MUA-F8SEvipMf5Tc
 
-Đầu tư cơ bản P.1 - Thị trường hoạt động như thế nào? | https://spiderum.com/bai-dang/Dau-tu-co-ban-P1-Thi-truong-hoat-dong-nhu-the-nao-VZGI0OU7YllA
 
-Tìm hiểu về kinh tế học - Phần I: Niềm tin và nợ công | https://spiderum.com/bai-dang/Tim-hieu-ve-kinh-te-hoc-5wp
 
-Tìm hiểu về kinh tế học - Phần II: Tư Bản và Cộng Sản | https://spiderum.com/bai-dang/Tim-hieu-ve-kinh-te-hoc-Phan-2-Tu-ban-va-cong-san-5z5
 
 Giấc mơ Mỹ đang giết chết người Mỹ như thế nào? | https://spiderum.com/bai-dang/Giac-mo-My-dang-giet-chet-nguoi-My-nhu-the-nao-6gx
 
 Đầu tư cơ bản P.2 - Các phương pháp đầu tư. | https://spiderum.com/bai-dang/Dau-tu-co-ban-P2-Cac-phuong-phap-dau-tu-ycF4b7Oggzpj
 
-Lịch sử quân sự qua góc nhìn chuỗi cung ứng (I) | https://spiderum.com/bai-dang/Lich-su-quan-su-qua-goc-nhin-chuoi-cung-ung-I-6pm
 
 Làm thế nào để thao túng giá trên thị trường chứng khoán Việt Nam? | https://spiderum.com/bai-dang/Lam-the-nao-de-thao-tung-gia-tren-thi-truong-chung-khoan-Viet-Nam-TUtTp7iBrsLF
 
@@ -18633,7 +18224,6 @@ Kiếm bao tiền một tháng là đủ? | https://spiderum.com/bai-dang/Kiem-b
 
 LÀM THẾ NÀO ĐỂ ĐẠT ĐƯỢC TỰ DO TÀI CHÍNH KHI CÒN TRẺ? | https://spiderum.com/bai-dang/LAM-THE-NAO-DE-DAT-DUOC-TU-DO-TAI-CHINH-KHI-CON-TRE-LzdHnSnTD5wX
 
-Chu Kỳ Bitcoin Halving: Sự Kiện Định Hình Tương Lai Crypto | https://spiderum.com/bai-dang/Chu-Ky-Bitcoin-Halving-Su-Kien-Dinh-Hinh-Tuong-Lai-Crypto-vbbYU09cgfoU
 
 Đầu tư cơ bản P.4 - Những điều cần biết về đầu tư bằng đòn bẩy nợ Margin | https://spiderum.com/bai-dang/Dau-tu-co-ban-P4-Nhung-dieu-can-biet-ve-dau-tu-bang-don-bay-no-Margin-Ynp0gvHJSPwZ
 
@@ -18695,15 +18285,12 @@ Làm thế nào để có được nhiều ý tưởng kinh doanh và chuyển h
 
 Jim Simons - Ông vua ngành tài chính định lượng là ai và cỗ máy kiếm tiền vĩ đại nhất trong lịch sử tài chính mang tên Quỹ Medallion | https://spiderum.com/bai-dang/Jim-Simons-Ong-vua-nganh-tai-chinh-dinh-luong-la-ai-va-co-may-kiem-tien-vi-dai-nhat-trong-lich-su-tai-chinh-mang-ten-Quy-Medallion-5x01myhbQ5OU
 
-Lịch sử hình thành và trở thành kẻ phản diện của Nestlé | https://spiderum.com/bai-dang/Lich-su-hinh-thanh-va-tro-thanh-ke-phan-dien-cua-Nestle-lsXZDbhqPYUO
 
 John Nash - Điên Loạn & Vĩ Đại | https://spiderum.com/bai-dang/John-Nash-Dien-Loan-and-Vi-Dai-gs7lQ7zfaAPg
 
-Đầu tư cơ bản P.9 - Đầu tư giống với Poker như thế nào? | https://spiderum.com/bai-dang/Dau-tu-co-ban-P9-Tu-duy-dat-cuoc-trong-dau-tu-NG3Rzbj7ceWi
 
 Vì sao người Nghèo (0 vàng, 0 BĐS) phải lo cho Khủng hoảng Tài chính? (của người giàu)? | https://spiderum.com/bai-dang/Vi-sao-nguoi-Ngheo-0-vang-0-BDS-phai-lo-cho-Khung-hoang-Tai-chinh-cua-nguoi-giau-rIWVfZz1El4b
 
-Tạm Biệt 2025: Vì sao Tiết Kiệm có thể là Từ Ngữ / Lối Sống Overrated từ Đây về Sau? | https://spiderum.com/bai-dang/Tam-Biet-2025-Vi-sao-Tiet-Kiem-co-the-la-Tu-Ngu-Loi-Song-Overrated-tu-Day-ve-Sau-D65yUn3HO6fy
 
 Nước Mỹ Đánh Giá Thấp Khó Khăn Khi Đưa Sản Xuất Trở Lại | https://spiderum.com/bai-dang/Nuoc-My-Danh-Gia-Thap-Kho-Khan-Khi-Dua-San-Xuat-Tro-Lai-QNYFfxB47RDo
 
@@ -18741,7 +18328,6 @@ Top 5 Sự kiện trong năm 2023 | https://spiderum.com/bai-dang/Top-5-Su-kien-
 
 Từ đâu mà có: Người Việt chỉ 'úp bô' nhau? | https://spiderum.com/bai-dang/Tu-dau-ma-co-Nguoi-Viet-chi-up-bo-nhau-g8tMbTh7qYzm
 
-Walmart - Gã khổng lồ định hình ngành tiêu dùng Hoa Kỳ | https://spiderum.com/bai-dang/Walmart-Ga-khong-lo-dinh-hinh-nganh-tieu-dung-Hoa-Ky-OvSWdOltK6vP
 
 CHARLIE MUNGER - THIÊN TÀI ĐẦU TƯ, CỘNG SỰ HOÀN HẢO CỦA WARREN BUFFETT | https://spiderum.com/bai-dang/CHARLIE-MUNGER-THIEN-TAI-DAU-TU-CONG-SU-HOAN-HAO-CUA-WARREN-BUFFETT-776vXVkoMl9V
 
@@ -18769,7 +18355,6 @@ Quá trình niêm yết trên sàn NASDAG của Vinfast và mức định giá 2
 
 Bản chất nguyên thủy của Tiền tệ: Vàng, Fiat và Bitcoin dưới lăng kính lịch sử | https://spiderum.com/bai-dang/Ban-chat-nguyen-thuy-cua-Tien-te-Vang-Fiat-va-Bitcoin-duoi-lang-kinh-lich-su-YtvDHmhD0OcU
 
-Người trẻ và những lo toan tiền bạc (#1) | https://spiderum.com/bai-dang/Nguoi-tre-va-nhung-lo-toan-tien-bac-1-t31cuyW2Kz9t
 
 Người trẻ và những lo toan tiền bạc (#3 - Kết) | https://spiderum.com/bai-dang/Nguoi-tre-va-nhung-lo-toan-tien-bac-3-Ket-KHx8yFxEaYjL
 
@@ -18847,17 +18432,13 @@ Về "Ếch" (Mạc Ngôn) | https://spiderum.com/bai-dang/Ve-Ech-Mac-Ngon-9zq
 
 Sách "Đắc Nhân Tâm" Viết Về Điều Gì Và Tại Sao Sách Lại Bị Tẩy Chay? | https://spiderum.com/bai-dang/Sach-Dac-Nhan-Tam-Viet-Ve-Dieu-Gi-Va-Tai-Sao-Sach-Lai-Bi-Tay-Chay-e97
 
-Giấc mơ của ông Nobi | https://spiderum.com/bai-dang/Giac-mo-cua-ong-Nobi-i72
 
 Tuổi trẻ của bạn đáng giá hơn cuốn sách này | https://spiderum.com/bai-dang/Tuoi-tre-cua-ban-dang-gia-hon-cuon-sach-nay-a9j
 
-Khi Mua Sách Spiderum, Bạn Đang Đóng Góp Vào Điều Gì? | https://spiderum.com/bai-dang/Khi-Mua-Sach-Spiderum-Ban-Dang-Dong-Gop-Vao-Dieu-Gi-d8h
 
-Căn bệnh ung thư mang tên Self-help | https://spiderum.com/bai-dang/Tai-sao-khong-nen-doc-sach-self-help-6jw
 
 Tâm sự Husky III: Những quyển sách phía sau mỗi bài viết | https://spiderum.com/bai-dang/Tam-su-Husky-III-Nhung-quyen-sach-phia-sau-moi-bai-viet-7k4
 
-TẠI SAO VIỆT NAM KHÔNG CÓ GIẢI NOBEL VĂN HỌC? | https://spiderum.com/bai-dang/TAI-SAO-VIET-NAM-KHONG-CO-GIAI-NOBEL-VAN-HOC-b3u
 
 TÁC HẠI CỦA VIỆC ĐỌC SÁCH | https://spiderum.com/bai-dang/TAC-HAI-CUA-VIEC-DOC-SACH-5mk
 
@@ -18869,7 +18450,6 @@ Lược sử thế giới: Một câu chuyện rất ngắn về nhân loại | 
 
 Gặp Phật giết Phật, gặp Tổ diệt Tổ (Phần 1) | https://spiderum.com/bai-dang/Gap-Phat-giet-Phat-gap-To-diet-To-brf
 
-TRIẾT LÝ DẠY VÀ HỌC VĂN CỦA VIỆT NAM VÀ TRUNG QUỐC. | https://spiderum.com/bai-dang/TRIET-LY-DAY-VA-HOC-VAN-CUA-VIET-NAM-VA-TRUNG-QUOC-psj
 
 Góc nhìn về mối quan hệ giữa Đường Tăng và Tôn Ngộ Không. | https://spiderum.com/bai-dang/Goc-nhin-ve-moi-quan-he-giua-Duong-Tang-va-Ton-Ngo-Khong-KO7bwc5gIEu9
 
@@ -18883,7 +18463,6 @@ Thú cưng đã dạy cho chúng ta biết trưởng thành như thế nào? | h
 
 Self-help: Đọc sao cho khỏi ngộ độc | https://spiderum.com/bai-dang/Self-help-Doc-sao-cho-khoi-ngo-doc-9bu
 
-Kỹ năng đọc sách của các Học giả - Chắc ai đó sẽ cần đến | https://spiderum.com/bai-dang/Ky-nang-doc-sach-cua-may-ONG-GIA-BAC-HOC-Ma-chac-ai-do-se-can-dung-den-GFs5LAfTIRqL
 
 Thần thoại Hy Lạp: Cẩm nang đồi trụy phương Tây | https://spiderum.com/bai-dang/Than-thoai-Hy-Lap-Cam-nang-doi-truy-phuong-Tay-qbt
 
@@ -18891,7 +18470,6 @@ Thần thoại Hy Lạp: Cẩm nang đồi trụy phương Tây | https://spider
 
 Phản hồi Tonard về sự kiện Trạng Tí | https://spiderum.com/bai-dang/Phan-hoi-Tonard-ve-su-kien-Trang-Ti-xha
 
-Về nghệ thuật kể chuyện. | https://spiderum.com/bai-dang/Ve-nghe-thuat-ke-chuyen-mr9
 
 Tóm tắt sách: Sapiens - Lược sử loài người | https://spiderum.com/bai-dang/Tom-tat-sach-Sapiens-Luoc-su-loai-nguoi-f6o
 
@@ -18899,15 +18477,12 @@ Nobita Học | Vĩnh biệt Shizuka | https://spiderum.com/bai-dang/Nobita-Hoc-o
 
 SỰ KHỐN CÙNG CỦA SÁCH SELF-HELP | https://spiderum.com/bai-dang/SU-KHON-CUNG-CUA-SACH-SELF-HELP-7cv
 
-Tôi đã "ngồi yên" tìm Cuốn sách bán "chạy" nhất Tiki như thế nào? - Phần 1: Đào Data | https://spiderum.com/bai-dang/Phan-thang-di-dao-vang-o-Spiderum-Phan-1-Dao-sBctGTESnY6L
 
-Stoicism P4: Epictetus - Gã nô lệ cụt chân - "người thầy" của hoàng đế Marcus | https://spiderum.com/bai-dang/Stoicism-P4-Epictetus-Ga-no-le-cut-chan-nguoi-thay-cua-hoang-de-Marcus-76w
 
 GIẢI MÃ BIỂU TƯỢNG TRONG "NHÀ GIẢ KIM" CỦA PAULO COELHO | https://spiderum.com/bai-dang/GIAI-MA-BIEU-TUONG-TRONG-NHA-GIA-KIM-CUA-PAULO-COELHO-8qt
 
 TÍNH CÁCH TẠO RA TIỀN | https://spiderum.com/bai-dang/Tinh-cach-tao-ra-tien-xq3
 
-Bệnh ngộ chữ | https://spiderum.com/bai-dang/Benh-ngo-chu-ikq
 
 Sự toxic trong cách truyền thông văn hóa đọc và hệ quả của nó | https://spiderum.com/bai-dang/Su-toxic-trong-cach-truyen-thong-van-hoa-doc-va-he-qua-cua-no-rvU7je7zSaKZ
 
@@ -18925,7 +18500,6 @@ Tuổi trẻ đáng giá bao nhiêu với "Three days of happiness" | https://sp
 
 Bàn về "Làm đĩ" | https://spiderum.com/bai-dang/Ban-ve-Lam-di-gom
 
-Yuval Noah Harari – Trong cuộc chiến chống coronavirus, nhân loại đang thiếu vắng người lãnh đạo | https://spiderum.com/bai-dang/Yuval-Noah-Harari-Trong-cuoc-chien-chong-coronavirus-nhan-loai-dang-thieu-vang-nguoi-lanh-dao-mea
 
 Đọc sách và ti tỉ thứ thay đổi trong cuộc sống | https://spiderum.com/bai-dang/Doc-sach-va-ti-ti-thu-thay-doi-cuoc-song-NREojarPHyhy
 
@@ -18949,7 +18523,6 @@ Phản đề và mở rộng "Cốt tuỷ của văn hoá đọc nằm ơ
 
 Vài đoạn trích hay về: Hãy sống như thể hôm nay là ngày cuối cùng của cuộc đời! | https://spiderum.com/bai-dang/Vai-doan-trich-hay-ve-Hay-song-nhu-the-hom-nay-la-ngay-cuoi-cung-cua-cuoc-doi-wiu
 
-[Hiểu sách]: “Đi tìm lẽ sống” – Hơn cả một quyển tự truyện | https://spiderum.com/bai-dang/Hieu-sach-Di-tim-le-song-Hon-ca-mot-quyen-tu-truyen-N6LtJ31qwv39
 
 Muốn sống bản lĩnh, đọc gì cho hay? | https://spiderum.com/bai-dang/Muon-song-ban-linh-doc-gi-cho-hay-U5NPS3sDt3Y5
 
@@ -18971,7 +18544,6 @@ Vài đoạn trích hay trong "Chiến binh cầu vồng", và chân giá trị 
 
 Đọc sách self-help thế nào cho đúng? | https://spiderum.com/bai-dang/Doc-sach-self-help-the-nao-cho-dung-dr3
 
-"Làm tình" với kẻ không yêu | https://spiderum.com/bai-dang/Lam-tinh-voi-ke-khong-yeu-otGCu6MxVwYP
 
 [Stoicism] - Dịch Seneca (2): Về văn hóa đọc: Vì sao không nên đọc lan man? | https://spiderum.com/bai-dang/Stoicism-Dich-Seneca-2-Ve-van-hoa-doc-Vi-sao-khong-nen-doc-lan-man-goh
 
@@ -19073,7 +18645,6 @@ Bí mật của sự sáng tạo - Nghệ Thuật "Đánh Cắp" Ý Tưởng (Au
 
 [Review sách] Atomic Habits - Hiểu đúng về thói quen | https://spiderum.com/bai-dang/Review-sach-Atomic-Habits-Hieu-dung-ve-thoi-quen-1BN2iGSDUES6
 
-VỤ BÊ BỐI KHIẾN GIẢI NOBEL VĂN HỌC BỊ HỦY | https://spiderum.com/bai-dang/VU-BE-BOI-KHIEN-GIAI-NOBEL-VAN-HOC-BI-HUY-uvfbC7kScWDr
 
 [Stoicism] - Dịch Seneca (35): Đôi dòng về tình bạn trên con đường hướng đến sự thông tuệ vinh quang này! | https://spiderum.com/bai-dang/Stoicism-Dich-Seneca-35-Doi-dong-ve-tinh-ban-tren-con-duong-huong-den-su-thong-tue-vinh-quang-nay-nul
 
@@ -21412,7 +20983,6 @@ Rò rỉ nước làm mát | https://www.otosaigon.com/threads/ro-ri-nuoc-lam-ma
 
 Vios bị rung vô lăng khi đạp thắng | https://www.otosaigon.com/threads/vios-bi-rung-vo-lang-khi-dap-thang.8987452/
 
-Review nhớt mobil 1, 15.000 miles và sự thật phũ phàng | https://www.otosaigon.com/threads/review-nhot-mobil-1-15-000-miles-va-su-that-phu-phang.8579093/
 
 Tư vấn về cách hạn chế tiếng ồn gió ở cửa kính xe ô tô | https://www.otosaigon.com/threads/tu-van-ve-cach-han-che-tieng-on-gio-o-cua-kinh-xe-o-to.10043393/
 
@@ -21422,7 +20992,6 @@ Auto's Only: Thách thức kép đối với xe điện và hybrid tại Việt 
 
 Auto's Only: "Bệnh viện" kỹ thuật cao cho siêu xe, Tesla và ô tô Hybrid tại Sài Gòn | https://www.otosaigon.com/threads/autos-only-benh-vien-ky-thuat-cao-cho-sieu-xe-tesla-va-o-to-hybrid-tai-sai-gon.10045695/
 
-Gara CCM Fast thiếu trách nhiệm, không chịu gặp khách hàng để giải quyết | https://www.otosaigon.com/threads/gara-ccm-fast-thieu-trach-nhiem-khong-chiu-gap-khach-hang-de-giai-quyet.10005330/
 
 Đồng hồ vòng tua Camry 2.2 sai, xử lý thế nào? | https://www.otosaigon.com/threads/dong-ho-vong-tua-camry-2-2-sai-xu-ly-the-nao.10044375/
 
@@ -21454,7 +21023,6 @@ Mazda CX-30 đôi khi bị dựt dựt khi chạy ở dãi tốc độ 8 đến 
 
 Lựa chọn Dầu Nhớt và dùng Phụ Gia đúng cách | https://www.otosaigon.com/threads/lua-chon-dau-nhot-va-dung-phu-gia-dung-cach.10043027/
 
-Cách trị xe oto chạy bị giật khi vào số lùi của hộp số tự động. | https://www.otosaigon.com/threads/cach-tri-xe-oto-chay-bi-giat-khi-vao-so-lui-cua-hop-so-tu-dong.8615515/
 
 Mazda 3 2017 FL khi xe đang đậu bị rung khi nghe tiếng kéo của điều hoà, do đâu? | https://www.otosaigon.com/threads/mazda-3-2017-fl-khi-xe-dang-dau-bi-rung-khi-nghe-tieng-keo-cua-dieu-hoa-do-dau.10042704/
 
@@ -21468,11 +21036,9 @@ Thước lái bị rung khi xuống dốc, có phải do bố thắng và đĩa 
 
 Tư vấn Kia Rondo 2016 GAT có hiện tượng yếu yếu | https://www.otosaigon.com/threads/tu-van-kia-rondo-2016-gat-co-hien-tuong-yeu-yeu.10042171/
 
-Xe Cerato bị kêu lọc cọc khi tăng ga, do đâu? | https://www.otosaigon.com/threads/xe-cerato-bi-keu-loc-coc-khi-tang-ga-do-dau.9057880/
 
 Bảo dưỡng ô tô ở đâu uy tín tại Nha Trang? | https://www.otosaigon.com/threads/bao-duong-o-to-o-dau-uy-tin-tai-nha-trang.10042451/
 
-Tại sao sách HDSD theo xe không yêu cầu thay dầu/nhớt hộp số nhỉ? | https://www.otosaigon.com/threads/tai-sao-sach-hdsd-theo-xe-khong-yeu-cau-thay-dau-nhot-hop-so-nhi.10019254/
 
 Điều hòa xe Mitsubishi Lancer 2004 không mát khi chạy chậm hoặc dừng đèn đỏ, do đâu? | https://www.otosaigon.com/threads/dieu-hoa-xe-mitsubishi-lancer-2004-khong-mat-khi-chay-cham-hoac-dung-den-do-do-dau.10042192/
 
@@ -21498,7 +21064,6 @@ Tìm garage nhận thay chụp đèn trước Ford Focus 2012 hatchback | https:
 
 Thay block lạnh zin bằng block lạnh dùng điện, cần những gì? | https://www.otosaigon.com/threads/thay-block-lanh-zin-bang-block-lanh-dung-dien-can-nhung-gi.10040126/
 
-Garage Phong Nguyễn chúng tôi không làm hư hỏng đồ của khách và không phủi tay.Cần trả lại công bằng | https://www.otosaigon.com/threads/garage-phong-nguyen-chung-toi-khong-lam-hu-hong-do-cua-khach-va-khong-phui-tay-can-tra-lai-cong-bang.8695463/
 
 Tiếng kêu trong buồng lái Mitsubishi Attrage CVT | https://www.otosaigon.com/threads/tieng-keu-trong-buong-lai-mitsubishi-attrage-cvt.10037903/
 
@@ -21512,7 +21077,6 @@ Nhờ tư vấn mua lại VW Touareg 2014 | https://www.otosaigon.com/threads/nh
 
 Cam 360 bị đen sau khi rửa xe, khắc phục thế nào? | https://www.otosaigon.com/threads/cam-360-bi-den-sau-khi-rua-xe-khac-phuc-the-nao.10037302/
 
-Xe Ford Everest 2023 lắc và sốc, nhờ tư vấn thay phuộc cho êm ái hơn | https://www.otosaigon.com/threads/xe-ford-everest-2023-lac-va-soc-nho-tu-van-thay-phuoc-cho-em-ai-hon.10005419/
 
 Trộn hai loại nước làm mát có vấn đề gì không? | https://www.otosaigon.com/threads/tron-hai-loai-nuoc-lam-mat-co-van-de-gi-khong.10036116/
 
@@ -21632,7 +21196,6 @@ Nơi sửa đầu Android xe Kia Sorento 2022 bị mất tiếng | https://www.o
 
 Tại sao không tắt được máy??? | https://www.otosaigon.com/threads/tai-sao-khong-tat-duoc-may.48855/
 
-Gara sửa chữa ô tô uy tín ở thành phố Hồ Chí Minh? | https://www.otosaigon.com/threads/gara-sua-chua-o-to-uy-tin-o-thanh-pho-ho-chi-minh.8786862/
 
 Bệnh hôi xăng ống xả với trong buồng lái trên Toyota Previa 1991 | https://www.otosaigon.com/threads/benh-hoi-xang-ong-xa-voi-trong-buong-lai-tren-toyota-previa-1991.10026792/
 
@@ -22382,7 +21945,6 @@ Philips X-tremePower H4 (+80%) vs NBR Osram H4 Plus90 (+90%) | https://www.otosa
 
 Bộ đổi điện 12VDC-> 220VAC dùng trên xe hơi. | https://www.otosaigon.com/threads/bo-doi-dien-12vdc-220vac-dung-tren-xe-hoi.218585/
 
-Thảm 5D-6D gớm quá, phải lột bỏ sau 2 tháng sử dụng | https://www.otosaigon.com/threads/tham-5d-6d-gom-qua-phai-lot-bo-sau-2-thang-su-dung.9059600/
 
 lại là 1 em gala 2.0 lên bàn Mổ theo xe khactrung ( Cập nhật hình mới trang 7 ) | https://www.otosaigon.com/threads/lai-la-1-em-gala-2-0-len-ban-mo-theo-xe-khactrung-cap-nhat-hinh-moi-trang-7.3925389/
 
@@ -22402,9 +21964,7 @@ Hỏi cách tẩy bụi sơn bám trên mặt ngoài kính lái | https://www.ot
 
 BMW E34 độ phần 2 : nội thất và đồ chơi (update hình page 7, sound pô page 8) | https://www.otosaigon.com/threads/bmw-e34-do-phan-2-noi-that-va-do-choi-update-hinh-page-7-sound-po-page-8.6656161/
 
-Cá nhân em có ý kiến: Không nên dùng phim cách nhiệt dán kính xe ô tô | https://www.otosaigon.com/threads/ca-nhan-em-co-y-kien-khong-nen-dung-phim-cach-nhiet-dan-kinh-xe-o-to.9062904/
 
-Hướng dẫn lắp đặt Autolock Cho innova 2012-2014 ! | https://www.otosaigon.com/threads/huong-dan-lap-dat-autolock-cho-innova-2012-2014.8619324/
 
 Choixongxu độ cây Strut bar - đã test thành công - mời các bác vào chém. | https://www.otosaigon.com/threads/choixongxu-do-cay-strut-bar-da-test-thanh-cong-moi-cac-bac-vao-chem.8328514/
 
