@@ -7,41 +7,53 @@
     <style>
         /* Cấu hình màu sắc cho cả 2 chế độ */
         :root[data-theme="light"] {
-            --bg-color: #f8f9fa;
-            --text-color: #212529;
-            --border-color: #cccccc;
+            --bg-color: #f4f6f9;
+            --text-color: #2c3e50;
+            --border-color: #e2e8f0;
             --card-bg: #ffffff;
-            --accent-color: #007bff;
-            --accent-hover: #0056b3;
-            --random-color: #28a745;
-            --random-hover: #218838;
-            --refresh-color: #17a2b8;
-            --refresh-hover: #138496;
-            --hover-bg: #eeeeee;
-            --item-border: #eeeeee;
-            --sub-text: #6c757d; 
+            --accent-color: #3b82f6;
+            --accent-hover: #1d4ed8;
+            --random-color: #10b981;
+            --random-hover: #047857;
+            --refresh-color: #06b6d4;
+            --refresh-hover: #0e7490;
+            --hover-bg: #f8fafc;
+            --item-border: #f1f5f9;
+            --sub-text: #64748b; 
             --search-bg: #ffffff;
-            --search-focus: #007bff;
-            --toggle-bg: #e9ecef;
+            --search-focus: #3b82f6;
+            --toggle-bg: #e2e8f0;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+            --star-color: #94a3b8;
+            --star-active: #eab308;
+            --badge-bg: #f1f5f9;
+            --badge-text: #475569;
         }
 
         :root[data-theme="dark"] {
-            --bg-color: #121212;
-            --text-color: #e0e0e0;
-            --border-color: #444444;
-            --card-bg: #1e1e1e;
-            --accent-color: #3792ff;
-            --accent-hover: #66aaff;
-            --random-color: #2fb94e;
-            --random-hover: #269c3f;
-            --refresh-color: #1fc1da;
-            --refresh-hover: #179cb0;
-            --hover-bg: #2a2a2a;
-            --item-border: #2d2d2d;
-            --sub-text: #aaaaaa;
-            --search-bg: #252525;
-            --search-focus: #3792ff;
-            --toggle-bg: #252525;
+            --bg-color: #0f172a;
+            --text-color: #f1f5f9;
+            --border-color: #334155;
+            --card-bg: #1e293b;
+            --accent-color: #60a5fa;
+            --accent-hover: #93c5fd;
+            --random-color: #34d399;
+            --random-hover: #6ee7b7;
+            --refresh-color: #22d3ee;
+            --refresh-hover: #67e8f9;
+            --hover-bg: #1e293b;
+            --item-border: #334155;
+            --sub-text: #94a3b8;
+            --search-bg: #1e293b;
+            --search-focus: #60a5fa;
+            --toggle-bg: #334155;
+            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2);
+            --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.3);
+            --star-color: #475569;
+            --star-active: #f59e0b;
+            --badge-bg: #334155;
+            --badge-text: #cbd5e1;
         }
 
         body {
@@ -49,73 +61,70 @@
             background-color: var(--bg-color);
             color: var(--text-color);
             max-width: 800px;
-            margin: 40px auto;
+            margin: 0 auto 40px auto;
             padding: 0 20px;
             line-height: 1.6;
             transition: background-color 0.3s, color 0.3s;
-            position: relative;
         }
 
-        h2 {
-            font-weight: 600;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        /* Vùng chứa nút chuyển đổi giao diện và các link phụ */
-        .theme-toggle-container {
-            position: absolute;
-            top: -25px; /* Tăng khoảng cách lên một chút để chèn chữ phía trên */
-            right: 20px;
+        /* Top Utilities Bar */
+        .top-bar {
             display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            gap: 4px;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 24px;
         }
 
-        /* Định dạng hai dòng chữ nhỏ phía trên nút mode */
         .sub-links-container {
             display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-            line-height: 1.3;
+            gap: 16px;
         }
 
         .sub-link {
-            font-size: 11px; /* Kích thước chữ siêu nhỏ */
-            color: var(--sub-text); /* Sử dụng màu sub-text để không nổi bật */
+            font-size: 12px;
+            color: var(--sub-text);
             text-decoration: none;
-            opacity: 0.75;
-            transition: opacity 0.2s ease, color 0.2s ease;
+            opacity: 0.8;
+            transition: all 0.2s ease;
+            font-weight: 500;
         }
 
         .sub-link:hover {
             opacity: 1;
-            color: var(--accent-color); /* Hơi sáng lên một chút khi di chuột vào */
-            text-decoration: underline;
+            color: var(--accent-color);
         }
 
         .btn-theme-toggle {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             color: var(--text-color);
-            padding: 8px 12px;
-            border-radius: 20px;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
             cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
             display: flex;
             align-items: center;
-            gap: 6px;
+            justify-content: center;
             transition: all 0.2s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            box-shadow: var(--card-shadow);
+            font-size: 16px;
         }
 
         .btn-theme-toggle:hover {
             background-color: var(--hover-bg);
+            transform: scale(1.05);
         }
 
-        /* CSS MỚI: Thanh nút chọn nguồn data ở đầu trang */
+        h2 {
+            font-weight: 700;
+            margin-bottom: 24px;
+            text-align: center;
+            letter-spacing: -0.5px;
+        }
+
+        /* Thanh nút chọn nguồn data ở đầu trang */
         .source-toggle-container {
             display: flex;
             justify-content: center;
@@ -126,7 +135,7 @@
             display: inline-flex;
             background-color: var(--toggle-bg);
             padding: 4px;
-            border-radius: 8px;
+            border-radius: 30px;
             border: 1px solid var(--border-color);
         }
 
@@ -134,10 +143,10 @@
             background: transparent;
             border: none;
             color: var(--text-color);
-            padding: 8px 20px;
+            padding: 8px 24px;
             font-size: 14px;
             font-weight: 600;
-            border-radius: 6px;
+            border-radius: 20px;
             cursor: pointer;
             transition: all 0.2s ease;
         }
@@ -145,64 +154,98 @@
         .btn-source.active {
             background-color: var(--card-bg);
             color: var(--accent-color);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
-        /* Thống kê & Bộ lọc nút bấm */
+        /* Thanh cuộn ngang mượt mà cho các Tab */
         .filter-container {
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 20px;
-            justify-content: center;
-            margin-top: 20px;
+            flex-wrap: nowrap;
+            gap: 8px;
+            margin-bottom: 24px;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            padding: 4px 4px 10px 4px;
+        }
+
+        .filter-container::-webkit-scrollbar {
+            display: none;
         }
 
         .btn-tab {
-            background: transparent;
+            background: var(--card-bg);
             border: 1px solid var(--border-color);
             color: var(--text-color);
             padding: 8px 16px;
-            border-radius: 4px;
+            border-radius: 20px;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 13px;
+            font-weight: 500;
+            white-space: nowrap;
             transition: all 0.2s ease;
+            box-shadow: var(--card-shadow);
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .btn-tab:hover {
-            border-color: var(--text-color);
+            border-color: var(--accent-color);
             background-color: var(--hover-bg);
         }
 
         .btn-tab.active {
-            background-color: var(--text-color);
-            color: var(--bg-color);
-            border-color: var(--text-color);
+            background-color: var(--accent-color);
+            color: #ffffff;
+            border-color: var(--accent-color);
         }
 
-        /* Khu vực tìm kiếm */
+        /* Badge đếm số lượng bài viết */
+        .tab-badge {
+            font-size: 11px;
+            background-color: var(--badge-bg);
+            color: var(--badge-text);
+            padding: 2px 6px;
+            border-radius: 10px;
+            font-weight: 600;
+        }
+
+        .btn-tab.active .tab-badge {
+            background-color: rgba(255, 255, 255, 0.25);
+            color: #ffffff;
+        }
+
+        /* Gom cụm Tìm kiếm, Random, Refresh lên 1 hàng */
+        .action-bar {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 24px;
+            align-items: center;
+        }
+
         .search-container {
             position: relative;
-            max-width: 500px;
-            margin: 0 auto 20px auto;
+            flex: 1;
         }
 
         .search-input {
             width: 100%;
-            padding: 10px 15px 10px 40px;
-            font-size: 15px;
+            padding: 12px 16px 12px 42px;
+            font-size: 14px;
             border: 1px solid var(--border-color);
-            border-radius: 24px;
+            border-radius: 12px;
             background-color: var(--search-bg);
             color: var(--text-color);
             box-sizing: border-box;
             outline: none;
             transition: all 0.2s ease;
+            box-shadow: var(--card-shadow);
         }
 
         .search-input:focus {
             border-color: var(--search-focus);
-            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
         }
 
         .search-icon {
@@ -210,8 +253,8 @@
             left: 14px;
             top: 50%;
             transform: translateY(-50%);
-            width: 16px;
-            height: 16px;
+            width: 18px;
+            height: 18px;
             fill: var(--sub-text);
             pointer-events: none;
             transition: fill 0.2s ease;
@@ -221,88 +264,101 @@
             fill: var(--search-focus);
         }
 
-        /* Khu vực chức năng tiện ích */
-        .utilities-container {
+        .btn-action-util {
+            height: 45px;
+            padding: 0 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
             display: flex;
+            align-items: center;
             justify-content: center;
-            gap: 12px;
-            margin-bottom: 20px;
+            gap: 6px;
+            transition: all 0.2s ease;
+            box-shadow: var(--card-shadow);
+            white-space: nowrap;
         }
 
         .btn-random {
             background-color: var(--random-color);
             color: white;
             border: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
-            transition: background 0.2s;
         }
+        .btn-random:hover { background-color: var(--random-hover); }
 
-        .btn-random:hover {
-            background-color: var(--random-hover);
-        }
-
-        /* Nút cập nhật dữ liệu mới */
         .btn-refresh {
             background-color: var(--refresh-color);
             color: white;
             border: none;
-            padding: 8px 16px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
         }
+        .btn-refresh:hover { background-color: var(--refresh-hover); }
+        .btn-refresh:disabled { opacity: 0.6; cursor: not-allowed; }
 
-        .btn-refresh:hover {
-            background-color: var(--refresh-hover);
-        }
-
-        .btn-refresh:disabled {
-            opacity: 0.6;
-            cursor: not-allowed;
-        }
-
-        /* Danh sách bài viết */
+        /* Danh sách dạng Card */
         .list-container {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            padding: 0; 
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
             min-height: 100px;
-            transition: background-color 0.3s, border-color 0.3s;
         }
 
         .post-item {
-            padding: 14px 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px 20px;
             display: flex;
-            flex-direction: column;
-            gap: 4px; 
+            align-items: center;
+            gap: 16px;
+            transition: all 0.25s ease;
+            box-shadow: var(--card-shadow);
         }
 
-        .post-item:not(:last-child) {
-            border-bottom: 1px solid var(--border-color); 
+        .post-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--card-shadow-hover);
+            border-color: var(--accent-color);
+        }
+
+        .post-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            object-fit: cover; /* Đảm bảo hình ảnh vuông vắn và gọn trong khung tròn */
+            background-color: var(--badge-bg);
+            border: 1px solid var(--border-color);
+        }
+
+        .post-content-block {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex: 1;
         }
 
         .post-title {
-            font-weight: 700; 
+            font-weight: 600; 
             color: var(--text-color);
             text-decoration: none;
             font-size: 15px;
-            transition: color 0.2s;
+            transition: all 0.2s;
             line-height: 1.4;
         }
 
         .post-title:hover {
             color: var(--accent-color);
-            text-decoration: underline;
+        }
+
+        /* Làm mờ các bài viết đã đọc */
+        .post-item.is-read .post-title {
+            opacity: 0.45;
+            font-weight: 400;
         }
 
         .post-source {
@@ -311,10 +367,36 @@
             font-weight: 500;
         }
 
+        /* Nút ngôi sao Bookmark */
+        .btn-bookmark {
+            background: transparent;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: var(--star-color);
+            padding: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.2s, color 0.2s;
+            user-select: none;
+        }
+
+        .btn-bookmark:hover {
+            transform: scale(1.2);
+        }
+
+        .btn-bookmark.active {
+            color: var(--star-active);
+        }
+
         .empty-message {
             text-align: center;
             color: var(--sub-text);
-            padding: 20px 0;
+            padding: 40px var(--card-bg);
+            background: var(--card-bg);
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
         }
 
         /* Thanh phân trang */
@@ -322,8 +404,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 5px;
-            margin-top: 24px;
+            gap: 6px;
+            margin-top: 32px;
             flex-wrap: wrap;
         }
 
@@ -331,20 +413,22 @@
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             color: var(--text-color);
-            min-width: 35px;
-            height: 35px;
-            padding: 0 6px;
-            border-radius: 4px;
+            min-width: 38px;
+            height: 38px;
+            padding: 0 8px;
+            border-radius: 8px;
             cursor: pointer;
             font-size: 14px;
+            font-weight: 500;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.2s;
+            box-shadow: var(--card-shadow);
         }
 
         .btn-page:hover:not(:disabled) {
-            border-color: var(--text-color);
+            border-color: var(--accent-color);
             background-color: var(--hover-bg);
         }
 
@@ -355,20 +439,31 @@
         }
 
         .btn-page:disabled {
-            opacity: 0.5;
+            opacity: 0.4;
             cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        @media (max-width: 600px) {
+            .action-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .btn-action-util {
+                height: 42px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="theme-toggle-container">
+    <div class="top-bar">
         <div class="sub-links-container">
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSdkkRZXJyeYno9vXrTD6vxso4agFl36-vzHoxl30Mod3_CPrQ/viewform" target="_blank" class="sub-link">đóng góp link bài viết</a>
             <a href="https://buymeacoffee.com/" target="_blank" class="sub-link">donation ♥️</a>
         </div>
-        <button class="btn-theme-toggle" id="btnThemeToggle">
-            <span id="themeIcon">☀️</span> <span id="themeText">Light Mode</span>
+        <button class="btn-theme-toggle" id="btnThemeToggle" title="Thay đổi giao diện">
+            <span id="themeIcon">☀️</span>
         </button>
     </div>
 
@@ -384,16 +479,15 @@
 
     <div class="filter-container" id="filterContainer"></div>
 
-    <div class="search-container">
-        <input type="text" class="search-input" id="searchInput" placeholder="Tìm kiếm bài viết theo tiêu đề...">
-        <svg class="search-icon" viewBox="0 0 24 24">
-            <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-        </svg>
-    </div>
-
-    <div class="utilities-container">
-        <button class="btn-random" id="btnRandom" title="Xem ngẫu nhiên một bài viết từ danh mục hiện tại">Xem ngẫu nhiên 1 bài</button>
-        <button class="btn-refresh" id="btnRefresh" title="Bỏ cache và cập nhật dữ liệu mới nhất từ máy chủ">🔄 Cập nhật dữ liệu mới</button>
+    <div class="action-bar">
+        <div class="search-container">
+            <input type="text" class="search-input" id="searchInput" placeholder="Tìm kiếm bài viết theo tiêu đề...">
+            <svg class="search-icon" viewBox="0 0 24 24">
+                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            </svg>
+        </div>
+        <button class="btn-action-util btn-random" id="btnRandom" title="Xem ngẫu nhiên một bài viết từ danh mục hiện tại">🎲 Ngẫu nhiên</button>
+        <button class="btn-action-util btn-refresh" id="btnRefresh" title="Bỏ cache và cập nhật dữ liệu mới nhất từ máy chủ">🔄 Đồng bộ</button>
     </div>
 
     <div class="list-container" id="listContainer">
@@ -403,20 +497,26 @@
     <div class="pagination-container" id="paginationContainer"></div>
 
     <script>
-        // CẬP NHẬT: Chia cấu trúc để quản lý riêng biệt từng nhóm dữ liệu nguồn
         let masterData = {
             vn: {},
             int: {}
         };
-        let activeSource = 'all'; // 'all', 'vn', hoặc 'int'
+        let activeSource = 'all'; 
         
-        let forumsData = {}; // Chứa dữ liệu sau khi đã gộp/lọc theo nguồn hiện tại
+        let forumsData = {}; 
         let currentDomain = 'all';
         let currentPage = 1;
         let searchQuery = '';
         let searchTimeout;
 
         const postsPerPage = 50;
+
+        // Quản lý lưu trữ Trạng thái Đã đọc và Bookmark Yêu thích
+        let readHistory = JSON.parse(localStorage.getItem('read_history')) || [];
+        let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+
+        // Một SVG icon mặc định dạng quả địa cầu dưới chuỗi base64 nếu website bị lỗi favicon
+        const defaultAvatar = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2394a3b8'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.53c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z'/></svg>";
 
         const filterContainer = document.getElementById('filterContainer');
         const listContainer = document.getElementById('listContainer');
@@ -425,10 +525,9 @@
         const btnRefresh = document.getElementById('btnRefresh');
         const btnThemeToggle = document.getElementById('btnThemeToggle');
         const themeIcon = document.getElementById('themeIcon');
-        const themeText = document.getElementById('themeText');
         const searchInput = document.getElementById('searchInput');
 
-        // --- KHU VỰC XỬ LÝ DARK / LIGHT MODE ---
+        // --- DARK / LIGHT MODE ---
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
         updateThemeUI(savedTheme);
@@ -436,33 +535,20 @@
         btnThemeToggle.addEventListener('click', () => {
             const currentTheme = document.documentElement.getAttribute('data-theme');
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            
             document.documentElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
             updateThemeUI(newTheme);
         });
 
         function updateThemeUI(theme) {
-            if (theme === 'dark') {
-                themeIcon.textContent = '🌙';
-                themeText.textContent = 'Dark Mode';
-            } else {
-                themeIcon.textContent = '☀️';
-                themeText.textContent = 'Light Mode';
-            }
+            themeIcon.textContent = theme === 'dark' ? '🌙' : '☀️';
         }
-        // ----------------------------------------
 
-        // Tải đồng thời 2 file data riêng biệt và phân loại vào masterData
-        // Thêm tham số forceRefresh để quyết định có bypass cache trình duyệt hay không
+        // Tải dữ liệu từ các file txt
         async function loadExternalData(forceRefresh = false) {
             try {
                 listContainer.innerHTML = '<div class="empty-message">Đang tải dữ liệu từ các file...</div>';
-                
-                // Cấu hình fetch: Nếu cần làm mới, yêu cầu trình duyệt lấy trực tiếp từ server
                 const fetchOptions = forceRefresh ? { cache: 'reload' } : {};
-                
-                // Cache-busting thủ công bằng cách đính kèm timestamp đề phòng server/CDN cố tình giữ cache
                 const suffix = forceRefresh ? `?t=${Date.now()}` : '';
 
                 const [resVn, resInt] = await Promise.allSettled([
@@ -471,7 +557,6 @@
                 ]);
                 
                 let hasData = false;
-                // Reset lại masterData để tránh dồn ứ dữ liệu cũ khi bấm cập nhật nhiều lần
                 masterData = { vn: {}, int: {} };
 
                 if (resVn.status === 'fulfilled' && resVn.value) {
@@ -488,18 +573,15 @@
                 if (!hasData) {
                     throw new Error('Cả hai file dữ liệu đều trống hoặc không tìm thấy.');
                 }
-                
                 updateCurrentForumsData();
             } catch (error) {
                 console.error("Lỗi:", error);
-                listContainer.innerHTML = `<div class="empty-message" style="color: red;">
-                    Lỗi: ${error.message}.<br>
-                    Hãy chắc chắn bạn đã tạo file <b>data_vn.txt</b> và/hoặc <b>data_int.txt</b> trong cùng thư mục.
+                listContainer.innerHTML = `<div class="empty-message" style="color: #ef4444; font-weight: 500;">
+                    Lỗi: ${error.message}.<br>Hãy chắc chắn bạn đã tạo file data_vn.txt và/hoặc data_int.txt.
                 </div>`;
             }
         }
 
-        // Đọc dữ liệu từ mảng thô điền vào cấu trúc domain cụ thể của từng nguồn
         function parseToSource(dataArray, sourceType) {
             dataArray.forEach(item => {
                 const parts = item.split('|');
@@ -513,72 +595,77 @@
                     if (!masterData[sourceType][domain]) masterData[sourceType][domain] = [];
                     masterData[sourceType][domain].push({ title, url, domain });
                 } catch (e) {
-                    console.error(`URL không hợp lệ trong file ${sourceType}:`, url);
+                    console.error(`URL không hợp lệ:`, url);
                 }
             });
         }
 
-        // CẬP NHẬT: Gộp dữ liệu hiển thị dựa trên trạng thái nút Option đầu trang
         function updateCurrentForumsData() {
             forumsData = {};
-            
             if (activeSource === 'all' || activeSource === 'vn') {
                 for (const [domain, posts] of Object.entries(masterData.vn)) {
                     if (!forumsData[domain]) forumsData[domain] = [];
                     forumsData[domain] = forumsData[domain].concat(posts);
                 }
             }
-            
             if (activeSource === 'all' || activeSource === 'int') {
                 for (const [domain, posts] of Object.entries(masterData.int)) {
                     if (!forumsData[domain]) forumsData[domain] = [];
                     forumsData[domain] = forumsData[domain].concat(posts);
                 }
             }
-
             renderTabs();
         }
 
         function renderTabs() {
             filterContainer.innerHTML = ''; 
-            if (Object.keys(forumsData).length === 0) {
+            if (Object.keys(forumsData).length === 0 && bookmarks.length === 0) {
                 listContainer.innerHTML = '<div class="empty-message">Không có dữ liệu hợp lệ để hiển thị.</div>';
                 paginationContainer.innerHTML = '';
                 return;
             }
 
-            createTabButton('Tất cả', 'all');
-            Object.keys(forumsData).forEach(domain => {
-                createTabButton(domain.toUpperCase(), domain);
+            let totalAllPostsCount = 0;
+            Object.values(forumsData).forEach(posts => {
+                totalAllPostsCount += posts.length;
             });
 
-            // Tìm nút tab đang hoạt động trước đó hoặc mặc định chọn nút đầu tiên
-            const tabs = filterContainer.querySelectorAll('.btn-tab');
-            let targetTab = tabs[0];
-            tabs.forEach(tab => {
-                if(tab.textContent.toLowerCase() === currentDomain.toLowerCase()){
-                    targetTab = tab;
-                }
-            });
+            createTabButton('Yêu thích ⭐', 'fav_bookmarks', bookmarks.length);
+            createTabButton('Tất cả diễn đàn', 'all', totalAllPostsCount);
             
-            if (targetTab) {
-                targetTab.click();
-            }
+            Object.keys(forumsData).forEach(domain => {
+                createTabButton(domain.toUpperCase(), domain, forumsData[domain].length);
+            });
+
+            const tabs = filterContainer.querySelectorAll('.btn-tab');
+            let targetTab = tabs[1]; 
+            tabs.forEach(tab => {
+                if (tab.getAttribute('data-domain') === currentDomain) targetTab = tab;
+            });
+            if (targetTab) targetTab.click();
         }
 
-        function createTabButton(label, domainKey) {
+        function createTabButton(label, domainKey, count) {
             const button = document.createElement('button');
             button.className = 'btn-tab';
-            button.textContent = label;
+            button.setAttribute('data-domain', domainKey);
+            
+            const labelSpan = document.createElement('span');
+            labelSpan.textContent = label;
+            button.appendChild(labelSpan);
+
+            const badge = document.createElement('span');
+            badge.className = 'tab-badge';
+            badge.textContent = count;
+            button.appendChild(badge);
+
             if (domainKey === currentDomain) button.classList.add('active');
             
             button.addEventListener('click', () => {
                 document.querySelectorAll('.btn-tab').forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
-                
                 currentDomain = domainKey;
                 currentPage = 1;
-                // Không tự động xóa từ khóa tìm kiếm khi chuyển tab để trải nghiệm mượt mà hơn
                 displayPosts();
             });
             filterContainer.appendChild(button);
@@ -586,7 +673,9 @@
 
         function getActivePosts() {
             let targetPosts = [];
-            if (currentDomain === 'all') {
+            if (currentDomain === 'fav_bookmarks') {
+                targetPosts = [...bookmarks];
+            } else if (currentDomain === 'all') {
                 Object.values(forumsData).forEach(posts => {
                     targetPosts = targetPosts.concat(posts);
                 });
@@ -611,20 +700,59 @@
             }
 
             const totalPages = Math.ceil(targetPosts.length / postsPerPage);
-            // Bảo vệ an toàn nếu currentPage vượt quá tổng số trang mới cập nhật
             if (currentPage > totalPages) currentPage = totalPages || 1;
 
             const startIndex = (currentPage - 1) * postsPerPage;
-            const endIndex = startIndex + postsPerPage;
-            const paginatedPosts = targetPosts.slice(startIndex, endIndex);
+            const paginatedPosts = targetPosts.slice(startIndex, startIndex + postsPerPage);
 
             paginatedPosts.forEach(post => {
+                const isRead = readHistory.includes(post.url);
+                const isBookmarked = bookmarks.some(b => b.url === post.url);
+
+                // Sử dụng API Favicon của Google để gọi trực tiếp ảnh từ domain bài viết
+                const faviconUrl = `https://www.google.com/s2/favicons?domain=${post.domain}&sz=64`;
+
                 const postItem = document.createElement('div');
-                postItem.className = 'post-item';
+                postItem.className = `post-item ${isRead ? 'is-read' : ''}`;
                 postItem.innerHTML = `
-                    <a href="${post.url}" target="_blank" class="post-title">${post.title}</a>
-                    <span class="post-source">Nguồn: ${post.domain}</span>
+                    <img class="post-avatar" src="${faviconUrl}" alt="${post.domain}" onerror="this.onerror=null; this.src='${defaultAvatar}';">
+                    <div class="post-content-block">
+                        <a href="${post.url}" target="_blank" class="post-title">${post.title}</a>
+                        <span class="post-source">Nguồn: ${post.domain}</span>
+                    </div>
+                    <button class="btn-bookmark ${isBookmarked ? 'active' : ''}" title="Đánh dấu yêu thích">
+                        ${isBookmarked ? '★' : '☆'}
+                    </button>
                 `;
+
+                postItem.querySelector('.post-title').addEventListener('click', () => {
+                    if (!readHistory.includes(post.url)) {
+                        readHistory.push(post.url);
+                        localStorage.setItem('read_history', JSON.stringify(readHistory));
+                        postItem.classList.add('is-read');
+                    }
+                });
+
+                postItem.querySelector('.btn-bookmark').addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    let currentBookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+                    const foundIndex = currentBookmarks.findIndex(b => b.url === post.url);
+
+                    if (foundIndex > -1) {
+                        currentBookmarks.splice(foundIndex, 1);
+                    } else {
+                        currentBookmarks.push({ title: post.title, url: post.url, domain: post.domain });
+                    }
+
+                    bookmarks = currentBookmarks;
+                    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+                    
+                    const favTab = filterContainer.querySelector('[data-domain="fav_bookmarks"] .tab-badge');
+                    if (favTab) favTab.textContent = bookmarks.length;
+
+                    displayPosts(); 
+                });
+
                 listContainer.appendChild(postItem);
             });
 
@@ -640,27 +768,17 @@
             prevBtn.innerHTML = '&laquo;';
             prevBtn.disabled = currentPage === 1;
             prevBtn.addEventListener('click', () => {
-                if (currentPage > 1) {
-                    currentPage--;
-                    displayPosts();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
+                if (currentPage > 1) { currentPage--; displayPosts(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
             });
             paginationContainer.appendChild(prevBtn);
 
             for (let i = 1; i <= totalPages; i++) {
                 if (totalPages > 6 && Math.abs(currentPage - i) > 2 && i !== 1 && i !== totalPages) {
                     if (i === 2 && currentPage > 4) {
-                        const dots = document.createElement('span');
-                        dots.textContent = '...';
-                        dots.style.padding = '0 5px';
-                        paginationContainer.appendChild(dots);
+                        const dots = document.createElement('span'); dots.textContent = '...'; dots.style.padding = '0 5px'; paginationContainer.appendChild(dots);
                     }
                     if (i === totalPages - 1 && currentPage < totalPages - 3) {
-                        const dots = document.createElement('span');
-                        dots.textContent = '...';
-                        dots.style.padding = '0 5px';
-                        paginationContainer.appendChild(dots);
+                        const dots = document.createElement('span'); dots.textContent = '...'; dots.style.padding = '0 5px'; paginationContainer.appendChild(dots);
                     }
                     continue;
                 }
@@ -669,9 +787,7 @@
                 pageBtn.className = `btn-page ${i === currentPage ? 'active' : ''}`;
                 pageBtn.textContent = i;
                 pageBtn.addEventListener('click', () => {
-                    currentPage = i;
-                    displayPosts();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                    currentPage = i; displayPosts(); window.scrollTo({ top: 0, behavior: 'smooth' });
                 });
                 paginationContainer.appendChild(pageBtn);
             }
@@ -681,16 +797,11 @@
             nextBtn.innerHTML = '&raquo;';
             nextBtn.disabled = currentPage === totalPages;
             nextBtn.addEventListener('click', () => {
-                if (currentPage < totalPages) {
-                    currentPage++;
-                    displayPosts();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
+                if (currentPage < totalPages) { currentPage++; displayPosts(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
             });
             paginationContainer.appendChild(nextBtn);
         }
 
-        // --- KHU VỰC LẮNG NGHE SỰ KIỆN TÌM KIẾM ---
         searchInput.addEventListener('input', (e) => {
             clearTimeout(searchTimeout);
             searchTimeout = setTimeout(() => {
@@ -700,58 +811,66 @@
             }, 300);
         });
 
-        // --- KHU VỰC XỬ LÝ NÚT RANDOM ---
         btnRandom.addEventListener('click', () => {
             const allCurrentPosts = getActivePosts();
             if (allCurrentPosts.length === 0) {
-                alert('Không có bài viết nào trong mục này để chọn ngẫu nhiên!');
+                alert('Không có bài viết nào để lựa chọn!');
                 return;
             }
 
             listContainer.innerHTML = '';
             paginationContainer.innerHTML = ''; 
 
-            const randomIndex = Math.floor(Math.random() * allCurrentPosts.length);
-            const randomPost = allCurrentPosts[randomIndex];
+            const randomPost = allCurrentPosts[Math.floor(Math.random() * allCurrentPosts.length)];
+            const isRead = readHistory.includes(randomPost.url);
+            const isBookmarked = bookmarks.some(b => b.url === randomPost.url);
+            const faviconUrl = `https://www.google.com/s2/favicons?domain=${randomPost.domain}&sz=64`;
 
             const postItem = document.createElement('div');
-            postItem.className = 'post-item';
+            postItem.className = `post-item ${isRead ? 'is-read' : ''}`;
             postItem.innerHTML = `
-                <a href="${randomPost.url}" target="_blank" class="post-title">${randomPost.title}</a>
-                <span class="post-source">Nguồn: ${randomPost.domain}</span>
+                <img class="post-avatar" src="${faviconUrl}" alt="${randomPost.domain}" onerror="this.onerror=null; this.src='${defaultAvatar}';">
+                <div class="post-content-block">
+                    <a href="${randomPost.url}" target="_blank" class="post-title">${randomPost.title}</a>
+                    <span class="post-source">Nguồn: ${randomPost.domain}</span>
+                </div>
+                <button class="btn-bookmark ${isBookmarked ? 'active' : ''}" title="Đánh dấu yêu thích">
+                    ${isBookmarked ? '★' : '☆'}
+                </button>
             `;
+
+            postItem.querySelector('.post-title').addEventListener('click', () => {
+                if (!readHistory.includes(randomPost.url)) {
+                    readHistory.push(randomPost.url);
+                    localStorage.setItem('read_history', JSON.stringify(readHistory));
+                    postItem.classList.add('is-read');
+                }
+            });
+
             listContainer.appendChild(postItem);
         });
 
-        // --- KHU VỰC XỬ LÝ NÚT CẬP NHẬT DỮ LIỆU MỚI (BỎ CACHE) ---
         btnRefresh.addEventListener('click', async () => {
             btnRefresh.disabled = true;
-            btnRefresh.textContent = '⏳ Đang đồng bộ...';
-            
-            // Gọi hàm load với tham số true để xóa cache trên trình duyệt và IIS/Apache server
+            btnRefresh.textContent = '⏳ ...';
             await loadExternalData(true);
-            
             btnRefresh.disabled = false;
-            btnRefresh.textContent = '🔄 Cập nhật dữ liệu mới';
+            btnRefresh.textContent = '🔄 Đồng bộ';
         });
 
-        // --- KHU VỰC XỬ LÝ CHUYỂN ĐỔI NGUỒN DỮ LIỆU TỪ 2 FILE ---
         document.querySelectorAll('.btn-source').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 document.querySelectorAll('.btn-source').forEach(b => b.classList.remove('active'));
                 e.target.classList.add('active');
-                
                 activeSource = e.target.getAttribute('data-source');
                 currentPage = 1;
-                currentDomain = 'all'; // Reset tab domain về mặc định
+                currentDomain = 'all'; 
                 searchInput.value = '';
                 searchQuery = '';
-                
                 updateCurrentForumsData();
             });
         });
 
-        // Khởi chạy ứng dụng khi DOM sẵn sàng (chạy ở chế độ bình thường có cache)
         window.addEventListener('DOMContentLoaded', () => loadExternalData(false));
     </script>
 </body>
