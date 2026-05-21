@@ -433,8 +433,8 @@
             border: 1px solid var(--border-color);
         }
 
-        /* Thanh phân trang */
-        .pagination-container {
+        /* Thanh phân trang và Thanh điều hướng Random */
+        .pagination-container, .random-nav-container {
             display: flex;
             justify-content: center;
             align-items: center;
@@ -443,13 +443,13 @@
             flex-wrap: wrap;
         }
 
-        .btn-page {
+        .btn-page, .btn-nav {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             color: var(--text-color);
             min-width: 38px;
             height: 38px;
-            padding: 0 8px;
+            padding: 0 16px;
             border-radius: 8px;
             cursor: pointer;
             font-size: 14px;
@@ -461,7 +461,7 @@
             box-shadow: var(--card-shadow);
         }
 
-        .btn-page:hover:not(:disabled) {
+        .btn-page:hover:not(:disabled), .btn-nav:hover:not(:disabled) {
             border-color: var(--accent-color);
             background-color: var(--hover-bg);
         }
@@ -472,7 +472,7 @@
             border-color: var(--accent-color);
         }
 
-        .btn-page:disabled {
+        .btn-page:disabled, .btn-nav:disabled {
             opacity: 0.4;
             cursor: not-allowed;
             box-shadow: none;
@@ -539,9 +539,9 @@
     </div>
 
     <div class="pagination-container" id="paginationContainer"></div>
+    <div class="random-nav-container" id="randomNavContainer"></div>
 
     <script>
-        // Giữ nguyên toàn bộ logic Javascript cũ của bạn bên dưới...
         let masterData = { vn: {}, int: {} };
         let activeSource = 'all'; 
         let forumsData = {}; 
@@ -551,6 +551,10 @@
         let searchTimeout;
         const postsPerPage = 50;
 
+        // Quản lý lịch sử bài viết khi bấm "Đọc ngẫu nhiên"
+        let randomHistory = [];
+        let currentRandomIndex = -1;
+
         let readHistory = JSON.parse(localStorage.getItem('read_history')) || [];
         let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
         const defaultAvatar = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2394a3b8'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.53c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z'/></svg>";
@@ -558,6 +562,7 @@
         const filterContainer = document.getElementById('filterContainer');
         const listContainer = document.getElementById('listContainer');
         const paginationContainer = document.getElementById('paginationContainer');
+        const randomNavContainer = document.getElementById('randomNavContainer');
         const btnRandom = document.getElementById('btnRandom');
         const btnRefresh = document.getElementById('btnRefresh');
         const btnThemeToggle = document.getElementById('btnThemeToggle');
@@ -650,6 +655,7 @@
             if (Object.keys(forumsData).length === 0 && bookmarks.length === 0) {
                 listContainer.innerHTML = '<div class="empty-message">Không có dữ liệu hợp lệ để hiển thị.</div>';
                 paginationContainer.innerHTML = '';
+                randomNavContainer.innerHTML = '';
                 return;
             }
             let totalAllPostsCount = 0;
@@ -682,6 +688,7 @@
                 button.classList.add('active');
                 currentDomain = domainKey;
                 currentPage = 1;
+                resetRandomHistory(); // Reset khi đổi tab danh mục công việc
                 displayPosts();
             });
             filterContainer.appendChild(button);
@@ -698,6 +705,7 @@
 
         function displayPosts() {
             listContainer.innerHTML = ''; 
+            randomNavContainer.innerHTML = ''; // Ẩn nút điều hướng random khi xem danh sách thường
             const targetPosts = getActivePosts();
             if (targetPosts.length === 0) {
                 listContainer.innerHTML = '<div class="empty-message">Không tìm thấy bài viết nào phù hợp.</div>';
@@ -710,44 +718,57 @@
             const paginatedPosts = targetPosts.slice(startIndex, startIndex + postsPerPage);
 
             paginatedPosts.forEach(post => {
-                const isRead = readHistory.includes(post.url);
-                const isBookmarked = bookmarks.some(b => b.url === post.url);
-                const faviconUrl = `https://www.google.com/s2/favicons?domain=${post.domain}&sz=64`;
-
-                const postItem = document.createElement('div');
-                postItem.className = `post-item ${isRead ? 'is-read' : ''}`;
-                postItem.innerHTML = `
-                    <img class="post-avatar" src="${faviconUrl}" alt="${post.domain}" onerror="this.onerror=null; this.src='${defaultAvatar}';">
-                    <div class="post-content-block">
-                        <a href="${post.url}" target="_blank" class="post-title">${post.title}</a>
-                        <span class="post-source">Nguồn: ${post.domain}</span>
-                    </div>
-                    <button class="btn-bookmark ${isBookmarked ? 'active' : ''}" title="Đánh dấu yêu thích">${isBookmarked ? '★' : '☆'}</button>
-                `;
-
-                postItem.querySelector('.post-title').addEventListener('click', () => {
-                    if (!readHistory.includes(post.url)) {
-                        readHistory.push(post.url);
-                        localStorage.setItem('read_history', JSON.stringify(readHistory));
-                        postItem.classList.add('is-read');
-                    }
-                });
-
-                postItem.querySelector('.btn-bookmark').addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    let currentBookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
-                    const foundIndex = currentBookmarks.findIndex(b => b.url === post.url);
-                    if (foundIndex > -1) { currentBookmarks.splice(foundIndex, 1); }
-                    else { currentBookmarks.push({ title: post.title, url: post.url, domain: post.domain }); }
-                    bookmarks = currentBookmarks;
-                    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
-                    const favTab = filterContainer.querySelector('[data-domain="fav_bookmarks"] .tab-badge');
-                    if (favTab) favTab.textContent = bookmarks.length;
-                    displayPosts(); 
-                });
-                listContainer.appendChild(postItem);
+                renderPostCard(post);
             });
             renderPagination(totalPages);
+        }
+
+        // Tách hàm render Card bài viết để tái sử dụng
+        function renderPostCard(post) {
+            const isRead = readHistory.includes(post.url);
+            const isBookmarked = bookmarks.some(b => b.url === post.url);
+            const faviconUrl = `https://www.google.com/s2/favicons?domain=${post.domain}&sz=64`;
+
+            const postItem = document.createElement('div');
+            postItem.className = `post-item ${isRead ? 'is-read' : ''}`;
+            postItem.innerHTML = `
+                <img class="post-avatar" src="${faviconUrl}" alt="${post.domain}" onerror="this.onerror=null; this.src='${defaultAvatar}';">
+                <div class="post-content-block">
+                    <a href="${post.url}" target="_blank" class="post-title">${post.title}</a>
+                    <span class="post-source">Nguồn: ${post.domain}</span>
+                </div>
+                <button class="btn-bookmark ${isBookmarked ? 'active' : ''}" title="Đánh dấu yêu thích">${isBookmarked ? '★' : '☆'}</button>
+            `;
+
+            postItem.querySelector('.post-title').addEventListener('click', () => {
+                if (!readHistory.includes(post.url)) {
+                    readHistory.push(post.url);
+                    localStorage.setItem('read_history', JSON.stringify(readHistory));
+                    postItem.classList.add('is-read');
+                }
+            });
+
+            postItem.querySelector('.btn-bookmark').addEventListener('click', (e) => {
+                e.stopPropagation();
+                let currentBookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+                const foundIndex = currentBookmarks.findIndex(b => b.url === post.url);
+                if (foundIndex > -1) { currentBookmarks.splice(foundIndex, 1); }
+                else { currentBookmarks.push({ title: post.title, url: post.url, domain: post.domain }); }
+                bookmarks = currentBookmarks;
+                localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+                const favTab = filterContainer.querySelector('[data-domain="fav_bookmarks"] .tab-badge');
+                if (favTab) favTab.textContent = bookmarks.length;
+                
+                // Nếu đang ở màn hình hiển thị Random, chỉ render lại card đó thay vì tải lại toàn bộ trang
+                if (currentRandomIndex !== -1) {
+                    const currentPost = randomHistory[currentRandomIndex];
+                    listContainer.innerHTML = '';
+                    renderPostCard(currentPost);
+                } else {
+                    displayPosts(); 
+                }
+            });
+            listContainer.appendChild(postItem);
         }
 
         function renderPagination(totalPages) {
@@ -776,40 +797,72 @@
             paginationContainer.appendChild(nextBtn);
         }
 
+        function resetRandomHistory() {
+            randomHistory = [];
+            currentRandomIndex = -1;
+        }
+
+        // Điều hướng lịch sử bài viết ngẫu nhiên công việc
+        function renderRandomNavigation() {
+            randomNavContainer.innerHTML = '';
+            
+            const prevNavBtn = document.createElement('button');
+            prevNavBtn.className = 'btn-nav';
+            prevNavBtn.innerHTML = '&larr; Bài trước';
+            prevNavBtn.disabled = currentRandomIndex <= 0;
+            prevNavBtn.addEventListener('click', () => {
+                if (currentRandomIndex > 0) {
+                    currentRandomIndex--;
+                    showRandomPostAtCurrentIndex();
+                }
+            });
+
+            const nextNavBtn = document.createElement('button');
+            nextNavBtn.className = 'btn-nav';
+            nextNavBtn.innerHTML = 'Bài sau &rarr;';
+            nextNavBtn.disabled = currentRandomIndex >= randomHistory.length - 1;
+            nextNavBtn.addEventListener('click', () => {
+                if (currentRandomIndex < randomHistory.length - 1) {
+                    currentRandomIndex++;
+                    showRandomPostAtCurrentIndex();
+                }
+            });
+
+            randomNavContainer.appendChild(prevNavBtn);
+            randomNavContainer.appendChild(nextNavBtn);
+        }
+
+        function showRandomPostAtCurrentIndex() {
+            listContainer.innerHTML = '';
+            paginationContainer.innerHTML = '';
+            const currentPost = randomHistory[currentRandomIndex];
+            renderPostCard(currentPost);
+            renderRandomNavigation();
+        }
+
         searchInput.addEventListener('input', (e) => {
             clearTimeout(searchTimeout);
-            searchTimeout = setTimeout(() => { searchQuery = e.target.value.trim().toLowerCase(); currentPage = 1; displayPosts(); }, 300);
+            searchTimeout = setTimeout(() => { searchQuery = e.target.value.trim().toLowerCase(); currentPage = 1; resetRandomHistory(); displayPosts(); }, 300);
         });
 
         btnRandom.addEventListener('click', () => {
             const allCurrentPosts = getActivePosts();
             if (allCurrentPosts.length === 0) { alert('Không có bài viết nào để lựa chọn!'); return; }
-            listContainer.innerHTML = ''; paginationContainer.innerHTML = ''; 
-            const randomPost = allCurrentPosts[Math.floor(Math.random() * allCurrentPosts.length)];
-            const isRead = readHistory.includes(randomPost.url);
-            const isBookmarked = bookmarks.some(b => b.url === randomPost.url);
-            const faviconUrl = `https://www.google.com/s2/favicons?domain=${randomPost.domain}&sz=64`;
+            
+            // Nếu đang xem dở lịch sử cũ mà bấm tiếp nút Random, ta sẽ xóa các bài viết "sau" vị trí hiện tại đi để thêm nhánh mới
+            if (currentRandomIndex < randomHistory.length - 1) {
+                randomHistory = randomHistory.slice(0, currentRandomIndex + 1);
+            }
 
-            const postItem = document.createElement('div');
-            postItem.className = `post-item ${isRead ? 'is-read' : ''}`;
-            postItem.innerHTML = `
-                <img class="post-avatar" src="${faviconUrl}" alt="${randomPost.domain}" onerror="this.onerror=null; this.src='${defaultAvatar}';">
-                <div class="post-content-block">
-                    <a href="${randomPost.url}" target="_blank" class="post-title">${randomPost.title}</a>
-                    <span class="post-source">Nguồn: ${randomPost.domain}</span>
-                </div>
-                <button class="btn-bookmark ${isBookmarked ? 'active' : ''}" title="Đánh dấu yêu thích">${isBookmarked ? '★' : '☆'}</button>
-            `;
-            postItem.querySelector('.post-title').addEventListener('click', () => {
-                if (!readHistory.includes(randomPost.url)) {
-                    readHistory.push(randomPost.url); localStorage.setItem('read_history', JSON.stringify(readHistory)); postItem.classList.add('is-read');
-                }
-            });
-            listContainer.appendChild(postItem);
+            const randomPost = allCurrentPosts[Math.floor(Math.random() * allCurrentPosts.length)];
+            randomHistory.push(randomPost);
+            currentRandomIndex = randomHistory.length - 1;
+
+            showRandomPostAtCurrentIndex();
         });
 
-        btnRefresh.addEventListener('click', async () => { btnRefresh.disabled = true; btnRefresh.textContent = '⏳ ...'; await loadExternalData(true); btnRefresh.disabled = false; btnRefresh.textContent = 'Đồng bộ'; });
-        document.querySelectorAll('.btn-source').forEach(btn => { btn.addEventListener('click', (e) => { document.querySelectorAll('.btn-source').forEach(b => b.classList.remove('active')); e.target.classList.add('active'); activeSource = e.target.getAttribute('data-source'); currentPage = 1; currentDomain = 'all'; searchInput.value = ''; searchQuery = ''; updateCurrentForumsData(); }); });
+        btnRefresh.addEventListener('click', async () => { btnRefresh.disabled = true; btnRefresh.textContent = '⏳ ...'; resetRandomHistory(); await loadExternalData(true); btnRefresh.disabled = false; btnRefresh.textContent = 'Đồng bộ'; });
+        document.querySelectorAll('.btn-source').forEach(btn => { btn.addEventListener('click', (e) => { document.querySelectorAll('.btn-source').forEach(b => b.classList.remove('active')); e.target.classList.add('active'); activeSource = e.target.getAttribute('data-source'); currentPage = 1; currentDomain = 'all'; searchInput.value = ''; searchQuery = ''; resetRandomHistory(); updateCurrentForumsData(); }); });
         window.addEventListener('DOMContentLoaded', () => loadExternalData(false));
     </script>
 </body>
