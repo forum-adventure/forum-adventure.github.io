@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forum Data Filter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
     <style>
         /* Cấu hình màu sắc cho cả 2 chế độ */
         :root[data-theme="light"] {
@@ -29,6 +33,10 @@
             --star-active: #eab308;
             --badge-bg: #f1f5f9;
             --badge-text: #475569;
+            
+            /* Thêm màu sắc thương hiệu riêng cho Logo ở chế độ sáng */
+            --logo-color: #1a1a1a;
+            --tagline-color: #555555;
         }
 
         :root[data-theme="dark"] {
@@ -54,6 +62,10 @@
             --star-active: #f59e0b;
             --badge-bg: #334155;
             --badge-text: #cbd5e1;
+            
+            /* Thêm màu sắc thương hiệu riêng cho Logo ở chế độ tối */
+            --logo-color: #ffffff;
+            --tagline-color: #94a3b8;
         }
 
         body {
@@ -117,11 +129,32 @@
             transform: scale(1.05);
         }
 
-        h2 {
-            font-weight: 700;
-            margin-bottom: 24px;
+        /* Định dạng cụm Logo "The Highball" tinh tế và sang trọng */
+        .brand-container {
             text-align: center;
-            letter-spacing: -0.5px;
+            margin: 32px 0 40px 0;
+        }
+
+        .brand-logo {
+            font-family: "Playfair Display", "Georgia", "Times New Roman", serif;
+            font-size: 46px;
+            font-weight: 700;
+            color: var(--logo-color);
+            margin: 0;
+            letter-spacing: 0.5px;
+            line-height: 1.1;
+            transition: color 0.3s ease;
+        }
+
+        .brand-tagline {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 11px;
+           
+            letter-spacing: 2px; /* Tăng khoảng cách chữ để tạo cảm giác sang trọng, thoáng đãng */
+            color: var(--tagline-color);
+            margin: 10px 0 0 0;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
 
         /* Thanh nút chọn nguồn data ở đầu trang */
@@ -149,6 +182,7 @@
             border-radius: 20px;
             cursor: pointer;
             transition: all 0.2s ease;
+            
         }
 
         .btn-source.active {
@@ -330,7 +364,7 @@
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            object-fit: cover; /* Đảm bảo hình ảnh vuông vắn và gọn trong khung tròn */
+            object-fit: cover; 
             background-color: var(--badge-bg);
             border: 1px solid var(--border-color);
         }
@@ -452,6 +486,13 @@
             .btn-action-util {
                 height: 42px;
             }
+            .brand-logo {
+                font-size: 36px;
+            }
+            .brand-tagline {
+                font-size: 12px;
+                letter-spacing: 2px;
+            }
         }
     </style>
 </head>
@@ -467,7 +508,10 @@
         </button>
     </div>
 
-    <h2>Danh Sách Bài Viết Diễn Đàn</h2>
+    <div class="brand-container">
+        <h1 class="brand-logo">Forum Adventure</h1>
+        <p class="brand-tagline">Danh Sách Bài Viết Diễn Đàn Có Nhiều Lượt Tương Tác</p>
+    </div>
 
     <div class="source-toggle-container">
         <div class="source-toggle">
@@ -486,8 +530,8 @@
                 <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
             </svg>
         </div>
-        <button class="btn-action-util btn-random" id="btnRandom" title="Xem ngẫu nhiên một bài viết từ danh mục hiện tại">🎲 Ngẫu nhiên</button>
-        <button class="btn-action-util btn-refresh" id="btnRefresh" title="Bỏ cache và cập nhật dữ liệu mới nhất từ máy chủ">🔄 Đồng bộ</button>
+        <button class="btn-action-util btn-random" id="btnRandom" title="Xem ngẫu nhiên một bài viết từ danh mục hiện tại">Đọc ngẫu nhiên</button>
+        <button class="btn-action-util btn-refresh" id="btnRefresh" title="Bỏ cache và cập nhật dữ liệu mới nhất từ máy chủ">Đồng bộ</button>
     </div>
 
     <div class="list-container" id="listContainer">
@@ -497,25 +541,18 @@
     <div class="pagination-container" id="paginationContainer"></div>
 
     <script>
-        let masterData = {
-            vn: {},
-            int: {}
-        };
+        // Giữ nguyên toàn bộ logic Javascript cũ của bạn bên dưới...
+        let masterData = { vn: {}, int: {} };
         let activeSource = 'all'; 
-        
         let forumsData = {}; 
         let currentDomain = 'all';
         let currentPage = 1;
         let searchQuery = '';
         let searchTimeout;
-
         const postsPerPage = 50;
 
-        // Quản lý lưu trữ Trạng thái Đã đọc và Bookmark Yêu thích
         let readHistory = JSON.parse(localStorage.getItem('read_history')) || [];
         let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
-
-        // Một SVG icon mặc định dạng quả địa cầu dưới chuỗi base64 nếu website bị lỗi favicon
         const defaultAvatar = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2394a3b8'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.53c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z'/></svg>";
 
         const filterContainer = document.getElementById('filterContainer');
@@ -527,7 +564,6 @@
         const themeIcon = document.getElementById('themeIcon');
         const searchInput = document.getElementById('searchInput');
 
-        // --- DARK / LIGHT MODE ---
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
         updateThemeUI(savedTheme);
@@ -544,7 +580,6 @@
             themeIcon.textContent = theme === 'dark' ? '🌙' : '☀️';
         }
 
-        // Tải dữ liệu từ các file txt
         async function loadExternalData(forceRefresh = false) {
             try {
                 listContainer.innerHTML = '<div class="empty-message">Đang tải dữ liệu từ các file...</div>';
@@ -570,15 +605,11 @@
                     hasData = true;
                 }
 
-                if (!hasData) {
-                    throw new Error('Cả hai file dữ liệu đều trống hoặc không tìm thấy.');
-                }
+                if (!hasData) throw new Error('Cả hai file dữ liệu đều trống hoặc không tìm thấy.');
                 updateCurrentForumsData();
             } catch (error) {
                 console.error("Lỗi:", error);
-                listContainer.innerHTML = `<div class="empty-message" style="color: #ef4444; font-weight: 500;">
-                    Lỗi: ${error.message}.<br>Hãy chắc chắn bạn đã tạo file data_vn.txt và/hoặc data_int.txt.
-                </div>`;
+                listContainer.innerHTML = `<div class="empty-message" style="color: #ef4444; font-weight: 500;">Lỗi: ${error.message}.<br>Hãy chắc chắn bạn đã tạo file data_vn.txt và/hoặc data_int.txt.</div>`;
             }
         }
 
@@ -588,15 +619,12 @@
                 if (parts.length < 2) return;
                 const title = parts[0].trim();
                 const url = parts[1].trim();
-
                 try {
                     const urlObj = new URL(url);
                     const domain = urlObj.hostname.replace('www.', '');
                     if (!masterData[sourceType][domain]) masterData[sourceType][domain] = [];
                     masterData[sourceType][domain].push({ title, url, domain });
-                } catch (e) {
-                    console.error(`URL không hợp lệ:`, url);
-                }
+                } catch (e) { console.error(`URL không hợp lệ:`, url); }
             });
         }
 
@@ -624,24 +652,16 @@
                 paginationContainer.innerHTML = '';
                 return;
             }
-
             let totalAllPostsCount = 0;
-            Object.values(forumsData).forEach(posts => {
-                totalAllPostsCount += posts.length;
-            });
+            Object.values(forumsData).forEach(posts => { totalAllPostsCount += posts.length; });
 
             createTabButton('Yêu thích ⭐', 'fav_bookmarks', bookmarks.length);
-            createTabButton('Tất cả diễn đàn', 'all', totalAllPostsCount);
-            
-            Object.keys(forumsData).forEach(domain => {
-                createTabButton(domain.toUpperCase(), domain, forumsData[domain].length);
-            });
+            createTabButton('Tất cả bài viết', 'all', totalAllPostsCount);
+            Object.keys(forumsData).forEach(domain => { createTabButton(domain.toUpperCase(), domain, forumsData[domain].length); });
 
             const tabs = filterContainer.querySelectorAll('.btn-tab');
             let targetTab = tabs[1]; 
-            tabs.forEach(tab => {
-                if (tab.getAttribute('data-domain') === currentDomain) targetTab = tab;
-            });
+            tabs.forEach(tab => { if (tab.getAttribute('data-domain') === currentDomain) targetTab = tab; });
             if (targetTab) targetTab.click();
         }
 
@@ -649,18 +669,14 @@
             const button = document.createElement('button');
             button.className = 'btn-tab';
             button.setAttribute('data-domain', domainKey);
-            
             const labelSpan = document.createElement('span');
             labelSpan.textContent = label;
             button.appendChild(labelSpan);
-
             const badge = document.createElement('span');
             badge.className = 'tab-badge';
             badge.textContent = count;
             button.appendChild(badge);
-
             if (domainKey === currentDomain) button.classList.add('active');
-            
             button.addEventListener('click', () => {
                 document.querySelectorAll('.btn-tab').forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
@@ -673,43 +689,29 @@
 
         function getActivePosts() {
             let targetPosts = [];
-            if (currentDomain === 'fav_bookmarks') {
-                targetPosts = [...bookmarks];
-            } else if (currentDomain === 'all') {
-                Object.values(forumsData).forEach(posts => {
-                    targetPosts = targetPosts.concat(posts);
-                });
-            } else {
-                targetPosts = forumsData[currentDomain] || [];
-            }
-
-            if (searchQuery !== '') {
-                targetPosts = targetPosts.filter(post => post.title.toLowerCase().includes(searchQuery));
-            }
+            if (currentDomain === 'fav_bookmarks') { targetPosts = [...bookmarks]; }
+            else if (currentDomain === 'all') { Object.values(forumsData).forEach(posts => { targetPosts = targetPosts.concat(posts); }); }
+            else { targetPosts = forumsData[currentDomain] || []; }
+            if (searchQuery !== '') { targetPosts = targetPosts.filter(post => post.title.toLowerCase().includes(searchQuery)); }
             return targetPosts;
         }
 
         function displayPosts() {
             listContainer.innerHTML = ''; 
             const targetPosts = getActivePosts();
-
             if (targetPosts.length === 0) {
                 listContainer.innerHTML = '<div class="empty-message">Không tìm thấy bài viết nào phù hợp.</div>';
                 paginationContainer.innerHTML = '';
                 return;
             }
-
             const totalPages = Math.ceil(targetPosts.length / postsPerPage);
             if (currentPage > totalPages) currentPage = totalPages || 1;
-
             const startIndex = (currentPage - 1) * postsPerPage;
             const paginatedPosts = targetPosts.slice(startIndex, startIndex + postsPerPage);
 
             paginatedPosts.forEach(post => {
                 const isRead = readHistory.includes(post.url);
                 const isBookmarked = bookmarks.some(b => b.url === post.url);
-
-                // Sử dụng API Favicon của Google để gọi trực tiếp ảnh từ domain bài viết
                 const faviconUrl = `https://www.google.com/s2/favicons?domain=${post.domain}&sz=64`;
 
                 const postItem = document.createElement('div');
@@ -720,9 +722,7 @@
                         <a href="${post.url}" target="_blank" class="post-title">${post.title}</a>
                         <span class="post-source">Nguồn: ${post.domain}</span>
                     </div>
-                    <button class="btn-bookmark ${isBookmarked ? 'active' : ''}" title="Đánh dấu yêu thích">
-                        ${isBookmarked ? '★' : '☆'}
-                    </button>
+                    <button class="btn-bookmark ${isBookmarked ? 'active' : ''}" title="Đánh dấu yêu thích">${isBookmarked ? '★' : '☆'}</button>
                 `;
 
                 postItem.querySelector('.post-title').addEventListener('click', () => {
@@ -737,90 +737,54 @@
                     e.stopPropagation();
                     let currentBookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
                     const foundIndex = currentBookmarks.findIndex(b => b.url === post.url);
-
-                    if (foundIndex > -1) {
-                        currentBookmarks.splice(foundIndex, 1);
-                    } else {
-                        currentBookmarks.push({ title: post.title, url: post.url, domain: post.domain });
-                    }
-
+                    if (foundIndex > -1) { currentBookmarks.splice(foundIndex, 1); }
+                    else { currentBookmarks.push({ title: post.title, url: post.url, domain: post.domain }); }
                     bookmarks = currentBookmarks;
                     localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
-                    
                     const favTab = filterContainer.querySelector('[data-domain="fav_bookmarks"] .tab-badge');
                     if (favTab) favTab.textContent = bookmarks.length;
-
                     displayPosts(); 
                 });
-
                 listContainer.appendChild(postItem);
             });
-
             renderPagination(totalPages);
         }
 
         function renderPagination(totalPages) {
             paginationContainer.innerHTML = '';
             if (totalPages <= 1) return;
-
             const prevBtn = document.createElement('button');
-            prevBtn.className = 'btn-page';
-            prevBtn.innerHTML = '&laquo;';
-            prevBtn.disabled = currentPage === 1;
-            prevBtn.addEventListener('click', () => {
-                if (currentPage > 1) { currentPage--; displayPosts(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
-            });
+            prevBtn.className = 'btn-page'; prevBtn.innerHTML = '&laquo;'; prevBtn.disabled = currentPage === 1;
+            prevBtn.addEventListener('click', () => { if (currentPage > 1) { currentPage--; displayPosts(); window.scrollTo({ top: 0, behavior: 'smooth' }); } });
             paginationContainer.appendChild(prevBtn);
 
             for (let i = 1; i <= totalPages; i++) {
                 if (totalPages > 6 && Math.abs(currentPage - i) > 2 && i !== 1 && i !== totalPages) {
-                    if (i === 2 && currentPage > 4) {
-                        const dots = document.createElement('span'); dots.textContent = '...'; dots.style.padding = '0 5px'; paginationContainer.appendChild(dots);
-                    }
-                    if (i === totalPages - 1 && currentPage < totalPages - 3) {
-                        const dots = document.createElement('span'); dots.textContent = '...'; dots.style.padding = '0 5px'; paginationContainer.appendChild(dots);
-                    }
+                    if (i === 2 && currentPage > 4) { const dots = document.createElement('span'); dots.textContent = '...'; dots.style.padding = '0 5px'; paginationContainer.appendChild(dots); }
+                    if (i === totalPages - 1 && currentPage < totalPages - 3) { const dots = document.createElement('span'); dots.textContent = '...'; dots.style.padding = '0 5px'; paginationContainer.appendChild(dots); }
                     continue;
                 }
-
                 const pageBtn = document.createElement('button');
-                pageBtn.className = `btn-page ${i === currentPage ? 'active' : ''}`;
-                pageBtn.textContent = i;
-                pageBtn.addEventListener('click', () => {
-                    currentPage = i; displayPosts(); window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
+                pageBtn.className = `btn-page ${i === currentPage ? 'active' : ''}`; pageBtn.textContent = i;
+                pageBtn.addEventListener('click', () => { currentPage = i; displayPosts(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
                 paginationContainer.appendChild(pageBtn);
             }
 
             const nextBtn = document.createElement('button');
-            nextBtn.className = 'btn-page';
-            nextBtn.innerHTML = '&raquo;';
-            nextBtn.disabled = currentPage === totalPages;
-            nextBtn.addEventListener('click', () => {
-                if (currentPage < totalPages) { currentPage++; displayPosts(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
-            });
+            nextBtn.className = 'btn-page'; nextBtn.innerHTML = '&raquo;'; nextBtn.disabled = currentPage === totalPages;
+            nextBtn.addEventListener('click', () => { if (currentPage < totalPages) { currentPage++; displayPosts(); window.scrollTo({ top: 0, behavior: 'smooth' }); } });
             paginationContainer.appendChild(nextBtn);
         }
 
         searchInput.addEventListener('input', (e) => {
             clearTimeout(searchTimeout);
-            searchTimeout = setTimeout(() => {
-                searchQuery = e.target.value.trim().toLowerCase();
-                currentPage = 1;
-                displayPosts();
-            }, 300);
+            searchTimeout = setTimeout(() => { searchQuery = e.target.value.trim().toLowerCase(); currentPage = 1; displayPosts(); }, 300);
         });
 
         btnRandom.addEventListener('click', () => {
             const allCurrentPosts = getActivePosts();
-            if (allCurrentPosts.length === 0) {
-                alert('Không có bài viết nào để lựa chọn!');
-                return;
-            }
-
-            listContainer.innerHTML = '';
-            paginationContainer.innerHTML = ''; 
-
+            if (allCurrentPosts.length === 0) { alert('Không có bài viết nào để lựa chọn!'); return; }
+            listContainer.innerHTML = ''; paginationContainer.innerHTML = ''; 
             const randomPost = allCurrentPosts[Math.floor(Math.random() * allCurrentPosts.length)];
             const isRead = readHistory.includes(randomPost.url);
             const isBookmarked = bookmarks.some(b => b.url === randomPost.url);
@@ -834,43 +798,18 @@
                     <a href="${randomPost.url}" target="_blank" class="post-title">${randomPost.title}</a>
                     <span class="post-source">Nguồn: ${randomPost.domain}</span>
                 </div>
-                <button class="btn-bookmark ${isBookmarked ? 'active' : ''}" title="Đánh dấu yêu thích">
-                    ${isBookmarked ? '★' : '☆'}
-                </button>
+                <button class="btn-bookmark ${isBookmarked ? 'active' : ''}" title="Đánh dấu yêu thích">${isBookmarked ? '★' : '☆'}</button>
             `;
-
             postItem.querySelector('.post-title').addEventListener('click', () => {
                 if (!readHistory.includes(randomPost.url)) {
-                    readHistory.push(randomPost.url);
-                    localStorage.setItem('read_history', JSON.stringify(readHistory));
-                    postItem.classList.add('is-read');
+                    readHistory.push(randomPost.url); localStorage.setItem('read_history', JSON.stringify(readHistory)); postItem.classList.add('is-read');
                 }
             });
-
             listContainer.appendChild(postItem);
         });
 
-        btnRefresh.addEventListener('click', async () => {
-            btnRefresh.disabled = true;
-            btnRefresh.textContent = '⏳ ...';
-            await loadExternalData(true);
-            btnRefresh.disabled = false;
-            btnRefresh.textContent = '🔄 Đồng bộ';
-        });
-
-        document.querySelectorAll('.btn-source').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                document.querySelectorAll('.btn-source').forEach(b => b.classList.remove('active'));
-                e.target.classList.add('active');
-                activeSource = e.target.getAttribute('data-source');
-                currentPage = 1;
-                currentDomain = 'all'; 
-                searchInput.value = '';
-                searchQuery = '';
-                updateCurrentForumsData();
-            });
-        });
-
+        btnRefresh.addEventListener('click', async () => { btnRefresh.disabled = true; btnRefresh.textContent = '⏳ ...'; await loadExternalData(true); btnRefresh.disabled = false; btnRefresh.textContent = 'Đồng bộ'; });
+        document.querySelectorAll('.btn-source').forEach(btn => { btn.addEventListener('click', (e) => { document.querySelectorAll('.btn-source').forEach(b => b.classList.remove('active')); e.target.classList.add('active'); activeSource = e.target.getAttribute('data-source'); currentPage = 1; currentDomain = 'all'; searchInput.value = ''; searchQuery = ''; updateCurrentForumsData(); }); });
         window.addEventListener('DOMContentLoaded', () => loadExternalData(false));
     </script>
 </body>
