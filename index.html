@@ -803,7 +803,7 @@
             if (targetTab) targetTab.click();
         }
 
-        function createTabButton(label, domainKey, count) {
+                function createTabButton(label, domainKey, count) {
             const button = document.createElement('button');
             button.className = 'btn-tab';
             button.setAttribute('data-domain', domainKey);
@@ -815,6 +815,7 @@
             badge.textContent = count;
             button.appendChild(badge);
             if (domainKey === currentDomain) button.classList.add('active');
+            
             button.addEventListener('click', () => {
                 document.querySelectorAll('.btn-tab').forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
@@ -822,9 +823,24 @@
                 currentPage = 1;
                 resetRandomHistory(); 
                 displayPosts();
+
+                // TỰ ĐỘNG TRƯỢT NÚT RA CHÍNH GIỮA KHUNG NHÌN
+                const containerWidth = filterContainer.offsetWidth;
+                const buttonWidth = button.offsetWidth;
+                const buttonLeft = button.offsetLeft;
+                
+                // Tính toán vị trí cuộn sao cho nút nằm chính giữa
+                const targetScrollLeft = buttonLeft - (containerWidth / 2) + (buttonWidth / 2);
+                
+                filterContainer.scrollTo({
+                    left: targetScrollLeft,
+                    behavior: 'smooth' // Cuộn mượt mà
+                });
             });
+            
             filterContainer.appendChild(button);
         }
+
 
         function getActivePosts() {
             let targetPosts = [];
