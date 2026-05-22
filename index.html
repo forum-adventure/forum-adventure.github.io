@@ -315,20 +315,47 @@
             white-space: nowrap;
         }
 
+        /* CSS MỚI: Hiệu ứng Outline và chỉ NHÁY background khi bấm (click) */
         .btn-random {
-            background-color: var(--random-color);
-            color: white;
-            border: none;
+            background-color: transparent;
+            color: var(--random-color);
+            border: 1.5px solid var(--random-color);
+            transition: background-color 0.1s ease-out, color 0.1s ease-out; /* Tạo độ mượt khi nháy */
         }
-        .btn-random:hover { background-color: var(--random-hover); }
+        .btn-random:hover { 
+            /* Giữ nguyên nền trong suốt khi di chuột, chỉ đổi màu nhẹ nếu muốn hoặc để trống */
+            background-color: rgba(16, 185, 129, 0.05); /* Thêm 5% màu nền rất nhẹ khi hover cho tự nhiên */
+        }
+        .btn-random:active {
+            /* Nháy màu nền đầy đặn lên ngay khi bấm */
+            background-color: var(--random-color) !important; 
+            color: #ffffff;
+            transition: none; /* Bấm một phát là lên màu ngay lập tức không độ trễ */
+        }
 
         .btn-refresh {
-            background-color: var(--refresh-color);
-            color: white;
-            border: none;
+            background-color: transparent;
+            color: var(--refresh-color);
+            border: 1.5px solid var(--refresh-color);
+            transition: background-color 0.1s ease-out, color 0.1s ease-out;
         }
-        .btn-refresh:hover { background-color: var(--refresh-hover); }
-        .btn-refresh:disabled { opacity: 0.6; cursor: not-allowed; }
+        .btn-refresh:hover { 
+            background-color: rgba(6, 182, 212, 0.05); 
+        }
+        .btn-refresh:active {
+            background-color: var(--refresh-color) !important;
+            color: #ffffff;
+            transition: none;
+        }
+        
+        .btn-refresh:disabled { 
+            opacity: 0.4; 
+            cursor: not-allowed; 
+            background-color: transparent !important;
+            color: var(--refresh-color);
+        }
+
+
 
         /* Danh sách dạng Card */
         .list-container {
