@@ -793,25 +793,47 @@
             });
 
             postItem.querySelector('.btn-bookmark').addEventListener('click', (e) => {
-                e.stopPropagation();
-                let currentBookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
-                const foundIndex = currentBookmarks.findIndex(b => b.url === post.url);
-                if (foundIndex > -1) { currentBookmarks.splice(foundIndex, 1); }
-                else { currentBookmarks.push({ title: post.title, url: post.url, domain: post.domain }); }
-                bookmarks = currentBookmarks;
-                localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
-                const favTab = filterContainer.querySelector('[data-domain="fav_bookmarks"] .tab-badge');
-                if (favTab) favTab.textContent = bookmarks.length;
-                
-                // Nếu đang ở màn hình hiển thị Random, chỉ render lại card đó thay vì tải lại toàn bộ trang
-                if (currentRandomIndex !== -1) {
-                    const currentPost = randomHistory[currentRandomIndex];
-                    listContainer.innerHTML = '';
-                    renderPostCard(currentPost);
-                } else {
-                    displayPosts(); 
-                }
-            });
+    e.stopPropagation();
+    let currentBookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+    const foundIndex = currentBookmarks.findIndex(b => b.url === post.url);
+    
+    // Khai báo biến để kiểm tra trạng thái sau khi click
+    let isNowBookmarked = false;
+
+    if (foundIndex > -1) { 
+        currentBookmarks.splice(foundIndex, 1); 
+    } else { 
+        currentBookmarks.push({ title: post.title, url: post.url, domain: post.domain }); 
+        isNowBookmarked = true;
+    }
+    
+    bookmarks = currentBookmarks;
+    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+    
+    // Cập nhật số lượng hiển thị trên Badge của Tab Yêu thích
+    const favTab = filterContainer.querySelector('[data-domain="fav_bookmarks"] .tab-badge');
+    if (favTab) favTab.textContent = bookmarks.length;
+    
+    // HIỆU CHỈNH CHÍNH: Chỉ cập nhật giao diện nút vừa bấm, không render lại toàn bộ danh sách
+    const btnTarget = e.currentTarget;
+    if (isNowBookmarked) {
+        btnTarget.classList.add('active');
+        btnTarget.textContent = '★';
+    } else {
+        btnTarget.classList.remove('active');
+        btnTarget.textContent = '☆';
+        
+        // Nếu người dùng đang đứng ở hẳn Tab "Yêu thích ⭐", xóa card này khỏi giao diện vì đã bỏ lưu
+        if (currentDomain === 'fav_bookmarks') {
+            postItem.remove();
+            // Nếu sau khi xóa mà tab trống, hiển thị thông báo trống
+            if (listContainer.children.length === 0) {
+                listContainer.innerHTML = '<div class="empty-message">Không tìm thấy bài viết nào phù hợp.</div>';
+            }
+        }
+    }
+});
+
             listContainer.appendChild(postItem);
         }
 
