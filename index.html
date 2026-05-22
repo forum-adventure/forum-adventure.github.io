@@ -478,6 +478,14 @@
             box-shadow: none;
         }
 
+    @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.post-item {
+    animation: fadeIn 0.3s ease-in-out;
+}
+    
         @media (max-width: 600px) {
             .action-bar {
                 
@@ -494,6 +502,9 @@
                 letter-spacing: 2px;
             }
         }
+    
+    
+
     </style>
 </head>
 <body>
@@ -509,9 +520,15 @@
     </div>
 
     <div class="brand-container">
-        <h1 class="brand-logo">Forum Adventure</h1>
-        <p class="brand-tagline">Danh Sách Bài Viết Diễn Đàn Có Nhiều Lượt Tương Tác</p>
-    </div>
+    <h1 class="brand-logo">
+        <a href="javascript:void(0)" onclick="resetToAllSource()" style="text-decoration: none; color: inherit;">
+            Forum Adventure
+        </a>
+    </h1>
+    <p class="brand-tagline">Danh Sách Bài Viết Diễn Đàn Có Nhiều Lượt Tương Tác</p>
+</div>
+
+
 
     <div class="source-toggle-container">
         <div class="source-toggle">
@@ -863,6 +880,23 @@
 
         btnRefresh.addEventListener('click', async () => { btnRefresh.disabled = true; btnRefresh.textContent = '⏳ ...'; resetRandomHistory(); await loadExternalData(true); btnRefresh.disabled = false; btnRefresh.textContent = 'Đồng bộ'; });
         document.querySelectorAll('.btn-source').forEach(btn => { btn.addEventListener('click', (e) => { document.querySelectorAll('.btn-source').forEach(b => b.classList.remove('active')); e.target.classList.add('active'); activeSource = e.target.getAttribute('data-source'); currentPage = 1; currentDomain = 'all'; searchInput.value = ''; searchQuery = ''; resetRandomHistory(); updateCurrentForumsData(); }); });
+    // Hàm giúp logo kích hoạt tính năng giống nút "Tất cả diễn đàn"
+function resetToAllSource() {
+    // 1. Tìm nút "Tất cả diễn đàn" và kích hoạt hiệu ứng active
+    document.querySelectorAll('.btn-source').forEach(b => b.classList.remove('active'));
+    const btnAll = document.querySelector('.btn-source[data-source="all"]');
+    if (btnAll) btnAll.classList.add('active');
+
+    // 2. Thiết lập lại toàn bộ trạng thái dữ liệu về ban đầu giống như logic đổi nguồn
+    activeSource = 'all';
+    currentPage = 1;
+    currentDomain = 'all';
+    searchInput.value = '';
+    searchQuery = '';
+    resetRandomHistory();
+    updateCurrentForumsData();
+}
+
         window.addEventListener('DOMContentLoaded', () => loadExternalData(false));
     </script>
 </body>
