@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Forum Data Filter</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.10.0/localforage.min.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -34,7 +36,6 @@
             --badge-bg: #f1f5f9;
             --badge-text: #475569;
             
-            /* Thêm màu sắc thương hiệu riêng cho Logo ở chế độ sáng */
             --logo-color: #1a1a1a;
             --tagline-color: #555555;
         }
@@ -63,7 +64,6 @@
             --badge-bg: #334155;
             --badge-text: #cbd5e1;
             
-            /* Thêm màu sắc thương hiệu riêng cho Logo ở chế độ tối */
             --logo-color: #ffffff;
             --tagline-color: #94a3b8;
         }
@@ -129,7 +129,6 @@
             transform: scale(1.05);
         }
 
-        /* Định dạng cụm Logo "The Highball" tinh tế và sang trọng */
         .brand-container {
             text-align: center;
             margin: 32px 0 40px 0;
@@ -149,15 +148,13 @@
         .brand-tagline {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             font-size: 11px;
-           
-            letter-spacing: 2px; /* Tăng khoảng cách chữ để tạo cảm giác sang trọng, thoáng đãng */
+            letter-spacing: 2px;
             color: var(--tagline-color);
             margin: 10px 0 0 0;
             font-weight: 500;
             transition: color 0.3s ease;
         }
 
-        /* Thanh nút chọn nguồn data ở đầu trang */
         .source-toggle-container {
             display: flex;
             justify-content: center;
@@ -182,7 +179,6 @@
             border-radius: 20px;
             cursor: pointer;
             transition: all 0.2s ease;
-            
         }
 
         .btn-source.active {
@@ -191,7 +187,6 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
-        /* Thanh cuộn ngang mượt mà cho các Tab */
         .filter-container {
             display: flex;
             flex-wrap: nowrap;
@@ -235,7 +230,6 @@
             border-color: var(--accent-color);
         }
 
-        /* Badge đếm số lượng bài viết */
         .tab-badge {
             font-size: 11px;
             background-color: var(--badge-bg);
@@ -250,7 +244,6 @@
             color: #ffffff;
         }
 
-        /* Gom cụm Tìm kiếm, Random, Refresh lên 1 hàng */
         .action-bar {
             display: flex;
             gap: 10px;
@@ -315,22 +308,19 @@
             white-space: nowrap;
         }
 
-        /* CSS MỚI: Hiệu ứng Outline và chỉ NHÁY background khi bấm (click) */
         .btn-random {
             background-color: transparent;
             color: var(--random-color);
             border: 1.5px solid var(--random-color);
-            transition: background-color 0.1s ease-out, color 0.1s ease-out; /* Tạo độ mượt khi nháy */
+            transition: background-color 0.1s ease-out, color 0.1s ease-out;
         }
         .btn-random:hover { 
-            /* Giữ nguyên nền trong suốt khi di chuột, chỉ đổi màu nhẹ nếu muốn hoặc để trống */
-            background-color: rgba(16, 185, 129, 0.05); /* Thêm 5% màu nền rất nhẹ khi hover cho tự nhiên */
+            background-color: rgba(16, 185, 129, 0.05);
         }
         .btn-random:active {
-            /* Nháy màu nền đầy đặn lên ngay khi bấm */
             background-color: var(--random-color) !important; 
             color: #ffffff;
-            transition: none; /* Bấm một phát là lên màu ngay lập tức không độ trễ */
+            transition: none;
         }
 
         .btn-refresh {
@@ -355,9 +345,6 @@
             color: var(--refresh-color);
         }
 
-
-
-        /* Danh sách dạng Card */
         .list-container {
             display: flex;
             flex-direction: column;
@@ -416,7 +403,6 @@
             color: var(--accent-color);
         }
 
-        /* Làm mờ các bài viết đã đọc */
         .post-item.is-read .post-title {
             opacity: 0.45;
             font-weight: 400;
@@ -428,7 +414,6 @@
             font-weight: 500;
         }
 
-        /* Nút ngôi sao Bookmark */
         .btn-bookmark {
             background: transparent;
             border: none;
@@ -460,7 +445,6 @@
             border: 1px solid var(--border-color);
         }
 
-        /* Thanh phân trang và Thanh điều hướng Random */
         .pagination-container, .random-nav-container {
             display: flex;
             justify-content: center;
@@ -505,17 +489,16 @@
             box-shadow: none;
         }
 
-    @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(8px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-.post-item {
-    animation: fadeIn 0.3s ease-in-out;
-}
-    
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .post-item {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+            
         @media (max-width: 600px) {
             .action-bar {
-                
                 align-items: stretch;
             }
             .btn-action-util {
@@ -529,9 +512,6 @@
                 letter-spacing: 2px;
             }
         }
-    
-    
-
     </style>
 </head>
 <body>
@@ -547,15 +527,13 @@
     </div>
 
     <div class="brand-container">
-    <h1 class="brand-logo">
-        <a href="javascript:void(0)" onclick="resetToAllSource()" style="text-decoration: none; color: inherit;">
-            Forum Adventure
-        </a>
-    </h1>
-    <p class="brand-tagline">Danh Sách Bài Viết Diễn Đàn Có Nhiều Lượt Tương Tác</p>
-</div>
-
-
+        <h1 class="brand-logo">
+            <a href="javascript:void(0)" onclick="resetToAllSource()" style="text-decoration: none; color: inherit;">
+                Forum Adventure
+            </a>
+        </h1>
+        <p class="brand-tagline">Danh Sách Bài Viết Diễn Đàn Có Nhiều Lượt Tương Tác</p>
+    </div>
 
     <div class="source-toggle-container">
         <div class="source-toggle">
@@ -595,7 +573,6 @@
         let searchTimeout;
         const postsPerPage = 50;
 
-        // Quản lý lịch sử bài viết khi bấm "Đọc ngẫu nhiên"
         let randomHistory = [];
         let currentRandomIndex = -1;
 
@@ -629,9 +606,51 @@
             themeIcon.textContent = theme === 'dark' ? '🌙' : '☀️';
         }
 
+        // ================= ĐÃ SỬA: TẢI FILE .TXT VÀ HOẠT ĐỘNG HOÀN HẢO VỚI INDEXEDDB =================
         async function loadExternalData(forceRefresh = false) {
             try {
-                listContainer.innerHTML = '<div class="empty-message">Đang tải dữ liệu từ các file...</div>';
+                listContainer.innerHTML = `
+                    <div class="loading-wrapper" style="text-align: center; padding: 40px 20px;">
+                        <div class="spinner" style="
+                            width: 40px; 
+                            height: 40px; 
+                            border: 4px solid var(--border-color); 
+                            border-top: 4px solid var(--accent-color); 
+                            border-radius: 50%; 
+                            margin: 0 auto 20px; 
+                            animation: spin 1s linear infinite;
+                        "></div>
+                        <div class="empty-message" style="font-weight: 500; color: var(--text-color);">
+                            Đang nạp dữ liệu hệ thống diễn đàn từ file .txt...
+                        </div>
+                        <div style="font-size: 13px; color: #64748b; margin-top: 8px; font-style: italic;">
+                            💡 Dữ liệu được tải trực tiếp từ bộ nhớ cục bộ IndexedDB (Siêu nhanh)!
+                        </div>
+                    </div>
+                `;
+                
+                if (!document.getElementById('spin-animation')) {
+                    const style = document.createElement('style');
+                    style.id = 'spin-animation';
+                    style.innerHTML = `@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }`;
+                    document.head.appendChild(style);
+                }
+
+                // Kiểm tra cache chuỗi văn bản thô (.txt) trong bộ nhớ IndexedDB
+                if (!forceRefresh) {
+                    const cachedVnText = await localforage.getItem('cached_data_vn_text');
+                    const cachedIntText = await localforage.getItem('cached_data_int_text');
+
+                    if (cachedVnText !== null && cachedIntText !== null) {
+                        masterData = { vn: {}, int: {} };
+                        if (cachedVnText) parseToSource(cachedVnText.split('\n'), 'vn');
+                        if (cachedIntText) parseToSource(cachedIntText.split('\n'), 'int');
+                        updateCurrentForumsData();
+                        return; 
+                    }
+                }
+
+                // Nếu chưa có cache hoặc nhấn "Đồng bộ", tiến hành Fetch file .txt từ server
                 const fetchOptions = forceRefresh ? { cache: 'reload' } : {};
                 const suffix = forceRefresh ? `?t=${Date.now()}` : '';
 
@@ -646,22 +665,30 @@
                 if (resVn.status === 'fulfilled' && resVn.value) {
                     const linesVn = resVn.value.split('\n').map(l => l.trim()).filter(l => l.length > 0);
                     parseToSource(linesVn, 'vn');
+                    await localforage.setItem('cached_data_vn_text', resVn.value);
                     hasData = true;
+                } else {
+                    await localforage.setItem('cached_data_vn_text', '');
                 }
+
                 if (resInt.status === 'fulfilled' && resInt.value) {
                     const linesInt = resInt.value.split('\n').map(l => l.trim()).filter(l => l.length > 0);
                     parseToSource(linesInt, 'int');
+                    await localforage.setItem('cached_data_int_text', resInt.value);
                     hasData = true;
+                } else {
+                    await localforage.setItem('cached_data_int_text', '');
                 }
 
-                if (!hasData) throw new Error('Cả hai file dữ liệu đều trống hoặc không tìm thấy.');
+                if (!hasData) throw new Error('Cả hai file dữ liệu .txt đều trống hoặc không tìm thấy tại máy chủ.');
                 updateCurrentForumsData();
             } catch (error) {
-                console.error("Lỗi:", error);
-                listContainer.innerHTML = `<div class="empty-message" style="color: #ef4444; font-weight: 500;">Lỗi: ${error.message}.<br>Hãy chắc chắn bạn đã tạo file data_vn.txt và/hoặc data_int.txt.</div>`;
+                console.error("Lỗi hệ thống:", error);
+                listContainer.innerHTML = `<div class="empty-message" style="color: #ef4444; font-weight: 500;">Lỗi: ${error.message}.<br>Hãy kiểm tra lại các file data_vn.txt và data_int.txt trên máy chủ.</div>`;
             }
         }
 
+        // Đã sửa lại hàm bóc tách chuỗi theo định dạng "Tiêu đề | URL" chuẩn từ file .txt cũ
         function parseToSource(dataArray, sourceType) {
             dataArray.forEach(item => {
                 const parts = item.split('|');
@@ -673,9 +700,12 @@
                     const domain = urlObj.hostname.replace('www.', '');
                     if (!masterData[sourceType][domain]) masterData[sourceType][domain] = [];
                     masterData[sourceType][domain].push({ title, url, domain });
-                } catch (e) { console.error(`URL không hợp lệ:`, url); }
+                } catch (e) { 
+                    // Bỏ qua dòng URL lỗi không hợp lệ
+                }
             });
         }
+        // =====================================================================================
 
         function updateCurrentForumsData() {
             forumsData = {};
@@ -732,7 +762,7 @@
                 button.classList.add('active');
                 currentDomain = domainKey;
                 currentPage = 1;
-                resetRandomHistory(); // Reset khi đổi tab danh mục công việc
+                resetRandomHistory(); 
                 displayPosts();
             });
             filterContainer.appendChild(button);
@@ -749,7 +779,7 @@
 
         function displayPosts() {
             listContainer.innerHTML = ''; 
-            randomNavContainer.innerHTML = ''; // Ẩn nút điều hướng random khi xem danh sách thường
+            randomNavContainer.innerHTML = ''; 
             const targetPosts = getActivePosts();
             if (targetPosts.length === 0) {
                 listContainer.innerHTML = '<div class="empty-message">Không tìm thấy bài viết nào phù hợp.</div>';
@@ -767,7 +797,6 @@
             renderPagination(totalPages);
         }
 
-        // Tách hàm render Card bài viết để tái sử dụng
         function renderPostCard(post) {
             const isRead = readHistory.includes(post.url);
             const isBookmarked = bookmarks.some(b => b.url === post.url);
@@ -793,46 +822,41 @@
             });
 
             postItem.querySelector('.btn-bookmark').addEventListener('click', (e) => {
-    e.stopPropagation();
-    let currentBookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
-    const foundIndex = currentBookmarks.findIndex(b => b.url === post.url);
-    
-    // Khai báo biến để kiểm tra trạng thái sau khi click
-    let isNowBookmarked = false;
+                e.stopPropagation();
+                let currentBookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+                const foundIndex = currentBookmarks.findIndex(b => b.url === post.url);
+                
+                let isNowBookmarked = false;
 
-    if (foundIndex > -1) { 
-        currentBookmarks.splice(foundIndex, 1); 
-    } else { 
-        currentBookmarks.push({ title: post.title, url: post.url, domain: post.domain }); 
-        isNowBookmarked = true;
-    }
-    
-    bookmarks = currentBookmarks;
-    localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
-    
-    // Cập nhật số lượng hiển thị trên Badge của Tab Yêu thích
-    const favTab = filterContainer.querySelector('[data-domain="fav_bookmarks"] .tab-badge');
-    if (favTab) favTab.textContent = bookmarks.length;
-    
-    // HIỆU CHỈNH CHÍNH: Chỉ cập nhật giao diện nút vừa bấm, không render lại toàn bộ danh sách
-    const btnTarget = e.currentTarget;
-    if (isNowBookmarked) {
-        btnTarget.classList.add('active');
-        btnTarget.textContent = '★';
-    } else {
-        btnTarget.classList.remove('active');
-        btnTarget.textContent = '☆';
-        
-        // Nếu người dùng đang đứng ở hẳn Tab "Yêu thích ⭐", xóa card này khỏi giao diện vì đã bỏ lưu
-        if (currentDomain === 'fav_bookmarks') {
-            postItem.remove();
-            // Nếu sau khi xóa mà tab trống, hiển thị thông báo trống
-            if (listContainer.children.length === 0) {
-                listContainer.innerHTML = '<div class="empty-message">Không tìm thấy bài viết nào phù hợp.</div>';
-            }
-        }
-    }
-});
+                if (foundIndex > -1) { 
+                    currentBookmarks.splice(foundIndex, 1); 
+                } else { 
+                    currentBookmarks.push({ title: post.title, url: post.url, domain: post.domain }); 
+                    isNowBookmarked = true;
+                }
+                
+                bookmarks = currentBookmarks;
+                localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+                
+                const favTab = filterContainer.querySelector('[data-domain="fav_bookmarks"] .tab-badge');
+                if (favTab) favTab.textContent = bookmarks.length;
+                
+                const btnTarget = e.currentTarget;
+                if (isNowBookmarked) {
+                    btnTarget.classList.add('active');
+                    btnTarget.textContent = '★';
+                } else {
+                    btnTarget.classList.remove('active');
+                    btnTarget.textContent = '☆';
+                    
+                    if (currentDomain === 'fav_bookmarks') {
+                        postItem.remove();
+                        if (listContainer.children.length === 0) {
+                            listContainer.innerHTML = '<div class="empty-message">Không tìm thấy bài viết nào phù hợp.</div>';
+                        }
+                    }
+                }
+            });
 
             listContainer.appendChild(postItem);
         }
@@ -868,7 +892,6 @@
             currentRandomIndex = -1;
         }
 
-        // Điều hướng lịch sử bài viết ngẫu nhiên công việc
         function renderRandomNavigation() {
             randomNavContainer.innerHTML = '';
             
@@ -915,7 +938,6 @@
             const allCurrentPosts = getActivePosts();
             if (allCurrentPosts.length === 0) { alert('Không có bài viết nào để lựa chọn!'); return; }
             
-            // Nếu đang xem dở lịch sử cũ mà bấm tiếp nút Random, ta sẽ xóa các bài viết "sau" vị trí hiện tại đi để thêm nhánh mới
             if (currentRandomIndex < randomHistory.length - 1) {
                 randomHistory = randomHistory.slice(0, currentRandomIndex + 1);
             }
@@ -927,24 +949,42 @@
             showRandomPostAtCurrentIndex();
         });
 
-        btnRefresh.addEventListener('click', async () => { btnRefresh.disabled = true; btnRefresh.textContent = '⏳ ...'; resetRandomHistory(); await loadExternalData(true); btnRefresh.disabled = false; btnRefresh.textContent = 'Đồng bộ'; });
-        document.querySelectorAll('.btn-source').forEach(btn => { btn.addEventListener('click', (e) => { document.querySelectorAll('.btn-source').forEach(b => b.classList.remove('active')); e.target.classList.add('active'); activeSource = e.target.getAttribute('data-source'); currentPage = 1; currentDomain = 'all'; searchInput.value = ''; searchQuery = ''; resetRandomHistory(); updateCurrentForumsData(); }); });
-    // Hàm giúp logo kích hoạt tính năng giống nút "Tất cả diễn đàn"
-function resetToAllSource() {
-    // 1. Tìm nút "Tất cả diễn đàn" và kích hoạt hiệu ứng active
-    document.querySelectorAll('.btn-source').forEach(b => b.classList.remove('active'));
-    const btnAll = document.querySelector('.btn-source[data-source="all"]');
-    if (btnAll) btnAll.classList.add('active');
+        btnRefresh.addEventListener('click', async () => { 
+            btnRefresh.disabled = true; 
+            btnRefresh.textContent = '⏳ ...'; 
+            resetRandomHistory(); 
+            await loadExternalData(true); 
+            btnRefresh.disabled = false; 
+            btnRefresh.textContent = 'Đồng bộ'; 
+        });
 
-    // 2. Thiết lập lại toàn bộ trạng thái dữ liệu về ban đầu giống như logic đổi nguồn
-    activeSource = 'all';
-    currentPage = 1;
-    currentDomain = 'all';
-    searchInput.value = '';
-    searchQuery = '';
-    resetRandomHistory();
-    updateCurrentForumsData();
-}
+        document.querySelectorAll('.btn-source').forEach(btn => { 
+            btn.addEventListener('click', (e) => { 
+                document.querySelectorAll('.btn-source').forEach(b => b.classList.remove('active')); 
+                e.target.classList.add('active'); 
+                activeSource = e.target.getAttribute('data-source'); 
+                currentPage = 1; 
+                currentDomain = 'all'; 
+                searchInput.value = ''; 
+                searchQuery = ''; 
+                resetRandomHistory(); 
+                updateCurrentForumsData(); 
+            }); 
+        });
+
+        function resetToAllSource() {
+            document.querySelectorAll('.btn-source').forEach(b => b.classList.remove('active'));
+            const btnAll = document.querySelector('.btn-source[data-source="all"]');
+            if (btnAll) btnAll.classList.add('active');
+
+            activeSource = 'all';
+            currentPage = 1;
+            currentDomain = 'all';
+            searchInput.value = '';
+            searchQuery = '';
+            resetRandomHistory();
+            updateCurrentForumsData();
+        }
 
         window.addEventListener('DOMContentLoaded', () => loadExternalData(false));
     </script>
