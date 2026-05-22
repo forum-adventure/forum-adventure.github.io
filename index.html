@@ -313,6 +313,8 @@
             color: var(--random-color);
             border: 1.5px solid var(--random-color);
             transition: background-color 0.1s ease-out, color 0.1s ease-out;
+            flex: 1;
+            max-width: 180px;
         }
         .btn-random:hover { 
             background-color: rgba(16, 185, 129, 0.05);
@@ -321,28 +323,6 @@
             background-color: var(--random-color) !important; 
             color: #ffffff;
             transition: none;
-        }
-
-        .btn-refresh {
-            background-color: transparent;
-            color: var(--refresh-color);
-            border: 1.5px solid var(--refresh-color);
-            transition: background-color 0.1s ease-out, color 0.1s ease-out;
-        }
-        .btn-refresh:hover { 
-            background-color: rgba(6, 182, 212, 0.05); 
-        }
-        .btn-refresh:active {
-            background-color: var(--refresh-color) !important;
-            color: #ffffff;
-            transition: none;
-        }
-        
-        .btn-refresh:disabled { 
-            opacity: 0.4; 
-            cursor: not-allowed; 
-            background-color: transparent !important;
-            color: var(--refresh-color);
         }
 
         .list-container {
@@ -553,11 +533,10 @@
             </svg>
         </div>
         <button class="btn-action-util btn-random" id="btnRandom" title="Xem ngẫu nhiên một bài viết từ danh mục hiện tại">Đọc ngẫu nhiên</button>
-        <button class="btn-action-util btn-refresh" id="btnRefresh" title="Bỏ cache và cập nhật dữ liệu mới nhất từ máy chủ">Đồng bộ</button>
     </div>
 
     <div class="list-container" id="listContainer">
-        <div class="empty-message">Đang tải dữ liệu từ các file...</div>
+        <div class="empty-message">Đang tải dữ liệu bộ nhớ đệm...</div>
     </div>
 
     <div class="pagination-container" id="paginationContainer"></div>
@@ -585,7 +564,6 @@
         const paginationContainer = document.getElementById('paginationContainer');
         const randomNavContainer = document.getElementById('randomNavContainer');
         const btnRandom = document.getElementById('btnRandom');
-        const btnRefresh = document.getElementById('btnRefresh');
         const btnThemeToggle = document.getElementById('btnThemeToggle');
         const themeIcon = document.getElementById('themeIcon');
         const searchInput = document.getElementById('searchInput');
@@ -606,9 +584,70 @@
             themeIcon.textContent = theme === 'dark' ? '🌙' : '☀️';
         }
 
-        // ================= ĐÃ SỬA: TẢI FILE .TXT VÀ HOẠT ĐỘNG HOÀN HẢO VỚI INDEXEDDB =================
-        async function loadExternalData(forceRefresh = false) {
+        // ================= GIẢI PHÁP HEAD REQUEST TRÁNH TẢI FILE 10MB KHI F5 =================
+        async function checkFileChanged(fileName) {
             try {
+                // Chỉ lấy phần đầu Metadata (vài byte), không GET nội dung file
+                const response = await fetch(fileName, { method: 'HEAD', cache: 'no-cache' });
+                if (!response.ok) return true; 
+                
+                const currentTag = response.headers.get('ETag') || response.headers.get('Last-Modified');
+                if (!currentTag) return true;
+
+                const savedTag = localStorage.getItem(`tag_${fileName}`);
+                if (savedTag === currentTag) {
+                    return false; // File không đổi -> Tiếp tục dùng dữ liệu trong bộ nhớ IndexedDB
+                }
+                
+                localStorage.setItem(`tag_${fileName}`, currentTag);
+                return true; 
+            } catch (e) {
+                console.warn(`Không check được mã HEAD cho ${fileName}, sử dụng chế độ an toàn.`, e);
+                return true; 
+            }
+        }
+
+                async function loadExternalData() {
+            try {
+                if (!document.getElementById('spin-animation')) {
+                    const style = document.createElement('style');
+                    style.id = 'spin-animation';
+                    style.innerHTML = `@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }`;
+                    document.head.appendChild(style);
+                }
+
+                // Thử lấy dữ liệu cũ lên trước để hiển thị lập tức khi người dùng F5
+                const cachedVnText = await localforage.getItem('cached_data_vn_text');
+                const cachedIntText = await localforage.getItem('cached_data_int_text');
+
+                // Kiểm tra xem đây có phải lần đầu tiên truy cập (chưa có dữ liệu cache) không
+                const isFirstTime = (cachedVnText === null && cachedIntText === null);
+
+                let needFetchVn = true;
+                let needFetchInt = true;
+
+                if (cachedVnText !== null) needFetchVn = await checkFileChanged('data_vn.txt');
+                if (cachedIntText !== null) needFetchInt = await checkFileChanged('data_int.txt');
+
+                // TRƯỜNG HỢP PHỔ BIẾN: F5 nhưng bạn chưa push bài mới lên server (Dùng luôn cache)
+                if (!needFetchVn && !needFetchInt) {
+                    masterData = { vn: {}, int: {} };
+                    if (cachedVnText) parseToSource(cachedVnText.split('\n'), 'vn');
+                    if (cachedIntText) parseToSource(cachedIntText.split('\n'), 'int');
+                    updateCurrentForumsData();
+                    return; // Ngắt hàm, tiết kiệm 10MB băng thông mạng!
+                }
+
+                // Tạo nội dung thông báo động dựa trên việc tải lần đầu hay cập nhật bài viết mới
+                let loadingTitle = "Đang cập nhật bài viết mới...";
+                let loadingSubtitle = "Hệ thống đang đồng bộ những bài viết mới nhất từ máy chủ.";
+
+                if (isFirstTime) {
+                    loadingTitle = "Đang khởi tạo dữ liệu lần đầu...";
+                    loadingSubtitle = "Dữ liệu sau này sẽ được tải từ bộ nhớ cục bộ (siêu nhanh).";
+                }
+
+                // Hiển thị trạng thái chờ tải đồng bộ ra giao diện
                 listContainer.innerHTML = `
                     <div class="loading-wrapper" style="text-align: center; padding: 40px 20px;">
                         <div class="spinner" style="
@@ -620,75 +659,53 @@
                             margin: 0 auto 20px; 
                             animation: spin 1s linear infinite;
                         "></div>
-                        <div class="empty-message" style="font-weight: 500; color: var(--text-color);">
-                            Đang nạp dữ liệu hệ thống diễn đàn từ file .txt...
+                        <div class="loading-title" style="font-weight: 600; font-size: 16px; color: var(--text-color); margin-bottom: 6px;">
+                            ${loadingTitle}
                         </div>
-                        <div style="font-size: 13px; color: #64748b; margin-top: 8px; font-style: italic;">
-                            💡 Dữ liệu được tải trực tiếp từ bộ nhớ cục bộ IndexedDB (Siêu nhanh)!
+                        <div class="loading-subtitle" style="font-size: 13px; color: var(--sub-text); max-width: 400px; margin: 0 auto; line-height: 1.4;">
+                            ${loadingSubtitle}
                         </div>
                     </div>
                 `;
-                
-                if (!document.getElementById('spin-animation')) {
-                    const style = document.createElement('style');
-                    style.id = 'spin-animation';
-                    style.innerHTML = `@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }`;
-                    document.head.appendChild(style);
-                }
 
-                // Kiểm tra cache chuỗi văn bản thô (.txt) trong bộ nhớ IndexedDB
-                if (!forceRefresh) {
-                    const cachedVnText = await localforage.getItem('cached_data_vn_text');
-                    const cachedIntText = await localforage.getItem('cached_data_int_text');
-
-                    if (cachedVnText !== null && cachedIntText !== null) {
-                        masterData = { vn: {}, int: {} };
-                        if (cachedVnText) parseToSource(cachedVnText.split('\n'), 'vn');
-                        if (cachedIntText) parseToSource(cachedIntText.split('\n'), 'int');
-                        updateCurrentForumsData();
-                        return; 
-                    }
-                }
-
-                // Nếu chưa có cache hoặc nhấn "Đồng bộ", tiến hành Fetch file .txt từ server
-                const fetchOptions = forceRefresh ? { cache: 'reload' } : {};
-                const suffix = forceRefresh ? `?t=${Date.now()}` : '';
-
-                const [resVn, resInt] = await Promise.allSettled([
-                    fetch(`data_vn.txt${suffix}`, fetchOptions).then(r => r.ok ? r.text() : ''),
-                    fetch(`data_int.txt${suffix}`, fetchOptions).then(r => r.ok ? r.text() : '')
-                ]);
-                
-                let hasData = false;
                 masterData = { vn: {}, int: {} };
+                const suffix = `?t=${Date.now()}`;
 
-                if (resVn.status === 'fulfilled' && resVn.value) {
-                    const linesVn = resVn.value.split('\n').map(l => l.trim()).filter(l => l.length > 0);
-                    parseToSource(linesVn, 'vn');
-                    await localforage.setItem('cached_data_vn_text', resVn.value);
-                    hasData = true;
-                } else {
-                    await localforage.setItem('cached_data_vn_text', '');
+                let freshVnText = cachedVnText;
+                let freshIntText = cachedIntText;
+
+                // Chỉ thực hiện GET nội dung nếu lệnh kiểm tra HEAD báo hiệu có sự thay đổi hoặc tải lần đầu
+                if (needFetchVn) {
+                    const resVn = await fetch(`data_vn.txt${suffix}`, { cache: 'no-cache' });
+                    freshVnText = resVn.ok ? await resVn.text() : '';
+                    if (freshVnText) await localforage.setItem('cached_data_vn_text', freshVnText);
+                }
+                if (needFetchInt) {
+                    const resInt = await fetch(`data_int.txt${suffix}`, { cache: 'no-cache' });
+                    freshIntText = resInt.ok ? await resInt.text() : '';
+                    if (freshIntText) await localforage.setItem('cached_data_int_text', freshIntText);
                 }
 
-                if (resInt.status === 'fulfilled' && resInt.value) {
-                    const linesInt = resInt.value.split('\n').map(l => l.trim()).filter(l => l.length > 0);
-                    parseToSource(linesInt, 'int');
-                    await localforage.setItem('cached_data_int_text', resInt.value);
-                    hasData = true;
-                } else {
-                    await localforage.setItem('cached_data_int_text', '');
-                }
+                if (freshVnText) parseToSource(freshVnText.split('\n'), 'vn');
+                if (freshIntText) parseToSource(freshIntText.split('\n'), 'int');
 
-                if (!hasData) throw new Error('Cả hai file dữ liệu .txt đều trống hoặc không tìm thấy tại máy chủ.');
                 updateCurrentForumsData();
             } catch (error) {
                 console.error("Lỗi hệ thống:", error);
-                listContainer.innerHTML = `<div class="empty-message" style="color: #ef4444; font-weight: 500;">Lỗi: ${error.message}.<br>Hãy kiểm tra lại các file data_vn.txt và data_int.txt trên máy chủ.</div>`;
+                const cachedVnText = await localforage.getItem('cached_data_vn_text');
+                const cachedIntText = await localforage.getItem('cached_data_int_text');
+                if (cachedVnText || cachedIntText) {
+                    masterData = { vn: {}, int: {} };
+                    if (cachedVnText) parseToSource(cachedVnText.split('\n'), 'vn');
+                    if (cachedIntText) parseToSource(cachedIntText.split('\n'), 'int');
+                    updateCurrentForumsData();
+                } else {
+                    listContainer.innerHTML = `<div class="empty-message" style="color: #ef4444;">Không thể kết nối máy chủ dữ liệu.</div>`;
+                }
             }
         }
 
-        // Đã sửa lại hàm bóc tách chuỗi theo định dạng "Tiêu đề | URL" chuẩn từ file .txt cũ
+
         function parseToSource(dataArray, sourceType) {
             dataArray.forEach(item => {
                 const parts = item.split('|');
@@ -700,9 +717,7 @@
                     const domain = urlObj.hostname.replace('www.', '');
                     if (!masterData[sourceType][domain]) masterData[sourceType][domain] = [];
                     masterData[sourceType][domain].push({ title, url, domain });
-                } catch (e) { 
-                    // Bỏ qua dòng URL lỗi không hợp lệ
-                }
+                } catch (e) {}
             });
         }
         // =====================================================================================
@@ -825,7 +840,6 @@
                 e.stopPropagation();
                 let currentBookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
                 const foundIndex = currentBookmarks.findIndex(b => b.url === post.url);
-                
                 let isNowBookmarked = false;
 
                 if (foundIndex > -1) { 
@@ -848,7 +862,6 @@
                 } else {
                     btnTarget.classList.remove('active');
                     btnTarget.textContent = '☆';
-                    
                     if (currentDomain === 'fav_bookmarks') {
                         postItem.remove();
                         if (listContainer.children.length === 0) {
@@ -894,28 +907,13 @@
 
         function renderRandomNavigation() {
             randomNavContainer.innerHTML = '';
-            
             const prevNavBtn = document.createElement('button');
-            prevNavBtn.className = 'btn-nav';
-            prevNavBtn.innerHTML = '&larr; Bài trước';
-            prevNavBtn.disabled = currentRandomIndex <= 0;
-            prevNavBtn.addEventListener('click', () => {
-                if (currentRandomIndex > 0) {
-                    currentRandomIndex--;
-                    showRandomPostAtCurrentIndex();
-                }
-            });
+            prevNavBtn.className = 'btn-nav'; prevNavBtn.innerHTML = '&larr; Bài trước'; prevNavBtn.disabled = currentRandomIndex <= 0;
+            prevNavBtn.addEventListener('click', () => { if (currentRandomIndex > 0) { currentRandomIndex--; showRandomPostAtCurrentIndex(); } });
 
             const nextNavBtn = document.createElement('button');
-            nextNavBtn.className = 'btn-nav';
-            nextNavBtn.innerHTML = 'Bài sau &rarr;';
-            nextNavBtn.disabled = currentRandomIndex >= randomHistory.length - 1;
-            nextNavBtn.addEventListener('click', () => {
-                if (currentRandomIndex < randomHistory.length - 1) {
-                    currentRandomIndex++;
-                    showRandomPostAtCurrentIndex();
-                }
-            });
+            nextNavBtn.className = 'btn-nav'; nextNavBtn.innerHTML = 'Bài sau &rarr;'; nextNavBtn.disabled = currentRandomIndex >= randomHistory.length - 1;
+            nextNavBtn.addEventListener('click', () => { if (currentRandomIndex < randomHistory.length - 1) { currentRandomIndex++; showRandomPostAtCurrentIndex(); } });
 
             randomNavContainer.appendChild(prevNavBtn);
             randomNavContainer.appendChild(nextNavBtn);
@@ -937,25 +935,12 @@
         btnRandom.addEventListener('click', () => {
             const allCurrentPosts = getActivePosts();
             if (allCurrentPosts.length === 0) { alert('Không có bài viết nào để lựa chọn!'); return; }
-            
-            if (currentRandomIndex < randomHistory.length - 1) {
-                randomHistory = randomHistory.slice(0, currentRandomIndex + 1);
-            }
+            if (currentRandomIndex < randomHistory.length - 1) { randomHistory = randomHistory.slice(0, currentRandomIndex + 1); }
 
             const randomPost = allCurrentPosts[Math.floor(Math.random() * allCurrentPosts.length)];
             randomHistory.push(randomPost);
             currentRandomIndex = randomHistory.length - 1;
-
             showRandomPostAtCurrentIndex();
-        });
-
-        btnRefresh.addEventListener('click', async () => { 
-            btnRefresh.disabled = true; 
-            btnRefresh.textContent = '⏳ ...'; 
-            resetRandomHistory(); 
-            await loadExternalData(true); 
-            btnRefresh.disabled = false; 
-            btnRefresh.textContent = 'Đồng bộ'; 
         });
 
         document.querySelectorAll('.btn-source').forEach(btn => { 
@@ -963,12 +948,7 @@
                 document.querySelectorAll('.btn-source').forEach(b => b.classList.remove('active')); 
                 e.target.classList.add('active'); 
                 activeSource = e.target.getAttribute('data-source'); 
-                currentPage = 1; 
-                currentDomain = 'all'; 
-                searchInput.value = ''; 
-                searchQuery = ''; 
-                resetRandomHistory(); 
-                updateCurrentForumsData(); 
+                currentPage = 1; currentDomain = 'all'; searchInput.value = ''; searchQuery = ''; resetRandomHistory(); updateCurrentForumsData(); 
             }); 
         });
 
@@ -976,17 +956,10 @@
             document.querySelectorAll('.btn-source').forEach(b => b.classList.remove('active'));
             const btnAll = document.querySelector('.btn-source[data-source="all"]');
             if (btnAll) btnAll.classList.add('active');
-
-            activeSource = 'all';
-            currentPage = 1;
-            currentDomain = 'all';
-            searchInput.value = '';
-            searchQuery = '';
-            resetRandomHistory();
-            updateCurrentForumsData();
+            activeSource = 'all'; currentPage = 1; currentDomain = 'all'; searchInput.value = ''; searchQuery = ''; resetRandomHistory(); updateCurrentForumsData();
         }
 
-        window.addEventListener('DOMContentLoaded', () => loadExternalData(false));
+        window.addEventListener('DOMContentLoaded', () => loadExternalData());
     </script>
 </body>
 </html>
