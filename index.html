@@ -105,6 +105,7 @@
             padding: 0 20px;
             line-height: 1.6;
             transition: background-color 0.3s, color 0.3s;
+            touch-action: manipulation;
         }
 
         /* Top Utilities Bar */
@@ -219,6 +220,7 @@
             display: flex;
             flex-wrap: nowrap;
             gap: 8px;
+            margin-top: 8px;
             margin-bottom: 24px;
             overflow-x: auto;
             scroll-behavior: smooth;
@@ -999,6 +1001,22 @@
             if (btnAll) btnAll.classList.add('active');
             activeSource = 'all'; currentPage = 1; currentDomain = 'all'; searchInput.value = ''; searchQuery = ''; resetRandomHistory(); updateCurrentForumsData();
         }
+
+    
+            // Chặn zoom khi nhấp đúp (Double tap) trên thiết bị di động
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', (event) => {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault(); // Hủy bỏ hành vi zoom của trình duyệt
+            }
+            lastTouchEnd = now;
+        }, false);
+
+        // Chặn zoom bằng cách thu phóng 2 ngón tay (Pinch to zoom)
+        document.addEventListener('gesturestart', (event) => {
+            event.preventDefault();
+        });
 
         window.addEventListener('DOMContentLoaded', () => loadExternalData());
     </script>
