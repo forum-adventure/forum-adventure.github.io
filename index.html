@@ -13,32 +13,60 @@
     <style>
         /* Cấu hình màu sắc cho cả 2 chế độ */
         :root[data-theme="light"] {
-            --bg-color: #f4f6f9;
-            --text-color: #2c3e50;
-            --border-color: #e2e8f0;
-            --card-bg: #ffffff;
-            --accent-color: #3b82f6;
-            --accent-hover: #1d4ed8;
-            --random-color: #10b981;
-            --random-hover: #047857;
-            --refresh-color: #06b6d4;
-            --refresh-hover: #0e7490;
-            --hover-bg: #f8fafc;
-            --item-border: #f1f5f9;
-            --sub-text: #64748b; 
-            --search-bg: #ffffff;
-            --search-focus: #3b82f6;
-            --toggle-bg: #e2e8f0;
-            --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
-            --card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
-            --star-color: #94a3b8;
-            --star-active: #eab308;
-            --badge-bg: #f1f5f9;
-            --badge-text: #475569;
-            
-            --logo-color: #1a1a1a;
-            --tagline-color: #555555;
-        }
+    --bg-color: #f8fafc;          /* Nền xám trắng rất dịu */
+    --text-color: #1e293b;        /* Chữ chính màu than đá */
+    --sub-text: #64748b;          /* Chữ phụ xám */
+    --border-color: #e2e8f0;      /* Đường viền mảnh */
+    --card-bg: #ffffff;
+    
+    /* Đồng bộ các nút hành động về một màu tối giản thanh lịch */
+    --accent-color: #0f172a;      /* Đen xám đậm (Deep Slate) thay cho xanh dương */
+    --accent-hover: #334155;
+    --random-color: #475569;      /* Đồng tone xám thay cho màu xanh lá */
+    
+    --hover-bg: #f1f5f9;
+    --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.04);
+    --card-shadow-hover: 0 4px 12px rgba(15, 23, 42, 0.05);
+    
+    --star-color: #94a3b8;
+    --star-active: #dc2626;       /* Đổi thành đỏ nhẹ/hồng nhạt hoặc giữ vàng tinh tế */
+    --badge-bg: #f1f5f9;
+    --badge-text: #64748b;
+    
+    --logo-color: #0f172a;
+    --tagline-color: #64748b;
+    --search-bg: #ffffff;
+    --search-focus: #0f172a;
+    --toggle-bg: #e2e8f0;
+}
+
+:root[data-theme="dark"] {
+    --bg-color: #0b0f19;          /* Nền đêm sâu thanh lịch */
+    --text-color: #e2e8f0;        /* Chữ trắng xám không bị lóa */
+    --sub-text: #64748b;
+    --border-color: #1e293b;
+    --card-bg: #111827;           /* Card tối nhẹ */
+    
+    --accent-color: #f1f5f9;      /* Nút active màu sáng hẳn */
+    --accent-hover: #cbd5e1;
+    --random-color: #94a3b8;
+    
+    --hover-bg: #1f2937;
+    --card-shadow: none;          /* Giao diện tối không cần đổ bóng mạnh */
+    --card-shadow-hover: none;
+    
+    --star-color: #475569;
+    --star-active: #f59e0b;
+    --badge-bg: #1f2937;
+    --badge-text: #94a3b8;
+    
+    --logo-color: #ffffff;
+    --tagline-color: #64748b;
+    --search-bg: #111827;
+    --search-focus: #94a3b8;
+    --toggle-bg: #1f2937;
+}
+
 
         :root[data-theme="dark"] {
             --bg-color: #0f172a;
@@ -203,21 +231,35 @@
         }
 
         .btn-tab {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            color: var(--text-color);
-            padding: 8px 16px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 13px;
-            font-weight: 500;
-            white-space: nowrap;
-            transition: all 0.2s ease;
-            box-shadow: var(--card-shadow);
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    
+    /* CHỈNH SỬA TẠI ĐÂY: Thu nhỏ padding và chữ */
+    padding: 5px 12px;          /* Giảm chiều cao rõ rệt (cũ là 8px 16px) */
+    font-size: 11.5px;          /* Hạ font chữ xuống một chút để phân biệt với nút lớn */
+    border-radius: 14px;        /* Giảm bo góc tương ứng với chiều cao mới */
+    
+    cursor: pointer;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+    box-shadow: var(--card-shadow);
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;                   /* Thu hẹp khoảng cách giữa chữ và số lượng bài viết */
+}
+
+/* Hạ size của badge số lượng bên trong nút tương ứng */
+.tab-badge {
+    font-size: 9.5px;           /* Nhỏ hơn chữ tiêu đề một chút (cũ là 11px) */
+    padding: 1px 5px;           /* Thu nhỏ badge lại cho vừa vặn */
+    border-radius: 8px;
+    font-weight: 600;
+    background-color: var(--badge-bg);
+    color: var(--badge-text);
+}
+
 
         .btn-tab:hover {
             border-color: var(--accent-color);
@@ -309,21 +351,19 @@
         }
 
         .btn-random {
-            background-color: transparent;
-            color: var(--random-color);
-            border: 1.5px solid var(--random-color);
-            transition: background-color 0.1s ease-out, color 0.1s ease-out;
-            flex: 1;
-            max-width: 180px;
-        }
-        .btn-random:hover { 
-            background-color: rgba(16, 185, 129, 0.05);
-        }
-        .btn-random:active {
-            background-color: var(--random-color) !important; 
-            color: #ffffff;
-            transition: none;
-        }
+    background-color: var(--badge-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color); /* Đồng bộ với ô search */
+    border-radius: 12px;
+}
+.btn-random:hover {
+    background-color: var(--hover-bg);
+}
+.btn-random:active {
+    background-color: var(--accent-color) !important;
+    color: var(--card-bg) !important;
+}
+
 
         .list-container {
             display: flex;
@@ -348,6 +388,7 @@
             transform: translateY(-2px);
             box-shadow: var(--card-shadow-hover);
             border-color: var(--accent-color);
+            background-color: rgba(0, 0, 0, 0.01); /* Nhấn nhẹ khi hover */
         }
 
         .post-avatar {
