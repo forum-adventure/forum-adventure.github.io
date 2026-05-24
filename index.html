@@ -110,23 +110,37 @@
             color: var(--accent-color);
         }
 
-        .btn-theme-toggle {
+        .right-utils {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-theme-toggle, .btn-lang-toggle {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             color: var(--text-color);
-            width: 36px;
             height: 36px;
-            border-radius: 50%;
+            border-radius: 18px;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: all 0.2s ease;
             box-shadow: var(--card-shadow);
+            font-size: 14px;
+            font-weight: 600;
+            padding: 0 12px;
+        }
+
+        .btn-theme-toggle {
+            width: 36px;
+            border-radius: 50%;
+            padding: 0;
             font-size: 16px;
         }
 
-        .btn-theme-toggle:hover {
+        .btn-theme-toggle:hover, .btn-lang-toggle:hover {
             background-color: var(--hover-bg);
             transform: scale(1.05);
         }
@@ -145,6 +159,11 @@
             letter-spacing: 0.5px;
             line-height: 1.1;
             transition: color 0.3s ease;
+        }
+
+        .brand-logo a {
+            text-decoration: none;
+            color: inherit;
         }
 
         .brand-tagline {
@@ -293,6 +312,8 @@
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
             display: none; 
             box-sizing: border-box;
+            max-height: 400px;
+            overflow-y: auto;
         }
 
         .custom-dropdown.open .dropdown-list {
@@ -308,6 +329,9 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
         .dropdown-list li:hover {
@@ -321,15 +345,49 @@
             font-weight: 600;
         }
 
+        /* CSS MỚI CHO PHẦN CHỌN NHIỀU DIỄN ĐÀN CỤ THỂ */
+        .sub-menu-container {
+            border-top: 1px dashed var(--border-color);
+            margin-top: 4px;
+            padding-top: 4px;
+            max-height: 220px;
+            overflow-y: auto;
+            display: none;
+        }
+
+        .custom-dropdown.open .sub-menu-container {
+            display: block;
+        }
+
+        .sub-menu-item {
+            padding: 8px 24px !important;
+            font-size: 13px;
+            font-weight: 400 !important;
+        }
+
+        .sub-menu-item input[type="checkbox"] {
+            margin-right: 10px;
+            accent-color: var(--accent-color);
+            cursor: pointer;
+            width: 15px;
+            height: 15px;
+        }
+
+        .sub-menu-item label {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            cursor: pointer;
+        }
+
         /* SEARCH CONTAINER CO GIÃN THEO V1 MÀU */
         .search-container {
-    position: relative;
-    /* Thay đổi cấu trúc từ width cố định sang hệ flex co giãn mượt */
-    flex: 0 0 45px; 
-    height: 45px;
-    transition: flex 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    flex-shrink: 0;
-}
+            position: relative;
+            flex: 0 0 45px; 
+            height: 45px;
+            transition: flex 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+            flex-shrink: 0;
+        }
 
         .search-input {
             width: 100%;
@@ -346,12 +404,10 @@
             box-shadow: var(--card-shadow);
             cursor: pointer;
         }
-    .search-input::placeholder {
-    color: transparent;
-    transition: color 0.2s ease;
-}
-
-        
+        .search-input::placeholder {
+            color: transparent;
+            transition: color 0.2s ease;
+        }
 
         .search-icon {
             position: absolute;
@@ -366,33 +422,32 @@
         }
 
         /* TRẠNG THÁI KHÍ ACTIVE Ô TÌM KIẾM */
-.action-bar.search-active .custom-dropdown {
-    flex: 0 0 50px; 
-}
+        .action-bar.search-active .custom-dropdown {
+            flex: 0 0 50px; 
+        }
 
-.action-bar.search-active .custom-dropdown .dropdown-selected {
-    padding-left: 10px;
-    padding-right: 22px;
-    font-size: 12px;
-}
-.action-bar.search-active .custom-dropdown .dropdown-selected::after {
-    right: 8px;
-}
+        .action-bar.search-active .custom-dropdown .dropdown-selected {
+            padding-left: 10px;
+            padding-right: 22px;
+            font-size: 12px;
+        }
+        .action-bar.search-active .custom-dropdown .dropdown-selected::after {
+            right: 8px;
+        }
 
-/* Đổi width: auto thành flex: 1 để kích hoạt lực đẩy mượt mà từ trái sang phải */
-.action-bar.search-active .search-container {
-    flex: 1; 
-}
-    .action-bar.search-active .search-input::placeholder {
-    color: var(--sub-text);
-}
+        /* Đổi width: auto thành flex: 1 để kích hoạt lực đẩy mượt mà từ trái sang phải */
+        .action-bar.search-active .search-container {
+            flex: 1; 
+        }
+        .action-bar.search-active .search-input::placeholder {
+            color: var(--sub-text);
+        }
 
-.action-bar.search-active .search-input {
-    cursor: text;
-    padding-left: 42px; /* Thêm padding đẩy chữ qua phải, nhường chỗ cho icon */
-}
+        .action-bar.search-active .search-input {
+            cursor: text;
+            padding-left: 42px; /* Thêm padding đẩy chữ qua phải, nhường chỗ cho icon */
+        }
     
-
         /* Nút đọc ngẫu nhiên khôi phục thiết kế đồng bộ v1 */
         .btn-action-util {
             height: 45px;
@@ -413,21 +468,20 @@
         }
 
         .btn-random {
-    background-color: var(--search-bg);
-    color: var(--text-color);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-}
-.btn-random:hover {
-    border-color: var(--accent-color);
-    background-color: var(--hover-bg);
-}
-.btn-random:active {
-    background-color: var(--accent-color) !important;
-    color: #ffffff !important;
-    border-color: var(--accent-color) !important;
-}
-
+            background-color: var(--search-bg);
+            color: var(--text-color);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+        }
+        .btn-random:hover {
+            border-color: var(--accent-color);
+            background-color: var(--hover-bg);
+        }
+        .btn-random:active {
+            background-color: var(--accent-color) !important;
+            color: #ffffff !important;
+            border-color: var(--accent-color) !important;
+        }
 
         /* DANH SÁCH BÀI VIẾT */
         .list-container {
@@ -601,55 +655,114 @@
 
     <div class="top-bar">
         <div class="sub-links-container">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdkkRZXJyeYno9vXrTD6vxso4agFl36-vzHoxl30Mod3_CPrQ/viewform" target="_blank" class="sub-link">đóng góp link bài viết</a>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdkkRZXJyeYno9vXrTD6vxso4agFl36-vzHoxl30Mod3_CPrQ/viewform" target="_blank" class="sub-link" data-i18n="contribute">đóng góp link bài viết</a>
             <a href="https://buymeacoffee.com/" target="_blank" class="sub-link">donation ♥️</a>
         </div>
-        <button class="btn-theme-toggle" id="btnThemeToggle" title="Thay đổi giao diện">
-            <span id="themeIcon">☀️</span>
-        </button>
+        <div class="right-utils">
+            <button class="btn-lang-toggle" id="btnLangToggle" title="Change Language / Đổi ngôn ngữ">🇺🇸 EN</button>
+            <button class="btn-theme-toggle" id="btnThemeToggle" title="Thay đổi giao diện">
+                <span id="themeIcon">☀️</span>
+            </button>
+        </div>
     </div>
 
     <div class="brand-container">
         <h1 class="brand-logo">
-            <a href="javascript:void(0)" onclick="resetToAllSource()" style="text-decoration: none; color: inherit;">
+            <a href="javascript:void(0)" onclick="resetToAllSource()">
                 Forum Adventure
             </a>
         </h1>
-        <p class="brand-tagline">Danh Sách Bài Viết Diễn Đàn Có Nhiều Lượt Tương Tác</p>
+        <p class="brand-tagline" id="brandTagline" data-i18n="tagline">Danh Sách Bài Viết Diễn Đàn Có Nhiều Lượt Tương Tác</p>
     </div>
 
     <div class="action-bar" id="actionBar">
         <div class="search-container" id="searchContainer">
-            <input type="text" class="search-input" id="searchInput" placeholder="Tìm kiếm bài viết theo tiêu đề...">
+            <input type="text" class="search-input" id="searchInput" placeholder="Tìm kiếm bài viết theo tiêu đề..." data-i18n-placeholder="search_placeholder">
             <svg class="search-icon" viewBox="0 0 24 24">
                 <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
             </svg>
         </div>
         
         <div class="custom-dropdown" id="customDropdown">
-            <div class="dropdown-selected" id="dropdownSelected">Tất cả diễn đàn</div>
+            <div class="dropdown-selected" id="dropdownSelected" data-i18n="dropdown_all">Tất cả diễn đàn</div>
             <ul class="dropdown-list" id="dropdownList">
-                <li data-value="all" class="active">Tất cả diễn đàn</li>
-                <li data-value="vn">Diễn đàn Việt Nam</li>
-                <li data-value="int">Diễn đàn Quốc tế</li>
+                <li data-value="all" class="active" data-i18n="dropdown_all">Tất cả diễn đàn</li>
+                <li data-value="vn" data-i18n="dropdown_vn">Diễn đàn Việt Nam</li>
+                <li data-value="int" data-i18n="dropdown_int">Diễn đàn Quốc tế</li>
+                <li data-value="sub" data-i18n="sub_menu_all">Chọn lọc diễn đàn cụ thể</li>
+                <div class="sub-menu-container" id="subMenuContainer"></div>
             </ul>
         </div>
 
-        
-        
-        <button class="btn-action-util btn-random" id="btnRandom" title="Xem ngẫu nhiên một bài viết từ danh mục hiện tại">Đọc ngẫu nhiên</button>
+        <button class="btn-action-util btn-random" id="btnRandom" title="Xem ngẫu nhiên một bài viết từ danh mục hiện tại" data-i18n="random_btn">Đọc ngẫu nhiên</button>
     </div>
 
     <div class="filter-container" id="filterContainer"></div>
 
     <div class="list-container" id="listContainer">
-        <div class="empty-message">Đang tải dữ liệu bộ nhớ đệm...</div>
+        <div class="empty-message" data-i18n="loading_cache">Đang tải dữ liệu bộ nhớ đệm...</div>
     </div>
 
     <div class="pagination-container" id="paginationContainer"></div>
     <div class="random-nav-container" id="randomNavContainer"></div>
 
     <script>
+        // CẤU HÌNH NGÔN NGỮ ĐA QUỐC GIA (Mở rộng tùy ý)
+        const languages = {
+            vi: {
+                contribute: "đóng góp link bài viết",
+                tagline: "Danh Sách Bài Viết Diễn Đàn Có Nhiều Lượt Tương Tác",
+                search_placeholder: "Tìm kiếm bài viết theo tiêu đề...",
+                dropdown_all: "Tất cả diễn đàn",
+                dropdown_vn: "Diễn đàn Việt Nam",
+                dropdown_int: "Diễn đàn Quốc tế",
+                sub_menu_all: "Chọn lọc diễn đàn cụ thể",
+                dropdown_selected_sub: "Đã chọn ({count}) diễn đàn",
+                random_btn: "Đọc ngẫu nhiên",
+                loading_cache: "Đang tải dữ liệu bộ nhớ đệm...",
+                update_new: "Đang cập nhật bài viết mới...",
+                sync_server: "Hệ thống đang đồng bộ những bài viết mới nhất từ máy chủ.",
+                init_first: "Đang khởi tạo dữ liệu lần đầu...",
+                fast_local: "Dữ liệu sau này sẽ được tải từ bộ nhớ cục bộ (siêu nhanh).",
+                no_data: "Không có dữ liệu hợp lệ để hiển thị.",
+                fav_title: "Yêu thích ⭐",
+                all_title: "Tất cả bài viết",
+                not_found: "Không tìm thấy bài viết nào phù hợp.",
+                btn_prev: "&larr; Bài trước",
+                btn_next: "Bài sau &rarr;",
+                alert_no_post: "Không có bài viết nào để lựa chọn!",
+                source_label: "Nguồn: ",
+                error_server: "Không thể kết nối máy chủ dữ liệu."
+            },
+            en: {
+                contribute: "contribute post links",
+                tagline: "List of High Engagement Forum Posts",
+                search_placeholder: "Search posts by title...",
+                dropdown_all: "All Forums",
+                dropdown_vn: "Vietnam Forums",
+                dropdown_int: "International Forums",
+                sub_menu_all: "Select specific forums",
+                dropdown_selected_sub: "Selected ({count}) forums",
+                random_btn: "Random Read",
+                loading_cache: "Loading cached data...",
+                update_new: "Updating new posts...",
+                sync_server: "The system is syncing the latest posts from the server.",
+                init_first: "Initializing data for the first time...",
+                fast_local: "Future data will be loaded from local storage (super fast).",
+                no_data: "No valid data to display.",
+                fav_title: "Favorites ⭐",
+                all_title: "All Posts",
+                not_found: "No matching posts found.",
+                btn_prev: "&larr; Previous",
+                btn_next: "Next &rarr;",
+                alert_no_post: "No posts available to choose!",
+                source_label: "Source: ",
+                error_server: "Failed to connect to data server."
+            }
+        };
+
+        let currentLang = localStorage.getItem('lang') || 'en';
+
         let masterData = { vn: {}, int: {} };
         let activeSource = 'all'; 
         let forumsData = {}; 
@@ -661,12 +774,12 @@
 
         let randomHistory = [];
         let currentRandomIndex = -1;
+        let selectedSpecificForums = []; // Lưu trữ mảng các domain được check chọn riêng lẻ
 
         let readHistory = JSON.parse(localStorage.getItem('read_history')) || [];
         let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
         const defaultAvatar = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2394a3b8'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.53c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z'/></svg>";
-// Thêm biến này bên dưới biến defaultAvatar
-const localFaviconFolder = "favicons"; // Thay đổi thành tên thư mục của bạn nếu khác
+        const localFaviconFolder = "favicons"; 
 
         const filterContainer = document.getElementById('filterContainer');
         const listContainer = document.getElementById('listContainer');
@@ -675,12 +788,17 @@ const localFaviconFolder = "favicons"; // Thay đổi thành tên thư mục c�
         const btnRandom = document.getElementById('btnRandom');
         const btnThemeToggle = document.getElementById('btnThemeToggle');
         const themeIcon = document.getElementById('themeIcon');
+        const btnLangToggle = document.getElementById('btnLangToggle');
         const searchInput = document.getElementById('searchInput');
         const actionBar = document.getElementById('actionBar');
+        const subMenuContainer = document.getElementById('subMenuContainer');
 
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
         updateThemeUI(savedTheme);
+
+        // Khởi động ngôn ngữ ban đầu
+        applyLanguage(currentLang);
 
         btnThemeToggle.addEventListener('click', () => {
             const currentTheme = document.documentElement.getAttribute('data-theme');
@@ -690,8 +808,48 @@ const localFaviconFolder = "favicons"; // Thay đổi thành tên thư mục c�
             updateThemeUI(newTheme);
         });
 
+        btnLangToggle.addEventListener('click', () => {
+            currentLang = currentLang === 'vi' ? 'en' : 'vi';
+            localStorage.setItem('lang', currentLang);
+            applyLanguage(currentLang);
+            updateDropdownSelectedText();
+            updateCurrentForumsData();
+        });
+
         function updateThemeUI(theme) {
             themeIcon.textContent = theme === 'dark' ? '🌙' : '☀️';
+        }
+
+        function applyLanguage(lang) {
+            btnLangToggle.textContent = lang === 'vi' ? '🇻🇳 VI' : '🇺🇸 EN';
+            
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (languages[lang][key]) {
+                    el.textContent = languages[lang][key];
+                }
+            });
+
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                if (languages[lang][key]) {
+                    el.setAttribute('placeholder', languages[lang][key]);
+                }
+            });
+        }
+
+        function updateDropdownSelectedText() {
+            const activeLi = document.querySelector('#dropdownList li.active');
+            if (activeLi) {
+                const activeVal = activeLi.getAttribute('data-value');
+                if (activeVal === 'sub') {
+                    const template = languages[currentLang].dropdown_selected_sub || "Đã chọn ({count}) diễn đàn";
+                    document.getElementById('dropdownSelected').textContent = template.replace('{count}', selectedSpecificForums.length);
+                } else {
+                    const key = activeLi.getAttribute('data-i18n');
+                    document.getElementById('dropdownSelected').textContent = languages[currentLang][key] || activeLi.textContent;
+                }
+            }
         }
 
         async function checkFileChanged(fileName) {
@@ -738,16 +896,17 @@ const localFaviconFolder = "favicons"; // Thay đổi thành tên thư mục c�
                     masterData = { vn: {}, int: {} };
                     if (cachedVnText) parseToSource(cachedVnText.split('\n'), 'vn');
                     if (cachedIntText) parseToSource(cachedIntText.split('\n'), 'int');
+                    buildSubMenuCheckboxes();
                     updateCurrentForumsData();
                     return; 
                 }
 
-                let loadingTitle = "Đang cập nhật bài viết mới...";
-                let loadingSubtitle = "Hệ thống đang đồng bộ những bài viết mới nhất từ máy chủ.";
+                let loadingTitle = languages[currentLang].update_new;
+                let loadingSubtitle = languages[currentLang].sync_server;
 
                 if (isFirstTime) {
-                    loadingTitle = "Đang khởi tạo dữ liệu lần đầu...";
-                    loadingSubtitle = "Dữ liệu sau này sẽ được tải từ bộ nhớ cục bộ (siêu nhanh).";
+                    loadingTitle = languages[currentLang].init_first;
+                    loadingSubtitle = languages[currentLang].fast_local;
                 }
 
                 listContainer.innerHTML = `
@@ -790,6 +949,7 @@ const localFaviconFolder = "favicons"; // Thay đổi thành tên thư mục c�
                 if (freshVnText) parseToSource(freshVnText.split('\n'), 'vn');
                 if (freshIntText) parseToSource(freshIntText.split('\n'), 'int');
 
+                buildSubMenuCheckboxes();
                 updateCurrentForumsData();
             } catch (error) {
                 console.error("Lỗi hệ thống:", error);
@@ -799,9 +959,10 @@ const localFaviconFolder = "favicons"; // Thay đổi thành tên thư mục c�
                     masterData = { vn: {}, int: {} };
                     if (cachedVnText) parseToSource(cachedVnText.split('\n'), 'vn');
                     if (cachedIntText) parseToSource(cachedIntText.split('\n'), 'int');
+                    buildSubMenuCheckboxes();
                     updateCurrentForumsData();
                 } else {
-                    listContainer.innerHTML = `<div class="empty-message" style="color: #ef4444;">Không thể kết nối máy chủ dữ liệu.</div>`;
+                    listContainer.innerHTML = `<div class="empty-message" style="color: #ef4444;">${languages[currentLang].error_server}</div>`;
                 }
             }
         }
@@ -821,18 +982,86 @@ const localFaviconFolder = "favicons"; // Thay đổi thành tên thư mục c�
             });
         }
 
+        // HÀM MỚI: Xây dựng cấu trúc danh sách Checkbox cụ thể
+        function buildSubMenuCheckboxes() {
+            subMenuContainer.innerHTML = '';
+            // Gộp tất cả domain duy nhất từ cả vn và int
+            const allDomains = new Set([
+                ...Object.keys(masterData.vn),
+                ...Object.keys(masterData.int)
+            ]);
+
+            // Sắp xếp Alphabet cho dễ tìm kiếm
+            const sortedDomains = Array.from(allDomains).sort();
+
+            sortedDomains.forEach(domain => {
+                const li = document.createElement('li');
+                li.className = 'sub-menu-item';
+                
+                const label = document.createElement('label');
+                
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkbox.value = domain;
+                
+                // Tránh đóng dropdown đột ngột khi click vào checkbox
+                checkbox.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                });
+
+                // Xử lý logic khi check/uncheck
+                checkbox.addEventListener('change', (e) => {
+                    if (checkbox.checked) {
+                        if (!selectedSpecificForums.includes(domain)) {
+                            selectedSpecificForums.push(domain);
+                        }
+                    } else {
+                        selectedSpecificForums = selectedSpecificForums.filter(d => d !== domain);
+                    }
+
+                    // Kích hoạt trạng thái active cho thẻ "Chọn lọc diễn đàn cụ thể" lớn bên ngoài
+                    dropdownList.querySelectorAll('li').forEach(li => li.classList.remove('active'));
+                    const subTargetLi = dropdownList.querySelector('li[data-value="sub"]');
+                    if(subTargetLi) subTargetLi.classList.add('active');
+
+                    activeSource = 'sub';
+                    currentPage = 1; 
+                    currentDomain = 'all';
+                    resetRandomHistory();
+                    updateCurrentForumsData();
+                    updateDropdownSelectedText();
+                });
+
+                label.appendChild(checkbox);
+                label.appendChild(document.createTextNode(domain.toUpperCase()));
+                li.appendChild(label);
+                subMenuContainer.appendChild(li);
+            });
+        }
+
         function updateCurrentForumsData() {
             forumsData = {};
-            if (activeSource === 'all' || activeSource === 'vn') {
-                for (const [domain, posts] of Object.entries(masterData.vn)) {
-                    if (!forumsData[domain]) forumsData[domain] = [];
-                    forumsData[domain] = forumsData[domain].concat(posts);
+            
+            // Nếu lọc theo cấu hình check chọn cụ thể
+            if (activeSource === 'sub') {
+                const allSources = { ...masterData.vn, ...masterData.int };
+                selectedSpecificForums.forEach(domain => {
+                    if (allSources[domain]) {
+                        forumsData[domain] = allSources[domain];
+                    }
+                });
+            } else {
+                if (activeSource === 'all' || activeSource === 'vn') {
+                    for (const [domain, posts] of Object.entries(masterData.vn)) {
+                        if (!forumsData[domain]) forumsData[domain] = [];
+                        forumsData[domain] = forumsData[domain].concat(posts);
+                    }
                 }
-            }
-            if (activeSource === 'all' || activeSource === 'int') {
-                for (const [domain, posts] of Object.entries(masterData.int)) {
-                    if (!forumsData[domain]) forumsData[domain] = [];
-                    forumsData[domain] = forumsData[domain].concat(posts);
+                if (activeSource === 'all' || activeSource === 'int') {
+                    for (const [domain, posts] of Object.entries(masterData.int)) {
+                        if (!forumsData[domain]) forumsData[domain] = [];
+                        forumsData[domain] = forumsData[domain].concat(posts);
+                    }
                 }
             }
             renderTabs();
@@ -841,7 +1070,7 @@ const localFaviconFolder = "favicons"; // Thay đổi thành tên thư mục c�
         function renderTabs() {
             filterContainer.innerHTML = ''; 
             if (Object.keys(forumsData).length === 0 && bookmarks.length === 0) {
-                listContainer.innerHTML = '<div class="empty-message">Không có dữ liệu hợp lệ để hiển thị.</div>';
+                listContainer.innerHTML = `<div class="empty-message">${languages[currentLang].no_data}</div>`;
                 paginationContainer.innerHTML = '';
                 randomNavContainer.innerHTML = '';
                 return;
@@ -849,8 +1078,8 @@ const localFaviconFolder = "favicons"; // Thay đổi thành tên thư mục c�
             let totalAllPostsCount = 0;
             Object.values(forumsData).forEach(posts => { totalAllPostsCount += posts.length; });
 
-            createTabButton('Yêu thích ⭐', 'fav_bookmarks', bookmarks.length);
-            createTabButton('Tất cả bài viết', 'all', totalAllPostsCount);
+            createTabButton(languages[currentLang].fav_title, 'fav_bookmarks', bookmarks.length);
+            createTabButton(languages[currentLang].all_title, 'all', totalAllPostsCount);
             Object.keys(forumsData).forEach(domain => { createTabButton(domain.toUpperCase(), domain, forumsData[domain].length); });
 
             const tabs = filterContainer.querySelectorAll('.btn-tab');
@@ -908,7 +1137,7 @@ const localFaviconFolder = "favicons"; // Thay đổi thành tên thư mục c�
             randomNavContainer.innerHTML = ''; 
             const targetPosts = getActivePosts();
             if (targetPosts.length === 0) {
-                listContainer.innerHTML = '<div class="empty-message">Không tìm thấy bài viết nào phù hợp.</div>';
+                listContainer.innerHTML = `<div class="empty-message">${languages[currentLang].not_found}</div>`;
                 paginationContainer.innerHTML = '';
                 return;
             }
@@ -925,11 +1154,9 @@ const localFaviconFolder = "favicons"; // Thay đổi thành tên thư mục c�
 
         function renderPostCard(post) {
             const isRead = readHistory.includes(post.url);
-const isBookmarked = bookmarks.some(b => b.url === post.url);
+            const isBookmarked = bookmarks.some(b => b.url === post.url);
 
-// Tự động ghép nối đường dẫn đến thư mục local của bạn
-// Ví dụ kết quả: favicons/reddit.com.png
-const faviconUrl = `${localFaviconFolder}/${post.domain}.png`; 
+            const faviconUrl = `${localFaviconFolder}/${post.domain}.png`; 
 
             const postItem = document.createElement('div');
             postItem.className = `post-item ${isRead ? 'is-read' : ''}`;
@@ -937,7 +1164,7 @@ const faviconUrl = `${localFaviconFolder}/${post.domain}.png`;
                 <img class="post-avatar" src="${faviconUrl}" alt="${post.domain}" onerror="this.onerror=null; this.src='${defaultAvatar}';">
                 <div class="post-content-block">
                     <a href="${post.url}" target="_blank" class="post-title">${post.title}</a>
-                    <span class="post-source">Nguồn: ${post.domain}</span>
+                    <span class="post-source">${languages[currentLang].source_label}${post.domain}</span>
                 </div>
                 <button class="btn-bookmark ${isBookmarked ? 'active' : ''}" title="Đánh dấu yêu thích">${isBookmarked ? '★' : '☆'}</button>
             `;
@@ -979,7 +1206,7 @@ const faviconUrl = `${localFaviconFolder}/${post.domain}.png`;
                     if (currentDomain === 'fav_bookmarks') {
                         postItem.remove();
                         if (listContainer.children.length === 0) {
-                            listContainer.innerHTML = '<div class="empty-message">Không tìm thấy bài viết nào phù hợp.</div>';
+                            listContainer.innerHTML = `<div class="empty-message">${languages[currentLang].not_found}</div>`;
                         }
                     }
                 }
@@ -1019,12 +1246,11 @@ const faviconUrl = `${localFaviconFolder}/${post.domain}.png`;
             currentRandomIndex = -1;
         }
 
-        /* TỐI ƯU HÓA: CHỈ CẬP NHẬT TRẠNG THÁI NÚT, KHÔNG LÀM NGHẼN KHI DOM BỊ KHỞI TẠO LẠI LIÊN TỤC */
         function renderRandomNavigation() {
             if (!randomNavContainer.querySelector('.btn-nav')) {
                 randomNavContainer.innerHTML = `
-                    <button class="btn-nav" id="btnNavPrev">&larr; Bài trước</button>
-                    <button class="btn-nav" id="btnNavNext">Bài sau &rarr;</button>
+                    <button class="btn-nav" id="btnNavPrev">${languages[currentLang].btn_prev}</button>
+                    <button class="btn-nav" id="btnNavNext">${languages[currentLang].btn_next}</button>
                 `;
                 
                 document.getElementById('btnNavPrev').addEventListener('click', (e) => {
@@ -1082,13 +1308,12 @@ const faviconUrl = `${localFaviconFolder}/${post.domain}.png`;
             }
         });
 
-        /* TỐI ƯU HÓA SỰ KIỆN CLICK ĐỌC NGẪU NHIÊN: CHỐNG TRÙNG VÀ BẤM LIÊN THANH */
         btnRandom.addEventListener('click', (e) => {
             e.preventDefault();
             e.stopPropagation();
 
             const allCurrentPosts = getActivePosts();
-            if (allCurrentPosts.length === 0) { alert('Không có bài viết nào để lựa chọn!'); return; }
+            if (allCurrentPosts.length === 0) { alert(languages[currentLang].alert_no_post); return; }
             if (currentRandomIndex < randomHistory.length - 1) { randomHistory = randomHistory.slice(0, currentRandomIndex + 1); }
 
             let randomPost;
@@ -1119,16 +1344,29 @@ const faviconUrl = `${localFaviconFolder}/${post.domain}.png`;
             item.addEventListener('click', (e) => {
                 e.stopPropagation();
                 
+                const dataVal = item.getAttribute('data-value');
+                
+                // Nếu bấm vào nút sub-menu chính, chỉ cần kích hoạt mở vùng chứa checkbox, không reset
+                if (dataVal === 'sub') {
+                    dropdownList.querySelectorAll('li').forEach(li => li.classList.remove('active'));
+                    item.classList.add('active');
+                    activeSource = 'sub';
+                    updateDropdownSelectedText();
+                    updateCurrentForumsData();
+                    return;
+                }
+
                 dropdownList.querySelectorAll('li').forEach(li => li.classList.remove('active'));
                 item.classList.add('active');
                 
-                // Luôn giữ nguyên text đầy đủ của danh mục dù có đang tìm kiếm hay không
-dropdownSelected.textContent = item.textContent;
+                // Bỏ check toàn bộ checkbox khi chuyển sang danh mục lớn tĩnh
+                subMenuContainer.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+                selectedSpecificForums = [];
 
-                
+                updateDropdownSelectedText();
                 customDropdown.classList.remove('open'); 
                 
-                activeSource = item.getAttribute('data-value'); 
+                activeSource = dataVal; 
                 currentPage = 1; 
                 currentDomain = 'all'; 
                 searchInput.value = ''; 
@@ -1140,12 +1378,15 @@ dropdownSelected.textContent = item.textContent;
         });
 
         function resetToAllSource() {
-            if (dropdownSelected) dropdownSelected.textContent = 'Tất cả diễn đàn';
-            
             dropdownList.querySelectorAll('li').forEach(li => {
                 if(li.getAttribute('data-value') === 'all') li.classList.add('active');
                 else li.classList.remove('active');
             });
+
+            subMenuContainer.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
+            selectedSpecificForums = [];
+
+            updateDropdownSelectedText();
 
             activeSource = 'all'; 
             currentPage = 1; 
@@ -1161,7 +1402,6 @@ dropdownSelected.textContent = item.textContent;
         document.addEventListener('touchend', (event) => {
             const now = (new Date()).getTime();
             if (now - lastTouchEnd <= 300) {
-                // Chỉ ngăn chặn hành vi mặc định nếu không phải click vào các phần tử tương tác chính như nút ngẫu nhiên
                 if (!event.target.closest('#btnRandom') && !event.target.closest('.btn-nav')) {
                     event.preventDefault(); 
                 }
