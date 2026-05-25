@@ -161,11 +161,6 @@
             transition: color 0.3s ease;
         }
 
-        .brand-logo a {
-            text-decoration: none;
-            color: inherit;
-        }
-
         .brand-tagline {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             font-size: 11px;
@@ -312,8 +307,6 @@
             box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
             display: none; 
             box-sizing: border-box;
-            max-height: 400px;
-            overflow-y: auto;
         }
 
         .custom-dropdown.open .dropdown-list {
@@ -329,9 +322,6 @@
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
         }
 
         .dropdown-list li:hover {
@@ -344,63 +334,6 @@
             color: var(--text-color);
             font-weight: 600;
         }
-
-                /* CSS MỚI CHO PHẦN CHỌN NHIỀU DIỄN ĐÀN CỤ THỂ DẠNG GRID */
-        .sub-menu-container {
-            border-top: 1px dashed var(--border-color);
-            margin-top: 4px;
-            padding: 8px 12px;
-            max-height: 220px;
-            overflow-y: auto;
-            display: none;
-            
-            /* Kích hoạt chế độ hiển thị Lưới */
-            display: none; /* Sẽ được điều khiển mở qua class .open bên dưới */
-            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-            gap: 6px;
-        }
-
-        /* Đảm bảo khi dropdown mở thì grid hiển thị đúng cấu trúc */
-        .custom-dropdown.open .subMenuContainer, /* ID fallback */
-        .custom-dropdown.open .sub-menu-container {
-            display: grid !important;
-        }
-
-        .sub-menu-item {
-            padding: 6px 8px !important;
-            font-size: 12px;
-            font-weight: 400 !important;
-            background-color: var(--bg-color);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            transition: all 0.15s ease;
-            box-sizing: border-box;
-        }
-
-        .sub-menu-item:hover {
-            border-color: var(--accent-color);
-            background-color: var(--hover-bg);
-        }
-
-        .sub-menu-item input[type="checkbox"] {
-            margin-right: 8px;
-            accent-color: var(--accent-color);
-            cursor: pointer;
-            width: 14px;
-            height: 14px;
-            flex-shrink: 0;
-        }
-
-        .sub-menu-item label {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            cursor: pointer;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-        }
-
 
         /* SEARCH CONTAINER CO GIÃN THEO V1 MÀU */
         .search-container {
@@ -470,6 +403,7 @@
             padding-left: 42px; /* Thêm padding đẩy chữ qua phải, nhường chỗ cho icon */
         }
     
+
         /* Nút đọc ngẫu nhiên khôi phục thiết kế đồng bộ v1 */
         .btn-action-util {
             height: 45px;
@@ -504,6 +438,7 @@
             color: #ffffff !important;
             border-color: var(--accent-color) !important;
         }
+
 
         /* DANH SÁCH BÀI VIẾT */
         .list-container {
@@ -690,7 +625,7 @@
 
     <div class="brand-container">
         <h1 class="brand-logo">
-            <a href="javascript:void(0)" onclick="resetToAllSource()">
+            <a href="javascript:void(0)" onclick="resetToAllSource()" style="text-decoration: none; color: inherit;">
                 Forum Adventure
             </a>
         </h1>
@@ -711,8 +646,6 @@
                 <li data-value="all" class="active" data-i18n="dropdown_all">Tất cả diễn đàn</li>
                 <li data-value="vn" data-i18n="dropdown_vn">Diễn đàn Việt Nam</li>
                 <li data-value="int" data-i18n="dropdown_int">Diễn đàn Quốc tế</li>
-                <li data-value="sub" data-i18n="sub_menu_all">Chọn lọc diễn đàn cụ thể</li>
-                <div class="sub-menu-container" id="subMenuContainer"></div>
             </ul>
         </div>
 
@@ -738,8 +671,6 @@
                 dropdown_all: "Tất cả diễn đàn",
                 dropdown_vn: "Diễn đàn Việt Nam",
                 dropdown_int: "Diễn đàn Quốc tế",
-                sub_menu_all: "Chọn lọc diễn đàn cụ thể",
-                dropdown_selected_sub: "Đã chọn ({count}) diễn đàn",
                 random_btn: "Đọc ngẫu nhiên",
                 loading_cache: "Đang tải dữ liệu bộ nhớ đệm...",
                 update_new: "Đang cập nhật bài viết mới...",
@@ -763,8 +694,6 @@
                 dropdown_all: "All Forums",
                 dropdown_vn: "Vietnam Forums",
                 dropdown_int: "International Forums",
-                sub_menu_all: "Select specific forums",
-                dropdown_selected_sub: "Selected ({count}) forums",
                 random_btn: "Random Read",
                 loading_cache: "Loading cached data...",
                 update_new: "Updating new posts...",
@@ -796,7 +725,6 @@
 
         let randomHistory = [];
         let currentRandomIndex = -1;
-        let selectedSpecificForums = []; // Lưu trữ mảng các domain được check chọn riêng lẻ
 
         let readHistory = JSON.parse(localStorage.getItem('read_history')) || [];
         let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
@@ -813,7 +741,6 @@
         const btnLangToggle = document.getElementById('btnLangToggle');
         const searchInput = document.getElementById('searchInput');
         const actionBar = document.getElementById('actionBar');
-        const subMenuContainer = document.getElementById('subMenuContainer');
 
         const savedTheme = localStorage.getItem('theme') || 'light';
         document.documentElement.setAttribute('data-theme', savedTheme);
@@ -834,6 +761,7 @@
             currentLang = currentLang === 'vi' ? 'en' : 'vi';
             localStorage.setItem('lang', currentLang);
             applyLanguage(currentLang);
+            // Re-render components to apply new language strings
             updateDropdownSelectedText();
             updateCurrentForumsData();
         });
@@ -843,8 +771,10 @@
         }
 
         function applyLanguage(lang) {
+            // Cập nhật text của nút chuyển ngôn ngữ
             btnLangToggle.textContent = lang === 'vi' ? '🇻🇳 VI' : '🇺🇸 EN';
             
+            // Tìm và dịch toàn bộ phần tử có data-i18n
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (languages[lang][key]) {
@@ -852,6 +782,7 @@
                 }
             });
 
+            // Dịch placeholder của ô tìm kiếm
             document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
                 const key = el.getAttribute('data-i18n-placeholder');
                 if (languages[lang][key]) {
@@ -863,14 +794,8 @@
         function updateDropdownSelectedText() {
             const activeLi = document.querySelector('#dropdownList li.active');
             if (activeLi) {
-                const activeVal = activeLi.getAttribute('data-value');
-                if (activeVal === 'sub') {
-                    const template = languages[currentLang].dropdown_selected_sub || "Đã chọn ({count}) diễn đàn";
-                    document.getElementById('dropdownSelected').textContent = template.replace('{count}', selectedSpecificForums.length);
-                } else {
-                    const key = activeLi.getAttribute('data-i18n');
-                    document.getElementById('dropdownSelected').textContent = languages[currentLang][key] || activeLi.textContent;
-                }
+                const key = activeLi.getAttribute('data-i18n');
+                document.getElementById('dropdownSelected').textContent = languages[currentLang][key] || activeLi.textContent;
             }
         }
 
@@ -918,7 +843,6 @@
                     masterData = { vn: {}, int: {} };
                     if (cachedVnText) parseToSource(cachedVnText.split('\n'), 'vn');
                     if (cachedIntText) parseToSource(cachedIntText.split('\n'), 'int');
-                    buildSubMenuCheckboxes();
                     updateCurrentForumsData();
                     return; 
                 }
@@ -971,7 +895,6 @@
                 if (freshVnText) parseToSource(freshVnText.split('\n'), 'vn');
                 if (freshIntText) parseToSource(freshIntText.split('\n'), 'int');
 
-                buildSubMenuCheckboxes();
                 updateCurrentForumsData();
             } catch (error) {
                 console.error("Lỗi hệ thống:", error);
@@ -981,7 +904,6 @@
                     masterData = { vn: {}, int: {} };
                     if (cachedVnText) parseToSource(cachedVnText.split('\n'), 'vn');
                     if (cachedIntText) parseToSource(cachedIntText.split('\n'), 'int');
-                    buildSubMenuCheckboxes();
                     updateCurrentForumsData();
                 } else {
                     listContainer.innerHTML = `<div class="empty-message" style="color: #ef4444;">${languages[currentLang].error_server}</div>`;
@@ -1004,92 +926,18 @@
             });
         }
 
-                // HÀM ĐÃ SỬA: Xây dựng cấu trúc danh sách Checkbox cụ thể (Không đóng khi click)
-        function buildSubMenuCheckboxes() {
-            subMenuContainer.innerHTML = '';
-            // Gộp tất cả domain duy nhất từ cả vn và int
-            const allDomains = new Set([
-                ...Object.keys(masterData.vn),
-                ...Object.keys(masterData.int)
-            ]);
-
-            // Sắp xếp Alphabet cho dễ tìm kiếm
-            const sortedDomains = Array.from(allDomains).sort();
-
-            sortedDomains.forEach(domain => {
-                const li = document.createElement('li');
-                li.className = 'sub-menu-item';
-                
-                // NGĂN CHẶN ĐÓNG DROPDOWN KHI CLICK VÀO DIỆN TÍCH Ô LI
-                li.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                });
-                
-                const label = document.createElement('label');
-                
-                const checkbox = document.createElement('input');
-                checkbox.type = 'checkbox';
-                checkbox.value = domain;
-                
-                // Tránh đóng dropdown đột ngột khi click trực tiếp vào checkbox
-                checkbox.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                });
-
-                // Xử lý logic khi check/uncheck
-                checkbox.addEventListener('change', (e) => {
-                    if (checkbox.checked) {
-                        if (!selectedSpecificForums.includes(domain)) {
-                            selectedSpecificForums.push(domain);
-                        }
-                    } else {
-                        selectedSpecificForums = selectedSpecificForums.filter(d => d !== domain);
-                    }
-
-                    // Kích hoạt trạng thái active cho thẻ "Chọn lọc diễn đàn cụ thể" lớn bên ngoài
-                    dropdownList.querySelectorAll('li').forEach(li => li.classList.remove('active'));
-                    const subTargetLi = dropdownList.querySelector('li[data-value="sub"]');
-                    if(subTargetLi) subTargetLi.classList.add('active');
-
-                    activeSource = 'sub';
-                    currentPage = 1; 
-                    currentDomain = 'all';
-                    resetRandomHistory();
-                    updateCurrentForumsData();
-                    updateDropdownSelectedText();
-                });
-
-                label.appendChild(checkbox);
-                label.appendChild(document.createTextNode(domain.toUpperCase()));
-                li.appendChild(label);
-                subMenuContainer.appendChild(li);
-            });
-        }
-
-
         function updateCurrentForumsData() {
             forumsData = {};
-            
-            // Nếu lọc theo cấu hình check chọn cụ thể
-            if (activeSource === 'sub') {
-                const allSources = { ...masterData.vn, ...masterData.int };
-                selectedSpecificForums.forEach(domain => {
-                    if (allSources[domain]) {
-                        forumsData[domain] = allSources[domain];
-                    }
-                });
-            } else {
-                if (activeSource === 'all' || activeSource === 'vn') {
-                    for (const [domain, posts] of Object.entries(masterData.vn)) {
-                        if (!forumsData[domain]) forumsData[domain] = [];
-                        forumsData[domain] = forumsData[domain].concat(posts);
-                    }
+            if (activeSource === 'all' || activeSource === 'vn') {
+                for (const [domain, posts] of Object.entries(masterData.vn)) {
+                    if (!forumsData[domain]) forumsData[domain] = [];
+                    forumsData[domain] = forumsData[domain].concat(posts);
                 }
-                if (activeSource === 'all' || activeSource === 'int') {
-                    for (const [domain, posts] of Object.entries(masterData.int)) {
-                        if (!forumsData[domain]) forumsData[domain] = [];
-                        forumsData[domain] = forumsData[domain].concat(posts);
-                    }
+            }
+            if (activeSource === 'all' || activeSource === 'int') {
+                for (const [domain, posts] of Object.entries(masterData.int)) {
+                    if (!forumsData[domain]) forumsData[domain] = [];
+                    forumsData[domain] = forumsData[domain].concat(posts);
                 }
             }
             renderTabs();
@@ -1368,38 +1216,18 @@
             customDropdown.classList.toggle('open');
         });
 
-                // BƯỚC 2: CẬP NHẬT LOGIC CLICK LỰA CHỌN DROPDOWN (KHÔNG ĐÓNG KHI CHỌN SUB-MENU)
         dropdownList.querySelectorAll('li').forEach(item => {
             item.addEventListener('click', (e) => {
                 e.stopPropagation();
                 
-                const dataVal = item.getAttribute('data-value');
-                
-                // Nếu bấm vào dòng "Chọn lọc diễn đàn cụ thể" lớn
-                if (dataVal === 'sub') {
-                    dropdownList.querySelectorAll('li').forEach(li => li.classList.remove('active'));
-                    item.classList.add('active');
-                    activeSource = 'sub';
-                    updateDropdownSelectedText();
-                    updateCurrentForumsData();
-                    // Giữ nguyên dropdown mở để người dùng nhìn thấy danh sách grid checkbox bên dưới
-                    return; 
-                }
-
-                // Nếu bấm vào các mục khác (all, vn, int), tiến hành đặt lại và ĐÓNG dropdown
                 dropdownList.querySelectorAll('li').forEach(li => li.classList.remove('active'));
                 item.classList.add('active');
                 
-                // Bỏ check toàn bộ checkbox khi chuyển sang danh mục lớn tĩnh
-                subMenuContainer.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
-                selectedSpecificForums = [];
-
                 updateDropdownSelectedText();
                 
-                // Chỉ đóng dropdown khi chọn các danh mục cố định này
                 customDropdown.classList.remove('open'); 
                 
-                activeSource = dataVal; 
+                activeSource = item.getAttribute('data-value'); 
                 currentPage = 1; 
                 currentDomain = 'all'; 
                 searchInput.value = ''; 
@@ -1410,15 +1238,11 @@
             });
         });
 
-
         function resetToAllSource() {
             dropdownList.querySelectorAll('li').forEach(li => {
                 if(li.getAttribute('data-value') === 'all') li.classList.add('active');
                 else li.classList.remove('active');
             });
-
-            subMenuContainer.querySelectorAll('input[type="checkbox"]').forEach(cb => cb.checked = false);
-            selectedSpecificForums = [];
 
             updateDropdownSelectedText();
 
