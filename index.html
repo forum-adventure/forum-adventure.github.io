@@ -171,12 +171,17 @@
             transition: color 0.3s ease;
         }
 
+        /* WRAPPER BỌC THANH FILTER SLIDE VÀ MENU DROPDOWN */
+        .filter-wrapper {
+            position: relative;
+            margin-top: 8px;
+            margin-bottom: 24px;
+        }
+
         .filter-container {
             display: flex;
             flex-wrap: nowrap;
             gap: 8px;
-            margin-top: 8px;
-            margin-bottom: 24px;
             overflow-x: auto;
             scroll-behavior: smooth;
             -webkit-overflow-scrolling: touch;
@@ -203,6 +208,36 @@
             align-items: center;
             gap: 5px;                   
         }
+
+        /* Nút icon cấu hình riêng */
+                /* Nút icon cấu hình riêng */
+        .btn-tab-icon {
+            padding: 5px 8px;
+            border-radius: 14px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            /* Giữ màu nền cố định theo theme, không đổi khi hover/active */
+            background: var(--card-bg) !important; 
+            border-color: var(--border-color) !important;
+            color: var(--text-color) !important;
+        }
+        .btn-tab-icon svg {
+            width: 14px;
+            height: 14px;
+            /* Điểm cốt lõi: fill luôn lấy theo biến chữ của hệ thống để tự đổi khi switch mode */
+            fill: var(--text-color) !important; 
+            transition: none !important;
+        }
+        /* Triệt tiêu hoàn toàn hiệu ứng đổi màu khi hover hoặc active cho riêng nút này */
+        .btn-tab-icon:hover, .btn-tab-icon:active {
+            background-color: var(--card-bg) !important;
+            border-color: var(--border-color) !important;
+        }
+        .btn-tab-icon:hover svg, .btn-tab-icon.active svg {
+            fill: var(--text-color) !important;
+        }
+
 
         .tab-badge {
             font-size: 9.5px;           
@@ -233,6 +268,47 @@
             background-color: rgba(255, 255, 255, 0.25) !important;
             color: #ffffff !important;
             border: none !important;
+        }
+
+        /* MENU CHECKBOX DROPDOWN CHO BỘ LỌC ẨN/HIỆN */
+        .checkbox-dropdown-menu {
+            position: absolute;
+            top: calc(100% - 4px);
+            left: 4px;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 8px 0;
+            max-height: 250px;
+            overflow-y: auto;
+            min-width: 200px;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            display: none;
+            z-index: 110;
+        }
+        .checkbox-dropdown-menu.open {
+            display: block;
+        }
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px 16px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-color);
+            user-select: none;
+            transition: background-color 0.15s ease;
+        }
+        .checkbox-item:hover {
+            background-color: var(--hover-bg);
+        }
+        .checkbox-item input {
+            cursor: pointer;
+            accent-color: var(--accent-color);
+            width: 15px;
+            height: 15px;
         }
 
         /* ACTION BAR - PHẦN TRỰC QUAN DIỄN ĐÀN DROPDOWN */
@@ -401,6 +477,7 @@
         .action-bar.search-active .search-input {
             cursor: text;
             padding-left: 42px; /* Thêm padding đẩy chữ qua phải, nhường chỗ cho icon */
+            padding-right: 32px; /* Thêm dòng này để chữ không đè lên nút X */
         }
     
 
@@ -635,6 +712,7 @@
     <div class="action-bar" id="actionBar">
         <div class="search-container" id="searchContainer">
             <input type="text" class="search-input" id="searchInput" placeholder="Tìm kiếm bài viết theo tiêu đề..." data-i18n-placeholder="search_placeholder">
+            <button id="clearSearch" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: transparent; border: none; color: var(--sub-text); font-size: 20px; cursor: pointer; display: none; z-index: 10;">&times;</button>
             <svg class="search-icon" viewBox="0 0 24 24">
                 <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
             </svg>
@@ -644,15 +722,19 @@
             <div class="dropdown-selected" id="dropdownSelected" data-i18n="dropdown_all">Tất cả diễn đàn</div>
             <ul class="dropdown-list" id="dropdownList">
                 <li data-value="all" class="active" data-i18n="dropdown_all">Tất cả diễn đàn</li>
-                <li data-value="vn" data-i18n="dropdown_vn">Diễn đàn Việt Nam</li>
                 <li data-value="int" data-i18n="dropdown_int">Diễn đàn Quốc tế</li>
+                <li data-value="vn" data-i18n="dropdown_vn">Diễn đàn Việt Nam</li>
+                
             </ul>
         </div>
 
         <button class="btn-action-util btn-random" id="btnRandom" title="Xem ngẫu nhiên một bài viết từ danh mục hiện tại" data-i18n="random_btn">Đọc ngẫu nhiên</button>
     </div>
 
-    <div class="filter-container" id="filterContainer"></div>
+    <div class="filter-wrapper" id="filterWrapper">
+        <div class="filter-container" id="filterContainer"></div>
+        <div class="checkbox-dropdown-menu" id="checkboxDropdownMenu"></div>
+    </div>
 
     <div class="list-container" id="listContainer">
         <div class="empty-message" data-i18n="loading_cache">Đang tải dữ liệu bộ nhớ đệm...</div>
@@ -685,7 +767,8 @@
                 btn_next: "Bài sau &rarr;",
                 alert_no_post: "Không có bài viết nào để lựa chọn!",
                 source_label: "Nguồn: ",
-                error_server: "Không thể kết nối máy chủ dữ liệu."
+                error_server: "Không thể kết nối máy chủ dữ liệu.",
+                filter_tooltip: "Ẩn/hiện diễn đàn"
             },
             en: {
                 contribute: "contribute post links",
@@ -708,7 +791,8 @@
                 btn_next: "Next &rarr;",
                 alert_no_post: "No posts available to choose!",
                 source_label: "Source: ",
-                error_server: "Failed to connect to data server."
+                error_server: "Failed to connect to data server.",
+                filter_tooltip: "Show/hide forums"
             }
         };
 
@@ -726,12 +810,17 @@
         let randomHistory = [];
         let currentRandomIndex = -1;
 
+        // Quản lý danh sách các diễn đàn bị ẩn tạm thời (Không lưu localStorage)
+let hiddenForums = [];
+
+
         let readHistory = JSON.parse(localStorage.getItem('read_history')) || [];
         let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
         const defaultAvatar = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2394a3b8'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.53c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z'/></svg>";
         const localFaviconFolder = "favicons"; 
 
         const filterContainer = document.getElementById('filterContainer');
+        const checkboxDropdownMenu = document.getElementById('checkboxDropdownMenu');
         const listContainer = document.getElementById('listContainer');
         const paginationContainer = document.getElementById('paginationContainer');
         const randomNavContainer = document.getElementById('randomNavContainer');
@@ -761,7 +850,6 @@
             currentLang = currentLang === 'vi' ? 'en' : 'vi';
             localStorage.setItem('lang', currentLang);
             applyLanguage(currentLang);
-            // Re-render components to apply new language strings
             updateDropdownSelectedText();
             updateCurrentForumsData();
         });
@@ -771,10 +859,8 @@
         }
 
         function applyLanguage(lang) {
-            // Cập nhật text của nút chuyển ngôn ngữ
             btnLangToggle.textContent = lang === 'vi' ? '🇻🇳 VI' : '🇺🇸 EN';
             
-            // Tìm và dịch toàn bộ phần tử có data-i18n
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
                 if (languages[lang][key]) {
@@ -782,13 +868,17 @@
                 }
             });
 
-            // Dịch placeholder của ô tìm kiếm
             document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
                 const key = el.getAttribute('data-i18n-placeholder');
                 if (languages[lang][key]) {
                     el.setAttribute('placeholder', languages[lang][key]);
                 }
             });
+
+            const filterBtn = document.getElementById('btnFilterToggle');
+            if (filterBtn) {
+                filterBtn.setAttribute('title', languages[lang].filter_tooltip);
+            }
         }
 
         function updateDropdownSelectedText() {
@@ -928,20 +1018,71 @@
 
         function updateCurrentForumsData() {
             forumsData = {};
-            if (activeSource === 'all' || activeSource === 'vn') {
-                for (const [domain, posts] of Object.entries(masterData.vn)) {
-                    if (!forumsData[domain]) forumsData[domain] = [];
-                    forumsData[domain] = forumsData[domain].concat(posts);
-                }
-            }
             if (activeSource === 'all' || activeSource === 'int') {
                 for (const [domain, posts] of Object.entries(masterData.int)) {
                     if (!forumsData[domain]) forumsData[domain] = [];
                     forumsData[domain] = forumsData[domain].concat(posts);
                 }
             }
+            if (activeSource === 'all' || activeSource === 'vn') {
+                for (const [domain, posts] of Object.entries(masterData.vn)) {
+                    if (!forumsData[domain]) forumsData[domain] = [];
+                    forumsData[domain] = forumsData[domain].concat(posts);
+                }
+            }
+            
             renderTabs();
+            renderCheckboxMenu();
         }
+
+        // TẠO DROPDOWN MENU CHỨA CHECKBOX BỘ LỌC
+                // TẠO DROPDOWN MENU CHỨA CHECKBOX BỘ LỌC ĐÃ ĐỒNG BỘ THEO NGUỒN (ALL / INT / VN)
+        function renderCheckboxMenu() {
+            checkboxDropdownMenu.innerHTML = '';
+            
+            // Xác định danh sách các domain cần hiển thị dựa theo bộ lọc nguồn chính (activeSource)
+            let filteredDomains = [];
+            if (activeSource === 'all' || activeSource === 'int') {
+                filteredDomains = filteredDomains.concat(Object.keys(masterData.int));
+            }
+            if (activeSource === 'all' || activeSource === 'vn') {
+                filteredDomains = filteredDomains.concat(Object.keys(masterData.vn));
+            }
+            
+            // Loại bỏ các domain trùng lặp (nếu có)
+            filteredDomains = [...new Set(filteredDomains)];
+            
+            if (filteredDomains.length === 0) return;
+
+            filteredDomains.forEach(domain => {
+                const label = document.createElement('label');
+                label.className = 'checkbox-item';
+                
+                const isChecked = !hiddenForums.includes(domain);
+                
+                label.innerHTML = `
+                    <input type="checkbox" value="${domain}" ${isChecked ? 'checked' : ''}>
+                    <span>${domain.toUpperCase()}</span>
+                `;
+
+                label.querySelector('input').addEventListener('change', (e) => {
+                    const val = e.target.value;
+                    if (e.target.checked) {
+                        hiddenForums = hiddenForums.filter(item => item !== val);
+                    } else {
+                        if (!hiddenForums.includes(val)) hiddenForums.push(val);
+                        // Nếu đang đứng ở tab vừa bị ẩn, quay về tab 'all'
+                        if (currentDomain === val) {
+                            currentDomain = 'all';
+                        }
+                    }
+                    renderTabs();
+                });
+
+                checkboxDropdownMenu.appendChild(label);
+            });
+        }
+
 
         function renderTabs() {
             filterContainer.innerHTML = ''; 
@@ -954,12 +1095,37 @@
             let totalAllPostsCount = 0;
             Object.values(forumsData).forEach(posts => { totalAllPostsCount += posts.length; });
 
+            // 1. Nút Yêu thích
             createTabButton(languages[currentLang].fav_title, 'fav_bookmarks', bookmarks.length);
-            createTabButton(languages[currentLang].all_title, 'all', totalAllPostsCount);
-            Object.keys(forumsData).forEach(domain => { createTabButton(domain.toUpperCase(), domain, forumsData[domain].length); });
+            
+            // 2. CHÈN NÚT ICON FILTER Ở CHÍNH GIỮA
+            const filterBtn = document.createElement('button');
+            filterBtn.className = 'btn-tab btn-tab-icon';
+            filterBtn.id = 'btnFilterToggle';
+            filterBtn.setAttribute('title', languages[currentLang].filter_tooltip);
+            filterBtn.innerHTML = `
+                <svg viewBox="0 0 24 24">
+                    <path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"/>
+                </svg>
+            `;
+            filterBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                checkboxDropdownMenu.classList.toggle('open');
+            });
+            filterContainer.appendChild(filterBtn);
 
-            const tabs = filterContainer.querySelectorAll('.btn-tab');
-            let targetTab = tabs[1]; 
+            // 3. Nút Tất cả bài viết
+            createTabButton(languages[currentLang].all_title, 'all', totalAllPostsCount);
+            
+            // 4. Danh sách các nút diễn đàn (chỉ hiển thị nếu không nằm trong danh sách hiddenForums)
+            Object.keys(forumsData).forEach(domain => { 
+                if (!hiddenForums.includes(domain)) {
+                    createTabButton(domain.toUpperCase(), domain, forumsData[domain].length); 
+                }
+            });
+
+            const tabs = filterContainer.querySelectorAll('.btn-tab:not(.btn-tab-icon)');
+            let targetTab = tabs[1]; // Mặc định là 'Tất cả bài viết'
             tabs.forEach(tab => { if (tab.getAttribute('data-domain') === currentDomain) targetTab = tab; });
             if (targetTab) targetTab.click();
         }
@@ -1000,13 +1166,27 @@
         }
 
         function getActivePosts() {
-            let targetPosts = [];
-            if (currentDomain === 'fav_bookmarks') { targetPosts = [...bookmarks]; }
-            else if (currentDomain === 'all') { Object.values(forumsData).forEach(posts => { targetPosts = targetPosts.concat(posts); }); }
-            else { targetPosts = forumsData[currentDomain] || []; }
-            if (searchQuery !== '') { targetPosts = targetPosts.filter(post => post.title.toLowerCase().includes(searchQuery)); }
-            return targetPosts;
-        }
+    let targetPosts = [];
+    if (currentDomain === 'fav_bookmarks') {
+        targetPosts = [...bookmarks];
+    } else if (currentDomain === 'all') {
+        // Chỉ lấy bài viết từ các diễn đàn KHÔNG bị ẩn
+        Object.entries(forumsData).forEach(([domain, posts]) => {
+            if (!hiddenForums.includes(domain)) {
+                targetPosts = targetPosts.concat(posts);
+            }
+        });
+    } else {
+        // Nếu danh mục hiện tại bị ẩn thì không trả về bài viết nào
+        targetPosts = hiddenForums.includes(currentDomain) ? [] : (forumsData[currentDomain] || []);
+    }
+
+    if (searchQuery !== '') {
+        targetPosts = targetPosts.filter(post => post.title.toLowerCase().includes(searchQuery));
+    }
+    return targetPosts;
+}
+
 
         function displayPosts() {
             listContainer.innerHTML = ''; 
@@ -1161,22 +1341,41 @@
             actionBar.classList.add('search-active');
         });
 
-        searchInput.addEventListener('input', (e) => {
-            clearTimeout(searchTimeout);
-            searchTimeout = setTimeout(() => { 
-                searchQuery = e.target.value.trim().toLowerCase(); 
-                currentPage = 1; 
-                resetRandomHistory(); 
-                displayPosts(); 
-            }, 300);
-        });
+        const clearSearchBtn = document.getElementById('clearSearch');
+
+searchInput.addEventListener('input', (e) => {
+    // 1. Chỉ thêm dòng này để tự ẩn/hiện nút X dựa trên việc có chữ hay không
+    clearSearchBtn.style.display = e.target.value.length > 0 ? 'block' : 'none';
+    
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(() => { 
+        searchQuery = e.target.value.trim().toLowerCase(); 
+        currentPage = 1; 
+        resetRandomHistory(); 
+        displayPosts(); 
+    }, 300);
+});
+
+// 2. Sự kiện click nút X: Xóa chữ và kích hoạt lại sự kiện 'input' có sẵn ở trên
+clearSearchBtn.addEventListener('click', () => {
+    searchInput.value = '';
+    clearSearchBtn.style.display = 'none';
+    searchInput.focus();
+    searchInput.dispatchEvent(new Event('input')); // Ép ô input chạy lại logic tự cập nhật danh sách của bạn
+});
+
 
         document.addEventListener('click', (e) => {
             const isClickInsideSearch = document.getElementById('searchContainer').contains(e.target);
             const isClickInsideDropdown = document.getElementById('customDropdown').contains(e.target);
+            const isClickInsideFilterMenu = document.getElementById('filterWrapper').contains(e.target);
             
             if (!isClickInsideDropdown) {
                 customDropdown.classList.remove('open');
+            }
+
+            if (!isClickInsideFilterMenu) {
+                checkboxDropdownMenu.classList.remove('open');
             }
 
             if (!isClickInsideSearch && searchInput.value.trim() === '') {
