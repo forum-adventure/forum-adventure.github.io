@@ -69,6 +69,12 @@
             --tagline-color: #94a3b8;
         }
 
+        /* SỬA LỖI LAYOUT SHIFT & SỬA LỖI 3: Kích hoạt hiệu ứng cuộn trang mượt mà toàn diện */
+        html {
+            overflow-y: scroll;
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             background-color: var(--bg-color);
@@ -79,6 +85,7 @@
             line-height: 1.6;
             transition: background-color 0.3s, color 0.3s;
             touch-action: manipulation;
+            -webkit-tap-highlight-color: transparent;
         }
 
         /* Top Utilities Bar */
@@ -161,6 +168,10 @@
             transition: color 0.3s ease;
         }
 
+        .brand-logo a {
+            display: inline-block;
+        }
+
         .brand-tagline {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
             font-size: 11px;
@@ -192,6 +203,12 @@
             display: none;
         }
 
+        /* SỬA LỖI ANDROID: Tạo khoảng đệm nhỏ ở cuối hàng để báo hiệu trực quan cho người dùng biết là cuộn ngang được */
+        .filter-container::after {
+            content: '';
+            padding-right: 20px;
+        }
+
         .btn-tab {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -210,7 +227,6 @@
         }
 
         /* Nút icon cấu hình riêng */
-                /* Nút icon cấu hình riêng */
         .btn-tab-icon {
             padding: 5px 8px;
             border-radius: 14px;
@@ -222,7 +238,9 @@
             border-color: var(--border-color) !important;
             color: var(--text-color) !important;
         }
-        .btn-tab-icon svg {
+        
+        /* SỬA LỖI TRÌNH DUYỆT CŨ/SAFARI: Ép path của SVG nhận biến màu văn bản chuẩn xác */
+        .btn-tab-icon svg, .btn-tab-icon svg path {
             width: 14px;
             height: 14px;
             /* Điểm cốt lõi: fill luôn lấy theo biến chữ của hệ thống để tự đổi khi switch mode */
@@ -234,7 +252,8 @@
             background-color: var(--card-bg) !important;
             border-color: var(--border-color) !important;
         }
-        .btn-tab-icon:hover svg, .btn-tab-icon.active svg {
+        .btn-tab-icon:hover svg, .btn-tab-icon.active svg,
+        .btn-tab-icon:hover svg path, .btn-tab-icon.active svg path {
             fill: var(--text-color) !important;
         }
 
@@ -411,74 +430,82 @@
             font-weight: 600;
         }
 
-        /* SEARCH CONTAINER CO GIÃN THEO V1 MÀU */
-        .search-container {
-            position: relative;
-            flex: 0 0 45px; 
-            height: 45px;
-            transition: flex 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            flex-shrink: 0;
-        }
+        /* 1. SỬA CONTAINER: Đảm bảo khi thu gọn phải là khối vuông hoàn hảo 45px */
+.search-container {
+    position: relative;
+    flex: 0 0 45px; 
+    width: 45px;   /* Ép thêm thuộc tính width cố định khi thu gọn */
+    height: 45px;
+    transition: flex 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+}
 
-        .search-input {
-            width: 100%;
-            height: 100%;
-            padding: 12px;
-            font-size: 14px;
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            background-color: var(--search-bg);
-            color: var(--text-color);
-            box-sizing: border-box;
-            outline: none;
-            transition: all 0.2s ease;
-            box-shadow: var(--card-shadow);
-            cursor: pointer;
-        }
-        .search-input::placeholder {
-            color: transparent;
-            transition: color 0.2s ease;
-        }
+/* 2. SỬA INPUT: Cân bằng lại padding ở 2 trạng thái */
+.search-input {
+    width: 100%;
+    height: 100%;
+    /* TRẠNG THÁI THU GỌN BAN ĐẦU: padding đều 2 bên trái phải để icon cân chính giữa */
+    padding: 12px; 
+    font-size: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background-color: var(--search-bg);
+    color: var(--text-color);
+    box-sizing: border-box;
+    outline: none;
+    transition: all 0.2s ease;
+    box-shadow: var(--card-shadow);
+    cursor: pointer;
+    
+    -webkit-appearance: none;
+    appearance: none;
+}
 
-        .search-icon {
-            position: absolute;
-            left: 13px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 18px;
-            height: 18px;
-            fill: var(--sub-text);
-            pointer-events: none;
-            transition: fill 0.2s ease;
-        }
+.search-input::placeholder {
+    color: transparent;
+    transition: color 0.2s ease;
+}
 
-        /* TRẠNG THÁI KHÍ ACTIVE Ô TÌM KIẾM */
-        .action-bar.search-active .custom-dropdown {
-            flex: 0 0 50px; 
-        }
+.search-icon {
+    position: absolute;
+    left: 13px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    fill: var(--sub-text);
+    pointer-events: none;
+    transition: fill 0.2s ease;
+}
 
-        .action-bar.search-active .custom-dropdown .dropdown-selected {
-            padding-left: 10px;
-            padding-right: 22px;
-            font-size: 12px;
-        }
-        .action-bar.search-active .custom-dropdown .dropdown-selected::after {
-            right: 8px;
-        }
+        /* TRẠNG THÁI KHI ACTIVE Ô TÌM KIẾM (BẤM MỞ RỘNG) */
+.action-bar.search-active .custom-dropdown {
+    flex: 0 0 50px; 
+}
 
-        /* Đổi width: auto thành flex: 1 để kích hoạt lực đẩy mượt mà từ trái sang phải */
-        .action-bar.search-active .search-container {
-            flex: 1; 
-        }
-        .action-bar.search-active .search-input::placeholder {
-            color: var(--sub-text);
-        }
+.action-bar.search-active .custom-dropdown .dropdown-selected {
+    padding-left: 10px;
+    padding-right: 22px;
+    font-size: 12px;
+}
+.action-bar.search-active .custom-dropdown .dropdown-selected::after {
+    right: 8px;
+}
 
-        .action-bar.search-active .search-input {
-            cursor: text;
-            padding-left: 42px; /* Thêm padding đẩy chữ qua phải, nhường chỗ cho icon */
-            padding-right: 32px; /* Thêm dòng này để chữ không đè lên nút X */
-        }
+.action-bar.search-active .search-container {
+    flex: 1; 
+    width: auto; /* Thả tự do width để flex: 1 chiếm trọn không gian */
+}
+.action-bar.search-active .search-input::placeholder {
+    color: var(--sub-text);
+}
+
+/* KHI ACTIVE: Mới kích hoạt khoảng đệm lớn để chống chữ đè nút X và nhường chỗ cho kính lúp */
+.action-bar.search-active .search-input {
+    cursor: text;
+    padding-left: 42px;  /* Đẩy chữ qua phải nhường chỗ cho icon kính lúp */
+    padding-right: 38px; /* Giữ khoảng trống bên phải cho nút X xóa text không bị đè chữ */
+}
     
 
         /* Nút đọc ngẫu nhiên khôi phục thiết kế đồng bộ v1 */
@@ -501,20 +528,43 @@
         }
 
         .btn-random {
-            background-color: var(--search-bg);
-            color: var(--text-color);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-        }
-        .btn-random:hover {
-            border-color: var(--accent-color);
-            background-color: var(--hover-bg);
-        }
-        .btn-random:active {
-            background-color: var(--accent-color) !important;
-            color: #ffffff !important;
-            border-color: var(--accent-color) !important;
-        }
+    /* Đảo ngược màu: Lấy màu chủ đạo làm nền, chữ chuyển thành màu trắng */
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border: 1px solid var(--accent-color);
+    border-radius: 12px;
+    outline: none; /* Loại bỏ đường viền focus mặc định của trình duyệt */
+            /* CHỐNG TÔ ĐẬM VÀ BÔI ĐEN TUYỆT ĐỐI (KỂ CẢ KHI BẤM GIỮ LÂU) */
+    -webkit-touch-callout: none; /* Khóa menu ngữ cảnh/copy trên iOS Safari khi nhấn giữ */
+    -webkit-user-select: none;   /* Safari */
+    -khtml-user-select: none;    /* Konqueror HTML */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Bản chuẩn: Chrome, Opera, Edge mới */
+}
+
+.btn-random:hover {
+    /* Khi hover: Dùng màu biến thể hover đậm hơn một chút để tạo hiệu ứng nhấn */
+    background-color: var(--accent-hover);
+    border-color: var(--accent-hover);
+}
+
+.btn-random:active {
+    /* Khi nhấn giữ: Chuyển sang màu nền sáng, chữ và viền tối */
+    background-color: var(--hover-bg);
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+/* Đảm bảo khi thả chuột/thả tay ra (hết active) nút sẽ về lại trạng thái chuẩn */
+.btn-random:focus:not(:active) {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    border-color: var(--accent-color);
+}
+    
+
+
 
 
         /* DANH SÁCH BÀI VIẾT */
@@ -562,6 +612,7 @@
             flex-direction: column;
             gap: 4px;
             flex: 1;
+            min-width: 0; /* SỬA LỖI SAFARI/CHROME: Ngăn tiêu đề dài bẻ gãy layout card flexbox */
         }
 
         .post-title {
@@ -571,16 +622,16 @@
             font-size: 15px;
             transition: all 0.2s;
             line-height: 1.4;
+            /* Cải thiện hiển thị text dài */
+            display: block;
+            word-break: break-word; 
         }
 
         .post-title:hover {
             color: var(--accent-color);
         }
 
-        .post-item.is-read .post-title {
-            opacity: 0.45;
-            font-weight: 400;
-        }
+       
 
         .post-source {
             font-size: 12px;
@@ -682,6 +733,29 @@
                 font-size: 12px;
                 letter-spacing: 2px;
             }
+            /* SỬA LỖI IPHONE MINI/MÀN HÌNH NHỎ: Ép co dropdown về mức vừa vặn mà không làm mất text hay lệch mũi tên */
+            .action-bar.search-active .custom-dropdown {
+                flex: 0 0 65px; 
+            }
+            .action-bar.search-active .custom-dropdown .dropdown-selected {
+                padding-left: 6px;
+                padding-right: 16px;
+                font-size: 11px;
+            }
+            .action-bar.search-active .custom-dropdown .dropdown-selected::after {
+                right: 4px;
+            }
+            mark.search-highlight {
+    background-color: #fef08a; /* Màu vàng nhạt dịu mắt (giống bộ màu Slate/Tailwind) */
+    color: #0f172a;            /* Chữ đen xám đậm để dễ đọc */
+    padding: 0 2px;
+    border-radius: 2px;
+}
+:root[data-theme="dark"] mark.search-highlight {
+    background-color: #ca8a04; /* Màu vàng sậm hơn ở giao diện tối để không bị chói */
+    color: #ffffff;
+}
+
         }
     </style>
 </head>
@@ -724,7 +798,6 @@
                 <li data-value="all" class="active" data-i18n="dropdown_all">Tất cả diễn đàn</li>
                 <li data-value="int" data-i18n="dropdown_int">Diễn đàn Quốc tế</li>
                 <li data-value="vn" data-i18n="dropdown_vn">Diễn đàn Việt Nam</li>
-                
             </ul>
         </div>
 
@@ -768,7 +841,14 @@
                 alert_no_post: "Không có bài viết nào để lựa chọn!",
                 source_label: "Nguồn: ",
                 error_server: "Không thể kết nối máy chủ dữ liệu.",
-                filter_tooltip: "Ẩn/hiện diễn đàn"
+                filter_tooltip: "Ẩn/hiện diễn đàn",
+                empty_bookmarks: "Bạn chưa có bài viết yêu thích nào. Hãy bấm nút ★ ở các bài viết để lưu lại nhé!",
+        btn_export: "📤 Xuất dữ liệu",
+        btn_import: "📥 Nhập dữ liệu",
+        import_success: "Nhập danh sách yêu thích thành công!",
+        import_invalid: "File dữ liệu không hợp lệ hoặc bị lỗi!",
+        import_empty: "File dữ liệu trống!",
+        confirm_import: "Hành động này sẽ ghi đè lên danh sách yêu thích hiện tại. Bạn có chắc chắn muốn tiếp tục?"
             },
             en: {
                 contribute: "contribute post links",
@@ -792,7 +872,14 @@
                 alert_no_post: "No posts available to choose!",
                 source_label: "Source: ",
                 error_server: "Failed to connect to data server.",
-                filter_tooltip: "Show/hide forums"
+                filter_tooltip: "Show/hide forums",
+                  empty_bookmarks: "You don't have any favorite posts yet. Click the ★ button on any post to save it!",
+        btn_export: "📤 Export Data",
+        btn_import: "📥 Import Data",
+        import_success: "Favorites imported successfully!",
+        import_invalid: "Invalid data file or corrupted!",
+        import_empty: "Data file is empty!",
+        confirm_import: "This will overwrite your current favorites. Do you want to proceed?" 
             }
         };
 
@@ -811,10 +898,9 @@
         let currentRandomIndex = -1;
 
         // Quản lý danh sách các diễn đàn bị ẩn tạm thời (Không lưu localStorage)
-let hiddenForums = [];
+        let hiddenForums = [];
 
-
-        let readHistory = JSON.parse(localStorage.getItem('read_history')) || [];
+        
         let bookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
         const defaultAvatar = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2394a3b8'><path d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.53c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z'/></svg>";
         const localFaviconFolder = "favicons"; 
@@ -1031,16 +1117,14 @@ let hiddenForums = [];
                 }
             }
             
-            renderTabs();
             renderCheckboxMenu();
+            renderTabs();
         }
 
-        // TẠO DROPDOWN MENU CHỨA CHECKBOX BỘ LỌC
-                // TẠO DROPDOWN MENU CHỨA CHECKBOX BỘ LỌC ĐÃ ĐỒNG BỘ THEO NGUỒN (ALL / INT / VN)
+        // SỬA LỖI 1: TỰ ĐỘNG ẨN CHECKBOX KHÔNG CÓ BÀI VIẾT (COUNT === 0)
         function renderCheckboxMenu() {
             checkboxDropdownMenu.innerHTML = '';
             
-            // Xác định danh sách các domain cần hiển thị dựa theo bộ lọc nguồn chính (activeSource)
             let filteredDomains = [];
             if (activeSource === 'all' || activeSource === 'int') {
                 filteredDomains = filteredDomains.concat(Object.keys(masterData.int));
@@ -1049,12 +1133,16 @@ let hiddenForums = [];
                 filteredDomains = filteredDomains.concat(Object.keys(masterData.vn));
             }
             
-            // Loại bỏ các domain trùng lặp (nếu có)
             filteredDomains = [...new Set(filteredDomains)];
-            
             if (filteredDomains.length === 0) return;
 
             filteredDomains.forEach(domain => {
+                // Đếm số lượng bài viết thực tế của domain này trong forumsData hiện tại
+                const count = forumsData[domain] ? forumsData[domain].length : 0;
+
+                // KHÔI PHỤC LOGIC V1: Nếu không có bài viết nào, tự động ẩn (bỏ qua không render checkbox)
+                if (count === 0) return;
+
                 const label = document.createElement('label');
                 label.className = 'checkbox-item';
                 
@@ -1071,7 +1159,6 @@ let hiddenForums = [];
                         hiddenForums = hiddenForums.filter(item => item !== val);
                     } else {
                         if (!hiddenForums.includes(val)) hiddenForums.push(val);
-                        // Nếu đang đứng ở tab vừa bị ẩn, quay về tab 'all'
                         if (currentDomain === val) {
                             currentDomain = 'all';
                         }
@@ -1083,7 +1170,6 @@ let hiddenForums = [];
             });
         }
 
-
         function renderTabs() {
             filterContainer.innerHTML = ''; 
             if (Object.keys(forumsData).length === 0 && bookmarks.length === 0) {
@@ -1092,13 +1178,18 @@ let hiddenForums = [];
                 randomNavContainer.innerHTML = '';
                 return;
             }
+            
             let totalAllPostsCount = 0;
-            Object.values(forumsData).forEach(posts => { totalAllPostsCount += posts.length; });
+            Object.entries(forumsData).forEach(([domain, posts]) => { 
+                if (!hiddenForums.includes(domain)) {
+                    totalAllPostsCount += posts.length; 
+                }
+            });
 
             // 1. Nút Yêu thích
             createTabButton(languages[currentLang].fav_title, 'fav_bookmarks', bookmarks.length);
             
-            // 2. CHÈN NÚT ICON FILTER Ở CHÍNH GIỮA
+            // 2. NÚT ICON FILTER Ở CHÍNH GIỮA
             const filterBtn = document.createElement('button');
             filterBtn.className = 'btn-tab btn-tab-icon';
             filterBtn.id = 'btnFilterToggle';
@@ -1108,26 +1199,36 @@ let hiddenForums = [];
                     <path d="M10 18h4v-2h-4v2zM3 6v2h18V6H3zm3 7h12v-2H6v2z"/>
                 </svg>
             `;
-            filterBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                checkboxDropdownMenu.classList.toggle('open');
-            });
+            filterBtn.addEventListener('pointerdown', (e) => {
+    e.stopPropagation(); // Ngăn chặn sự kiện lan ra ngoài document
+    checkboxDropdownMenu.classList.toggle('open');
+});
             filterContainer.appendChild(filterBtn);
 
             // 3. Nút Tất cả bài viết
             createTabButton(languages[currentLang].all_title, 'all', totalAllPostsCount);
             
-            // 4. Danh sách các nút diễn đàn (chỉ hiển thị nếu không nằm trong danh sách hiddenForums)
+            // 4. Danh sách các nút diễn đàn
             Object.keys(forumsData).forEach(domain => { 
                 if (!hiddenForums.includes(domain)) {
                     createTabButton(domain.toUpperCase(), domain, forumsData[domain].length); 
                 }
             });
 
+            // Kiểm tra trạng thái Active Tab hiện tại bảo toàn dữ liệu
             const tabs = filterContainer.querySelectorAll('.btn-tab:not(.btn-tab-icon)');
-            let targetTab = tabs[1]; // Mặc định là 'Tất cả bài viết'
+            let targetTab = null;
             tabs.forEach(tab => { if (tab.getAttribute('data-domain') === currentDomain) targetTab = tab; });
-            if (targetTab) targetTab.click();
+            
+            if (targetTab) {
+                document.querySelectorAll('.btn-tab').forEach(btn => btn.classList.remove('active'));
+                targetTab.classList.add('active');
+                displayPosts();
+            } else {
+                currentDomain = 'all';
+                const allTab = filterContainer.querySelector('[data-domain="all"]');
+                if (allTab) allTab.click();
+            }
         }
 
         function createTabButton(label, domainKey, count) {
@@ -1170,68 +1271,128 @@ let hiddenForums = [];
     if (currentDomain === 'fav_bookmarks') {
         targetPosts = [...bookmarks];
     } else if (currentDomain === 'all') {
-        // Chỉ lấy bài viết từ các diễn đàn KHÔNG bị ẩn
         Object.entries(forumsData).forEach(([domain, posts]) => {
             if (!hiddenForums.includes(domain)) {
                 targetPosts = targetPosts.concat(posts);
             }
         });
     } else {
-        // Nếu danh mục hiện tại bị ẩn thì không trả về bài viết nào
         targetPosts = hiddenForums.includes(currentDomain) ? [] : (forumsData[currentDomain] || []);
     }
 
+    // --- NÂNG CẤP LOGIC TÌM KIẾM CHÍNH XÁC TỪ ĐẦU TỪ ---
     if (searchQuery !== '') {
-        targetPosts = targetPosts.filter(post => post.title.toLowerCase().includes(searchQuery));
+        try {
+            // Escape các ký tự đặc biệt để tránh lỗi Regex vỡ hệ thống
+            const escapedQuery = searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            
+            // \b giúp định vị ranh giới từ (chữ cái đầu tiên của một từ)
+            const searchRegex = new RegExp('\\b' + escapedQuery, 'i');
+            
+            targetPosts = targetPosts.filter(post => searchRegex.test(post.title));
+        } catch (e) {
+            console.error("Lỗi Regex Search:", e);
+        }
     }
     return targetPosts;
 }
 
 
         function displayPosts() {
-            listContainer.innerHTML = ''; 
-            randomNavContainer.innerHTML = ''; 
-            const targetPosts = getActivePosts();
-            if (targetPosts.length === 0) {
-                listContainer.innerHTML = `<div class="empty-message">${languages[currentLang].not_found}</div>`;
-                paginationContainer.innerHTML = '';
-                return;
-            }
-            const totalPages = Math.ceil(targetPosts.length / postsPerPage);
-            if (currentPage > totalPages) currentPage = totalPages || 1;
-            const startIndex = (currentPage - 1) * postsPerPage;
-            const paginatedPosts = targetPosts.slice(startIndex, startIndex + postsPerPage);
+    listContainer.innerHTML = ''; 
+    randomNavContainer.innerHTML = ''; 
+    const targetPosts = getActivePosts();
 
-            paginatedPosts.forEach(post => {
-                renderPostCard(post);
-            });
-            renderPagination(totalPages);
-        }
+    // TRƯỜNG HỢP: Tab Yêu thích trống
+    if (currentDomain === 'fav_bookmarks' && targetPosts.length === 0) {
+        listContainer.innerHTML = `
+            <div class="empty-bookmarks-wrapper" style="text-align: center; padding: 40px 20px; background: var(--card-bg); border-radius: 12px; border: 1px solid var(--border-color); animation: fadeIn 0.3s ease;">
+                <svg width="120" height="120" viewBox="0 0 24 24" fill="none" style="margin: 0 auto 16px; display: block; opacity: 0.7;">
+                    <path d="M19 1H5C3.9 1 3 1.9 3 3V21C3 22.1 3.9 23 5 23H19C20.1 23 21 22.1 21 21V3C21 1.9 20.1 1 19 1ZM19 21H5V3H19V21Z" fill="var(--sub-text)"/>
+                    <path d="M12 18.05L11.05 17.18C7.67 14.12 5.45 12.11 5.45 9.65C5.45 7.62 7.04 6.03 9.05 6.03C10.19 6.03 11.28 6.56 12 7.4C12.72 6.56 13.81 6.03 14.95 6.03C16.96 6.03 18.55 7.62 18.55 9.65C18.55 12.11 16.33 14.12 12.95 17.19L12 18.05Z" fill="var(--star-active)" style="opacity: 0.65;"/>
+                </svg>
+                <div style="font-weight: 500; font-size: 14.5px; color: var(--text-color); max-width: 450px; margin: 0 auto 20px; line-height: 1.5;">
+                    ${languages[currentLang].empty_bookmarks}
+                </div>
+                
+                <div style="display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;">
+                    <button class="btn-tab" onclick="importBookmarks()" style="padding: 8px 16px; font-size: 12px;">${languages[currentLang].btn_import}</button>
+                    <input type="file" id="importFileInput" accept=".txt" style="display: none;" onchange="handleFileSelect(event)">
+                </div>
+            </div>
+        `;
+        paginationContainer.innerHTML = '';
+        return;
+    }
 
-        function renderPostCard(post) {
-            const isRead = readHistory.includes(post.url);
+    // TRƯỜNG HỢP: Các bộ lọc khác hoặc Tìm kiếm không ra kết quả
+    if (targetPosts.length === 0) {
+        listContainer.innerHTML = `<div class="empty-message">${languages[currentLang].not_found}</div>`;
+        paginationContainer.innerHTML = '';
+        return;
+    }
+
+    // Nếu là tab Yêu thích và CÓ bài viết, chèn thêm thanh công cụ Xuất dữ liệu lên đầu danh sách bài viết
+    if (currentDomain === 'fav_bookmarks') {
+        const backupBar = document.createElement('div');
+        backupBar.style = "display: flex; gap: 10px; justify-content: flex-end; margin-bottom: 12px; padding: 0 4px;";
+        backupBar.innerHTML = `
+            <button class="btn-tab" onclick="exportBookmarks()" style="padding: 6px 12px; font-size: 11px; opacity: 0.8;">${languages[currentLang].btn_export}</button>
+            <button class="btn-tab" onclick="importBookmarks()" style="padding: 6px 12px; font-size: 11px; opacity: 0.8;">${languages[currentLang].btn_import}</button>
+            <input type="file" id="importFileInput" accept=".txt" style="display: none;" onchange="handleFileSelect(event)">
+        `;
+        listContainer.appendChild(backupBar);
+    }
+
+    const totalPages = Math.ceil(targetPosts.length / postsPerPage);
+    if (currentPage > totalPages) currentPage = totalPages || 1;
+    const startIndex = (currentPage - 1) * postsPerPage;
+    const paginatedPosts = targetPosts.slice(startIndex, startIndex + postsPerPage);
+
+    paginatedPosts.forEach(post => {
+        renderPostCard(post);
+    });
+    renderPagination(totalPages);
+}
+
+
+                function renderPostCard(post) {
+            
             const isBookmarked = bookmarks.some(b => b.url === post.url);
 
             const faviconUrl = `${localFaviconFolder}/${post.domain}.png`; 
 
+            // --- XỬ LÝ HIGHLIGHT CHỮ CHUẨN XÁC THEO RANH GIỚI TỪ ---
+let displayedTitle = post.title;
+if (searchQuery && searchQuery.trim() !== '') {
+    try {
+        const escapedQuery = searchQuery.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        
+        // Thêm \\b vào trước để chỉ highlight phần đầu của từ khớp với tìm kiếm
+        const regex = new RegExp(`\\b(${escapedQuery})`, 'gi');
+        
+        displayedTitle = post.title.replace(regex, '<mark class="search-highlight">$1</mark>');
+    } catch (e) {
+        console.error("Lỗi highlight:", e);
+    }
+}
+// -----------------------------------------------------
+
+            
+
             const postItem = document.createElement('div');
-            postItem.className = `post-item ${isRead ? 'is-read' : ''}`;
+            postItem.className = `post-item`;
+
             postItem.innerHTML = `
                 <img class="post-avatar" src="${faviconUrl}" alt="${post.domain}" onerror="this.onerror=null; this.src='${defaultAvatar}';">
                 <div class="post-content-block">
-                    <a href="${post.url}" target="_blank" class="post-title">${post.title}</a>
+                    <a href="${post.url}" target="_blank" class="post-title">${displayedTitle}</a>
                     <span class="post-source">${languages[currentLang].source_label}${post.domain}</span>
                 </div>
                 <button class="btn-bookmark ${isBookmarked ? 'active' : ''}" title="Đánh dấu yêu thích">${isBookmarked ? '★' : '☆'}</button>
             `;
 
-            postItem.querySelector('.post-title').addEventListener('click', () => {
-                if (!readHistory.includes(post.url)) {
-                    readHistory.push(post.url);
-                    localStorage.setItem('read_history', JSON.stringify(readHistory));
-                    postItem.classList.add('is-read');
-                }
-            });
+            
 
             postItem.querySelector('.btn-bookmark').addEventListener('click', (e) => {
                 e.stopPropagation();
@@ -1260,16 +1421,19 @@ let hiddenForums = [];
                     btnTarget.classList.remove('active');
                     btnTarget.textContent = '☆';
                     if (currentDomain === 'fav_bookmarks') {
-                        postItem.remove();
-                        if (listContainer.children.length === 0) {
-                            listContainer.innerHTML = `<div class="empty-message">${languages[currentLang].not_found}</div>`;
-                        }
-                    }
+    postItem.remove();
+    // Nếu mảng bookmarks đã trống, gọi lại displayPosts để vẽ lại giao diện thông báo chuẩn
+    if (bookmarks.length === 0) {
+        displayPosts();
+    }
+}
+
                 }
             });
 
             listContainer.appendChild(postItem);
         }
+
 
         function renderPagination(totalPages) {
             paginationContainer.innerHTML = '';
@@ -1343,45 +1507,47 @@ let hiddenForums = [];
 
         const clearSearchBtn = document.getElementById('clearSearch');
 
-searchInput.addEventListener('input', (e) => {
-    // 1. Chỉ thêm dòng này để tự ẩn/hiện nút X dựa trên việc có chữ hay không
-    clearSearchBtn.style.display = e.target.value.length > 0 ? 'block' : 'none';
-    
-    clearTimeout(searchTimeout);
-    searchTimeout = setTimeout(() => { 
-        searchQuery = e.target.value.trim().toLowerCase(); 
-        currentPage = 1; 
-        resetRandomHistory(); 
-        displayPosts(); 
-    }, 300);
-});
-
-// 2. Sự kiện click nút X: Xóa chữ và kích hoạt lại sự kiện 'input' có sẵn ở trên
-clearSearchBtn.addEventListener('click', () => {
-    searchInput.value = '';
-    clearSearchBtn.style.display = 'none';
-    searchInput.focus();
-    searchInput.dispatchEvent(new Event('input')); // Ép ô input chạy lại logic tự cập nhật danh sách của bạn
-});
-
-
-        document.addEventListener('click', (e) => {
-            const isClickInsideSearch = document.getElementById('searchContainer').contains(e.target);
-            const isClickInsideDropdown = document.getElementById('customDropdown').contains(e.target);
-            const isClickInsideFilterMenu = document.getElementById('filterWrapper').contains(e.target);
+        searchInput.addEventListener('input', (e) => {
+            clearSearchBtn.style.display = e.target.value.length > 0 ? 'block' : 'none';
             
-            if (!isClickInsideDropdown) {
-                customDropdown.classList.remove('open');
-            }
-
-            if (!isClickInsideFilterMenu) {
-                checkboxDropdownMenu.classList.remove('open');
-            }
-
-            if (!isClickInsideSearch && searchInput.value.trim() === '') {
-                actionBar.classList.remove('search-active');
-            }
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => { 
+                searchQuery = e.target.value.trim().toLowerCase(); 
+                currentPage = 1; 
+                resetRandomHistory(); 
+                displayPosts(); 
+            }, 300);
         });
+
+        clearSearchBtn.addEventListener('click', () => {
+            searchInput.value = '';
+            clearSearchBtn.style.display = 'none';
+            searchInput.focus();
+            searchInput.dispatchEvent(new Event('input')); 
+        });
+
+        // THAY THẾ BẰNG ĐOẠN CODE MỚI NÀY:
+document.addEventListener('pointerdown', (e) => {
+    const isClickInsideSearch = document.getElementById('searchContainer').contains(e.target);
+    const isClickInsideDropdown = document.getElementById('customDropdown').contains(e.target);
+    const isClickInsideFilterMenu = document.getElementById('filterWrapper').contains(e.target);
+    
+    // Đóng dropdown diễn đàn chính ngay khi chạm ra ngoài
+    if (!isClickInsideDropdown) {
+        customDropdown.classList.remove('open');
+    }
+
+    // Đóng menu checkbox ẩn/hiển ngay khi chạm ra ngoài
+    if (!isClickInsideFilterMenu) {
+        checkboxDropdownMenu.classList.remove('open');
+    }
+
+    // Thu nhỏ thanh tìm kiếm nếu trống và chạm ra ngoài
+    if (!isClickInsideSearch && searchInput.value.trim() === '') {
+        actionBar.classList.remove('search-active');
+    }
+});
+
 
         btnRandom.addEventListener('click', (e) => {
             e.preventDefault();
@@ -1423,15 +1589,13 @@ clearSearchBtn.addEventListener('click', () => {
                 item.classList.add('active');
                 
                 updateDropdownSelectedText();
-                
                 customDropdown.classList.remove('open'); 
                 
                 activeSource = item.getAttribute('data-value'); 
                 currentPage = 1; 
                 currentDomain = 'all'; 
-                searchInput.value = ''; 
-                searchQuery = ''; 
-                actionBar.classList.remove('search-active');
+                
+                // SỬA LỖI 2: Giữ nguyên từ khóa tìm kiếm khi đổi nguồn bộ lọc chính (Không xóa trắng searchQuery)
                 resetRandomHistory(); 
                 updateCurrentForumsData(); 
             });
@@ -1450,11 +1614,13 @@ clearSearchBtn.addEventListener('click', () => {
             currentDomain = 'all'; 
             searchInput.value = ''; 
             searchQuery = ''; 
+            clearSearchBtn.style.display = 'none';
             actionBar.classList.remove('search-active');
             resetRandomHistory(); 
             updateCurrentForumsData();
         }
 
+        // --- ĐOẠN CODE CHẶN DOUBLE-ZOOM ĐƯỢC GIỮ NGUYÊN VẸN THEO YÊU CẦU CỦA BẠN ---
         let lastTouchEnd = 0;
         document.addEventListener('touchend', (event) => {
             const now = (new Date()).getTime();
@@ -1471,6 +1637,112 @@ clearSearchBtn.addEventListener('click', () => {
         });
 
         window.addEventListener('DOMContentLoaded', () => loadExternalData());
+    
+    // ================= PHẦN XỬ LÝ XUẤT/NHẬP DỮ LIỆU YÊU THÍCH =================
+
+// 1. Hàm xuất dữ liệu ra file TXT theo cấu trúc: Tiêu đề | URL
+function exportBookmarks() {
+    const currentBookmarks = JSON.parse(localStorage.getItem('bookmarks')) || [];
+    if (currentBookmarks.length === 0) {
+        alert(languages[currentLang].alert_no_post);
+        return;
+    }
+    
+    // Chuyển mảng object thành chuỗi văn bản thuần dạng: Tiêu đề | URL
+    const lines = currentBookmarks.map(item => `${item.title} | ${item.url}`);
+    const dataStr = lines.join('\n');
+    const dataUri = 'data:text/plain;charset=utf-8,' + encodeURIComponent(dataStr);
+    
+    // Tạo tên file chứa ngày xuất
+    const dateStr = new Date().toISOString().slice(0,10);
+    const exportFileDefaultName = `forum_favorites_${dateStr}.txt`;
+    
+    const linkElement = document.createElement('a');
+    linkElement.setAttribute('href', dataUri);
+    linkElement.setAttribute('download', exportFileDefaultName);
+    linkElement.click();
+}
+
+// 2. Hàm kích hoạt mở cửa sổ chọn file
+function importBookmarks() {
+    document.getElementById('importFileInput').click();
+}
+
+// 3. Xử lý đọc file text dạng "Tiêu đề | URL" và nạp vào hệ thống
+function handleFileSelect(event) {
+    const input = event.target;
+    if (!input.files || input.files.length === 0) return;
+    
+    // Cảnh báo người dùng hành động này sẽ ghi đè dữ liệu cũ
+    if (!confirm(languages[currentLang].confirm_import)) {
+        input.value = ''; 
+        return;
+    }
+
+    const file = input.files[0];
+    const reader = new FileReader();
+    
+    reader.onload = function(e) {
+        const text = e.target.result.trim();
+        if (!text) {
+            alert(languages[currentLang].import_empty);
+            input.value = '';
+            return;
+        }
+        
+        try {
+            // Tách file thành từng dòng
+            const lines = text.split('\n');
+            const parsedData = [];
+            
+            lines.forEach(line => {
+                if (!line.trim()) return; // Bỏ qua dòng trống
+                
+                const parts = line.split('|');
+                if (parts.length >= 2) {
+                    const title = parts[0].trim();
+                    const url = parts[1].trim();
+                    
+                    try {
+                        // Tự động bóc tách domain từ URL để cấp Favicon chính xác
+                        const urlObj = new URL(url);
+                        const domain = urlObj.hostname.replace('www.', '');
+                        
+                        parsedData.push({ title, url, domain });
+                    } catch (urlErr) {
+                        // Nếu URL không hợp lệ thì bỏ qua dòng đó
+                        console.warn("URL không hợp lệ:", url);
+                    }
+                }
+            });
+            
+            if (parsedData.length > 0) {
+                // Ghi đè vào bộ nhớ tạm toàn cục và LocalStorage
+                bookmarks = parsedData;
+                localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
+                
+                // Thông báo và tự động vẽ lại giao diện tức thì
+                alert(languages[currentLang].import_success);
+                
+                // Cập nhật lại số lượng huy hiệu (badge) trên tab Yêu thích
+                const favTab = filterContainer.querySelector('[data-domain="fav_bookmarks"] .tab-badge');
+                if (favTab) favTab.textContent = bookmarks.length;
+                
+                // Reload tab hiện tại
+                displayPosts();
+            } else {
+                alert(languages[currentLang].import_invalid);
+            }
+        } catch (err) {
+            console.error("Lỗi import file:", err);
+            alert(languages[currentLang].import_invalid);
+        }
+        input.value = ''; // Làm sạch input file
+    };
+    
+    reader.readAsText(file);
+}
+
     </script>
 </body>
 </html>
