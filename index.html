@@ -1150,10 +1150,14 @@
                 
                 const isChecked = !hiddenForums.includes(domain);
                 
-                label.innerHTML = `
-                    <input type="checkbox" value="${domain}" ${isChecked ? 'checked' : ''}>
-                    <span>${domain.toUpperCase()}</span>
-                `;
+                // Sử dụng split('.') để lấy phần tên trước dấu chấm đầu tiên
+const cleanName = domain.split('.')[0].toUpperCase(); 
+
+label.innerHTML = `
+    <input type="checkbox" value="${domain}" ${isChecked ? 'checked' : ''}>
+    <span>${cleanName}</span>
+`;
+
 
                 label.querySelector('input').addEventListener('change', (e) => {
                     const val = e.target.value;
@@ -1212,11 +1216,14 @@
             createTabButton(languages[currentLang].all_title, 'all', totalAllPostsCount);
             
             // 4. Danh sách các nút diễn đàn
-            Object.keys(forumsData).forEach(domain => { 
-                if (!hiddenForums.includes(domain)) {
-                    createTabButton(domain.toUpperCase(), domain, forumsData[domain].length); 
-                }
-            });
+Object.keys(forumsData).forEach(domain => { 
+    if (!hiddenForums.includes(domain)) {
+        // Lấy tên diễn đàn bỏ đuôi .com, .vn...
+        const cleanName = domain.split('.')[0].toUpperCase();
+        createTabButton(cleanName, domain, forumsData[domain].length); 
+    }
+});
+
 
             // Kiểm tra trạng thái Active Tab hiện tại bảo toàn dữ liệu
             const tabs = filterContainer.querySelectorAll('.btn-tab:not(.btn-tab-icon)');
@@ -1238,6 +1245,26 @@
             const button = document.createElement('button');
             button.className = 'btn-tab';
             button.setAttribute('data-domain', domainKey);
+            
+            // --- BỔ SUNG: Chèn Favicon cho các tab diễn đàn ---
+            if (domainKey !== 'fav_bookmarks' && domainKey !== 'all') {
+                const tabIcon = document.createElement('img');
+                tabIcon.src = `${localFaviconFolder}/${domainKey}.png`;
+                tabIcon.alt = domainKey;
+                // Thiết kế style trực tiếp để icon gọn gàng, đồng bộ giao diện
+                tabIcon.style.width = '16px';
+                tabIcon.style.height = '16px';
+                tabIcon.style.borderRadius = '50%';
+                tabIcon.style.objectFit = 'cover';
+                tabIcon.style.flexShrink = '0';
+                // Xử lý lỗi nếu thiếu ảnh icon thì đổi sang ảnh mặc định hệ thống
+                tabIcon.onerror = function() {
+                    this.onerror = null;
+                    this.src = defaultAvatar;
+                };
+                button.appendChild(tabIcon);
+            }
+            // -------------------------------------------------
             const labelSpan = document.createElement('span');
             labelSpan.textContent = label;
             button.appendChild(labelSpan);
