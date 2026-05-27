@@ -1641,7 +1641,31 @@ document.addEventListener('pointerdown', (e) => {
     randomHistory.push(randomPost);
     currentRandomIndex = randomHistory.length - 1;
     showRandomPostAtCurrentIndex();
+
+    // --- ĐOẠN SỬA ĐỔI CHÍNH XÁC CHO LOGIC TRƯỢT TAB ---
+    // Nếu đang ở 'all' hoặc 'fav_bookmarks', đích đến chính là nút 'all' hoặc 'fav_bookmarks' đó luôn
+    // Ngược lại nếu đang ở tab cụ thể thì trượt về tab cụ thể đó.
+    const targetDomainKey = (currentDomain === 'all' || currentDomain === 'fav_bookmarks') ? currentDomain : randomPost.domain;
+    
+    // Tìm đúng phần tử button đang hiển thị trên thanh filter
+    const targetTabButton = filterContainer.querySelector(`.btn-tab[data-domain="${targetDomainKey}"]`);
+    
+    if (targetTabButton) {
+        const containerWidth = filterContainer.offsetWidth;
+        const buttonWidth = targetTabButton.offsetWidth;
+        const buttonLeft = targetTabButton.offsetLeft;
+        
+        // Tính toán khoảng cách để đưa nút vào giữa thanh cuộn ngang
+        const targetScrollLeft = buttonLeft - (containerWidth / 2) + (buttonWidth / 2);
+        
+        filterContainer.scrollTo({
+            left: targetScrollLeft,
+            behavior: 'smooth'
+        });
+    }
 });
+
+
 
 
         const customDropdown = document.getElementById('customDropdown');
