@@ -13,6 +13,16 @@
     <link rel="icon" type="image/png" href="favicon.png">
 
     <style>
+    /* Chặn chọn văn bản trên tất cả các nút bấm */
+button, 
+.btn, 
+[role="button"] {
+    -webkit-user-select: none;  /* Safari */
+    -moz-user-select: none;     /* Firefox */
+    -ms-user-select: none;      /* IE10+/Edge cũ */
+    user-select: none;          /* Tiêu chuẩn: Chrome, Edge, Opera */
+}
+    
         /* KHÔI PHỤC HOÀN TOÀN CẤU HÌNH MÀU SẮC GIAO DIỆN V1 */
         :root[data-theme="light"] {
             --bg-color: #f8fafc;          /* Nền xám trắng rất dịu */
@@ -193,20 +203,24 @@
 
         /* WRAPPER BỌC THANH FILTER SLIDE VÀ MENU DROPDOWN */
         .filter-wrapper {
-            position: relative;
-            margin-top: 8px;
-            margin-bottom: 24px;
-        }
+    position: relative;
+    margin-top: 8px;
+    margin-bottom: 24px;
+    display: flex; /* Kích hoạt flexbox để tách biệt nút ghim và khối cuộn */
+    align-items: center;
+}
 
-                        .filter-container {
-            position: relative;
-            display: flex;            
-            flex-wrap: wrap;           /* Mặc định cho Desktop: Xuống hàng */
-            gap: 8px;
-            padding: 4px;
-            margin-bottom: 24px;
-            overflow: hidden;          /* Khóa cuộn trên máy tính */
-        }
+                        /* CONTAINER CUỘN NGANG CỦA CÁC NÚT TAB (Không chứa nút phễu nữa) */
+.filter-container {
+    position: relative;
+    display: flex;            
+    flex-wrap: wrap;           /* Mặc định cho Desktop: Xuống hàng */
+    gap: 8px;
+    padding: 0px;
+    overflow: hidden;          /* Khóa cuộn trên máy tính */
+    flex: 1;                   /* Chiếm trọn không gian còn lại */
+    min-width: 0;              /* Khắc phục lỗi flexbox không co bóp trên một số trình duyệt */
+}
 
         .filter-container::-webkit-scrollbar {
             display: none;
@@ -237,18 +251,60 @@
             gap: 5px;                   
         }
 
-        /* Nút icon cấu hình riêng */
-        .btn-tab-icon {
-            padding: 5px 8px;
-            border-radius: 14px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            /* Giữ màu nền cố định theo theme, không đổi khi hover/active */
-            background: var(--card-bg) !important; 
-            border-color: var(--border-color) !important;
-            color: var(--text-color) !important;
-        }
+        /* Nút icon phễu cấu hình riêng - Sử dụng Sticky cố định */
+/* Chuyển các thuộc tính Sticky, Shadow và Margin sang cho Container bọc ngoài */
+/* Container bọc ngoài ôm sát nút phễu */
+.filter-icon-container {
+    display: inline-flex;
+    flex-shrink: 0;
+    position: -webkit-sticky;  
+    position: sticky;
+    left: 0;                   
+    z-index: 10;               
+    margin-right: 8px;         
+    
+    /* 1. ĐỒNG BỘ MÀU NỀN VỚI BACKGROUND CHÍNH */
+    background-color: var(--bg-color); 
+
+    /* 2. CHỈ BO TRÒN CẠNH BÊN PHẢI (Top-Right và Bottom-Right), CẠNH TRÁI THÀNH HÌNH VUÔNG */
+    border-radius: 0 14px 14px 0; 
+
+    
+}
+
+/* Đóng giao diện tối (Dark Mode) shadow tương ứng cho container */
+:root[data-theme="dark"] .filter-icon-container {
+    
+}
+
+/* Nút icon phễu bên trong chỉ giữ lại tạo hình core */
+.btn-tab-icon {
+    padding: 5px 8px;
+    border-radius: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--card-bg) !important; 
+    border-color: var(--border-color) !important;
+    color: var(--text-color) !important;
+}
+
+    /* Cấu hình khi ở giao diện Dark Mode để phần bóng đổ của nút ghim trông tự nhiên */
+:root[data-theme="dark"] .btn-tab-icon {
+    
+}
+    
+    /* Container bọc ngoài ôm sát nút phễu */
+.filter-icon-container {
+    display: inline-flex;
+    flex-shrink: 0;
+}
+
+    
+    /* Các nút tab thông thường */
+.btn-tab:not(.btn-tab-icon) {
+    z-index: 1; /* Thấp hơn nút icon phễu để đi xuyên xuống dưới */
+}
         
         /* SỬA LỖI TRÌNH DUYỆT CŨ/SAFARI: Ép path của SVG nhận biến màu văn bản chuẩn xác */
         .btn-tab-icon svg, .btn-tab-icon svg path {
@@ -538,30 +594,28 @@
             flex-shrink: 0;
         }
 
-        .btn-random {
-    /* Đảo ngược màu: Lấy màu chủ đạo làm nền, chữ chuyển thành màu trắng */
+        /* --- CẤU HÌNH NÚT RANDOM CHUẨN HOÀN TOÀN --- */
+.btn-random {
     background-color: var(--accent-color);
     color: #ffffff;
     border: 1px solid var(--accent-color);
     border-radius: 12px;
-    outline: none; /* Loại bỏ đường viền focus mặc định của trình duyệt */
-    /* CHỐNG TÔ ĐẬM VÀ BÔI ĐEN TUYỆT ĐỐI (KỂ CẢ KHI BẤM GIỮ LÂU) */
-    -webkit-touch-callout: none; /* Khóa menu ngữ cảnh/copy trên iOS Safari khi nhấn giữ */
-    -webkit-user-select: none;   /* Safari */
-    -khtml-user-select: none;    /* Konqueror HTML */
-    -moz-user-select: none;      /* Firefox */
-    -ms-user-select: none;       /* Internet Explorer/Edge */
-    user-select: none;           /* Bản chuẩn: Chrome, Opera, Edge mới */
+    outline: none;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent; /* Loại bỏ lớp phủ highlight mặc định của iOS */
 }
 
 .btn-random:hover {
-    /* Khi hover: Dùng màu biến thể hover đậm hơn một chút để tạo hiệu ứng nhấn */
     background-color: var(--accent-hover);
     border-color: var(--accent-hover);
 }
 
 .btn-random:active {
-    /* Khi nhấn giữ: Chuyển sang màu nền sáng, chữ và viền tối */
     background-color: var(--hover-bg);
     border-color: var(--accent-color);
     color: var(--accent-color);
@@ -573,6 +627,22 @@
     color: #ffffff;
     border-color: var(--accent-color);
 }
+
+/* SỬA LỖI KẸT FOCUS TRÊN SAFARI IPHONE: Khóa hover/focus giả lập trên thiết bị cảm ứng */
+@media (hover: none) {
+    .btn-random:hover,
+    .btn-random:focus {
+        background-color: var(--accent-color) !important;
+        color: #ffffff !important;
+        border-color: var(--accent-color) !important;
+    }
+    .btn-random:active {
+        background-color: var(--hover-bg) !important;
+        border-color: var(--accent-color) !important;
+        color: var(--accent-color) !important;
+    }
+}
+
 
     
 
@@ -736,12 +806,12 @@
             
                 /* ÁP DỤNG CHO CẢ ĐIỆN THOẠI VÀ MÁY TÍNH BẢNG (Dưới 1024px) */
         @media (max-width: 1024px) {
-            .filter-container {
-                flex-wrap: nowrap !important; /* Ép buộc cuộn ngang trên Tablet & Mobile */
-                overflow-x: auto !important;
-                scroll-behavior: smooth;
-                -webkit-overflow-scrolling: touch;
-                padding-bottom: 10px;
+    .filter-container {
+        flex-wrap: nowrap !important; /* Ép buộc cuộn ngang trên Tablet & Mobile */
+        overflow-x: auto !important;
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 10px;
             }
             /* Tạo khoảng đệm nhỏ ở cuối hàng mobile để báo hiệu có thể cuộn tiếp */
             .filter-container::after {
@@ -782,6 +852,17 @@
                 color: #ffffff;
             }
         }
+/* Tắt toàn bộ hiệu ứng hover và pointer-events của danh sách khi đang cuộn tab */
+body.is-swiping-tabs .post-item {
+    pointer-events: none !important;
+    transform: none !important;
+    background-color: var(--card-bg) !important;
+    border-color: var(--border-color) !important;
+    box-shadow: var(--card-shadow) !important;
+}
+body.is-swiping-tabs .post-title {
+    color: var(--text-color) !important;
+}
 
     </style>
 </head>
@@ -1216,7 +1297,10 @@ label.innerHTML = `
                 }
             });
 
-            // 1. NÚT ICON FILTER ĐƯỢC ĐƯA LÊN ĐẦU TIÊN
+            // 1. TẠO CONTAINER ÔM SÁT VÀ NÚT ICON FILTER ĐƯỢC ĐƯA LÊN ĐẦU TIÊN
+const iconContainer = document.createElement('div');
+iconContainer.className = 'filter-icon-container';
+
 const filterBtn = document.createElement('button');
 filterBtn.className = 'btn-tab btn-tab-icon';
 filterBtn.id = 'btnFilterToggle';
@@ -1231,7 +1315,10 @@ filterBtn.addEventListener('click', (e) => {
     checkboxDropdownMenu.classList.toggle('open');
 });
 
-filterContainer.appendChild(filterBtn);
+// Bỏ nút vào container, rồi bỏ container vào filterContainer
+iconContainer.appendChild(filterBtn);
+filterContainer.appendChild(iconContainer);
+
 
 // 2. Nút Yêu thích đứng ngay sau nút Phễu
 createTabButton(languages[currentLang].fav_title, 'fav_bookmarks', bookmarks.length);
@@ -1674,9 +1761,10 @@ document.addEventListener('pointerdown', (e) => {
     showRandomPostAtCurrentIndex();
 
     // --- ĐOẠN SỬA ĐỔI CHÍNH XÁC CHO LOGIC TRƯỢT TAB ---
-    // Nếu đang ở 'all' hoặc 'fav_bookmarks', đích đến chính là nút 'all' hoặc 'fav_bookmarks' đó luôn
-    // Ngược lại nếu đang ở tab cụ thể thì trượt về tab cụ thể đó.
-    const targetDomainKey = (currentDomain === 'all' || currentDomain === 'fav_bookmarks') ? currentDomain : randomPost.domain;
+// Nếu đang ở 'all', ép vị trí đích cuộn đến thành vị trí của tab 'yêu thích' (fav_bookmarks)
+// Ngược lại nếu đang ở các tab khác thì giữ nguyên logic cũ.
+const targetDomainKey = (currentDomain === 'all') ? 'fav_bookmarks' : ((currentDomain === 'fav_bookmarks') ? 'fav_bookmarks' : randomPost.domain);
+
     
     // Tìm đúng phần tử button đang hiển thị trên thanh filter
     const targetTabButton = filterContainer.querySelector(`.btn-tab[data-domain="${targetDomainKey}"]`);
@@ -1903,6 +1991,31 @@ slider.addEventListener('mousemove', (e) => {
     const walk = (x - startX) * 1.5; // Nhân với 1.5 để tốc độ lướt nhanh và mượt hơn
     slider.scrollLeft = scrollLeft - walk;
 });
+    
+    // ================= SỬA LỖI KẸT HOVER TRÊN SAFARI IPHONE =================
+let isScrollingTabs;
+
+slider.addEventListener('scroll', () => {
+    // Ngay khi thanh tab phát sinh hành động cuộn (vuốt bằng tay hoặc chuột)
+    document.body.classList.add('is-swiping-tabs');
+
+    // Xóa bỏ thời gian chờ cũ
+    window.clearTimeout(isScrollingTabs);
+
+    // Nếu sau 150ms không có hành động cuộn tiếp theo, hiểu là đã dừng vuốt và trả lại trạng thái bình thường
+    isScrollingTabs = setTimeout(() => {
+        document.body.classList.remove('is-swiping-tabs');
+    }, 150);
+}, { passive: true });
+
+// Phòng hờ trường hợp người dùng nhấc tay lên đột ngột nhưng thanh cuộn không trượt quán tính
+slider.addEventListener('touchend', () => {
+    setTimeout(() => {
+        if (slider && !slider.classList.contains('grabbing')) {
+            document.body.classList.remove('is-swiping-tabs');
+        }
+    }, 200);
+}, { passive: true });
 
 
     </script>
