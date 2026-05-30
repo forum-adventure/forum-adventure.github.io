@@ -1282,11 +1282,15 @@ updateThemeUI(savedTheme);
                 
                 const isChecked = !hiddenForums.includes(domain);
                 
-                // Sử dụng split('.') để lấy phần tên trước dấu chấm đầu tiên
-let cleanName = domain.split('.')[0].toUpperCase();
-if (domain.includes('digitalspy.com')) {
+                let cleanName = domain.split('.')[0].toUpperCase();
+
+// Kiểm tra nếu URL chứa các cụm từ đặc biệt thì gán cứng tên hiển thị mong muốn
+if (domain.includes('digitalspy')) {
     cleanName = 'DIGITALSPY';
+} else if (domain.includes('macrumors')) {
+    cleanName = 'MACRUMORS';
 }
+
  
 
 label.innerHTML = `
@@ -1363,9 +1367,14 @@ Object.keys(forumsData).forEach(domain => {
     if (!hiddenForums.includes(domain)) {
         // Lấy tên diễn đàn bỏ đuôi .com, .vn...
         let cleanName = domain.split('.')[0].toUpperCase();
-if (domain.includes('digitalspy.com')) {
+
+// Kiểm tra nếu URL chứa các cụm từ đặc biệt thì gán cứng tên hiển thị mong muốn
+if (domain.includes('digitalspy')) {
     cleanName = 'DIGITALSPY';
+} else if (domain.includes('macrumors')) {
+    cleanName = 'MACRUMORS';
 }
+
 
         createTabButton(cleanName, domain, forumsData[domain].length); 
     }
