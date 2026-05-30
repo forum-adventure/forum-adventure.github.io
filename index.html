@@ -1283,7 +1283,11 @@ updateThemeUI(savedTheme);
                 const isChecked = !hiddenForums.includes(domain);
                 
                 // Sử dụng split('.') để lấy phần tên trước dấu chấm đầu tiên
-const cleanName = domain.split('.')[0].toUpperCase(); 
+let cleanName = domain.split('.')[0].toUpperCase();
+if (domain.includes('digitalspy.com')) {
+    cleanName = 'DIGITALSPY';
+}
+ 
 
 label.innerHTML = `
     <input type="checkbox" value="${domain}" ${isChecked ? 'checked' : ''}>
@@ -1358,7 +1362,11 @@ createTabButton(languages[currentLang].all_title, 'all', totalAllPostsCount);
 Object.keys(forumsData).forEach(domain => { 
     if (!hiddenForums.includes(domain)) {
         // Lấy tên diễn đàn bỏ đuôi .com, .vn...
-        const cleanName = domain.split('.')[0].toUpperCase();
+        let cleanName = domain.split('.')[0].toUpperCase();
+if (domain.includes('digitalspy.com')) {
+    cleanName = 'DIGITALSPY';
+}
+
         createTabButton(cleanName, domain, forumsData[domain].length); 
     }
 });
