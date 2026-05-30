@@ -1426,7 +1426,9 @@ if (domain.includes('digitalspy')) {
             button.appendChild(labelSpan);
             const badge = document.createElement('span');
             badge.className = 'tab-badge';
-            badge.textContent = count;
+            const locale = currentLang === 'vi' ? 'vi-VN' : 'en-US';
+badge.textContent = count.toLocaleString(locale);
+
             button.appendChild(badge);
             if (domainKey === currentDomain) button.classList.add('active');
             
@@ -1635,7 +1637,9 @@ function shuffleArray(array) {
         localStorage.setItem('bookmarks', JSON.stringify(bookmarks));
         
         const favTab = filterContainer.querySelector('[data-domain="fav_bookmarks"] .tab-badge');
-        if (favTab) favTab.textContent = bookmarks.length;
+        const locale = currentLang === 'vi' ? 'vi-VN' : 'en-US';
+if (favTab) favTab.textContent = bookmarks.length.toLocaleString(locale);
+
         
         const btnTarget = e.currentTarget;
         if (isNowBookmarked) {
@@ -1989,7 +1993,9 @@ function handleFileSelect(event) {
                 
                 // Cập nhật lại số lượng huy hiệu (badge) trên tab Yêu thích
                 const favTab = filterContainer.querySelector('[data-domain="fav_bookmarks"] .tab-badge');
-                if (favTab) favTab.textContent = bookmarks.length;
+                const locale = currentLang === 'vi' ? 'vi-VN' : 'en-US';
+if (favTab) favTab.textContent = bookmarks.length.toLocaleString(locale);
+
                 
                 // Reload tab hiện tại
                 displayPosts();
