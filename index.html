@@ -982,7 +982,12 @@ body.is-swiping-tabs .post-title {
         import_success: "Nhập danh sách yêu thích thành công!",
         import_invalid: "File dữ liệu không hợp lệ hoặc bị lỗi!",
         import_empty: "File dữ liệu trống!",
-        confirm_import: "Hành động này sẽ ghi đè lên danh sách yêu thích hiện tại. Bạn có chắc chắn muốn tiếp tục?"
+        confirm_import: "Hành động này sẽ ghi đè lên danh sách yêu thích hiện tại. Bạn có chắc chắn muốn tiếp tục?",
+                footer_copyright: "© 2026 Forum Adventure",
+        footer_author: "Made with ❤️ bởi Ncox | Kết nối cộng đồng diễn đàn",
+        footer_terms: "Điều khoản sử dụng & Miễn trừ trách nhiệm",
+        footer_alert_text: "Forum Adventure là công cụ tìm kiếm và tổng hợp liên kết tự động từ các diễn đàn công khai. Chúng tôi không chịu trách nhiệm về nội dung, tính chính xác hoặc độ an toàn của các liên kết bên ngoài. Nếu bạn là chủ sở hữu bản quyền và muốn yêu cầu gỡ bỏ liên kết, vui lòng liên hệ với chúng tôi qua email: [Email của bạn]."
+ 
             },
             en: {
                 contribute: "contribute post links",
@@ -1013,7 +1018,13 @@ body.is-swiping-tabs .post-title {
         import_success: "Favorites imported successfully!",
         import_invalid: "Invalid data file or corrupted!",
         import_empty: "Data file is empty!",
-        confirm_import: "This will overwrite your current favorites. Do you want to proceed?" 
+        confirm_import: "This will overwrite your current favorites. Do you want to proceed?",
+                footer_copyright: "© 2026 Forum Adventure",
+        footer_author: "Made with ❤️ by Ncox | Connecting Forum Communities",
+        footer_terms: "Terms of Service & Disclaimer",
+        footer_alert_text: "Forum Adventure is an automated search tool and aggregator of links from public forums. We are not responsible for the content, accuracy, or safety of external links. If you are a copyright owner and wish to request link removal, please contact us via email: [Your Email]."
+ 
+                
             }
         };
 
@@ -2071,7 +2082,22 @@ slider.addEventListener('touchend', () => {
     }, 200);
 }, { passive: true });
 
+    function showTermsAlert() {
+    // Lấy chuỗi thông báo dựa theo ngôn ngữ hiện tại (currentLang)
+    const alertMessage = languages[currentLang]['footer_alert_text'];
+    alert(alertMessage);
+}
+
 
     </script>
+    
+    <footer style="margin-top: 40px; padding: 20px 0; border-top: 1px solid var(--border-color); text-align: center; font-size: 12px; color: var(--sub-text);">
+    <p data-i18n="footer_copyright">© 2026 Forum Adventure</p>
+    <p data-i18n="footer_author">Made with ❤️ bởi Ncox | Kết nối cộng đồng diễn đàn</p>
+    <p>
+        <a href="javascript:void(0)" onclick="showTermsAlert()" style="color: var(--accent-color); text-decoration: underline; margin: 0 10px;" data-i18n="footer_terms">Điều khoản sử dụng & Miễn trừ trách nhiệm</a>
+    </p>
+</footer>
+
 </body>
 </html>
