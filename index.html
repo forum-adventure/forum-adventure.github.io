@@ -953,8 +953,13 @@ body.is-swiping-tabs .post-title {
     </div>
 
     <div class="list-container" id="listContainer">
-        <div class="empty-message" data-i18n="loading_cache">Đang tải dữ liệu bộ nhớ đệm...</div>
+    <div class="empty-message" data-i18n="loading_cache">Đang tải dữ liệu...</div>
+    <div id="progressContainer" style="width: 100%; max-width: 300px; background: var(--border-color); height: 6px; border-radius: 3px; margin: 12px auto; overflow: hidden; display: none;">
+        <div id="progressBar" style="width: 0%; height: 100%; background: var(--accent-color); transition: width 0.1s ease;"></div>
     </div>
+    <div id="progressText" style="text-align: center; font-size: 13px; color: var(--sub-text); font-weight: 500; display: none;">0%</div>
+</div>
+
 
     <div class="pagination-container" id="paginationContainer"></div>
     <div class="random-nav-container" id="randomNavContainer"></div>
@@ -1149,182 +1154,115 @@ updateThemeUI(savedTheme);
                 return true; 
             }
         }
-    
-    async function fetchWithProgress(url, onProgress) {
-    const response = await fetch(url, { cache: 'no-cache' });
-    if (!response.ok) throw new Error(`Không thể tải url: ${url}`);
-
-    // Lấy tổng dung lượng file từ Header của máy chủ
-    const contentLength = response.headers.get('content-length');
-    const totalBytes = contentLength ? parseInt(contentLength, 10) : 0;
-
-    const reader = response.body.getReader();
-    let receivedBytes = 0;
-    let chunks = [];
-
-    while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-
-        chunks.push(value);
-        receivedBytes += value.length;
-
-        // Nếu server có trả về content-length thì mới tính được phần trăm chính xác
-        if (totalBytes > 0 && typeof onProgress === 'function') {
-            const percent = Math.round((receivedBytes / totalBytes) * 100);
-            onProgress(percent);
-        }
-    }
-
-    // Gộp các mẩu nhỏ (Uint8Array) lại thành một chuỗi văn bản hoàn chỉnh giống như .text()
-    const allChunks = new Uint8Array(receivedBytes);
-    let position = 0;
-    for (let chunk of chunks) {
-        allChunks.set(chunk, position);
-        position += chunk.length;
-    }
-
-    return new TextDecoder("utf-8").decode(allChunks);
-}
-
 
         async function loadExternalData() {
-            try {
-                if (!document.getElementById('spin-animation')) {
-                    const style = document.createElement('style');
-                    style.id = 'spin-animation';
-                    style.innerHTML = `@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }`;
-                    document.head.appendChild(style);
-                }
+    let isFirstTime = false;
+    const cachedVnText = await localforage.getItem('cached_data_vn_text');
+    const cachedIntText = await localforage.getItem('cached_data_int_text');
 
-                const cachedVnText = await localforage.getItem('cached_data_vn_text');
-                const cachedIntText = await localforage.getItem('cached_data_int_text');
-                const isFirstTime = (cachedVnText === null && cachedIntText === null);
+    if (cachedVnText === null && cachedIntText === null) {
+        isFirstTime = true;
+    }
 
-                let needFetchVn = true;
-                let needFetchInt = true;
+    let needFetchVn = true;
+    let needFetchInt = true;
 
-                if (cachedVnText !== null) needFetchVn = await checkFileChanged('data_vn.txt');
-                if (cachedIntText !== null) needFetchInt = await checkFileChanged('data_int.txt');
+    if (cachedVnText !== null) needFetchVn = await checkFileChanged('data_vn.txt');
+    if (cachedIntText !== null) needFetchInt = await checkFileChanged('data_int.txt');
 
-                if (!needFetchVn && !needFetchInt) {
-                    masterData = { vn: {}, int: {} };
-                    if (cachedVnText) parseToSource(cachedVnText.split('\n'), 'vn');
-                    if (cachedIntText) parseToSource(cachedIntText.split('\n'), 'int');
-                    updateCurrentForumsData();
-                    return; 
-                }
+    if (!needFetchVn && !needFetchInt) {
+        masterData = { vn: {}, int: {} };
+        if (cachedVnText) parseToSource(cachedVnText.split('\n'), 'vn');
+        if (cachedIntText) parseToSource(cachedIntText.split('\n'), 'int');
+        updateCurrentForumsData();
+        return;
+    }
 
-                // Tính toán tiêu đề và phụ đề hiển thị chuẩn ngôn ngữ như cũ của bạn
-let loadingTitle = languages[currentLang].update_new;
-let loadingSubtitle = languages[currentLang].sync_server;
-if (isFirstTime) {
-    loadingTitle = languages[currentLang].init_first;
-    loadingSubtitle = languages[currentLang].fast_local;
-}
+    let loadingTitle = languages[currentLang].update_new;
+    let loadingSubtitle = languages[currentLang].sync_server;
+    if (isFirstTime) {
+        loadingTitle = languages[currentLang].init_first;
+        loadingSubtitle = languages[currentLang].fast_local;
+    }
 
-listContainer.innerHTML = `
-<div class="loading-wrapper" style="text-align: center; padding: 40px 20px;">
-    <div style="width: 100%; max-width: 300px; height: 8px; background: var(--border-color); border-radius: 4px; margin: 0 auto 15px; overflow: hidden; position: relative;">
-        <div id="progressBarFill" style="width: 0%; height: 100%; background: var(--accent-color); transition: width 0.1s ease; border-radius: 4px;"></div>
-    </div>
-    <div id="progressText" style="font-size: 14px; font-weight: bold; color: var(--accent-color); margin-bottom: 15px;">0%</div>
-    
-    <div class="loading-title" style="font-weight: 600; font-size: 16px; color: var(--text-color); margin-bottom: 6px;">
-        ${loadingTitle}
-    </div>
-    <div class="loading-subtitle" style="font-size: 13px; color: var(--sub-text); max-width: 400px; margin: 0 auto; line-height: 1.4;">
-        ${loadingSubtitle}
-    </div>
-</div>
-`;
+    // KHÔI PHỤC HOÀN TOÀN GIAO DIỆN SPINNER VÀ CHÈN THÊM THANH PHẦN TRĂM LOADING CHUẨN
+    listContainer.innerHTML = `
+        <div class="loading-wrapper" style="text-align: center; padding: 40px 20px;">
+            <div class="spinner" style=" width: 40px; height: 40px; border: 4px solid var(--border-color); border-top: 4px solid var(--accent-color); border-radius: 50%; margin: 0 auto 20px; animation: spin 1s linear infinite; "></div>
+            
+            <div id="progressContainer" style="width: 100%; max-width: 260px; background: var(--border-color); height: 6px; border-radius: 3px; margin: 0 auto 12px; overflow: hidden;">
+                <div id="progressBar" style="width: 0%; height: 100%; background: var(--accent-color); transition: width 0.1s ease;"></div>
+            </div>
+            <div id="progressText" style="text-align: center; font-size: 13px; color: var(--sub-text); font-weight: 600; margin-bottom: 12px;">Đang tải: 0%</div>
 
+            <div class="loading-title" style="font-weight: 600; font-size: 16px; color: var(--text-color); margin-bottom: 6px;">
+                ${loadingTitle}
+            </div>
+            <div class="loading-subtitle" style="font-size: 13px; color: var(--sub-text); max-width: 400px; margin: 0 auto; line-height: 1.4;">
+                ${loadingSubtitle}
+            </div>
+        </div>
+    `;
 
-                masterData = { vn: {}, int: {} };
-                const suffix = `?t=${Date.now()}`;
+    masterData = { vn: {}, int: {} };
+    const suffix = `?t=${Date.now()}`;
+    let freshVnText = cachedVnText;
+    let freshIntText = cachedIntText;
 
-                let freshVnText = cachedVnText;
-                let freshIntText = cachedIntText;
+    // Các biến lưu tiến trình % của từng file dữ liệu
+    let percentVn = needFetchVn ? 0 : 100;
+    let percentInt = needFetchInt ? 0 : 100;
 
-                masterData = { vn: {}, int: {} };
-const suffix = `?t=${Date.now()}`;
-let freshVnText = cachedVnText;
-let freshIntText = cachedIntText;
+    // Hàm cập nhật giao diện tính toán trung bình cộng tiến trình thực tế
+    const updateUIProgress = () => {
+        const progressBar = document.getElementById('progressBar');
+        const progressText = document.getElementById('progressText');
+        if (!progressBar || !progressText) return;
 
-// Lấy các element thanh tiến trình đã render ở bước 1
-const progressBarFill = document.getElementById('progressBarFill');
-const progressText = document.getElementById('progressText');
+        const totalPercent = Math.round((percentVn + percentInt) / 2);
+        progressBar.style.width = totalPercent + '%';
+        progressText.textContent = currentLang === 'vi' ? `Đang tải: ${totalPercent}%` : `Loading: ${totalPercent}%`;
+    };
 
-// Hàm cập nhật giao diện thanh phần trăm lên màn hình
-function updateUI(percent) {
-    if (progressBarFill && progressText) {
-        progressBarFill.style.width = `${percent}%`;
-        progressText.textContent = `${percent}%`;
+    try {
+        const fetchPromises = [];
+
+        if (needFetchVn) {
+            const vnPromise = fetchWithProgress(`data_vn.txt${suffix}`, (p) => {
+                percentVn = p;
+                updateUIProgress();
+            }).then(async (text) => {
+                freshVnText = text;
+                if (freshVnText) await localforage.setItem('cached_data_vn_text', freshVnText);
+            });
+            fetchPromises.push(vnPromise);
+        }
+
+        if (needFetchInt) {
+            const intPromise = fetchWithProgress(`data_int.txt${suffix}`, (p) => {
+                percentInt = p;
+                updateUIProgress();
+            }).then(async (text) => {
+                freshIntText = text;
+                if (freshIntText) await localforage.setItem('cached_data_int_text', freshIntText);
+            });
+            fetchPromises.push(intPromise);
+        }
+
+        // Kích hoạt cơ chế tải song song đồng thời cả 2 file 7MB để tối ưu tốc độ mạng
+        await Promise.all(fetchPromises);
+
+        // Nạp dữ liệu vào ứng dụng sau khi tải hoàn tất thành công
+        if (freshVnText) parseToSource(freshVnText.split('\n'), 'vn');
+        if (freshIntText) parseToSource(freshIntText.split('\n'), 'int');
+        updateCurrentForumsData();
+
+    } catch (error) {
+        console.error("Lỗi đồng bộ dữ liệu diễn đàn:", error);
+        listContainer.innerHTML = `<div class="empty-message">${languages[currentLang].error_server || "Lỗi tải dữ liệu"}</div>`;
     }
 }
 
-// Xác định xem cần tải bao nhiêu file để chia tỉ lệ phần trăm cho đều (mỗi file chiếm 50% tổng thanh tiến trình nếu tải cả 2)
-let totalFilesToFetch = (needFetchVn ? 1 : 0) + (needFetchInt ? 1 : 0);
-let filesFetchedCount = 0;
-
-// 1. Tải file Việt Nam nếu bộ nhớ đệm thay đổi
-if (needFetchVn) {
-    freshVnText = await fetchWithProgress(`data_vn.txt${suffix}`, (filePercent) => {
-        // Tính toán phần trăm tổng dựa trên số lượng file cần tải
-        let totalPercent = 0;
-        if (totalFilesToFetch === 2) {
-            totalPercent = Math.round(filePercent / 2); // File 1 chiếm từ 0% -> 50%
-        } else {
-            totalPercent = filePercent; // Nếu chỉ tải duy nhất 1 file thì chạy từ 0% -> 100%
-        }
-        updateUI(totalPercent);
-    });
-    filesFetchedCount++;
-    if (freshVnText) await localforage.setItem('cached_data_vn_text', freshVnText);
-}
-
-// 2. Tải file Quốc tế nếu bộ nhớ đệm thay đổi
-if (needFetchInt) {
-    freshIntText = await fetchWithProgress(`data_int.txt${suffix}`, (filePercent) => {
-        let totalPercent = 0;
-        if (totalFilesToFetch === 2) {
-            // Nếu là file thứ 2 trong số 2 file, tiến trình chạy từ 50% -> 100%
-            totalPercent = 50 + Math.round(filePercent / 2);
-        } else {
-            totalPercent = filePercent;
-        }
-        updateUI(totalPercent);
-    });
-    filesFetchedCount++;
-    if (freshIntText) await localforage.setItem('cached_data_int_text', freshIntText);
-}
-
-// Đảm bảo thanh loading chạy đầy 100% trước khi xử lý vẽ giao diện bài viết
-updateUI(100);
-
-if (freshVnText) parseToSource(freshVnText.split('\n'), 'vn');
-if (freshIntText) parseToSource(freshIntText.split('\n'), 'int');
-updateCurrentForumsData();
-
-
-                if (freshVnText) parseToSource(freshVnText.split('\n'), 'vn');
-                if (freshIntText) parseToSource(freshIntText.split('\n'), 'int');
-
-                updateCurrentForumsData();
-            } catch (error) {
-                console.error("Lỗi hệ thống:", error);
-                const cachedVnText = await localforage.getItem('cached_data_vn_text');
-                const cachedIntText = await localforage.getItem('cached_data_int_text');
-                if (cachedVnText || cachedIntText) {
-                    masterData = { vn: {}, int: {} };
-                    if (cachedVnText) parseToSource(cachedVnText.split('\n'), 'vn');
-                    if (cachedIntText) parseToSource(cachedIntText.split('\n'), 'int');
-                    updateCurrentForumsData();
-                } else {
-                    listContainer.innerHTML = `<div class="empty-message" style="color: #ef4444;">${languages[currentLang].error_server}</div>`;
-                }
-            }
-        }
 
         function parseToSource(dataArray, sourceType) {
             dataArray.forEach(item => {
@@ -2182,6 +2120,34 @@ slider.addEventListener('touchend', () => {
     alert(alertMessage);
 }
 
+function fetchWithProgress(url, onProgressCallback) {
+    return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+
+        // Bắt sự kiện đang tải dữ liệu để tính toán %
+        xhr.onprogress = function(event) {
+            if (event.lengthComputable) {
+                const percentComplete = Math.round((event.loaded / event.total) * 100);
+                onProgressCallback(percentComplete);
+            }
+        };
+
+        xhr.onload = function() {
+            if (xhr.status >= 200 && xhr.status < 300) {
+                resolve(xhr.responseText); // Trả về nội dung file text
+            } else {
+                reject(new Error(`Lỗi tải file: ${xhr.statusText}`));
+            }
+        };
+
+        xhr.onerror = function() {
+            reject(new Error('Lỗi kết nối mạng.'));
+        };
+
+        xhr.send();
+    });
+}
 
     </script>
     
