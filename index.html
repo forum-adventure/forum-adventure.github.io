@@ -953,8 +953,13 @@ body.is-swiping-tabs .post-title {
     </div>
 
     <div class="list-container" id="listContainer">
-        <div class="empty-message" data-i18n="loading_cache">Đang tải dữ liệu bộ nhớ đệm...</div>
+    <div class="empty-message" data-i18n="loading_cache">Đang tải dữ liệu...</div>
+    <div id="progressContainer" style="width: 100%; max-width: 300px; background: var(--border-color); height: 6px; border-radius: 3px; margin: 12px auto; overflow: hidden; display: none;">
+        <div id="progressBar" style="width: 0%; height: 100%; background: var(--accent-color); transition: width 0.1s ease;"></div>
     </div>
+    <div id="progressText" style="text-align: center; font-size: 13px; color: var(--sub-text); font-weight: 500; display: none;">0%</div>
+</div>
+
 
     <div class="pagination-container" id="paginationContainer"></div>
     <div class="random-nav-container" id="randomNavContainer"></div>
@@ -1039,11 +1044,7 @@ body.is-swiping-tabs .post-title {
 
         let currentLang = localStorage.getItem('lang') || 'en';
 
-        let masterData = {
-    vn: {},
-    int: {},
-    hinative: {}
-};
+        let masterData = { vn: {}, int: {} };
         let activeSource = 'all'; 
         let forumsData = {}; 
         let currentDomain = 'all';
@@ -1154,120 +1155,101 @@ updateThemeUI(savedTheme);
             }
         }
 
-        async function loadExternalData() {
-            try {
-                if (!document.getElementById('spin-animation')) {
-                    const style = document.createElement('style');
-                    style.id = 'spin-animation';
-                    style.innerHTML = `@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }`;
-                    document.head.appendChild(style);
-                }
+        async function loadExternalData(isFirstTime = false) {
+    // 1. Lấy trạng thái cache cũ (nếu có)
+    const cachedVnText = await localforage.getItem('forum_data_vn_text');
+    const cachedIntText = await localforage.getItem('forum_data_int_text');
 
-                const cachedVnText = await localforage.getItem('cached_data_vn_text');
-                const cachedIntText = await localforage.getItem('cached_data_int_text');
-                const cachedHinativeText = await localforage.getItem('cached_hinative_text');
-                const isFirstTime = (cachedVnText === null && cachedIntText === null);
+    if (cachedVnText || cachedIntText) {
+        if (cachedVnText) parseToSource(cachedVnText.split('\n'), 'vn');
+        if (cachedIntText) parseToSource(cachedIntText.split('\n'), 'int');
+        updateCurrentForumsData();
+        return;
+    }
 
-                let needFetchVn = true;
-                let needFetchInt = true;
-                let needFetchHinative = true;
+    let loadingTitle = languages[currentLang].update_new;
+    let loadingSubtitle = languages[currentLang].sync_server;
+    if (isFirstTime) {
+        loadingTitle = languages[currentLang].init_first;
+        loadingSubtitle = languages[currentLang].fast_local;
+    }
 
-                if (cachedVnText !== null) needFetchVn = await checkFileChanged('data_vn.txt');
-                if (cachedIntText !== null) needFetchInt = await checkFileChanged('data_int.txt');
-if (cachedHinativeText !== null)
-    needFetchHinative = await checkFileChanged('hinative.txt');
-                
-                if (!needFetchVn && !needFetchInt) {
-                    masterData = { vn: {}, int: {} };
-                    if (cachedVnText) parseToSource(cachedVnText.split('\n'), 'vn');
-                    if (cachedIntText) parseToSource(cachedIntText.split('\n'), 'int');
-                    updateCurrentForumsData();
-                    return; 
-                }
+    // 2. Thiết lập giao diện Loading ban đầu
+    listContainer.innerHTML = `
+        <div class="loading-wrapper" style="text-align: center; padding: 40px 20px;">
+                        <div id="progressContainer" style="width: 100%; max-width: 260px; background: var(--border-color); height: 6px; border-radius: 3px; margin: 0 auto 12px; overflow: hidden;">
+                <div id="progressBar" style="width: 0%; height: 100%; background: var(--accent-color); transition: width 0.2s ease;"></div>
+            </div>
+            <div id="progressText" style="text-align: center; font-size: 13px; color: var(--sub-text); font-weight: 600; margin-bottom: 12px;">Đang tải: 0%</div>
+            <div class="loading-title" style="font-weight: 600; font-size: 16px; color: var(--text-color); margin-bottom: 6px;">${loadingTitle}</div>
+            <div class="loading-subtitle" style="font-size: 13px; color: var(--sub-text); max-width: 400px; margin: 0 auto; line-height: 1.4;">${loadingSubtitle}</div>
+        </div>
+    `;
 
-                let loadingTitle = languages[currentLang].update_new;
-                let loadingSubtitle = languages[currentLang].sync_server;
+    const pBar = document.getElementById('progressBar');
+    const pText = document.getElementById('progressText');
 
-                if (isFirstTime) {
-                    loadingTitle = languages[currentLang].init_first;
-                    loadingSubtitle = languages[currentLang].fast_local;
-                }
+    // --- KHỞI TẠO TIẾN TRÌNH GIẢ LẬP THÔNG MINH (0% -> 95%) ---
+    let currentProgress = 0;
+    
+    // Hàm cập nhật giao diện
+    const updateLoadingUI = (percentage) => {
+        if (pBar) pBar.style.width = percentage + '%';
+        if (pText) pText.textContent = `Đang tải: ${percentage}%`;
+    };
 
-                listContainer.innerHTML = `
-                    <div class="loading-wrapper" style="text-align: center; padding: 40px 20px;">
-                        <div class="spinner" style="
-                            width: 40px; 
-                            height: 40px; 
-                            border: 4px solid var(--border-color); 
-                            border-top: 4px solid var(--accent-color); 
-                            border-radius: 50%; 
-                            margin: 0 auto 20px; 
-                            animation: spin 1s linear infinite;
-                        "></div>
-                        <div class="loading-title" style="font-weight: 600; font-size: 16px; color: var(--text-color); margin-bottom: 6px;">
-                            ${loadingTitle}
-                        </div>
-                        <div class="loading-subtitle" style="font-size: 13px; color: var(--sub-text); max-width: 400px; margin: 0 auto; line-height: 1.4;">
-                            ${loadingSubtitle}
-                        </div>
-                    </div>
-                `;
+    // Bộ đếm thời gian tự động tăng tiến trình giả lập
+    const progressInterval = setInterval(() => {
+        if (currentProgress < 70) {
+            currentProgress += Math.floor(Math.random() * 5) + 2; // Giai đoạn đầu tăng nhanh ngẫu nhiên
+        } else if (currentProgress < 85) {
+            currentProgress += Math.floor(Math.random() * 2) + 1; // Giai đoạn giữa chậm lại
+        } else if (currentProgress < 95) {
+            currentProgress += 0.5; // Giai đoạn gần đích chạy cực kỳ chậm tạo cảm giác "đang xử lý nặng"
+        }
 
-                masterData = { vn: {}, int: {} };
-                const suffix = `?t=${Date.now()}`;
+        // Khóa trần ở mức 95%
+        if (currentProgress > 95) currentProgress = 95;
+        
+        updateLoadingUI(Math.floor(currentProgress));
+    }, 150); // Cứ mỗi 150ms cập nhật 1 lần
 
-                let freshVnText = cachedVnText;
-                let freshIntText = cachedIntText;
-                let freshHinativeText = cachedHinativeText;
+    masterData = { vn: {}, int: {} };
 
-                if (needFetchVn) {
-                    const resVn = await fetch(`data_vn.txt${suffix}`, { cache: 'no-cache' });
-                    freshVnText = resVn.ok ? await resVn.text() : '';
-                    if (freshVnText) await localforage.setItem('cached_data_vn_text', freshVnText);
-                }
-                if (needFetchInt) {
-                    const resInt = await fetch(`data_int.txt${suffix}`, { cache: 'no-cache' });
-                    freshIntText = resInt.ok ? await resInt.text() : '';
-                    if (freshIntText) await localforage.setItem('cached_data_int_text', freshIntText);
-                }
-                
-                // Chỉ chạy sau khi VN và INT đã hoàn thành
+    try {
+        // Tải dữ liệu song song từ server (bỏ fetchWithProgress cũ đi vì ta dùng thanh giả lập mượt hơn)
+        const [freshVnText, freshIntText] = await Promise.all([
+            fetch('data_vn.txt').then(res => res.ok ? res.text() : ''),
+            fetch('data_int.txt').then(res => res.ok ? res.text() : '')
+        ]);
 
-if (needFetchHinative) {
-    const resHinative = await fetch(`hinative.txt${suffix}`, {
-        cache: 'no-cache'
-    });
+        // Lưu vào LocalForage bộ nhớ đệm
+        if (freshVnText) await localforage.setItem('forum_data_vn_text', freshVnText);
+        if (freshIntText) await localforage.setItem('forum_data_int_text', freshIntText);
 
-    freshHinativeText = resHinative.ok
-        ? await resHinative.text()
-        : '';
+        // --- TẢI XONG: DỪNG ĐẾM, NHẢY VỌT LÊN 100% ---
+        clearInterval(progressInterval);
+        updateLoadingUI(100);
 
-    if (freshHinativeText) {
-        await localforage.setItem(
-            'cached_hinative_text',
-            freshHinativeText
-        );
+        // Tạo một khoảng trễ nhỏ (300ms) để người dùng kịp nhìn thấy thanh loading chuyển sang 100% cực kỳ thỏa mãn
+        await new Promise(resolve => setTimeout(resolve, 300));
+
+        // Xử lý dữ liệu và render giao diện bài viết như bình thường
+        if (freshVnText) parseToSource(freshVnText.split('\n'), 'vn');
+        if (freshIntText) parseToSource(freshIntText.split('\n'), 'int');
+        
+        updateCurrentForumsData();
+
+    } catch (error) {
+        clearInterval(progressInterval);
+        console.error("Lỗi đồng bộ dữ liệu diễn đàn:", error);
+        listContainer.innerHTML = `<div class="empty-message">${languages[currentLang].error_server || "Lỗi tải dữ liệu"}</div>`;
     }
 }
 
-                if (freshVnText) parseToSource(freshVnText.split('\n'), 'vn');
-                if (freshIntText) parseToSource(freshIntText.split('\n'), 'int');
+    
+      
 
-                updateCurrentForumsData();
-            } catch (error) {
-                console.error("Lỗi hệ thống:", error);
-                const cachedVnText = await localforage.getItem('cached_data_vn_text');
-                const cachedIntText = await localforage.getItem('cached_data_int_text');
-                if (cachedVnText || cachedIntText) {
-                    masterData = { vn: {}, int: {} };
-                    if (cachedVnText) parseToSource(cachedVnText.split('\n'), 'vn');
-                    if (cachedIntText) parseToSource(cachedIntText.split('\n'), 'int');
-                    updateCurrentForumsData();
-                } else {
-                    listContainer.innerHTML = `<div class="empty-message" style="color: #ef4444;">${languages[currentLang].error_server}</div>`;
-                }
-            }
-        }
 
         function parseToSource(dataArray, sourceType) {
             dataArray.forEach(item => {
@@ -2125,6 +2107,34 @@ slider.addEventListener('touchend', () => {
     alert(alertMessage);
 }
 
+function fetchWithProgress(url, onProgressCallback) {
+    return new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', url, true);
+
+        // Bắt sự kiện đang tải dữ liệu để tính toán %
+        xhr.onprogress = function(event) {
+            if (event.lengthComputable) {
+                const percentComplete = Math.round((event.loaded / event.total) * 100);
+                onProgressCallback(percentComplete);
+            }
+        };
+
+        xhr.onload = function() {
+            if (xhr.status >= 200 && xhr.status < 300) {
+                resolve(xhr.responseText); // Trả về nội dung file text
+            } else {
+                reject(new Error(`Lỗi tải file: ${xhr.statusText}`));
+            }
+        };
+
+        xhr.onerror = function() {
+            reject(new Error('Lỗi kết nối mạng.'));
+        };
+
+        xhr.send();
+    });
+}
 
     </script>
     
@@ -2133,7 +2143,8 @@ slider.addEventListener('touchend', () => {
     <footer style="margin-top: 40px; padding: 20px 0; border-top: 1px solid var(--border-color); text-align: center; font-size: 12px; color: var(--sub-text);">
     <p data-i18n="footer_copyright">© 2026 Forum Adventure</p>
     <p data-i18n="footer_author">Made with ❤️ by Ncox | Connecting Forum Communities</p>
-    <p>
+    
+        <p>
         <a href="javascript:void(0)" onclick="showTermsAlert()" style="color: var(--accent-color); text-decoration: underline; margin: 0 10px;" data-i18n="footer_terms">Terms of Service & Disclaimer</a>
     </p>
 </footer>
