@@ -1039,7 +1039,11 @@ body.is-swiping-tabs .post-title {
 
         let currentLang = localStorage.getItem('lang') || 'en';
 
-        let masterData = { vn: {}, int: {} };
+        let masterData = {
+    vn: {},
+    int: {},
+    hinative: {}
+};
         let activeSource = 'all'; 
         let forumsData = {}; 
         let currentDomain = 'all';
@@ -1161,14 +1165,18 @@ updateThemeUI(savedTheme);
 
                 const cachedVnText = await localforage.getItem('cached_data_vn_text');
                 const cachedIntText = await localforage.getItem('cached_data_int_text');
+                const cachedHinativeText = await localforage.getItem('cached_hinative_text');
                 const isFirstTime = (cachedVnText === null && cachedIntText === null);
 
                 let needFetchVn = true;
                 let needFetchInt = true;
+                let needFetchHinative = true;
 
                 if (cachedVnText !== null) needFetchVn = await checkFileChanged('data_vn.txt');
                 if (cachedIntText !== null) needFetchInt = await checkFileChanged('data_int.txt');
-
+if (cachedHinativeText !== null)
+    needFetchHinative = await checkFileChanged('hinative.txt');
+                
                 if (!needFetchVn && !needFetchInt) {
                     masterData = { vn: {}, int: {} };
                     if (cachedVnText) parseToSource(cachedVnText.split('\n'), 'vn');
@@ -1210,6 +1218,7 @@ updateThemeUI(savedTheme);
 
                 let freshVnText = cachedVnText;
                 let freshIntText = cachedIntText;
+                let freshHinativeText = cachedHinativeText;
 
                 if (needFetchVn) {
                     const resVn = await fetch(`data_vn.txt${suffix}`, { cache: 'no-cache' });
@@ -1221,6 +1230,25 @@ updateThemeUI(savedTheme);
                     freshIntText = resInt.ok ? await resInt.text() : '';
                     if (freshIntText) await localforage.setItem('cached_data_int_text', freshIntText);
                 }
+                
+                // Chỉ chạy sau khi VN và INT đã hoàn thành
+
+if (needFetchHinative) {
+    const resHinative = await fetch(`hinative.txt${suffix}`, {
+        cache: 'no-cache'
+    });
+
+    freshHinativeText = resHinative.ok
+        ? await resHinative.text()
+        : '';
+
+    if (freshHinativeText) {
+        await localforage.setItem(
+            'cached_hinative_text',
+            freshHinativeText
+        );
+    }
+}
 
                 if (freshVnText) parseToSource(freshVnText.split('\n'), 'vn');
                 if (freshIntText) parseToSource(freshIntText.split('\n'), 'int');
@@ -2100,11 +2128,13 @@ slider.addEventListener('touchend', () => {
 
     </script>
     
+    
+    
     <footer style="margin-top: 40px; padding: 20px 0; border-top: 1px solid var(--border-color); text-align: center; font-size: 12px; color: var(--sub-text);">
     <p data-i18n="footer_copyright">© 2026 Forum Adventure</p>
-    <p data-i18n="footer_author">Made with ❤️ bởi Ncox | Kết nối cộng đồng diễn đàn</p>
+    <p data-i18n="footer_author">Made with ❤️ by Ncox | Connecting Forum Communities</p>
     <p>
-        <a href="javascript:void(0)" onclick="showTermsAlert()" style="color: var(--accent-color); text-decoration: underline; margin: 0 10px;" data-i18n="footer_terms">Điều khoản sử dụng & Miễn trừ trách nhiệm</a>
+        <a href="javascript:void(0)" onclick="showTermsAlert()" style="color: var(--accent-color); text-decoration: underline; margin: 0 10px;" data-i18n="footer_terms">Terms of Service & Disclaimer</a>
     </p>
 </footer>
 
