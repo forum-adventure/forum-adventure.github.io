@@ -1161,6 +1161,9 @@ updateThemeUI(savedTheme);
     const cachedIntText = await localforage.getItem('forum_data_int_text');
 
     if (cachedVnText || cachedIntText) {
+        
+        // THÊM VÀO ĐÂY: Reset RAM trước khi phân tách dữ liệu cache
+    masterData = { vn: {}, int: {} };
         if (cachedVnText) parseToSource(cachedVnText.split('\n'), 'vn');
         if (cachedIntText) parseToSource(cachedIntText.split('\n'), 'int');
         updateCurrentForumsData();
