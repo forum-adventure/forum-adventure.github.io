@@ -1173,7 +1173,16 @@ updateThemeUI(savedTheme);
                     masterData = { vn: {}, int: {} };
                     if (cachedVnText) parseToSource(cachedVnText.split('\n'), 'vn');
                     if (cachedIntText) parseToSource(cachedIntText.split('\n'), 'int');
+                    // Ép thanh tiến trình lên 100%
+                clearInterval(window.progressInterval);
+                if (document.getElementById('progressBar')) {
+                    document.getElementById('progressBar').style.width = '100%';
+                }
+                
+                // Đợi 200ms cho hiệu ứng CSS chạy xong rồi mới render dữ liệu (ẩn thanh loading)
+                setTimeout(() => {
                     updateCurrentForumsData();
+                }, 200);
                     return; 
                 }
 
