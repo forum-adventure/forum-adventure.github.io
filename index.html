@@ -1161,9 +1161,6 @@ updateThemeUI(savedTheme);
     const cachedIntText = await localforage.getItem('forum_data_int_text');
 
     if (cachedVnText || cachedIntText) {
-        
-        // THÊM VÀO ĐÂY: Reset RAM trước khi phân tách dữ liệu cache
-    masterData = { vn: {}, int: {} };
         if (cachedVnText) parseToSource(cachedVnText.split('\n'), 'vn');
         if (cachedIntText) parseToSource(cachedIntText.split('\n'), 'int');
         updateCurrentForumsData();
@@ -1242,6 +1239,12 @@ updateThemeUI(savedTheme);
         if (freshIntText) parseToSource(freshIntText.split('\n'), 'int');
         
         updateCurrentForumsData();
+        
+        // [THÊM MỚI TẠI ĐÂY] - Kích hoạt tải ngầm Hinative sau khi UI chính đã render xong
+        setTimeout(() => {
+            loadHinativeDataInBackground();
+        }, 1000); // Delay 1 giây cho an toàn, để trình duyệt rảnh tay render xong toàn bộ CSS/HTML rồi mới fetch tiếp
+
 
     } catch (error) {
         clearInterval(progressInterval);
@@ -2139,6 +2142,60 @@ function fetchWithProgress(url, onProgressCallback) {
     });
 }
 
+    // HÀM TẢI NGẦM DỮ LIỆU HINATIVE (Chạy sau khi load xong data chính)
+async function loadHinativeDataInBackground() {
+    try {
+        // 1. Kiểm tra xem đã có trong bộ nhớ đệm (cache) chưa
+        const cachedHinativeText = await localforage.getItem('forum_data_hinative_text');
+
+        if (cachedHinativeText) {
+            // Nếu có cache, xử lý data ngay
+            parseToSource(cachedHinativeText.split('\n'), 'int'); // 'int' vì thuộc nhóm Quốc tế
+            silentUpdateForumsUI();
+            return;
+        }
+
+        // 2. Nếu chưa có cache, tiến hành fetch ngầm file hinative.txt
+        const response = await fetch('hinative.txt');
+        
+        if (response.ok) {
+            const freshHinativeText = await response.text();
+
+            // Lưu vào bộ nhớ đệm để lần sau tải nhanh hơn
+            await localforage.setItem('forum_data_hinative_text', freshHinativeText);
+
+            // Bóc tách dữ liệu và đưa vào biến masterData nhóm 'int'
+            parseToSource(freshHinativeText.split('\n'), 'int');
+
+            // Cập nhật lại giao diện một cách nhẹ nhàng
+            silentUpdateForumsUI();
+        }
+    } catch (error) {
+        console.error("Lỗi khi tải ngầm hinative.txt:", error);
+    }
+}
+
+// HÀM CẬP NHẬT GIAO DIỆN LẶNG LẼ (Không làm gián đoạn người dùng)
+function silentUpdateForumsUI() {
+    // 1. Lưu lại vị trí cuộn hiện tại của thanh Tab ngang để người dùng không bị giật màn hình
+    const currentScrollLeft = filterContainer.scrollLeft;
+
+    // 2. Chạy lại logic gom data từ masterData vào forumsData
+    updateCurrentForumsData();
+
+    // 3. Khôi phục lại vị trí cuộn của thanh Tab
+    requestAnimationFrame(() => {
+        filterContainer.scrollTo({ left: currentScrollLeft, behavior: 'instant' });
+    });
+
+    // 4. Nếu người dùng đang ở tab "Tất cả bài viết" (all), tự động vẽ lại danh sách bài viết
+    // để các bài viết của Hinative được hòa trộn vào.
+    if (currentDomain === 'all') {
+        displayPosts();
+    }
+}
+
+    
     </script>
     
     
