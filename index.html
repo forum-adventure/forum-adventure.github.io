@@ -953,13 +953,19 @@ body.is-swiping-tabs .post-title {
     </div>
 
     <div class="list-container" id="listContainer">
-    <div class="empty-message" data-i18n="loading_cache">Đang tải dữ liệu...</div>
-    <div id="progressContainer" style="width: 100%; max-width: 300px; background: var(--border-color); height: 6px; border-radius: 3px; margin: 12px auto; overflow: hidden; display: none;">
-        <div id="progressBar" style="width: 0%; height: 100%; background: var(--accent-color); transition: width 0.1s ease;"></div>
+    <div class="loading-wrapper" style="text-align: center; padding: 40px 20px;">
+        <div id="progressContainer" style="width: 100%; max-width: 260px; background: var(--border-color); height: 6px; border-radius: 3px; margin: 0 auto 12px; overflow: hidden;">
+            <div id="progressBar" style="width: 0%; height: 100%; background: var(--accent-color); transition: width 0.2s ease;"></div>
+        </div>
+        <div id="progressText" style="text-align: center; font-size: 13px; color: var(--sub-text); font-weight: 600; margin-bottom: 12px;">Đang tải: 0%</div>
+        <div class="loading-title" id="loadingTitle" style="font-weight: 600; font-size: 16px; color: var(--text-color); margin-bottom: 6px;">
+            Đang cập nhật bài viết mới...
+        </div>
+        <div class="loading-subtitle" id="loadingSubtitle" style="font-size: 13px; color: var(--sub-text); max-width: 400px; margin: 0 auto; line-height: 1.4;">
+            Hệ thống đang đồng bộ những bài viết mới nhất từ máy chủ.
+        </div>
     </div>
-    <div id="progressText" style="text-align: center; font-size: 13px; color: var(--sub-text); font-weight: 500; display: none;">0%</div>
 </div>
-
 
     <div class="pagination-container" id="paginationContainer"></div>
     <div class="random-nav-container" id="randomNavContainer"></div>
@@ -1155,107 +1161,96 @@ updateThemeUI(savedTheme);
             }
         }
 
-        async function loadExternalData(isFirstTime = false) {
-    // 1. Lấy trạng thái cache cũ (nếu có)
-    const cachedVnText = await localforage.getItem('forum_data_vn_text');
-    const cachedIntText = await localforage.getItem('forum_data_int_text');
+        async function loadExternalData() {
+            try {
+                if (!document.getElementById('spin-animation')) {
+                    const style = document.createElement('style');
+                    style.id = 'spin-animation';
+                    style.innerHTML = `@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }`;
+                    document.head.appendChild(style);
+                }
 
-    if (cachedVnText || cachedIntText) {
-        if (cachedVnText) parseToSource(cachedVnText.split('\n'), 'vn');
-        if (cachedIntText) parseToSource(cachedIntText.split('\n'), 'int');
-        updateCurrentForumsData();
-        return;
-    }
+                const cachedVnText = await localforage.getItem('cached_data_vn_text');
+                const cachedIntText = await localforage.getItem('cached_data_int_text');
+                const isFirstTime = (cachedVnText === null && cachedIntText === null);
 
-    let loadingTitle = languages[currentLang].update_new;
-    let loadingSubtitle = languages[currentLang].sync_server;
-    if (isFirstTime) {
-        loadingTitle = languages[currentLang].init_first;
-        loadingSubtitle = languages[currentLang].fast_local;
-    }
+                let needFetchVn = true;
+                let needFetchInt = true;
 
-    // 2. Thiết lập giao diện Loading ban đầu
-    listContainer.innerHTML = `
-        <div class="loading-wrapper" style="text-align: center; padding: 40px 20px;">
-                        <div id="progressContainer" style="width: 100%; max-width: 260px; background: var(--border-color); height: 6px; border-radius: 3px; margin: 0 auto 12px; overflow: hidden;">
-                <div id="progressBar" style="width: 0%; height: 100%; background: var(--accent-color); transition: width 0.2s ease;"></div>
-            </div>
-            <div id="progressText" style="text-align: center; font-size: 13px; color: var(--sub-text); font-weight: 600; margin-bottom: 12px;">Đang tải: 0%</div>
-            <div class="loading-title" style="font-weight: 600; font-size: 16px; color: var(--text-color); margin-bottom: 6px;">${loadingTitle}</div>
-            <div class="loading-subtitle" style="font-size: 13px; color: var(--sub-text); max-width: 400px; margin: 0 auto; line-height: 1.4;">${loadingSubtitle}</div>
-        </div>
-    `;
+                if (cachedVnText !== null) needFetchVn = await checkFileChanged('data_vn.txt');
+                if (cachedIntText !== null) needFetchInt = await checkFileChanged('data_int.txt');
 
-    const pBar = document.getElementById('progressBar');
-    const pText = document.getElementById('progressText');
+                if (!needFetchVn && !needFetchInt) {
+                    masterData = { vn: {}, int: {} };
+                    if (cachedVnText) parseToSource(cachedVnText.split('\n'), 'vn');
+                    if (cachedIntText) parseToSource(cachedIntText.split('\n'), 'int');
+                    updateCurrentForumsData();
+                    return; 
+                }
 
-    // --- KHỞI TẠO TIẾN TRÌNH GIẢ LẬP THÔNG MINH (0% -> 95%) ---
-    let currentProgress = 0;
-    
-    // Hàm cập nhật giao diện
-    const updateLoadingUI = (percentage) => {
-        if (pBar) pBar.style.width = percentage + '%';
-        if (pText) pText.textContent = `Đang tải: ${percentage}%`;
-    };
+                let loadingTitle = languages[currentLang].update_new;
+                let loadingSubtitle = languages[currentLang].sync_server;
 
-    // Bộ đếm thời gian tự động tăng tiến trình giả lập
-    const progressInterval = setInterval(() => {
-        if (currentProgress < 70) {
-            currentProgress += Math.floor(Math.random() * 5) + 2; // Giai đoạn đầu tăng nhanh ngẫu nhiên
-        } else if (currentProgress < 85) {
-            currentProgress += Math.floor(Math.random() * 2) + 1; // Giai đoạn giữa chậm lại
-        } else if (currentProgress < 95) {
-            currentProgress += 0.5; // Giai đoạn gần đích chạy cực kỳ chậm tạo cảm giác "đang xử lý nặng"
+                if (isFirstTime) {
+                    loadingTitle = languages[currentLang].init_first;
+                    loadingSubtitle = languages[currentLang].fast_local;
+                }
+
+                listContainer.innerHTML = `
+                    <div class="loading-wrapper" style="text-align: center; padding: 40px 20px;">
+                        <div class="spinner" style="
+                            width: 40px; 
+                            height: 40px; 
+                            border: 4px solid var(--border-color); 
+                            border-top: 4px solid var(--accent-color); 
+                            border-radius: 50%; 
+                            margin: 0 auto 20px; 
+                            animation: spin 1s linear infinite;
+                        "></div>
+                        <div class="loading-title" style="font-weight: 600; font-size: 16px; color: var(--text-color); margin-bottom: 6px;">
+                            ${loadingTitle}
+                        </div>
+                        <div class="loading-subtitle" style="font-size: 13px; color: var(--sub-text); max-width: 400px; margin: 0 auto; line-height: 1.4;">
+                            ${loadingSubtitle}
+                        </div>
+                    </div>
+                `;
+
+                masterData = { vn: {}, int: {} };
+                const suffix = `?t=${Date.now()}`;
+
+                let freshVnText = cachedVnText;
+                let freshIntText = cachedIntText;
+
+                if (needFetchVn) {
+                    const resVn = await fetch(`data_vn.txt${suffix}`, { cache: 'no-cache' });
+                    freshVnText = resVn.ok ? await resVn.text() : '';
+                    if (freshVnText) await localforage.setItem('cached_data_vn_text', freshVnText);
+                }
+                if (needFetchInt) {
+                    const resInt = await fetch(`data_int.txt${suffix}`, { cache: 'no-cache' });
+                    freshIntText = resInt.ok ? await resInt.text() : '';
+                    if (freshIntText) await localforage.setItem('cached_data_int_text', freshIntText);
+                }
+
+                if (freshVnText) parseToSource(freshVnText.split('\n'), 'vn');
+                if (freshIntText) parseToSource(freshIntText.split('\n'), 'int');
+
+                updateCurrentForumsData();
+            } catch (error) {
+                console.error("Lỗi hệ thống:", error);
+                const cachedVnText = await localforage.getItem('cached_data_vn_text');
+                const cachedIntText = await localforage.getItem('cached_data_int_text');
+                if (cachedVnText || cachedIntText) {
+                    masterData = { vn: {}, int: {} };
+                    if (cachedVnText) parseToSource(cachedVnText.split('\n'), 'vn');
+                    if (cachedIntText) parseToSource(cachedIntText.split('\n'), 'int');
+                    updateCurrentForumsData();
+                } else {
+                    listContainer.innerHTML = `<div class="empty-message" style="color: #ef4444;">${languages[currentLang].error_server}</div>`;
+                }
+            }
         }
-
-        // Khóa trần ở mức 95%
-        if (currentProgress > 95) currentProgress = 95;
-        
-        updateLoadingUI(Math.floor(currentProgress));
-    }, 150); // Cứ mỗi 150ms cập nhật 1 lần
-
-    masterData = { vn: {}, int: {} };
-
-    try {
-        // Tải dữ liệu song song từ server (bỏ fetchWithProgress cũ đi vì ta dùng thanh giả lập mượt hơn)
-        const [freshVnText, freshIntText] = await Promise.all([
-            fetch('data_vn.txt').then(res => res.ok ? res.text() : ''),
-            fetch('data_int.txt').then(res => res.ok ? res.text() : '')
-        ]);
-
-        // Lưu vào LocalForage bộ nhớ đệm
-        if (freshVnText) await localforage.setItem('forum_data_vn_text', freshVnText);
-        if (freshIntText) await localforage.setItem('forum_data_int_text', freshIntText);
-
-        // --- TẢI XONG: DỪNG ĐẾM, NHẢY VỌT LÊN 100% ---
-        clearInterval(progressInterval);
-        updateLoadingUI(100);
-
-        // Tạo một khoảng trễ nhỏ (300ms) để người dùng kịp nhìn thấy thanh loading chuyển sang 100% cực kỳ thỏa mãn
-        await new Promise(resolve => setTimeout(resolve, 300));
-
-        // Xử lý dữ liệu và render giao diện bài viết như bình thường
-        if (freshVnText) parseToSource(freshVnText.split('\n'), 'vn');
-        if (freshIntText) parseToSource(freshIntText.split('\n'), 'int');
-        
-        updateCurrentForumsData();
-        
-        // [THÊM MỚI TẠI ĐÂY] - Kích hoạt tải ngầm Hinative sau khi UI chính đã render xong
-        setTimeout(() => {
-            loadHinativeDataInBackground();
-        }, 1000); // Delay 1 giây cho an toàn, để trình duyệt rảnh tay render xong toàn bộ CSS/HTML rồi mới fetch tiếp
-
-
-    } catch (error) {
-        clearInterval(progressInterval);
-        console.error("Lỗi đồng bộ dữ liệu diễn đàn:", error);
-        listContainer.innerHTML = `<div class="empty-message">${languages[currentLang].error_server || "Lỗi tải dữ liệu"}</div>`;
-    }
-}
-
-    
-      
-
 
         function parseToSource(dataArray, sourceType) {
             dataArray.forEach(item => {
@@ -2113,89 +2108,99 @@ slider.addEventListener('touchend', () => {
     alert(alertMessage);
 }
 
-function fetchWithProgress(url, onProgressCallback) {
-    return new Promise((resolve, reject) => {
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', url, true);
-
-        // Bắt sự kiện đang tải dữ liệu để tính toán %
-        xhr.onprogress = function(event) {
-            if (event.lengthComputable) {
-                const percentComplete = Math.round((event.loaded / event.total) * 100);
-                onProgressCallback(percentComplete);
-            }
-        };
-
-        xhr.onload = function() {
-            if (xhr.status >= 200 && xhr.status < 300) {
-                resolve(xhr.responseText); // Trả về nội dung file text
-            } else {
-                reject(new Error(`Lỗi tải file: ${xhr.statusText}`));
-            }
-        };
-
-        xhr.onerror = function() {
-            reject(new Error('Lỗi kết nối mạng.'));
-        };
-
-        xhr.send();
-    });
-}
-
-    // HÀM TẢI NGẦM DỮ LIỆU HINATIVE (Chạy sau khi load xong data chính)
-async function loadHinativeDataInBackground() {
-    try {
-        // 1. Kiểm tra xem đã có trong bộ nhớ đệm (cache) chưa
-        const cachedHinativeText = await localforage.getItem('forum_data_hinative_text');
-
-        if (cachedHinativeText) {
-            // Nếu có cache, xử lý data ngay
-            parseToSource(cachedHinativeText.split('\n'), 'int'); // 'int' vì thuộc nhóm Quốc tế
-            silentUpdateForumsUI();
-            return;
-        }
-
-        // 2. Nếu chưa có cache, tiến hành fetch ngầm file hinative.txt
-        const response = await fetch('hinative.txt');
-        
-        if (response.ok) {
-            const freshHinativeText = await response.text();
-
-            // Lưu vào bộ nhớ đệm để lần sau tải nhanh hơn
-            await localforage.setItem('forum_data_hinative_text', freshHinativeText);
-
-            // Bóc tách dữ liệu và đưa vào biến masterData nhóm 'int'
-            parseToSource(freshHinativeText.split('\n'), 'int');
-
-            // Cập nhật lại giao diện một cách nhẹ nhàng
-            silentUpdateForumsUI();
-        }
-    } catch (error) {
-        console.error("Lỗi khi tải ngầm hinative.txt:", error);
-    }
-}
-
-// HÀM CẬP NHẬT GIAO DIỆN LẶNG LẼ (Không làm gián đoạn người dùng)
-function silentUpdateForumsUI() {
-    // 1. Lưu lại vị trí cuộn hiện tại của thanh Tab ngang để người dùng không bị giật màn hình
-    const currentScrollLeft = filterContainer.scrollLeft;
-
-    // 2. Chạy lại logic gom data từ masterData vào forumsData
-    updateCurrentForumsData();
-
-    // 3. Khôi phục lại vị trí cuộn của thanh Tab
-    requestAnimationFrame(() => {
-        filterContainer.scrollTo({ left: currentScrollLeft, behavior: 'instant' });
-    });
-
-    // 4. Nếu người dùng đang ở tab "Tất cả bài viết" (all), tự động vẽ lại danh sách bài viết
-    // để các bài viết của Hinative được hòa trộn vào.
-    if (currentDomain === 'all') {
-        displayPosts();
-    }
-}
-
     
+    // 1. Hàm cập nhật giao diện (Thanh phần trăm, Số chữ, Tiêu đề)
+function updateLoadingUI(percent, titleText = null, subtitleText = null) {
+    const pBar = document.getElementById('progressBar');
+    const pText = document.getElementById('progressText');
+    const lTitle = document.getElementById('loadingTitle');
+    const lSubtitle = document.getElementById('loadingSubtitle');
+
+    if (pBar) pBar.style.width = percent + '%';
+    if (pText) pText.innerText = `Đang tải: ${percent}%`;
+    if (titleText && lTitle) lTitle.innerText = titleText;
+    if (subtitleText && lSubtitle) lSubtitle.innerText = subtitleText;
+}
+
+// 2. Hàm kích hoạt chạy thanh loading
+function runLoadingEffect() {
+    let currentProgress = 0;
+    
+    // Đặt tiêu đề theo ngôn ngữ hiện tại của bạn (nếu có, hoặc dùng chữ mặc định)
+    let title = (typeof languages !== 'undefined' && languages[currentLang]?.update_new) || "Đang cập nhật bài viết mới...";
+    let subtitle = (typeof languages !== 'undefined' && languages[currentLang]?.sync_server) || "Hệ thống đang đồng bộ từ máy chủ.";
+    
+    updateLoadingUI(0, title, subtitle);
+
+    // Tạo bộ đếm tăng dần ngẫu nhiên (từ 0% -> 95%) để tạo hiệu ứng chuyển động mượt mà
+    const progressInterval = setInterval(() => {
+        if (currentProgress < 70) {
+            currentProgress += Math.floor(Math.random() * 8) + 3; // Tăng nhanh ở giai đoạn đầu
+        } else if (currentProgress < 95) {
+            currentProgress += Math.floor(Math.random() * 3) + 1; // Chạy chậm lại khi đến gần đích để chờ dữ liệu thực tế
+        }
+        
+        if (currentProgress >= 95) {
+            currentProgress = 95;
+            clearInterval(progressInterval); // Dừng lại ở 95% chờ lệnh hoàn thành
+        }
+        
+        updateLoadingUI(currentProgress);
+    }, 150);
+
+    // Trả về một hàm đóng (Hàm này sẽ được gọi khi dữ liệu của bạn đã tải xong xuôi)
+    return async function finishLoading(callbackRenderData) {
+        clearInterval(progressInterval); // Xóa bộ đếm phòng hờ
+        
+        // Nhảy vọt lên 100% cực kỳ mượt và thỏa mãn
+        updateLoadingUI(100); 
+        
+        // Chờ 300 mili-giây để người dùng kịp nhìn thấy số 100% rồi mới xóa thanh loading đi
+        await new Promise(resolve => setTimeout(resolve, 300));
+        
+        // Gọi hàm Render/Hiển thị dữ liệu thực tế của bạn để lấp đầy listContainer
+        if (typeof callbackRenderData === 'function') {
+            callbackRenderData();
+        }
+    };
+}
+
+// 3. THỰC THI (Cách áp dụng vào logic thực tế của bạn)
+// Ví dụ khi trang web load, hoặc khi bạn nhấn nút "Tải dữ liệu"
+document.addEventListener("DOMContentLoaded", async () => {
+    // Bắt đầu chạy hiệu ứng loading
+    const endLoading = runLoadingEffect();
+    
+    try {
+        // --- ĐOẠN NÀY DÙNG ĐỂ CHẠY HÀM FETCH DATA THỰC TẾ CỦA BẠN ---
+        // Giả lập thời gian tải file/mạng mất khoảng 2.5 giây:
+        await new Promise(resolve => setTimeout(resolve, 2500)); 
+        
+        // --- KHI TẢI XONG ---
+        // Gọi hàm kết thúc, truyền vào hàm xử lý render giao diện thực tế của bạn 
+        // (Ví dụ: truyền hàm hiển thị danh sách bài viết vào đây để nó ghi đè lại listContainer)
+        await endLoading(() => {
+            const listContainer = document.getElementById('listContainer');
+            if (listContainer) {
+                // Thay thế toàn bộ cụm loading bằng danh sách dữ liệu bài viết thật của bạn
+                listContainer.innerHTML = `
+                    <div style="padding: 20px; text-align: center; color: var(--text-color);">
+                        <h3>🎉 Tải dữ liệu thành công!</h3>
+                        <p>Danh sách bài viết của bạn sẽ được render tại đây.</p>
+                    </div>
+                `;
+                
+                // Nếu bạn có hàm updateCurrentForumsData() hoặc hiển thị bài viết sẵn, hãy gọi nó ở đây:
+                // updateCurrentForumsData();
+            }
+        });
+
+    } catch (error) {
+        console.error("Lỗi tải dữ liệu:", error);
+        clearInterval();
+    }
+});
+
     </script>
     
     
@@ -2203,8 +2208,7 @@ function silentUpdateForumsUI() {
     <footer style="margin-top: 40px; padding: 20px 0; border-top: 1px solid var(--border-color); text-align: center; font-size: 12px; color: var(--sub-text);">
     <p data-i18n="footer_copyright">© 2026 Forum Adventure</p>
     <p data-i18n="footer_author">Made with ❤️ by Ncox | Connecting Forum Communities</p>
-    
-        <p>
+    <p>
         <a href="javascript:void(0)" onclick="showTermsAlert()" style="color: var(--accent-color); text-decoration: underline; margin: 0 10px;" data-i18n="footer_terms">Terms of Service & Disclaimer</a>
     </p>
 </footer>
