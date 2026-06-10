@@ -952,22 +952,9 @@ body.is-swiping-tabs .post-title {
         <div class="checkbox-dropdown-menu" id="checkboxDropdownMenu"></div>
     </div>
 
-    
-    
-   
-    
-    
     <div class="list-container" id="listContainer">
         <div class="empty-message" data-i18n="loading_cache">Đang tải dữ liệu bộ nhớ đệm...</div>
-        
-    <div class="loading-wrapper" style="text-align: center; padding: 40px 20px;">
-        <div id="progressContainer" style="width: 100%; max-width: 260px; background: var(--border-color); height: 6px; border-radius: 3px; margin: 0 auto 12px; overflow: hidden;">
-            <div id="progressBar" style="width: 0%; height: 100%; background: var(--accent-color); transition: width 0.2s ease;"></div>
-        </div>
-        
-        
     </div>
-</div>
 
     <div class="pagination-container" id="paginationContainer"></div>
     <div class="random-nav-container" id="randomNavContainer"></div>
@@ -1198,26 +1185,78 @@ updateThemeUI(savedTheme);
                     loadingSubtitle = languages[currentLang].fast_local;
                 }
 
-                listContainer.innerHTML = `
-                    <div class="loading-wrapper" style="text-align: center; padding: 40px 20px;">
-                        <div class="spinner" style="
-                            width: 40px; 
-                            height: 40px; 
-                            border: 4px solid var(--border-color); 
-                            border-top: 4px solid var(--accent-color); 
-                            border-radius: 50%; 
-                            margin: 0 auto 20px; 
-                            animation: spin 1s linear infinite;
-                        "></div>
-                        <div class="loading-title" style="font-weight: 600; font-size: 16px; color: var(--text-color); margin-bottom: 6px;">
-                            ${loadingTitle}
-                        </div>
-                        <div class="loading-subtitle" style="font-size: 13px; color: var(--sub-text); max-width: 400px; margin: 0 auto; line-height: 1.4;">
-                            ${loadingSubtitle}
-                        </div>
-                    </div>
-                `;
+                // Thay thế đoạn render spinner cũ trong hàm loadExternalData()
+listContainer.innerHTML = `
+    <div class="loading-wrapper" style="text-align: center; padding: 40px 20px;">
+        <div id="progressContainer" style="width: 100%; max-width: 260px; background: var(--border-color); height: 6px; border-radius: 3px; margin: 0 auto 20px; overflow: hidden;">
+            <div id="progressBar" style="width: 0%; height: 100%; background: var(--accent-color); transition: width 0.4s ease;"></div>
+        </div>
+        <div class="loading-title" style="font-weight: 600; font-size: 16px; color: var(--text-color); margin-bottom: 6px;">
+            ${loadingTitle}
+        </div>
+        <div class="loading-subtitle" style="font-size: 13px; color: var(--sub-text); max-width: 400px; margin: 0 auto; line-height: 1.4;">
+            ${loadingSubtitle}
+        </div>
+    </div>
+`;
 
+                
+        
+
+        // 2. Kích hoạt vòng lặp giả lập tiến trình chạy từ 0% đến 95%
+        const progressBar = document.getElementById('progressBar');
+        let progressWidth = 0;
+        const progressInterval = setInterval(() => {
+            if (progressWidth < 95) {
+                // Tăng tốc độ mượt mà ngẫu nhiên để tạo cảm giác thật hơn
+                progressWidth += Math.floor(Math.random() * 10) + 5; 
+                if (progressWidth > 95) progressWidth = 95;
+                if (progressBar) progressBar.style.width = progressWidth + '%';
+            }
+        }, 150);
+
+        masterData = { vn: {}, int: {} };
+        const suffix = `?t=${Date.now()}`;
+        let freshVnText = cachedVnText;
+        let freshIntText = cachedIntText;
+
+        if (needFetchVn) {
+            const resVn = await fetch(`data_vn.txt${suffix}`, { cache: 'no-cache' });
+            freshVnText = resVn.ok ? await resVn.text() : '';
+            if (freshVnText) await localforage.setItem('cached_data_vn_text', freshVnText);
+        }
+
+        if (needFetchInt) {
+            const resInt = await fetch(`data_int.txt${suffix}`, { cache: 'no-cache' });
+            freshIntText = resInt.ok ? await resInt.text() : '';
+            if (freshIntText) await localforage.setItem('cached_data_int_text', freshIntText);
+        }
+
+        if (freshVnText) parseToSource(freshVnText.split('\n'), 'vn');
+        if (freshIntText) parseToSource(freshIntText.split('\n'), 'int');
+
+        // 3. Khi dữ liệu đã load xong hoàn toàn: Dừng interval, nhảy lên 100%
+        clearInterval(progressInterval);
+        if (progressBar) progressBar.style.width = '100%';
+
+        // Đợi 400ms (bằng thời gian transition width) để thanh bar chạy hết qua phải rồi mới ẩn đi và render danh sách bài viết
+        await new Promise(resolve => setTimeout(resolve, 400));
+
+        updateCurrentForumsData();
+        
+    } catch (error) {
+        console.error("Lỗi hệ thống:", error);
+        // Trường hợp lỗi, đảm bảo giải phóng bộ đếm thời gian
+        if (typeof progressInterval !== 'undefined') clearInterval(progressInterval);
+        
+        const cachedVnText = await localforage.getItem('cached_data_vn_text');
+        const cachedIntText = await localforage.getItem('cached_data_int_text');
+        if (cachedVnText) parseToSource(cachedVnText.split('\n'), 'vn');
+        if (cachedIntText) parseToSource(cachedIntText.split('\n'), 'int');
+        updateCurrentForumsData();
+    }
+}
+                
                 masterData = { vn: {}, int: {} };
                 const suffix = `?t=${Date.now()}`;
 
@@ -2110,96 +2149,6 @@ slider.addEventListener('touchend', () => {
     alert(alertMessage);
 }
 
-    
-    // 1. Hàm cập nhật giao diện (Thanh phần trăm, Số chữ, Tiêu đề)
-function updateLoadingUI(percent, titleText = null, subtitleText = null) {
-    const pBar = document.getElementById('progressBar');
-    const pText = document.getElementById('progressText');
-    const lTitle = document.getElementById('loadingTitle');
-    const lSubtitle = document.getElementById('loadingSubtitle');
-
-    if (pBar) pBar.style.width = percent + '%';
-    if (pText) pText.innerText = `Đang tải: ${percent}%`;
-    if (titleText && lTitle) lTitle.innerText = titleText;
-    if (subtitleText && lSubtitle) lSubtitle.innerText = subtitleText;
-}
-
-// 2. Hàm kích hoạt chạy thanh loading
-function runLoadingEffect() {
-    let currentProgress = 0;
-    
-    // Đặt tiêu đề theo ngôn ngữ hiện tại của bạn (nếu có, hoặc dùng chữ mặc định)
-    let title = (typeof languages !== 'undefined' && languages[currentLang]?.update_new) || "Đang cập nhật bài viết mới...";
-    let subtitle = (typeof languages !== 'undefined' && languages[currentLang]?.sync_server) || "Hệ thống đang đồng bộ từ máy chủ.";
-    
-    updateLoadingUI(0, title, subtitle);
-
-    // Tạo bộ đếm tăng dần ngẫu nhiên (từ 0% -> 95%) để tạo hiệu ứng chuyển động mượt mà
-    const progressInterval = setInterval(() => {
-        if (currentProgress < 70) {
-            currentProgress += Math.floor(Math.random() * 8) + 3; // Tăng nhanh ở giai đoạn đầu
-        } else if (currentProgress < 95) {
-            currentProgress += Math.floor(Math.random() * 3) + 1; // Chạy chậm lại khi đến gần đích để chờ dữ liệu thực tế
-        }
-        
-        if (currentProgress >= 95) {
-            currentProgress = 95;
-            clearInterval(progressInterval); // Dừng lại ở 95% chờ lệnh hoàn thành
-        }
-        
-        updateLoadingUI(currentProgress);
-    }, 150);
-
-    // Trả về một hàm đóng (Hàm này sẽ được gọi khi dữ liệu của bạn đã tải xong xuôi)
-    return async function finishLoading(callbackRenderData) {
-        clearInterval(progressInterval); // Xóa bộ đếm phòng hờ
-        
-        // Nhảy vọt lên 100% cực kỳ mượt và thỏa mãn
-        updateLoadingUI(100); 
-        
-        // Chờ 300 mili-giây để người dùng kịp nhìn thấy số 100% rồi mới xóa thanh loading đi
-        await new Promise(resolve => setTimeout(resolve, 300));
-        
-        // Gọi hàm Render/Hiển thị dữ liệu thực tế của bạn để lấp đầy listContainer
-        if (typeof callbackRenderData === 'function') {
-            callbackRenderData();
-        }
-    };
-}
-
-// 3. THỰC THI (Cách áp dụng vào logic thực tế của bạn)
-// Ví dụ khi trang web load, hoặc khi bạn nhấn nút "Tải dữ liệu"
-document.addEventListener("DOMContentLoaded", async () => {
-    // Bắt đầu chạy hiệu ứng loading
-    const endLoading = runLoadingEffect();
-    
-    try {
-        // --- ĐOẠN NÀY DÙNG ĐỂ CHẠY HÀM FETCH DATA THỰC TẾ CỦA BẠN ---
-        // Giả lập thời gian tải file/mạng mất khoảng 2.5 giây:
-        await new Promise(resolve => setTimeout(resolve, 2500)); 
-        
-        // --- KHI TẢI XONG ---
-        // Gọi hàm kết thúc, truyền vào hàm xử lý render giao diện thực tế của bạn 
-        // (Ví dụ: truyền hàm hiển thị danh sách bài viết vào đây để nó ghi đè lại listContainer)
-                await endLoading(() => {
-            const listContainer = document.getElementById('listContainer');
-            if (listContainer) {
-                // Xóa rỗng vùng chứa loading để chuẩn bị hiển thị bài viết luôn
-                listContainer.innerHTML = '';
-                
-                // Gọi hàm render danh sách bài viết thực tế của bạn ngay tại đây
-                if (typeof updateCurrentForumsData === 'function') {
-                    updateCurrentForumsData();
-                }
-            }
-        });
-
-
-    } catch (error) {
-        console.error("Lỗi tải dữ liệu:", error);
-        clearInterval();
-    }
-});
 
     </script>
     
