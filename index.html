@@ -2181,21 +2181,19 @@ document.addEventListener("DOMContentLoaded", async () => {
         // --- KHI TẢI XONG ---
         // Gọi hàm kết thúc, truyền vào hàm xử lý render giao diện thực tế của bạn 
         // (Ví dụ: truyền hàm hiển thị danh sách bài viết vào đây để nó ghi đè lại listContainer)
-        await endLoading(() => {
+                await endLoading(() => {
             const listContainer = document.getElementById('listContainer');
             if (listContainer) {
-                // Thay thế toàn bộ cụm loading bằng danh sách dữ liệu bài viết thật của bạn
-                listContainer.innerHTML = `
-                    <div style="padding: 20px; text-align: center; color: var(--text-color);">
-                        <h3>🎉 Tải dữ liệu thành công!</h3>
-                        <p>Danh sách bài viết của bạn sẽ được render tại đây.</p>
-                    </div>
-                `;
+                // Xóa rỗng vùng chứa loading để chuẩn bị hiển thị bài viết luôn
+                listContainer.innerHTML = '';
                 
-                // Nếu bạn có hàm updateCurrentForumsData() hoặc hiển thị bài viết sẵn, hãy gọi nó ở đây:
-                // updateCurrentForumsData();
+                // Gọi hàm render danh sách bài viết thực tế của bạn ngay tại đây
+                if (typeof updateCurrentForumsData === 'function') {
+                    updateCurrentForumsData();
+                }
             }
         });
+
 
     } catch (error) {
         console.error("Lỗi tải dữ liệu:", error);
