@@ -1185,78 +1185,31 @@ updateThemeUI(savedTheme);
                     loadingSubtitle = languages[currentLang].fast_local;
                 }
 
-                // Thay thế đoạn render spinner cũ trong hàm loadExternalData()
-listContainer.innerHTML = `
-    <div class="loading-wrapper" style="text-align: center; padding: 40px 20px;">
-        <div id="progressContainer" style="width: 100%; max-width: 260px; background: var(--border-color); height: 6px; border-radius: 3px; margin: 0 auto 20px; overflow: hidden;">
-            <div id="progressBar" style="width: 0%; height: 100%; background: var(--accent-color); transition: width 0.4s ease;"></div>
-        </div>
-        <div class="loading-title" style="font-weight: 600; font-size: 16px; color: var(--text-color); margin-bottom: 6px;">
-            ${loadingTitle}
-        </div>
-        <div class="loading-subtitle" style="font-size: 13px; color: var(--sub-text); max-width: 400px; margin: 0 auto; line-height: 1.4;">
-            ${loadingSubtitle}
-        </div>
-    </div>
-`;
+                listContainer.innerHTML = `
+                    <div class="loading-wrapper" style="text-align: center; padding: 40px 20px;">
+                        <div id="progressContainer" style="width: 100%; max-width: 260px; background: var(--border-color); height: 6px; border-radius: 3px; margin: 0 auto 12px; overflow: hidden;">
+                            <div id="progressBar" style="width: 0%; height: 100%; background: var(--accent-color); transition: width 0.2s ease;"></div>
+                        </div>
+                        <div class="loading-title" style="font-weight: 600; font-size: 16px; color: var(--text-color); margin-bottom: 6px;">
+                            ${loadingTitle}
+                        </div>
+                        <div class="loading-subtitle" style="font-size: 13px; color: var(--sub-text); max-width: 400px; margin: 0 auto; line-height: 1.4;">
+                            ${loadingSubtitle}
+                        </div>
+                    </div>
+                `;
 
-                
-        
+                // Thêm logic giả lập thanh tiến trình chạy từ 0 đến 95%
+                let progress = 0;
+                const progressBar = document.getElementById('progressBar');
+                window.progressInterval = setInterval(() => {
+                    if (progress < 95) {
+                        progress += Math.random() * 15; // Tốc độ tăng ngẫu nhiên
+                        if (progress > 95) progress = 95;
+                        if (progressBar) progressBar.style.width = `${progress}%`;
+                    }
+                }, 150);
 
-        // 2. Kích hoạt vòng lặp giả lập tiến trình chạy từ 0% đến 95%
-        const progressBar = document.getElementById('progressBar');
-        let progressWidth = 0;
-        const progressInterval = setInterval(() => {
-            if (progressWidth < 95) {
-                // Tăng tốc độ mượt mà ngẫu nhiên để tạo cảm giác thật hơn
-                progressWidth += Math.floor(Math.random() * 10) + 5; 
-                if (progressWidth > 95) progressWidth = 95;
-                if (progressBar) progressBar.style.width = progressWidth + '%';
-            }
-        }, 150);
-
-        masterData = { vn: {}, int: {} };
-        const suffix = `?t=${Date.now()}`;
-        let freshVnText = cachedVnText;
-        let freshIntText = cachedIntText;
-
-        if (needFetchVn) {
-            const resVn = await fetch(`data_vn.txt${suffix}`, { cache: 'no-cache' });
-            freshVnText = resVn.ok ? await resVn.text() : '';
-            if (freshVnText) await localforage.setItem('cached_data_vn_text', freshVnText);
-        }
-
-        if (needFetchInt) {
-            const resInt = await fetch(`data_int.txt${suffix}`, { cache: 'no-cache' });
-            freshIntText = resInt.ok ? await resInt.text() : '';
-            if (freshIntText) await localforage.setItem('cached_data_int_text', freshIntText);
-        }
-
-        if (freshVnText) parseToSource(freshVnText.split('\n'), 'vn');
-        if (freshIntText) parseToSource(freshIntText.split('\n'), 'int');
-
-        // 3. Khi dữ liệu đã load xong hoàn toàn: Dừng interval, nhảy lên 100%
-        clearInterval(progressInterval);
-        if (progressBar) progressBar.style.width = '100%';
-
-        // Đợi 400ms (bằng thời gian transition width) để thanh bar chạy hết qua phải rồi mới ẩn đi và render danh sách bài viết
-        await new Promise(resolve => setTimeout(resolve, 400));
-
-        updateCurrentForumsData();
-        
-    } catch (error) {
-        console.error("Lỗi hệ thống:", error);
-        // Trường hợp lỗi, đảm bảo giải phóng bộ đếm thời gian
-        if (typeof progressInterval !== 'undefined') clearInterval(progressInterval);
-        
-        const cachedVnText = await localforage.getItem('cached_data_vn_text');
-        const cachedIntText = await localforage.getItem('cached_data_int_text');
-        if (cachedVnText) parseToSource(cachedVnText.split('\n'), 'vn');
-        if (cachedIntText) parseToSource(cachedIntText.split('\n'), 'int');
-        updateCurrentForumsData();
-    }
-}
-                
                 masterData = { vn: {}, int: {} };
                 const suffix = `?t=${Date.now()}`;
 
@@ -1279,6 +1232,7 @@ listContainer.innerHTML = `
 
                 updateCurrentForumsData();
             } catch (error) {
+                clearInterval(window.progressInterval); // Thêm dòng này để dọn dẹp tiến trình
                 console.error("Lỗi hệ thống:", error);
                 const cachedVnText = await localforage.getItem('cached_data_vn_text');
                 const cachedIntText = await localforage.getItem('cached_data_int_text');
