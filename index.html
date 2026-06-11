@@ -22,6 +22,8 @@
     <link rel="icon" type="image/png" href="favicon.png">
 
     <style>
+    
+    
     /* Chặn chọn văn bản trên tất cả các nút bấm */
 button, 
 .btn, 
@@ -898,6 +900,21 @@ body.is-swiping-tabs .post-title {
     color: var(--text-color) !important;
 }
 
+    /* Thêm vào cuối khối <style> của bạn */
+.post-subreddit {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent-color); /* Đồng bộ theo màu Accent hiện tại của hệ thống */
+    margin-bottom: 2px;
+    display: inline-block;
+    text-transform: lowercase; /* Đưa về chữ thường theo đúng style Reddit */
+    opacity: 0.85;
+}
+
+.post-item:hover .post-subreddit {
+    opacity: 1;
+}
+
     </style>
 </head>
 <body>
@@ -1643,17 +1660,37 @@ function shuffleArray(array) {
 
             
 
-            const postItem = document.createElement('div');
-    postItem.className = `post-item`;
+            // ĐOẠN CODE MỚI ĐÃ ĐƯỢC CẬP NHẬT:
+const postItem = document.createElement('div');
+postItem.className = `post-item`;
 
-    postItem.innerHTML = `
-        <img class="post-avatar" src="${faviconUrl}" alt="${post.domain}" onerror="this.onerror=null; this.src='${defaultAvatar}';">
-        <div class="post-content-block">
-            <a href="${post.url}" target="_blank" class="post-title">${displayedTitle}</a>
-            <span class="post-source">${languages[currentLang].source_label}${post.domain}</span>
-        </div>
-        <button class="btn-bookmark ${isBookmarked ? 'active' : ''}" title="Đánh dấu yêu thích">${isBookmarked ? '★' : '☆'}</button>
-    `;
+// 1. Kiểm tra xem bài viết này có thuộc diễn đàn REDDIT hay không
+const isReddit = post.domain && post.domain.toLowerCase().includes('reddit.com');
+
+// 2. Trích xuất tên sub-reddit từ URL (Ví dụ: từ link reddit.com/r/vietnam/xxx lấy ra r/vietnam)
+let subredditName = '';
+if (isReddit && post.url) {
+    const match = post.url.match(/reddit\.com\/(r\/[^\/]+)/i);
+    if (match && match[1]) {
+        subredditName = match[1];
+    }
+}
+
+// 3. Tạo đoạn mã HTML hiển thị sub-reddit nhỏ nếu tìm thấy dữ liệu
+const subredditHTML = subredditName 
+    ? `<span class="post-subreddit">${subredditName}</span>` 
+    : '';
+
+postItem.innerHTML = `
+    <img class="post-avatar" src="${faviconUrl}" alt="${post.domain}" onerror="this.onerror=null; this.src='${defaultAvatar}';">
+    <div class="post-content-block">
+        ${subredditHTML}
+        <a href="${post.url}" target="_blank" class="post-title">${displayedTitle}</a>
+        <span class="post-source">${languages[currentLang].source_label}${post.domain}</span>
+    </div>
+    <button class="btn-bookmark ${isBookmarked ? 'active' : ''}" title="Đánh dấu yêu thích">${isBookmarked ? '★' : '☆'}</button>
+`;
+
 
     postItem.querySelector('.btn-bookmark').addEventListener('click', (e) => {
         e.stopPropagation();
