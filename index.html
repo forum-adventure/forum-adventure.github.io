@@ -1732,10 +1732,23 @@ function shuffleArray(array) {
 
 
                 function renderPostCard(post, targetContainer) {
-    
     const isBookmarked = bookmarks.some(b => b.url === post.url);
-    const faviconUrl = `${localFaviconFolder}/${post.domain}.png`; 
-
+    
+    // 1. Xác định xem bài viết có thuộc Reddit hay không
+    const isReddit = post.domain && post.domain.toLowerCase().includes('reddit');
+    
+    // 2. Mặc định dùng icon của Domain trước
+    let faviconUrl = `${localFaviconFolder}/${post.domain}.png`; 
+    
+    // 3. Nếu là Reddit, tiến hành bóc tách tên Subreddit để gán Avatar riêng biệt
+    if (isReddit && post.url) {
+        const match = post.url.match(/reddit\.com\/r\/([^\/]+)/i);
+        if (match && match[1]) {
+            const subNameClean = match[1].trim().toLowerCase();
+            // Gán đường dẫn tới ảnh .png của Subreddit đó
+            faviconUrl = `${localFaviconFolder}/${subNameClean}.png`;
+        }
+    }
     // --- XỬ LÝ HIGHLIGHT CHỮ CHUẨN XÁC THEO RANH GIỚI TỪ ---
     let displayedTitle = post.title;
     if (searchQuery && searchQuery.trim() !== '') {
