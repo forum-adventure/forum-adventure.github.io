@@ -1737,20 +1737,30 @@ function shuffleArray(array) {
     const faviconUrl = `${localFaviconFolder}/${post.domain}.png`; 
                     
                       // NẾU LÀ REDDIT: Tách tên Subreddit để lấy ảnh riêng biệt
-    if (post.domain === 'reddit.com' && post.url.includes('/r/')) {
-        try {
-            const parts = post.url.split('/r/');
-            if (parts[1]) {
-                const subName = parts[1].split('/')[0].trim().toLowerCase();
-                if (subName && subName !== 'undefined' && subName !== 'null') {
-                    // Chuyển cấu trúc từ r/name thành file ảnh r-name.png
-                    faviconUrl = `${localFaviconFolder}/r-${subName}.png`;
-                }
+// Kiểm tra bao gồm 'reddit.com' để nhận diện cả www.reddit.com, old.reddit.com...
+if (post.domain && post.domain.includes('reddit.com') && post.url && post.url.includes('/r/')) {
+    try {
+        const parts = post.url.split('/r/');
+        if (parts[1]) {
+            // Tách theo dấu / trước để cô lập phần chứa tên Subreddit
+            let rawSubName = parts[1].split('/')[0];
+            
+            // Loại bỏ các tham số query (?utm...) hoặc hash (#...) nếu có ngay sau tên Subreddit
+            rawSubName = rawSubName.split('?')[0].split('#')[0];
+            
+            const subName = rawSubName.trim().toLowerCase();
+            
+            // Kiểm tra tính hợp lệ của tên Subreddit sau khi lọc
+            if (subName && subName !== 'undefined' && subName !== 'null' && subName.length > 0) {
+                // Chuyển cấu trúc từ r/name thành file ảnh r-name.png
+                faviconUrl = `${localFaviconFolder}/r-${subName}.png`;
             }
-        } catch (e) {
-            console.warn("Không thể bóc tách avatar Subreddit:", e);
         }
+    } catch (e) {
+        console.warn("Không thể bóc tách avatar Subreddit:", e);
     }
+}
+
     // --- XỬ LÝ HIGHLIGHT CHỮ CHUẨN XÁC THEO RANH GIỚI TỪ ---
     let displayedTitle = post.title;
     if (searchQuery && searchQuery.trim() !== '') {
