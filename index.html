@@ -1736,7 +1736,7 @@ function shuffleArray(array) {
     const isBookmarked = bookmarks.some(b => b.url === post.url);
     const faviconUrl = `${localFaviconFolder}/${post.domain}.png`; 
                     
-                    // NẾU LÀ REDDIT: Tách tên Subreddit để lấy ảnh riêng biệt
+                      // NẾU LÀ REDDIT: Tách tên Subreddit để lấy ảnh riêng biệt
     if (post.domain === 'reddit.com' && post.url.includes('/r/')) {
         try {
             const parts = post.url.split('/r/');
@@ -1747,7 +1747,10 @@ function shuffleArray(array) {
                     faviconUrl = `${localFaviconFolder}/r-${subName}.png`;
                 }
             }
-
+        } catch (e) {
+            console.warn("Không thể bóc tách avatar Subreddit:", e);
+        }
+    }
     // --- XỬ LÝ HIGHLIGHT CHỮ CHUẨN XÁC THEO RANH GIỚI TỪ ---
     let displayedTitle = post.title;
     if (searchQuery && searchQuery.trim() !== '') {
