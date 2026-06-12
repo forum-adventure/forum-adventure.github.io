@@ -915,6 +915,11 @@ body.is-swiping-tabs .post-title {
     opacity: 1;
 }
 
+        /* Khóa chiều cao tối thiểu cho khung chứa khi ở chế độ Đọc Ngẫu Nhiên để chống giật cụng nút bấm */
+.list-container.is-random-mode {
+    min-height: 180px; 
+}
+
     </style>
 </head>
 <body>
@@ -1643,6 +1648,10 @@ function shuffleArray(array) {
         function displayPosts() {
             listContainer.innerHTML = ''; 
             randomNavContainer.innerHTML = ''; 
+
+            // Thêm dòng này: Tắt chế độ giữ form khi quay về xem danh sách
+    listContainer.classList.remove('is-random-mode');
+            
             const targetPosts = getActivePosts();
 
             // TRƯỜNG HỢP: Tab Yêu thích trống
@@ -1897,6 +1906,10 @@ if (favTab) favTab.textContent = bookmarks.length.toLocaleString(locale);
         function showRandomPostAtCurrentIndex() {
             listContainer.innerHTML = '';
             paginationContainer.innerHTML = '';
+
+            // Thêm dòng này: Bật chế độ giữ form
+    listContainer.classList.add('is-random-mode');
+            
             const currentPost = randomHistory[currentRandomIndex];
             if (currentPost) {
                 renderPostCard(currentPost, listContainer); // Truyền thêm listContainer vào đây
