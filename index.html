@@ -1455,18 +1455,18 @@ if (domain.includes('digitalspy')) {
             }
         }
     
-            // HÀM MỚI: TỰ ĐỘNG HIỂN THỊ HASHTAG CHO REDDIT
+                   // HÀM MỚI: TỰ ĐỘNG HIỂN THỊ HASHTAG CHO REDDIT
         function renderSubredditHashtags() {
             const container = document.getElementById('subFilterContainer');
             container.innerHTML = '';
 
             // Chỉ hiển thị khi chọn đúng tab reddit.com
-            if (currentDomain !== 'reddit') {
+            if (currentDomain !== 'reddit.com') {
                 container.style.display = 'none';
                 return;
             }
 
-            const redditPosts = forumsData['reddit'] || [];
+            const redditPosts = forumsData['reddit.com'] || [];
             if (redditPosts.length === 0) return;
 
             // Bóc tách danh sách các Subreddit duy nhất
@@ -1521,6 +1521,7 @@ if (domain.includes('digitalspy')) {
                 container.appendChild(subBtn);
             });
         }
+
 
 
         function createTabButton(label, domainKey, count) {
@@ -1610,7 +1611,7 @@ function shuffleArray(array) {
             }
                 
                 // --- THÊM LOGIC LỌC SUBREDDIT VÀO ĐÂY ---
-            if (currentDomain === 'reddit' && currentSubreddit !== 'all') {
+            if (currentDomain === 'reddit.com' && currentSubreddit !== 'all') {
                 targetPosts = targetPosts.filter(post => post.url.toLowerCase().includes('/' + currentSubreddit + '/'));
             }
             // ----------------------------------------
