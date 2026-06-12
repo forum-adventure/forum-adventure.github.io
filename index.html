@@ -1786,7 +1786,9 @@ const subredditHTML = subredditName
     : '';
 
 postItem.innerHTML = `
-    <img class="post-avatar" src="${faviconUrl}" alt="${post.domain}" onerror="this.onerror=null; this.src='${defaultAvatar}';">
+    // Thay đổi thuộc tính onerror để nếu thiếu ảnh sub thì quay về ảnh gốc của reddit.com
+<img class="post-avatar" src="${faviconUrl}" alt="${post.domain}" onerror="this.onerror=null; this.src='${localFaviconFolder}/reddit.com.png';">
+
     <div class="post-content-block">
         ${subredditHTML}
         <a href="${post.url}" target="_blank" class="post-title">${displayedTitle}</a>
