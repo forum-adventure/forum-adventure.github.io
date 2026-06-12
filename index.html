@@ -964,10 +964,13 @@ body.is-swiping-tabs .post-title {
         <button class="btn-action-util btn-random" id="btnRandom" title="Xem ngẫu nhiên một bài viết từ danh mục hiện tại" data-i18n="random_btn">Đọc ngẫu nhiên</button>
     </div>
 
-    <div class="filter-wrapper" id="filterWrapper">
+        <div class="filter-wrapper" id="filterWrapper">
         <div class="filter-container" id="filterContainer"></div>
         <div class="checkbox-dropdown-menu" id="checkboxDropdownMenu"></div>
     </div>
+
+    <div id="subFilterContainer" style="display: flex; gap: 8px; overflow-x: auto; padding: 0 4px 12px 4px; margin-top: -12px; margin-bottom: 24px; scroll-behavior: smooth;"></div>
+
 
     <div class="list-container" id="listContainer">
         <div class="empty-message" data-i18n="loading_cache">Đang tải dữ liệu bộ nhớ đệm...</div>
@@ -1060,6 +1063,7 @@ body.is-swiping-tabs .post-title {
         let activeSource = 'all'; 
         let forumsData = {}; 
         let currentDomain = 'all';
+    let currentSubreddit = 'all'; // THÊM BIẾN NÀY
         let currentPage = 1;
         let searchQuery = '';
         let searchTimeout;
@@ -1441,13 +1445,83 @@ if (domain.includes('digitalspy')) {
             if (targetTab) {
                 document.querySelectorAll('.btn-tab').forEach(btn => btn.classList.remove('active'));
                 targetTab.classList.add('active');
+                renderSubredditHashtags(); // THÊM DÒNG NÀY
                 displayPosts();
             } else {
                 currentDomain = 'all';
+                currentSubreddit = 'all';  // THÊM DÒNG NÀY
                 const allTab = filterContainer.querySelector('[data-domain="all"]');
                 if (allTab) allTab.click();
             }
         }
+    
+            // HÀM MỚI: TỰ ĐỘNG HIỂN THỊ HASHTAG CHO REDDIT
+        function renderSubredditHashtags() {
+            const container = document.getElementById('subFilterContainer');
+            container.innerHTML = '';
+
+            // Chỉ hiển thị khi chọn đúng tab reddit.com
+            if (currentDomain !== 'reddit') {
+                container.style.display = 'none';
+                return;
+            }
+
+            const redditPosts = forumsData['reddit'] || [];
+            if (redditPosts.length === 0) return;
+
+            // Bóc tách danh sách các Subreddit duy nhất
+            const subreddits = new Set();
+            redditPosts.forEach(post => {
+                try {
+                    const urlObj = new URL(post.url);
+                    const pathParts = urlObj.pathname.split('/');
+                    const rIndex = pathParts.indexOf('r');
+                    if (rIndex !== -1 && pathParts[rIndex + 1]) {
+                        subreddits.add(`r/${pathParts[rIndex + 1].toLowerCase()}`);
+                    }
+                } catch (e) {}
+            });
+
+            if (subreddits.size === 0) return;
+
+            container.style.display = 'flex';
+
+            // 1. Tạo nút "Tất cả sub"
+            const allBtn = document.createElement('button');
+            allBtn.className = 'btn-tab';
+            allBtn.style = currentSubreddit === 'all' ? 'background-color: var(--text-color); color: var(--card-bg); font-size: 11px; border-radius: 8px;' : 'font-size: 11px; border-radius: 8px;';
+            allBtn.textContent = '# Tất cả';
+            allBtn.addEventListener('click', () => {
+                currentSubreddit = 'all';
+                currentPage = 1;
+                renderSubredditHashtags();
+                displayPosts();
+            });
+            container.appendChild(allBtn);
+
+            // 2. Tạo nút cho từng Subreddit
+            subreddits.forEach(sub => {
+                const subBtn = document.createElement('button');
+                subBtn.className = 'btn-tab';
+                
+                // CSS nhanh để làm nổi bật hashtag đang chọn khác biệt với tab chính
+                if (currentSubreddit === sub) {
+                    subBtn.style = 'background-color: var(--text-color); color: var(--card-bg); font-size: 11px; border-radius: 8px;';
+                } else {
+                    subBtn.style = 'font-size: 11px; border-radius: 8px;';
+                }
+                
+                subBtn.textContent = `# ${sub}`;
+                subBtn.addEventListener('click', () => {
+                    currentSubreddit = sub;
+                    currentPage = 1;
+                    renderSubredditHashtags();
+                    displayPosts();
+                });
+                container.appendChild(subBtn);
+            });
+        }
+
 
         function createTabButton(label, domainKey, count) {
             const button = document.createElement('button');
@@ -1488,8 +1562,10 @@ badge.textContent = count.toLocaleString(locale);
                 document.querySelectorAll('.btn-tab').forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
                 currentDomain = domainKey;
+                currentSubreddit = 'all'; // Thêm dòng này để reset sub về mặc định khi đổi tab
                 currentPage = 1;
                 resetRandomHistory(); 
+                renderSubredditHashtags(); // THÊM DÒNG NÀY
                 displayPosts();
 
                 const containerWidth = filterContainer.offsetWidth;
@@ -1532,6 +1608,12 @@ function shuffleArray(array) {
             } else {
                 targetPosts = hiddenForums.includes(currentDomain) ? [] : (forumsData[currentDomain] || []);
             }
+                
+                // --- THÊM LOGIC LỌC SUBREDDIT VÀO ĐÂY ---
+            if (currentDomain === 'reddit' && currentSubreddit !== 'all') {
+                targetPosts = targetPosts.filter(post => post.url.toLowerCase().includes('/' + currentSubreddit + '/'));
+            }
+            // ----------------------------------------
 
             // --- NÂNG CẤP LOGIC TÌM KIẾM CHÍNH XÁC TỪ ĐẦU TỪ ---
             if (searchQuery !== '') {
@@ -1665,7 +1747,7 @@ const postItem = document.createElement('div');
 postItem.className = `post-item`;
 
 // 1. Kiểm tra xem bài viết này có thuộc diễn đàn REDDIT hay không
-const isReddit = post.domain && post.domain.toLowerCase().includes('reddit.com');
+const isReddit = post.domain && post.domain.toLowerCase().includes('reddit');
 
 // 2. Trích xuất tên sub-reddit từ URL (Ví dụ: từ link reddit.com/r/vietnam/xxx lấy ra r/vietnam)
 let subredditName = '';
@@ -1947,11 +2029,13 @@ const targetDomainKey = (currentDomain === 'all') ? 'fav_bookmarks' : ((currentD
             activeSource = 'all'; 
             currentPage = 1; 
             currentDomain = 'all'; 
+            currentSubreddit = 'all'; // THÊM DÒNG NÀY
             searchInput.value = ''; 
             searchQuery = ''; 
             clearSearchBtn.style.display = 'none';
             actionBar.classList.remove('search-active');
             resetRandomHistory(); 
+            renderSubredditHashtags(); // THÊM DÒNG NÀY
             updateCurrentForumsData();
         }
     
