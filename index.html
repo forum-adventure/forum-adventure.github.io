@@ -1202,7 +1202,10 @@ updateThemeUI(savedTheme);
                     document.getElementById('progressBar').style.width = '100%';
                 }
                 
-               
+                // Đợi 200ms cho hiệu ứng CSS chạy xong rồi mới render dữ liệu (ẩn thanh loading)
+                setTimeout(() => {
+                    updateCurrentForumsData();
+                }, 0);
                     return; 
                 }
 
