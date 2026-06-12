@@ -1064,6 +1064,8 @@ body.is-swiping-tabs .post-title {
         let forumsData = {}; 
         let currentDomain = 'all';
     let currentSubreddit = 'all'; // THÊM BIẾN NÀY
+    let redditSubredditsCache = []; // Mảng lưu các hashtag sub reddit
+let isRedditCached = false;     // ĐÁNH DẤU: Chưa quét dữ liệu Reddit
         let currentPage = 1;
         let searchQuery = '';
         let searchTimeout;
@@ -1457,70 +1459,79 @@ if (domain.includes('digitalspy')) {
     
                    // HÀM MỚI: TỰ ĐỘNG HIỂN THỊ HASHTAG CHO REDDIT
         function renderSubredditHashtags() {
-            const container = document.getElementById('subFilterContainer');
-            container.innerHTML = '';
+    const container = document.getElementById('subFilterContainer');
+    if (!container) return;
+    container.innerHTML = '';
 
-            // Chỉ hiển thị khi chọn đúng tab reddit.com
-            if (currentDomain !== 'reddit.com') {
-                container.style.display = 'none';
-                return;
-            }
+    // 1. Nếu không phải tab reddit thì ẩn đi luôn và dừng xử lý
+    if (currentDomain !== 'reddit.com') {
+        container.style.display = 'none';
+        return;
+    }
 
-            const redditPosts = forumsData['reddit.com'] || [];
-            if (redditPosts.length === 0) return;
+    // 2. CHỈ CHẠY 1 LẦN DUY NHẤT: Nếu chưa cache, tiến hành bóc tách dữ liệu Reddit
+    if (!isRedditCached) {
+        const redditPosts = forumsData['reddit.com'] || [];
+        const subreddits = new Set();
 
-            // Bóc tách danh sách các Subreddit duy nhất
-            const subreddits = new Set();
-            redditPosts.forEach(post => {
-                try {
-                    const urlObj = new URL(post.url);
-                    const pathParts = urlObj.pathname.split('/');
-                    const rIndex = pathParts.indexOf('r');
-                    if (rIndex !== -1 && pathParts[rIndex + 1]) {
-                        subreddits.add(`r/${pathParts[rIndex + 1].toLowerCase()}`);
+        for (let i = 0; i < redditPosts.length; i++) {
+            const url = redditPosts[i]?.url;
+            if (url && url.includes('/r/')) {
+                const parts = url.split('/r/');
+                if (parts[1]) {
+                    const subName = parts[1].split('/')[0].trim().toLowerCase();
+                    if (subName && subName !== 'undefined' && subName !== 'null') {
+                        subreddits.add('r/' + subName);
                     }
-                } catch (e) {}
-            });
-
-            if (subreddits.size === 0) return;
-
-            container.style.display = 'flex';
-
-            // 1. Tạo nút "Tất cả sub"
-            const allBtn = document.createElement('button');
-            allBtn.className = 'btn-tab';
-            allBtn.style = currentSubreddit === 'all' ? 'background-color: var(--text-color); color: var(--card-bg); font-size: 11px; border-radius: 8px;' : 'font-size: 11px; border-radius: 8px;';
-            allBtn.textContent = '# Tất cả';
-            allBtn.addEventListener('click', () => {
-                currentSubreddit = 'all';
-                currentPage = 1;
-                renderSubredditHashtags();
-                displayPosts();
-            });
-            container.appendChild(allBtn);
-
-            // 2. Tạo nút cho từng Subreddit
-            subreddits.forEach(sub => {
-                const subBtn = document.createElement('button');
-                subBtn.className = 'btn-tab';
-                
-                // CSS nhanh để làm nổi bật hashtag đang chọn khác biệt với tab chính
-                if (currentSubreddit === sub) {
-                    subBtn.style = 'background-color: var(--text-color); color: var(--card-bg); font-size: 11px; border-radius: 8px;';
-                } else {
-                    subBtn.style = 'font-size: 11px; border-radius: 8px;';
                 }
-                
-                subBtn.textContent = `# ${sub}`;
-                subBtn.addEventListener('click', () => {
-                    currentSubreddit = sub;
-                    currentPage = 1;
-                    renderSubredditHashtags();
-                    displayPosts();
-                });
-                container.appendChild(subBtn);
-            });
+            }
         }
+        redditSubredditsCache = Array.from(subreddits);
+        isRedditCached = true; // Đánh dấu đã quét xong, lần sau bấm tab Reddit sẽ bỏ qua đoạn này
+        console.log("Reddit data parsed once upon click!"); // Bạn có thể xóa dòng này sau khi test
+    }
+
+    // 3. Nếu dữ liệu trống hoàn toàn (không có link reddit nào), ẩn thanh hashtag
+    if (redditSubredditsCache.length === 0) {
+        container.style.display = 'none';
+        return;
+    }
+
+    // 4. Tiến hành vẽ giao diện các nút bấm
+    container.style.display = 'flex';
+
+    // Nút "Tất cả"
+    const allBtn = document.createElement('button');
+    allBtn.className = 'btn-tab';
+    allBtn.style = currentSubreddit === 'all' ? 'background-color: var(--text-color); color: var(--card-bg); font-size: 11px; border-radius: 8px;' : 'font-size: 11px; border-radius: 8px;';
+    allBtn.textContent = '# Tất cả';
+    allBtn.onclick = () => {
+        currentSubreddit = 'all';
+        currentPage = 1;
+        renderSubredditHashtags();
+        displayPosts();
+    };
+    container.appendChild(allBtn);
+
+    // Nút cho từng Subreddit
+    redditSubredditsCache.forEach(sub => {
+        const subBtn = document.createElement('button');
+        subBtn.className = 'btn-tab';
+        if (currentSubreddit === sub) {
+            subBtn.style = 'background-color: var(--text-color); color: var(--card-bg); font-size: 11px; border-radius: 8px;';
+        } else {
+            subBtn.style = 'font-size: 11px; border-radius: 8px;';
+        }
+        subBtn.textContent = `# ${sub}`;
+        subBtn.onclick = () => {
+            currentSubreddit = sub;
+            currentPage = 1;
+            renderSubredditHashtags(); // Vẽ lại để cập nhật trạng thái active của nút
+            displayPosts();
+        };
+        container.appendChild(subBtn);
+    });
+}
 
 
 
