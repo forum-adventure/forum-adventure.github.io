@@ -4,7 +4,7 @@
   "description": "Công Cụ Lọc Dữ Liệu Diễn Đàn Tiện Lợi",
   "icons": [
     {
-      "src": "./icon-512.png",
+      "src": "/icon-512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
