@@ -1,0 +1,16 @@
+{
+  "short_name": "ForumFilter",
+  "name": "Forum Data Filter",
+  "description": "Công Cụ Lọc Dữ Liệu Diễn Đàn Tiện Lợi",
+  "icons": [
+    {
+      "src": "./icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#121212",
+  "theme_color": "#121212"
+}
