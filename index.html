@@ -21,22 +21,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="favicon.png">
 <link rel="manifest" href="manifest.json">
-    
-    <script>
-// Kiểm tra xem trình duyệt có hỗ trợ Service Worker không
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./sw.js')
-            .then((registration) => {
-                console.log('Service Worker đã đăng ký thành công với scope:', registration.scope);
-            })
-            .catch((error) => {
-                console.log('Đăng ký Service Worker thất bại:', error);
-            });
-    });
-}
-</script>
-
 
     <style>
     
