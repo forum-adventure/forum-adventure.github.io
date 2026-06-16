@@ -1,7 +1,7 @@
 {
-  "short_name": "Forum Aventure",
-  "name": "Forum Aventure",
-  "description": "Forum Aventure - Forum Data Filter",
+  "short_name": "Forum Adventure",
+  "name": "Forum Adventure",
+  "description": "Forum Adventure - Forum Data Filter",
   "icons": [
     {
       "src": "./icon-512.png",
