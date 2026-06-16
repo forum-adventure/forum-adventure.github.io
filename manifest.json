@@ -1,7 +1,7 @@
 {
-  "short_name": "ForumFilter",
-  "name": "Forum Data Filter",
-  "description": "Công Cụ Lọc Dữ Liệu Diễn Đàn Tiện Lợi",
+  "short_name": "Forum Adventure",
+  "name": "Forum Adventure",
+  "description": "Forum Data Filter",
   "icons": [
     {
       "src": "./icon-512.png",
