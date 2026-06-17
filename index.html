@@ -924,6 +924,21 @@ body.is-swiping-tabs .post-title {
     </style>
 </head>
 <body>
+    
+    <div id="pwa-install-popup" style="display: none; position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); background-color: var(--card-bg); border: 1px solid var(--border-color); padding: 16px 20px; border-radius: 16px; box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3); z-index: 9999; width: calc(100% - 40px); max-width: 400px; box-sizing: border-box; align-items: center; justify-content: space-between; gap: 12px; animation: fadeIn 0.4s ease-in-out;">
+    <div style="display: flex; align-items: center; gap: 12px; min-width: 0;">
+        <img src="favicon.png" alt="Logo" style="width: 40px; height: 40px; border-radius: 8px; flex-shrink: 0;">
+        <div style="min-width: 0;">
+            <p style="margin: 0; font-weight: 600; font-size: 14px; color: var(--text-color); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Forum Adventure</p>
+            <p style="margin: 2px 0 0 0; font-size: 12px; color: var(--sub-text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" data-i18n="pwa_install_desc">Cài đặt ứng dụng để trải nghiệm mượt mà hơn!</p>
+        </div>
+    </div>
+    <div style="display: flex; gap: 8px; flex-shrink: 0;">
+        <button id="pwa-close-btn" style="background: transparent; border: 1px solid var(--border-color); color: var(--sub-text); padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 500; cursor: pointer;">Để sau</button>
+        <button id="pwa-install-btn" style="background-color: var(--accent-color); border: none; color: white; padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; cursor: pointer;">Cài đặt</button>
+    </div>
+</div>
+
 
     <div class="top-bar">
         <div class="sub-links-container">
@@ -2268,6 +2283,57 @@ slider.addEventListener('touchend', () => {
     const alertMessage = languages[currentLang]['footer_alert_text'];
     alert(alertMessage);
 }
+
+    
+    // Logic xử lý Popup cài đặt PWA (App)
+let deferredPrompt;
+const installPopup = document.getElementById('pwa-install-popup');
+const installBtn = document.getElementById('pwa-install-btn');
+const closeBtn = document.getElementById('pwa-close-btn');
+
+window.addEventListener('beforeinstallprompt', (e) => {
+    // Ngăn trình duyệt hiển thị banner mặc định (trên một số trình duyệt cũ)
+    e.preventDefault();
+    // Lưu lại sự kiện để kích hoạt sau khi người dùng bấm nút
+    deferredPrompt = e;
+    
+    // Kiểm tra xem người dùng trước đó đã bấm "Để sau" trong phiên này chưa
+    if (!sessionStorage.getItem('pwa-dismissed')) {
+        // Hiển thị popup tùy chỉnh dạng flex
+        installPopup.style.display = 'flex';
+    }
+});
+
+// Xử lý khi người dùng bấm nút "Cài đặt"
+installBtn.addEventListener('click', async () => {
+    if (!deferredPrompt) return;
+    
+    // Hiển thị hộp thoại cài đặt gốc của trình duyệt
+    deferredPrompt.prompt();
+    
+    // Chờ người dùng phản hồi (Đồng ý cài đặt hoặc Hủy)
+    const { outcome } = await deferredPrompt.userChoice;
+    console.log(`User response to the install prompt: ${outcome}`);
+    
+    // Xóa sự kiện đã lưu vì nó chỉ dùng được 1 lần
+    deferredPrompt = null;
+    // Ẩn popup
+    installPopup.style.display = 'none';
+});
+
+// Xử lý khi người dùng bấm "Để sau"
+closeBtn.addEventListener('click', () => {
+    installPopup.style.display = 'none';
+    // Lưu trạng thái vào sessionStorage để không làm phiền họ liên tục khi họ chuyển hướng trong phiên truy cập này
+    sessionStorage.setItem('pwa-dismissed', 'true');
+});
+
+// Ẩn popup ngay lập tức nếu ứng dụng đã được cài đặt thành công trước đó
+window.addEventListener('appinstalled', (event) => {
+    console.log('PWA was installed successfully!');
+    installPopup.style.display = 'none';
+    deferredPrompt = null;
+});
 
 
     </script>
