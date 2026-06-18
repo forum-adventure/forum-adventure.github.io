@@ -1256,16 +1256,24 @@ updateThemeUI(savedTheme);
                     </div>
                 `;
 
-              // Thêm logic giả lập thanh tiến trình chạy từ 0 đến 95%
+            // Thêm logic giả lập thanh tiến trình chạy thông minh (0 -> 85 nhanh, 85 -> 95 siêu chậm)
 let progress = 0;
 const progressBar = document.getElementById('progressBar');
 window.progressInterval = setInterval(() => {
-    if (progress < 95) {
-        progress += Math.random() * 15; // Tốc độ tăng ngẫu nhiên
+    if (progress < 85) {
+        // Giai đoạn 1: Chạy ngẫu nhiên nhanh đến mốc 85%
+        progress += Math.random() * 15; 
+        if (progress > 85) progress = 85;
+    } else if (progress >= 85 && progress < 95) {
+        // Giai đoạn 2: Hãm phanh từ 85% đến 95% chạy cực chậm để chống cảm giác bị đơ máy
+        progress += Math.random() * 0.4; 
         if (progress > 95) progress = 95;
-        if (progressBar) progressBar.style.width = `${progress}%`;
     }
+
+    // Cập nhật thanh tiến trình lên giao diện
+    if (progressBar) progressBar.style.width = `${progress}%`;
 }, 150);
+
 
 
 
