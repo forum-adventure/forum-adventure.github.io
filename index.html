@@ -1256,16 +1256,24 @@ updateThemeUI(savedTheme);
                     </div>
                 `;
 
-                // Thêm logic giả lập thanh tiến trình chạy từ 0 đến 95%
-                let progress = 0;
-                const progressBar = document.getElementById('progressBar');
-                window.progressInterval = setInterval(() => {
-                    if (progress < 95) {
-                        progress += Math.random() * 15; // Tốc độ tăng ngẫu nhiên
-                        if (progress > 95) progress = 95;
-                        if (progressBar) progressBar.style.width = `${progress}%`;
-                    }
-                }, 150);
+              // Thêm logic giả lập thanh tiến trình chạy từ 0 đến 95% (Hãm phanh từ 85% trở đi)
+let progress = 0;
+const progressBar = document.getElementById('progressBar');
+window.progressInterval = setInterval(() => {
+    if (progress < 95) {
+        if (progress < 85) {
+            // Giai đoạn đầu (0% - 85%): Chạy nhanh ngẫu nhiên như cũ
+            progress += Math.random() * 12 + 3; 
+        } else {
+            // Giai đoạn sau (85% - 95%): Chuyển sang số siêu nhỏ để thanh nhích từng chút một
+            progress += Math.random() * 0.8 + 0.1; 
+        }
+        
+        if (progress > 95) progress = 95;
+        if (progressBar) progressBar.style.width = `${progress}%`;
+    }
+}, 150);
+
 
                 masterData = { vn: {}, int: {} };
                 const suffix = `?t=${Date.now()}`;
